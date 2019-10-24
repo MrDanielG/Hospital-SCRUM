@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QSqlDatabase>
 #include <QDebug>
+#include "Widgets/Usuario/registro.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,9 +16,17 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{
             qDebug()<<"Base de datos conectada exitosamente";
     }
+
+    ui->stackedWidget->insertWidget(1, &ventanaRegistro);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }
