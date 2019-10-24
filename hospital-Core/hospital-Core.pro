@@ -26,13 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Widgets/Usuario/registro.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Widgets/Usuario/registro.h \
         mainwindow.h
 
 FORMS += \
+        Widgets/Usuario/registro.ui \
         mainwindow.ui
 
 # Default rules for deployment.
