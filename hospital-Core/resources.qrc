@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/imagenes">
+        <file>Imagenes/img_doctores.png</file>
+    </qresource>
+</RCC>
