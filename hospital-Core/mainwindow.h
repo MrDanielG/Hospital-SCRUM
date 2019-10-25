@@ -5,7 +5,8 @@
 #include <QSqlDatabase>
 #include "Widgets/Usuario/registro.h"
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 
@@ -18,14 +19,12 @@ public:
     ~MainWindow();
 
 private slots:
-
     void on_btn_iniciar_sesion_clicked();
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
     registro ventanaRegistro;
-
 };
 
 #endif // MAINWINDOW_H
