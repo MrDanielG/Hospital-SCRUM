@@ -26,17 +26,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Widgets/Administrador/administrador_landpage.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registro.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Widgets/Administrador/administrador_landpage.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registro.h \
         mainwindow.h
 
 FORMS += \
+        Widgets/Administrador/administrador_landpage.ui \
         Widgets/Usuario/inicar_sesion.ui \
         Widgets/Usuario/registro.ui \
         mainwindow.ui

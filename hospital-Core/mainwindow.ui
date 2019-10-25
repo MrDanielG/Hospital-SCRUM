@@ -55,6 +55,9 @@ background: #3E64FF;</string>
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">border-radius: 5px;
 background: white;
@@ -84,7 +87,7 @@ color: #3E64FF;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>750</x>
@@ -103,6 +106,9 @@ color: #3E64FF;
            <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">border: none;
@@ -138,6 +144,9 @@ color: white;
            <bold>false</bold>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">border: none;
 background: none;
@@ -172,6 +181,9 @@ color: white;
            <bold>false</bold>
           </font>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">border: none;
 background: none;
@@ -185,7 +197,7 @@ color: white;
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>650</x>
