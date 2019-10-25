@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Imagenes/img-doctores.svg</file>
+    </qresource>
+</RCC>
