@@ -3,6 +3,7 @@
 #include <QSqlDatabase>
 #include <QDebug>
 #include "Widgets/Usuario/registro.h"
+#include "Widgets/Usuario/inicar_sesion.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,7 +27,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
+
+
+
+void MainWindow::on_btn_iniciar_sesion_clicked(){
+    inicar_sesion dialogo_iniciar_sesion;
+    dialogo_iniciar_sesion.exec();
+
 }
