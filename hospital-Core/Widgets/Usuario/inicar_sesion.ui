@@ -40,6 +40,9 @@ background: white;</string>
    <property name="text">
     <string>Inicio Sesión</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="img_login">
    <property name="geometry">
@@ -52,16 +55,25 @@ background: white;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
-background: #3E64FF;</string>
+</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/doctor 4.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>240</y>
      <width>181</width>
      <height>16</height>
@@ -79,7 +91,7 @@ background: #3E64FF;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>310</y>
      <width>111</width>
      <height>16</height>
@@ -97,9 +109,9 @@ background: #3E64FF;</string>
   <widget class="QLineEdit" name="line_correo">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>270</y>
-     <width>361</width>
+     <width>341</width>
      <height>20</height>
     </rect>
    </property>
@@ -111,9 +123,9 @@ border-bottom: 1px solid #C4C4C4;</string>
   <widget class="QLineEdit" name="line_contrasenia">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>340</y>
-     <width>361</width>
+     <width>341</width>
      <height>20</height>
     </rect>
    </property>
@@ -161,6 +173,8 @@ border-radius: 10px;</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

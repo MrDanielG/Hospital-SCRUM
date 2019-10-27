@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QSqlDatabase>
-#include "Widgets/Usuario/registro.h"
+#include "Widgets/Usuario/registrar.h"
+#include "Widgets/Usuario/inicar_sesion.h"
 
 namespace Ui
 {
@@ -20,11 +21,14 @@ public:
 
 private slots:
     void on_btn_iniciar_sesion_clicked();
+    void on_btn_registrarse_clicked();
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
-    registro ventanaRegistro;
+    registrar ventanaRegistro;
+    inicar_sesion ventanaSesion;
+
 };
 
 #endif // MAINWINDOW_H

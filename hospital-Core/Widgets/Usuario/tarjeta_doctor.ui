@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>registro</class>
- <widget class="QWidget" name="registro">
+ <class>tarjeta_doctor</class>
+ <widget class="QWidget" name="tarjeta_doctor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>549</width>
-    <height>371</height>
+    <width>245</width>
+    <height>217</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <property name="styleSheet">
+   <string notr="true">border: none;
+background: white;</string>
+  </property>
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>60</y>
-     <width>75</width>
-     <height>23</height>
+     <x>70</x>
+     <y>10</y>
+     <width>111</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
-    <string>Estoy en registro</string>
+    <string/>
    </property>
   </widget>
  </widget>

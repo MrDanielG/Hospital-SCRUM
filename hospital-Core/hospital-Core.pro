@@ -26,19 +26,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
-        Widgets/Usuario/registro.cpp \
+        Widgets/Usuario/registrar.cpp \
+        Widgets/Usuario/tarjeta_doctor.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Widgets/Usuario/catalogo_doctores.h \
         Widgets/Usuario/inicar_sesion.h \
-        Widgets/Usuario/registro.h \
+        Widgets/Usuario/registrar.h \
+        Widgets/Usuario/tarjeta_doctor.h \
         mainwindow.h
 
 FORMS += \
+        Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Usuario/inicar_sesion.ui \
-        Widgets/Usuario/registro.ui \
+        Widgets/Usuario/registrar.ui \
+        Widgets/Usuario/tarjeta_doctor.ui \
         mainwindow.ui
 
 # Default rules for deployment.
