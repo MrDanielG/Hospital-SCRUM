@@ -30,12 +30,12 @@ border-radius:5px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>70</x>
      <y>70</y>
-     <width>231</width>
+     <width>251</width>
      <height>331</height>
     </rect>
    </property>
@@ -116,7 +116,7 @@ border-radius:5px;</string>
       <property name="font">
        <font>
         <family>Montserrat Medium</family>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="text">
@@ -157,7 +157,7 @@ border-radius:5px;</string>
       <property name="font">
        <font>
         <family>Montserrat Medium</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
        </font>
       </property>
       <property name="styleSheet">

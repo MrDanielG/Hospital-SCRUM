@@ -51,10 +51,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>440</x>
      <y>20</y>
-     <width>781</width>
-     <height>22</height>
+     <width>901</width>
+     <height>24</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="menu_layout">
