@@ -51,9 +51,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>560</x>
      <y>20</y>
-     <width>741</width>
+     <width>781</width>
      <height>22</height>
     </rect>
    </property>
@@ -63,7 +63,7 @@
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -100,7 +100,7 @@ color: white;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -137,7 +137,7 @@ color: white;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -174,7 +174,7 @@ color: white;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -211,7 +211,7 @@ color: white;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -244,11 +244,11 @@ color: white;
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="btn_gestionar_tips_2">
+     <widget class="QPushButton" name="btn_salir">
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
