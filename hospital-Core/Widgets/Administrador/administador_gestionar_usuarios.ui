@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #E5E5E5</string>
+    <string notr="true">background-color: #fbfbfb</string>
    </property>
    <property name="text">
     <string/>
@@ -35,7 +35,7 @@
      <x>560</x>
      <y>20</y>
      <width>771</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="menu_layout">
@@ -309,7 +309,8 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(251, 251, 251);
+border:none;</string>
    </property>
    <property name="verticalScrollBarPolicy">
     <enum>Qt::ScrollBarAsNeeded</enum>
@@ -328,15 +329,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1289</width>
-      <height>519</height>
+      <width>1291</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="0">
@@ -349,13 +350,13 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
      <y>110</y>
      <width>1271</width>
-     <height>33</height>
+     <height>36</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -393,7 +394,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Montserrat</family>
+          <family>Montserrat Medium</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -448,7 +449,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Montserrat</family>
+          <family>Montserrat Medium</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -503,7 +504,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Montserrat</family>
+          <family>Montserrat Medium</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -543,15 +544,21 @@
     </item>
     <item>
      <widget class="QLineEdit" name="buscar">
+      <property name="minimumSize">
+       <size>
+        <width>230</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>500</width>
+        <width>600</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Roboto</family>
+        <family>Montserrat Medium</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -566,13 +573,13 @@ border-radius:5px;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>40</x>
      <y>700</y>
      <width>1291</width>
-     <height>31</height>
+     <height>34</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -624,7 +631,7 @@ color: #818181;</string>
       </property>
       <property name="font">
        <font>
-        <family>Montserrat</family>
+        <family>Montserrat Medium</family>
         <pointsize>12</pointsize>
        </font>
       </property>
