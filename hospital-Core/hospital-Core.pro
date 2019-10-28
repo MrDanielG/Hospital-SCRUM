@@ -28,6 +28,15 @@ CONFIG += c++11
 SOURCES += \
         Clases/doctor.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
+        Widgets/Administrador/administador_gestionar_usuarios.cpp \
+        Widgets/Administrador/administrador_crear_tips.cpp \
+        Widgets/Administrador/administrador_gestionar_tips.cpp \
+        Widgets/Administrador/administrador_info_gestion.cpp \
+        Widgets/Administrador/administrador_info_servicios.cpp \
+        Widgets/Administrador/administrador_info_tip.cpp \
+        Widgets/Administrador/administrador_landpage.cpp \
+        Widgets/Administrador/administrador_servicios_hospital.cpp \
+        Widgets/Administrador/administrador_tarjeta_gestion.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
@@ -37,6 +46,15 @@ SOURCES += \
 HEADERS += \
         Clases/doctor.h \
         Widgets/Usuario/catalogo_doctores.h \
+        Widgets/Administrador/administador_gestionar_usuarios.h \
+        Widgets/Administrador/administrador_crear_tips.h \
+        Widgets/Administrador/administrador_gestionar_tips.h \
+        Widgets/Administrador/administrador_info_gestion.h \
+        Widgets/Administrador/administrador_info_servicios.h \
+        Widgets/Administrador/administrador_info_tip.h \
+        Widgets/Administrador/administrador_landpage.h \
+        Widgets/Administrador/administrador_servicios_hospital.h \
+        Widgets/Administrador/administrador_tarjeta_gestion.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
@@ -44,6 +62,15 @@ HEADERS += \
 
 FORMS += \
         Widgets/Usuario/catalogo_doctores.ui \
+        Widgets/Administrador/administador_gestionar_usuarios.ui \
+        Widgets/Administrador/administrador_crear_tips.ui \
+        Widgets/Administrador/administrador_gestionar_tips.ui \
+        Widgets/Administrador/administrador_info_gestion.ui \
+        Widgets/Administrador/administrador_info_servicios.ui \
+        Widgets/Administrador/administrador_info_tip.ui \
+        Widgets/Administrador/administrador_landpage.ui \
+        Widgets/Administrador/administrador_servicios_hospital.ui \
+        Widgets/Administrador/administrador_tarjeta_gestion.ui \
         Widgets/Usuario/inicar_sesion.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
