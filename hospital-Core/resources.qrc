@@ -2,5 +2,6 @@
     <qresource prefix="/imagenes">
         <file>Imagenes/img_doctores.png</file>
         <file>Imagenes/imgPrueba.png</file>
+        <file>Imagenes/imgTipTest.png</file>
     </qresource>
 </RCC>
