@@ -29,7 +29,7 @@
    <string notr="true">border: none;
 background: white;</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="fotografia">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -47,7 +47,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="tarjetadoctor_doctor">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -86,7 +86,7 @@ border-radius: 50px;</string>
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="especialidad">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -117,7 +117,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/estrella.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/estrella.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -139,7 +139,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/estrella.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/estrella.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -161,7 +161,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/estrella.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/estrella.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -183,7 +183,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/estrella.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/estrella.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -205,7 +205,7 @@ border-radius: 50px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/estrella.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/estrella.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -215,8 +215,6 @@ border-radius: 50px;</string>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

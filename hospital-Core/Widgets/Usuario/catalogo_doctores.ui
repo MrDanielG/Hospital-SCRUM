@@ -20,7 +20,7 @@ background: white;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>150</x>
      <y>60</y>
      <width>111</width>
      <height>16</height>
@@ -42,7 +42,7 @@ background: white;</string>
   <widget class="QPushButton" name="btn_iniciar_sesion">
    <property name="geometry">
     <rect>
-     <x>1262</x>
+     <x>1200</x>
      <y>20</y>
      <width>87</width>
      <height>18</height>
@@ -69,7 +69,7 @@ color: #818181;
   <widget class="QPushButton" name="btn_doctores_info">
    <property name="geometry">
     <rect>
-     <x>1015</x>
+     <x>980</x>
      <y>20</y>
      <width>141</width>
      <height>18</height>
@@ -96,7 +96,7 @@ color: #818181;
   <widget class="QPushButton" name="btn_servicios">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>740</x>
      <y>20</y>
      <width>139</width>
      <height>18</height>
@@ -125,8 +125,8 @@ color: #818181;
     <rect>
      <x>139</x>
      <y>110</y>
-     <width>1091</width>
-     <height>600</height>
+     <width>1100</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -137,21 +137,15 @@ color: #818181;
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1091</width>
-      <height>600</height>
+      <width>1100</width>
+      <height>601</height>
      </rect>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>1091</width>
-       <height>591</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout"/>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout"/>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

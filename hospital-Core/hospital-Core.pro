@@ -26,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Clases/doctor.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registrar.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
         mainwindow.cpp
 
 HEADERS += \
+        Clases/doctor.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registrar.h \

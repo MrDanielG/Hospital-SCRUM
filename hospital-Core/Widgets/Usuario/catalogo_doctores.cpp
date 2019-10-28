@@ -2,6 +2,7 @@
 #include "ui_catalogo_doctores.h"
 #include <QSqlQuery>
 #include "Widgets/Usuario/tarjeta_doctor.h"
+#include "Clases/doctor.h"
 
 catalogo_doctores::catalogo_doctores(QWidget *parent) :
     QWidget(parent),
@@ -14,25 +15,27 @@ catalogo_doctores::catalogo_doctores(QWidget *parent) :
 //                  "id_casa from casa INNER JOIN direccion ON casa.id_direccion = direccion.id_direccion");
 //    query.exec();
 
-    int i=0;
-    int row = 0;
-    int col = 0;
+        int i=0;
+        int row = 0;
+        int col = 0;
 
-    while (query.next()){
-        QString descripcion = query.value(0).toString();
-        QString fotografia = query.value(1).toString();
-        QString estado = query.value(2).toString();
-        QString estrellas = query.value(3).toString();
-        QString idCasa = query.value(4).toString();
-        row = i/4;
-        col= i%4;
 
-        tarjeta_doctor *tarjeta = new tarjeta_doctor(foto, nombre, especialidad, estrellas);
-        i++;
+       //aqui se ponen los valores de la query
+        QString foto = "C:/Users/Angel/Documents/Escuela/5toSemestre/SoftwareEngineer2/Hospital-SCRUM/hospital-Core/Imagenes/imgcircular.png";
+        QString nombre = "Angel Genis";
+        QString especialidad = "Cirujano";
+        int estrellas = 5;
 
-        ui->gridLayout->addWidget(tarjeta, row, col);
+        for(int j=0; j<13; j++){
+            row = i/4;
+            col= i%4;
 
-    }
+            tarjeta_doctor *tarjeta = new tarjeta_doctor(foto, nombre, especialidad, estrellas);
+            i++;
+            ui->gridLayout->addWidget(tarjeta, row, col);
+        }
+
+
 }
 
 catalogo_doctores::~catalogo_doctores()
