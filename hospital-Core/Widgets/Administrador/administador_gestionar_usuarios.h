@@ -2,7 +2,7 @@
 #define ADMINISTADOR_GESTIONAR_USUARIOS_H
 
 #include <QWidget>
-
+#include <QSqlDatabase>
 namespace Ui {
 class administador_gestionar_usuarios;
 }
@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::administador_gestionar_usuarios *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // ADMINISTADOR_GESTIONAR_USUARIOS_H
