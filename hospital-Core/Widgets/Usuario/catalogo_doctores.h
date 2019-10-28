@@ -2,6 +2,8 @@
 #define CATALOGO_DOCTORES_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+
 
 namespace Ui {
 class catalogo_doctores;
@@ -17,6 +19,7 @@ public:
 
 private:
     Ui::catalogo_doctores *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // CATALOGO_DOCTORES_H
