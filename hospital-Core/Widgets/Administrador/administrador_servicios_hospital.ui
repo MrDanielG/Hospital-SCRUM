@@ -317,7 +317,7 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>50</x>
      <y>690</y>
      <width>1281</width>
      <height>39</height>
@@ -401,7 +401,7 @@ color: #818181;</string>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>150</y>
      <width>1291</width>
      <height>521</height>
