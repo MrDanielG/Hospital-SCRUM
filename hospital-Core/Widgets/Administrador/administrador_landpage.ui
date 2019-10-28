@@ -303,7 +303,7 @@ color: white;</string>
      <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="font">
        <font>
-        <family>Montserrat</family>
+        <family>Montserrat Medium</family>
         <pointsize>12</pointsize>
         <weight>50</weight>
         <bold>false</bold>

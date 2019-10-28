@@ -70,11 +70,13 @@ border-radius:5px;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #e4e4e4;
-border-radius:75px;</string>
+         <string notr="true">background-color: rgb(251, 251, 251);</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgPrueba.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -180,6 +182,8 @@ border-radius:75px;</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -27,6 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
+        Widgets/Administrador/administrador_info_gestion.cpp \
         Widgets/Administrador/administrador_landpage.cpp \
         Widgets/Administrador/administrador_tarjeta_gestion.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
         Widgets/Administrador/administador_gestionar_usuarios.h \
+        Widgets/Administrador/administrador_info_gestion.h \
         Widgets/Administrador/administrador_landpage.h \
         Widgets/Administrador/administrador_tarjeta_gestion.h \
         Widgets/Usuario/inicar_sesion.h \
@@ -44,6 +46,7 @@ HEADERS += \
 
 FORMS += \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
+        Widgets/Administrador/administrador_info_gestion.ui \
         Widgets/Administrador/administrador_landpage.ui \
         Widgets/Administrador/administrador_tarjeta_gestion.ui \
         Widgets/Usuario/inicar_sesion.ui \
