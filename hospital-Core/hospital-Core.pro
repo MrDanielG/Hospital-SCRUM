@@ -27,6 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
+        Widgets/Administrador/administrador_crear_tips.cpp \
         Widgets/Administrador/administrador_gestionar_tips.cpp \
         Widgets/Administrador/administrador_info_gestion.cpp \
         Widgets/Administrador/administrador_info_tip.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
 
 HEADERS += \
         Widgets/Administrador/administador_gestionar_usuarios.h \
+        Widgets/Administrador/administrador_crear_tips.h \
         Widgets/Administrador/administrador_gestionar_tips.h \
         Widgets/Administrador/administrador_info_gestion.h \
         Widgets/Administrador/administrador_info_tip.h \
@@ -50,6 +52,7 @@ HEADERS += \
 
 FORMS += \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
+        Widgets/Administrador/administrador_crear_tips.ui \
         Widgets/Administrador/administrador_gestionar_tips.ui \
         Widgets/Administrador/administrador_info_gestion.ui \
         Widgets/Administrador/administrador_info_tip.ui \

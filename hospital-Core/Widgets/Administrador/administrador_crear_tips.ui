@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>administrador_info_tip</class>
- <widget class="QDialog" name="administrador_info_tip">
+ <class>administrador_crear_tips</class>
+ <widget class="QDialog" name="administrador_crear_tips">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
-    <height>605</height>
+    <width>767</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>120</y>
+     <x>37</x>
+     <y>50</y>
      <width>681</width>
      <height>291</height>
     </rect>
@@ -34,17 +34,14 @@ border-radius: 5px;
   <widget class="QLabel" name="img">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>190</y>
+     <x>107</x>
+     <y>120</y>
      <width>150</width>
      <height>150</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgTipTest.png</pixmap>
+    <string>img</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -53,9 +50,9 @@ border-radius: 5px;
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>185</y>
-     <width>151</width>
+     <x>40</x>
+     <y>60</y>
+     <width>671</width>
      <height>31</height>
     </rect>
    </property>
@@ -68,42 +65,24 @@ border-radius: 5px;
     </font>
    </property>
    <property name="text">
-    <string>Tip del Dia</string>
+    <string>Crear Tip</string>
    </property>
-  </widget>
-  <widget class="QLabel" name="texto_tip">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>220</y>
-     <width>391</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat Light</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>lorem impsum</string>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>483</x>
-     <y>350</y>
+     <x>430</x>
+     <y>280</y>
      <width>261</width>
      <height>39</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="btn_eliminar">
+     <widget class="QPushButton" name="btn_cancelar">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -131,7 +110,7 @@ border-radius: 5px;
 }</string>
       </property>
       <property name="text">
-       <string>Eliminar</string>
+       <string>Cancelar</string>
       </property>
      </widget>
     </item>
@@ -149,7 +128,7 @@ border-radius: 5px;
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="btn_modificar">
+     <widget class="QPushButton" name="btn_crear">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -177,15 +156,32 @@ border-radius: 5px;
 }</string>
       </property>
       <property name="text">
-       <string>Modificar</string>
+       <string>Crear</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>120</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="placeholderText">
+    <string>Nombre Tip</string>
+   </property>
+  </widget>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

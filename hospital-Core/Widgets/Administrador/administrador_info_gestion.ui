@@ -57,7 +57,7 @@ border-radius:5px;</string>
     <rect>
      <x>160</x>
      <y>160</y>
-     <width>251</width>
+     <width>281</width>
      <height>231</height>
     </rect>
    </property>
@@ -168,9 +168,9 @@ border-radius:5px;</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>465</x>
      <y>160</y>
-     <width>296</width>
+     <width>271</width>
      <height>241</height>
     </rect>
    </property>
