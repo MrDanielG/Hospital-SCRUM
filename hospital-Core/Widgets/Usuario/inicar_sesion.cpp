@@ -68,7 +68,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 tipodeusuario = 3;
-//                                this->parentWidget()->setIndex();
+//                              this->parentWidget()->setIndex();
                             }
                         }
                         tipo.finish();

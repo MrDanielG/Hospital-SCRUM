@@ -7,6 +7,7 @@
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Widgets/Usuario/catalogo_doctores.h"
 #include "Widgets/Administrador/administrador_landpage.h"
+#include "Widgets/Usuario/catalogo_servicios.h"
 
 namespace Ui
 {
@@ -27,6 +28,10 @@ private slots:
     void on_btn_registrarse_clicked();
     void on_btn_doctores_info_clicked();
 
+    void on_btn_servicios_clicked();
+
+    void on_btn_servicios_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -34,6 +39,7 @@ private:
     inicar_sesion ventanaSesion;
     catalogo_doctores catalogo_doctores;
     administrador_landpage landpageadministrador;
+    Catalogo_servicios catalogo_servicios;
 
     int index;
 
