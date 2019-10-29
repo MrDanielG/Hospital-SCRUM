@@ -31,7 +31,7 @@
 background: white;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>9</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -95,7 +95,7 @@ background: none;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/imagenes/Imagenes/img_doctores.png</pixmap>
+       <pixmap>:/imagenes/Imagenes/img_doctores.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -266,12 +266,18 @@ color: white;
       <string notr="true"/>
      </property>
     </widget>
+    <widget class="QWidget" name="page_3"/>
+    <widget class="QWidget" name="page_4"/>
+    <widget class="QWidget" name="page_5"/>
+    <widget class="QWidget" name="page_6"/>
+    <widget class="QWidget" name="page_7"/>
+    <widget class="QWidget" name="page_8"/>
+    <widget class="QWidget" name="page_9"/>
+    <widget class="QWidget" name="page_10"/>
    </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

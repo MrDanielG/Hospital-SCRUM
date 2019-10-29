@@ -163,6 +163,9 @@ border-bottom: 1px solid #C4C4C4;</string>
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">border: none;
 background: #3f64FF;

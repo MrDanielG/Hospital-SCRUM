@@ -17,13 +17,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     }else{
         qDebug() << "Base de datos conectada exitosamente";
     }
-    this->index = index;
 
     ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->insertWidget(1, &ventanaSesion);
-    ui->stackedWidget->insertWidget(2, &ventanaRegistro);
-    ui->stackedWidget->insertWidget(3, &catalogo_doctores);
-    ui->stackedWidget->insertWidget(10, &landpageadministrador);
+    ui->stackedWidget->insertWidget(1, &landpageadministrador);
 }
 
 MainWindow::MainWindow(QWidget *parent, int tipo): QMainWindow(parent),
@@ -54,7 +50,11 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
 {
     inicar_sesion dialogo_iniciar_sesion;
     dialogo_iniciar_sesion.exec();
-    qDebug()<<"Funciono?" <<this->index;
+    this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
+
+    if(this->index == 3){
+        ui->stackedWidget->setCurrentIndex(1);
+    }
 }
 
 void MainWindow::on_btn_registrarse_clicked(){

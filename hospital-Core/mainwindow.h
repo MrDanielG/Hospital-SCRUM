@@ -31,13 +31,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
-    registrar ventanaRegistro;
-    inicar_sesion ventanaSesion;
-    catalogo_doctores catalogo_doctores;
     administrador_landpage landpageadministrador;
 
     int index;
-
 };
 
 #endif // MAINWINDOW_H
