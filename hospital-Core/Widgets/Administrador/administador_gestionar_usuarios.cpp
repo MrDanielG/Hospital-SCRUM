@@ -19,24 +19,14 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
     int i=0;
     int row = 0;
     int col = 0;
-    int x = 0;
-    //while (query.next()){
-    while (x<10){
-        /*
-        QString descripcion = query.value(0).toString();
-        QString fotografia = query.value(1).toString();
-        QString estado = query.value(2).toString();
-        QString estrellas = query.value(3).toString();
-        QString idCasa = query.value(4).toString()*/
+
+    for(int j=0; j<4; j++){
         row = i/3;
-        col= i%3;
+        col = i%3;
 
         administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion;
-
         i++;
-        x++;
         ui->gridLayout->addWidget(tarjeta, row, col);
-
     }
 }
 
