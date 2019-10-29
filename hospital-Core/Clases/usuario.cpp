@@ -9,12 +9,20 @@ Usuario::Usuario(){
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{
-        qDebug() << "base de datos sigue conectada en iniciar sesion";
+        qDebug() << "base de datos sigue conectada en USUARIO";
     }
 
 }
 
 Usuario::Usuario(QString nu, QString pd){
+
+    mDatabase = QSqlDatabase::database("Connection");
+    if (!mDatabase.isOpen()){
+        qDebug() << "ERROR";
+    }else{
+        qDebug() << "base de datos sigue conectada en USUARIO C2";
+    }
+
     nombre_usuario = nu;
     passwd = pd;
     tipo_usuario = "3";

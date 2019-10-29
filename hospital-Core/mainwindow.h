@@ -19,6 +19,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent, int);
     ~MainWindow();
     void setindex(int index);
 
