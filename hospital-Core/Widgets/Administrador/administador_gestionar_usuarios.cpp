@@ -3,6 +3,7 @@
 #include "Widgets/Administrador/administrador_tarjeta_gestion.h"
 #include "QMessageBox"
 #include "QDebug"
+#include "QSqlQuery"
 administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::administador_gestionar_usuarios)
@@ -15,6 +16,10 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
     }else{
             qDebug()<<"Base de datos continua abierta, esto es: GESTIONAR USUARIOS";
     }
+
+    QSqlQuery infoPersona(mDatabase);
+    infoPersona.prepare();
+    infoPersona.exec();
 
     int i=0;
     int row = 0;

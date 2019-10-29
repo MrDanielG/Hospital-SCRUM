@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::administrador_tarjeta_gestion *ui;
+    QString id;
+    QString nombre;
+    QString img;
 };
 
 #endif // ADMINISTRADOR_TARJETA_GESTION_H
