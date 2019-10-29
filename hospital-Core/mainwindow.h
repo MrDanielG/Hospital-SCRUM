@@ -38,6 +38,8 @@ private:
     QSqlDatabase mDatabase;
     administrador_landpage landpageadministrador;
     Catalogo_servicios catalogo_servicios;
+    catalogo_doctores catalogodoctores;
+
 
     int index;
 };

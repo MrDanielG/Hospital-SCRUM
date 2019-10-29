@@ -20,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &landpageadministrador);
+    ui->stackedWidget->insertWidget(2, &catalogo_servicios);
+    ui->stackedWidget->insertWidget(3, &catalogodoctores);
+
 }
 
 MainWindow::MainWindow(QWidget *parent, int tipo): QMainWindow(parent),
@@ -63,7 +66,7 @@ void MainWindow::on_btn_registrarse_clicked(){
 }
 
 void MainWindow::on_btn_doctores_info_clicked(){
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainWindow::on_btn_servicios_clicked()
