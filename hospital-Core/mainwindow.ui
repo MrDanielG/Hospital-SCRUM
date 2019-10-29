@@ -36,8 +36,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>-10</x>
-        <y>-1</y>
+        <x>0</x>
+        <y>0</y>
         <width>1381</width>
         <height>731</height>
        </rect>
@@ -176,14 +176,14 @@ y de prestigio.</string>
    <widget class="QStackedWidget" name="stackedWidget_2">
     <property name="geometry">
      <rect>
-      <x>-1</x>
+      <x>0</x>
       <y>0</y>
       <width>1371</width>
       <height>41</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -279,9 +279,9 @@ color: white;
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>-10</x>
         <y>0</y>
-        <width>1371</width>
+        <width>1381</width>
         <height>41</height>
        </rect>
       </property>
@@ -336,10 +336,10 @@ color: white;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>2</x>
+        <x>-8</x>
         <y>-1</y>
-        <width>1371</width>
-        <height>61</height>
+        <width>1381</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -353,7 +353,7 @@ background: #3E64FF;</string>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>607</x>
+        <x>600</x>
         <y>10</y>
         <width>731</width>
         <height>30</height>
@@ -365,7 +365,7 @@ background: #3E64FF;</string>
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -401,7 +401,7 @@ color: white;
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -437,7 +437,7 @@ color: white;
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -474,7 +474,7 @@ color: white;
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -511,7 +511,7 @@ color: white;
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="cursor">
@@ -546,7 +546,7 @@ color: white;
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="cursor">

@@ -14,8 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: none;
-background: white;</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -56,8 +55,8 @@ background: white;</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1100</width>
-      <height>601</height>
+      <width>1098</width>
+      <height>599</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
