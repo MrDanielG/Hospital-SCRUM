@@ -7,7 +7,7 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
     ui(new Ui::administador_gestionar_usuarios)
 {
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("hospital");
+    mDatabase = QSqlDatabase::database("Connection");
     if(!mDatabase.isOpen()){
            qDebug()<<"ERROR con Base de Datos, esto es: GESTIONAR USUARIOS";
            return;
