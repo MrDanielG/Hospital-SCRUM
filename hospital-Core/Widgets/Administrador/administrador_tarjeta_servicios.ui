@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>administrador_info_servicios</class>
- <widget class="QDialog" name="administrador_info_servicios">
+ <class>administrador_tarjeta_servicios</class>
+ <widget class="QWidget" name="administrador_tarjeta_servicios">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>373</width>
-    <height>360</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Form</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>69</x>
-     <y>29</y>
+     <x>200</x>
+     <y>80</y>
      <width>221</width>
-     <height>261</height>
+     <height>271</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -30,12 +30,41 @@ border-radius: 5px;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>211</x>
+     <y>93</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	border: 1px solid #3E64FF;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="btn_gestionar">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>233</y>
-     <width>181</width>
+     <x>211</x>
+     <y>302</y>
+     <width>201</width>
      <height>36</height>
     </rect>
    </property>
@@ -63,31 +92,13 @@ border-radius: 5px;</string>
     <string>Gestionar</string>
    </property>
   </widget>
-  <widget class="QLabel" name="border">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>49</y>
-     <width>180</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">	border: 1px solid #3E64FF;
-	border-radius: 5px;
-	background:none;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="img">
    <property name="geometry">
     <rect>
-     <x>99</x>
-     <y>63</y>
-     <width>161</width>
-     <height>151</height>
+     <x>220</x>
+     <y>110</y>
+     <width>181</width>
+     <height>171</height>
     </rect>
    </property>
    <property name="text">
@@ -100,10 +111,6 @@ border-radius: 5px;</string>
     <bool>true</bool>
    </property>
   </widget>
-  <zorder>label</zorder>
-  <zorder>btn_gestionar</zorder>
-  <zorder>img</zorder>
-  <zorder>border</zorder>
  </widget>
  <resources>
   <include location="../../resources.qrc"/>
