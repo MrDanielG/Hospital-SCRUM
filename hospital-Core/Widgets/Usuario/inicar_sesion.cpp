@@ -67,9 +67,49 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
 
                                 this->tipodeusuario = 3;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+
+                                this->close();
+                            }
+                            else if(usuario.tipo_usuario == "Paciente"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 2;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
                             }
+
+                            else if(usuario.tipo_usuario == "Medico"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 1;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
+                            }
+                            else if(usuario.tipo_usuario == "Farmaceutico"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 4;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
+                            }
+
+                            else if(usuario.tipo_usuario == "Staff"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 5;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
+                            }
+
+
                         }
                         tipo.finish();
                     }
