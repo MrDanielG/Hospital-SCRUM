@@ -2,6 +2,7 @@
 #include "ui_administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_tarjeta_gestion.h"
 #include "QMessageBox"
+#include "QDebug"
 administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::administador_gestionar_usuarios)

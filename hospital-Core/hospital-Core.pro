@@ -26,6 +26,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Clases/doctor.cpp \
+        Clases/usuario.cpp \
+        Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
         Widgets/Administrador/administrador_gestionar_tips.cpp \
@@ -36,11 +39,15 @@ SOURCES += \
         Widgets/Administrador/administrador_tarjeta_gestion.cpp \
         Widgets/Administrador/administrador_tarjeta_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
-        Widgets/Usuario/registro.cpp \
+        Widgets/Usuario/registrar.cpp \
+        Widgets/Usuario/tarjeta_doctor.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Clases/doctor.h \
+        Clases/usuario.h \
+        Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
         Widgets/Administrador/administrador_gestionar_tips.h \
@@ -51,10 +58,12 @@ HEADERS += \
         Widgets/Administrador/administrador_tarjeta_gestion.h \
         Widgets/Administrador/administrador_tarjeta_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
-        Widgets/Usuario/registro.h \
+        Widgets/Usuario/registrar.h \
+        Widgets/Usuario/tarjeta_doctor.h \
         mainwindow.h
 
 FORMS += \
+        Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \
         Widgets/Administrador/administrador_gestionar_tips.ui \
@@ -65,7 +74,8 @@ FORMS += \
         Widgets/Administrador/administrador_tarjeta_gestion.ui \
         Widgets/Administrador/administrador_tarjeta_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
-        Widgets/Usuario/registro.ui \
+        Widgets/Usuario/registrar.ui \
+        Widgets/Usuario/tarjeta_doctor.ui \
         mainwindow.ui
 
 # Default rules for deployment.

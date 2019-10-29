@@ -3,7 +3,10 @@
 
 #include <QMainWindow>
 #include <QSqlDatabase>
-#include "Widgets/Usuario/registro.h"
+#include "Widgets/Usuario/registrar.h"
+#include "Widgets/Usuario/inicar_sesion.h"
+#include "Widgets/Usuario/catalogo_doctores.h"
+#include "Widgets/Administrador/administrador_landpage.h"
 
 namespace Ui
 {
@@ -16,15 +19,21 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent, int);
     ~MainWindow();
+    void setindex(int index);
 
 private slots:
     void on_btn_iniciar_sesion_clicked();
+    void on_btn_registrarse_clicked();
+    void on_btn_doctores_info_clicked();
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
-    registro ventanaRegistro;
+    administrador_landpage landpageadministrador;
+
+    int index;
 };
 
 #endif // MAINWINDOW_H
