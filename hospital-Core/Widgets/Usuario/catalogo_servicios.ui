@@ -50,7 +50,7 @@ background:none;</string>
      <x>120</x>
      <y>120</y>
      <width>1100</width>
-     <height>541</height>
+     <height>491</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -65,7 +65,7 @@ background:none;</string>
       <x>0</x>
       <y>0</y>
       <width>1098</width>
-      <height>539</height>
+      <height>489</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -75,6 +75,25 @@ background:none;</string>
     </layout>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>750</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>scrollArea</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -19,7 +19,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>230</x>
      <y>60</y>
      <width>111</width>
      <height>16</height>
@@ -44,7 +44,7 @@
      <x>139</x>
      <y>110</y>
      <width>1100</width>
-     <height>601</height>
+     <height>491</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -66,6 +66,22 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>751</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>scrollArea</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -43,10 +43,35 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     dialogo_iniciar_sesion.exec();
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
-    if(this->index == 3){
+    if(this->index == 1){
+        /*Aqui deben poner el index del landpage al que quieran visualizar
+         * 1 = Medico
+         * 2 = Paciente
+         * 3 = Administrador
+         * 4 = Farmaceutico
+         * 5 = Staff
+         *
+         * esto se hace para todos los else if dependiendo el caso
+        */
+
+    }
+    else if(this->index == 2){
+
+    }
+    else if(this->index == 3){
         ui->stackedWidget->setCurrentIndex(1);
+        //Aqui se cambia el index del navegador, se hace lo mismo para todos
         ui->stackedWidget_2->setCurrentIndex(1);
     }
+    else if(this->index == 4){
+
+    }
+    else if(this->index == 5){
+
+    }
+
+
+
 }
 
 void MainWindow::on_btn_registrarse_clicked(){
