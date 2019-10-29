@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     }
 
     ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &landpageadministrador);
     ui->stackedWidget->insertWidget(2, &catalogo_servicios);
     ui->stackedWidget->insertWidget(3, &catalogodoctores);

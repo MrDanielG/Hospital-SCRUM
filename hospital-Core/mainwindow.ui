@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: none;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -27,11 +27,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: none;
-background: white;</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -95,80 +94,67 @@ background: none;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>:/imagenes/Imagenes/img_doctores.png</pixmap>
+       <pixmap resource="resources.qrc">:/imagenes/Imagenes/img_doctores.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>110</y>
-        <width>621</width>
-        <height>361</height>
+        <x>720</x>
+        <y>130</y>
+        <width>191</width>
+        <height>21</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>26</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>631</x>
+        <y>171</y>
+        <width>671</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
 background: #3E64FF;
 color: white;</string>
-         </property>
-         <property name="text">
-          <string>Hospital Puebla</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit">
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
-background: #3E64FF;
-color: white;</string>
-         </property>
-         <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-         <property name="plainText">
-          <string>Se apoya en un equipo médico de gran rigor, profesionales
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Se apoya en un equipo médico de gran rigor, profesionales
 pioneros en sus técnicas y exigentes en los resultados,
 seleccionados entre los más prestigiosos médicos 
 nacionales e internacionales para
 formar parte de un equipo multidisciplinar 
 y de prestigio.</string>
-         </property>
-         <property name="overwriteMode">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      </property>
+      <property name="overwriteMode">
+       <bool>false</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
@@ -189,14 +175,14 @@ y de prestigio.</string>
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="page_3">
+    <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>20</y>
-        <width>171</width>
-        <height>18</height>
+        <x>794</x>
+        <y>21</y>
+        <width>187</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -223,9 +209,9 @@ color: white;
      <widget class="QPushButton" name="btn_doctores_info">
       <property name="geometry">
        <rect>
-        <x>1040</x>
-        <y>20</y>
-        <width>161</width>
+        <x>988</x>
+        <y>21</y>
+        <width>189</width>
         <height>20</height>
        </rect>
       </property>
@@ -253,10 +239,10 @@ color: white;
      <widget class="QPushButton" name="btn_iniciar_sesion">
       <property name="geometry">
        <rect>
-        <x>1240</x>
-        <y>20</y>
-        <width>111</width>
-        <height>18</height>
+        <x>1184</x>
+        <y>21</y>
+        <width>116</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -300,10 +286,10 @@ background: #3E64FF;</string>
      <widget class="QPushButton" name="btn_servicios_2">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>20</y>
-        <width>151</width>
-        <height>18</height>
+        <x>691</x>
+        <y>21</y>
+        <width>47</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -333,23 +319,184 @@ color: white;
      <zorder>btn_iniciar_sesion</zorder>
      <zorder>btn_servicios_2</zorder>
     </widget>
-    <widget class="QWidget" name="page_2">
+    <widget class="QWidget" name="menu_admin">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>-1</y>
+        <width>1371</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: #3E64FF;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>30</y>
+        <width>831</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_inicio_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: #3E64FF;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Inicio</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_remedios_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: #3E64FF;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Gestionar Remedios</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_gestionar_servicios_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Gestionar Servicios</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_gestionar_usuarios_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Gestionar Usuarios</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_gestionar_tips_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Gestionar Tips</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_salir_admin">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Salir</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
-    <widget class="QWidget" name="page_3"/>
-    <widget class="QWidget" name="page_4"/>
-    <widget class="QWidget" name="page_5"/>
-    <widget class="QWidget" name="page_6"/>
-    <widget class="QWidget" name="page_7"/>
-    <widget class="QWidget" name="page_8"/>
-    <widget class="QWidget" name="page_9"/>
-    <widget class="QWidget" name="page_10"/>
+    <widget class="QWidget" name="menu_medico"/>
+    <widget class="QWidget" name="menu_paciente"/>
+    <widget class="QWidget" name="menu_staff"/>
+    <widget class="QWidget" name="menu_farmaceutico"/>
    </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

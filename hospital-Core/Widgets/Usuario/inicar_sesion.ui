@@ -20,9 +20,9 @@ background: white;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>-10</x>
      <y>30</y>
-     <width>121</width>
+     <width>451</width>
      <height>21</height>
     </rect>
    </property>
@@ -61,7 +61,7 @@ background: white;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/imagenes/Imagenes/doctor 4.png</pixmap>
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/doctor 4.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -190,6 +190,8 @@ border-radius: 10px;</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
