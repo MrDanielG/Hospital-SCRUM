@@ -17,10 +17,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     }else{
         qDebug() << "Base de datos conectada exitosamente";
     }
+    this->index = index;
+
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &ventanaSesion);
     ui->stackedWidget->insertWidget(2, &ventanaRegistro);
     ui->stackedWidget->insertWidget(3, &catalogo_doctores);
+    ui->stackedWidget->insertWidget(10, &landpageadministrador);
+
 
 }
 
@@ -29,10 +33,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setindex(int index){
+    this->index = index;
+}
+
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    inicar_sesion dialogo_iniciar_sesion;
+    inicar_sesion dialogo_iniciar_sesion(this);
     dialogo_iniciar_sesion.exec();
+
 }
 
 void MainWindow::on_btn_registrarse_clicked(){
