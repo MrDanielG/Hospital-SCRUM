@@ -37,10 +37,12 @@ SOURCES += \
         Widgets/Administrador/administrador_landpage.cpp \
         Widgets/Administrador/administrador_servicios_hospital.cpp \
         Widgets/Administrador/administrador_tarjeta_gestion.cpp \
+        Widgets/Usuario/catalogo_servicios.cpp \
         Widgets/Administrador/administrador_tarjeta_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
+        Widgets/Usuario/tarjeta_servicios.cpp \
         main.cpp \
         mainwindow.cpp
 
@@ -56,10 +58,12 @@ HEADERS += \
         Widgets/Administrador/administrador_landpage.h \
         Widgets/Administrador/administrador_servicios_hospital.h \
         Widgets/Administrador/administrador_tarjeta_gestion.h \
+        Widgets/Usuario/catalogo_servicios.h \
         Widgets/Administrador/administrador_tarjeta_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
+        Widgets/Usuario/tarjeta_servicios.h \
         mainwindow.h
 
 FORMS += \
@@ -72,10 +76,12 @@ FORMS += \
         Widgets/Administrador/administrador_landpage.ui \
         Widgets/Administrador/administrador_servicios_hospital.ui \
         Widgets/Administrador/administrador_tarjeta_gestion.ui \
+        Widgets/Usuario/catalogo_servicios.ui \
         Widgets/Administrador/administrador_tarjeta_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
+        Widgets/Usuario/tarjeta_servicios.ui \
         mainwindow.ui
 
 # Default rules for deployment.
