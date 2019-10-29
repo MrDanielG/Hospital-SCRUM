@@ -14,9 +14,8 @@ inicar_sesion::inicar_sesion(QWidget *parent) :
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{
-        qDebug() << "base de datos sigue conectada en iniciar sesion";
+        qDebug() << "base de datos sigue conectada en INICIAR SESION";
     }
-
 }
 
 inicar_sesion::~inicar_sesion()
@@ -30,7 +29,6 @@ int inicar_sesion::getindex()
 }
 
 void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
-
     QString nombre_usuario;
     QString contrasenia;
     QString tipo_usuario = " ";
@@ -47,7 +45,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
 
         if(usuario.validarNombreU(nombre_usuario) == true){
             if(usuario.validarContrasenia(nombre_usuario, contrasenia) == true){
-
+                    qDebug()<<"Prequery";
                     QSqlQuery buscartipo(mDatabase);
                     buscartipo.exec("select id_tipo_usuario from usuario where contrasenia = '"+usuario.passwd+"' and id_usuario = '"+usuario.nombre_usuario+"' ");
 
@@ -67,8 +65,10 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_correo->clear();
                                 ui->line_contrasenia->clear();
 
-                                tipodeusuario = 3;
-//                              this->parentWidget()->setIndex();
+                                this->tipodeusuario = 3;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
                             }
                         }
                         tipo.finish();

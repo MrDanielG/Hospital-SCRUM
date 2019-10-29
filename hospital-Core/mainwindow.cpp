@@ -17,14 +17,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     }else{
         qDebug() << "Base de datos conectada exitosamente";
     }
-    this->index = index;
 
     ui->stackedWidget->setCurrentIndex(0);
-    ui->stackedWidget->insertWidget(1, &catalogo_doctores);
-    ui->stackedWidget->insertWidget(2, &catalogo_servicios);
-    ui->stackedWidget->insertWidget(10, &landpageadministrador);
+    ui->stackedWidget->insertWidget(1, &landpageadministrador);
+}
 
+MainWindow::MainWindow(QWidget *parent, int tipo): QMainWindow(parent),
+ui(new Ui::MainWindow){
+    ui->setupUi(this);
 
+    mDatabase = QSqlDatabase::database("Connection");
+    if (!mDatabase.isOpen()){
+        qDebug() << "ERROR, esto es constructor MW 2";
+    }else{
+        qDebug() << "Base de datos conectada exitosamente MAINWUNDOW C2";
+    }
+
+    this->index = tipo;
+    qDebug()<<"Tipo Usuario MW: " << this->index;
 }
 
 MainWindow::~MainWindow()
@@ -38,9 +48,13 @@ void MainWindow::setindex(int index){
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    inicar_sesion dialogo_iniciar_sesion(this);
+    inicar_sesion dialogo_iniciar_sesion;
     dialogo_iniciar_sesion.exec();
+    this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
+    if(this->index == 3){
+        ui->stackedWidget->setCurrentIndex(1);
+    }
 }
 
 void MainWindow::on_btn_registrarse_clicked(){

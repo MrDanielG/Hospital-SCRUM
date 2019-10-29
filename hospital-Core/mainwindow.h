@@ -20,6 +20,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent, int);
     ~MainWindow();
     void setindex(int index);
 
@@ -35,14 +36,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
-    registrar ventanaRegistro;
-    inicar_sesion ventanaSesion;
-    catalogo_doctores catalogo_doctores;
     administrador_landpage landpageadministrador;
     Catalogo_servicios catalogo_servicios;
 
     int index;
-
 };
 
 #endif // MAINWINDOW_H

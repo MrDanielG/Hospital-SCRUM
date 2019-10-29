@@ -61,7 +61,7 @@ background: white;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/doctor 4.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/doctor 4.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -75,17 +75,18 @@ background: white;</string>
     <rect>
      <x>50</x>
      <y>240</y>
-     <width>181</width>
+     <width>191</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Correo:</string>
+    <string>Nombre de Usuario:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -93,13 +94,14 @@ background: white;</string>
     <rect>
      <x>50</x>
      <y>310</y>
-     <width>111</width>
+     <width>181</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
@@ -115,6 +117,12 @@ background: white;</string>
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Light</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border: none;
 border-bottom: 1px solid #C4C4C4;</string>
@@ -128,6 +136,12 @@ border-bottom: 1px solid #C4C4C4;</string>
      <width>341</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Light</family>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
@@ -148,6 +162,9 @@ border-bottom: 1px solid #C4C4C4;</string>
      <family>Montserrat</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">border: none;
@@ -173,8 +190,6 @@ border-radius: 10px;</string>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
