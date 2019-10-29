@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>750</height>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,10 +32,10 @@
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>39</x>
-     <y>160</y>
+     <x>40</x>
+     <y>90</y>
      <width>1291</width>
-     <height>521</height>
+     <height>541</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -72,7 +72,7 @@ border:none;</string>
       <x>0</x>
       <y>0</y>
       <width>1291</width>
-      <height>521</height>
+      <height>541</height>
      </rect>
     </property>
     <property name="cursor">
@@ -96,7 +96,7 @@ border:none;</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>110</y>
+     <y>30</y>
      <width>1271</width>
      <height>41</height>
     </rect>
@@ -321,9 +321,9 @@ border-radius:5px;</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>700</y>
-     <width>1291</width>
+     <x>50</x>
+     <y>650</y>
+     <width>1271</width>
      <height>39</height>
     </rect>
    </property>

@@ -23,22 +23,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(1, &landpageadministrador);
     ui->stackedWidget->insertWidget(2, &catalogo_servicios);
     ui->stackedWidget->insertWidget(3, &catalogodoctores);
-
-}
-
-MainWindow::MainWindow(QWidget *parent, int tipo): QMainWindow(parent),
-ui(new Ui::MainWindow){
-    ui->setupUi(this);
-
-    mDatabase = QSqlDatabase::database("Connection");
-    if (!mDatabase.isOpen()){
-        qDebug() << "ERROR, esto es constructor MW 2";
-    }else{
-        qDebug() << "Base de datos conectada exitosamente MAINWUNDOW C2";
-    }
-
-    this->index = tipo;
-    qDebug()<<"Tipo Usuario MW: " << this->index;
+    ui->stackedWidget->insertWidget(4, &gestionServiciosAdmin);
+    ui->stackedWidget->insertWidget(5, &gestionUsuariosAdmin);
+    ui->stackedWidget->insertWidget(6, &gestionTipsAdmin);
 }
 
 MainWindow::~MainWindow()
@@ -58,6 +45,7 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
 
     if(this->index == 3){
         ui->stackedWidget->setCurrentIndex(1);
+        ui->stackedWidget_2->setCurrentIndex(1);
     }
 }
 
@@ -79,4 +67,35 @@ void MainWindow::on_btn_servicios_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 
+}
+
+void MainWindow::on_btn_inicio_admin_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_btn_remedios_admin_clicked()
+{
+    qDebug()<<"Aun no la haces prro";
+}
+
+void MainWindow::on_btn_gestionar_servicios_admin_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_btn_gestionar_usuarios_admin_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_btn_gestionar_tips_admin_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_btn_salir_admin_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }
