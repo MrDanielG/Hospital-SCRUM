@@ -2,13 +2,16 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QMessageBox>
+
 Usuario::Usuario(){
+
     mDatabase = QSqlDatabase::database("Connection");
-    if(!mDatabase.isOpen()){
-           qDebug()<<"ERROR, esto es: USUARIO";
+    if (!mDatabase.isOpen()){
+        qDebug() << "ERROR";
     }else{
-            qDebug()<<"Base de datos continua abierta, esto es: USUARIO";
+        qDebug() << "base de datos sigue conectada en iniciar sesion";
     }
+
 }
 
 Usuario::Usuario(QString nu, QString pd){
@@ -18,12 +21,16 @@ Usuario::Usuario(QString nu, QString pd){
 }
 
 bool Usuario::validarNombreU(QString nu){
-    qDebug() << "si valida el nombre";
     bool existe = false;
+
     QSqlQuery buscarNombre(mDatabase);
-    buscarNombre.exec("select id_usuario from usuario where id_usuario = '"+nu+"' ");
+    buscarNombre.prepare("select id_usuario from usuario where id_usuario ='"+nu+"'");
+    buscarNombre.exec();
+
     while(buscarNombre.next()){
+        qDebug() << "si encuentra el  nombre";
         QString nombretemporal = buscarNombre.value(0).toString();
+        qDebug() << "si encuentra el ";
         if(nombretemporal == nu){
            existe = true;
            qDebug() << "Su nombre de usuario es correcto";
@@ -32,7 +39,7 @@ bool Usuario::validarNombreU(QString nu){
            qDebug() << "Nombre de usuario INCORRECTO";
         }
     }
-    buscarNombre.finish();
+
     return existe;
 }
 

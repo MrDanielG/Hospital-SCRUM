@@ -17,10 +17,6 @@ inicar_sesion::inicar_sesion(QWidget *parent) :
         qDebug() << "base de datos sigue conectada en iniciar sesion";
     }
 
-
-
-
-
 }
 
 inicar_sesion::~inicar_sesion()
@@ -50,7 +46,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
         //Primero se valida que exista el nombre de usuario
 
         if(usuario.validarNombreU(nombre_usuario) == true){
-            if(usuario.validarContrasenia(nombre_usuario,contrasenia) == true){
+            if(usuario.validarContrasenia(nombre_usuario, contrasenia) == true){
 
                     QSqlQuery buscartipo(mDatabase);
                     buscartipo.exec("select id_tipo_usuario from usuario where contrasenia = '"+usuario.passwd+"' and id_usuario = '"+usuario.nombre_usuario+"' ");

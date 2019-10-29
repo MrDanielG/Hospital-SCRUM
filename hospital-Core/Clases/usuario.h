@@ -9,9 +9,6 @@
 class Usuario{
 private:
     QSqlDatabase mDatabase;
-    QString nombre_usuario;
-    QString passwd;
-    QString tipo_usuario;
 
 public:
     Usuario();
@@ -22,6 +19,10 @@ public:
 //    void modificarUsuarioBD();
 //    void modificarContraBD();
     friend class iniciar_sesion;
+    friend class iniciar_sesion;
+    QString nombre_usuario;
+    QString passwd;
+    QString tipo_usuario;
 
 };
 

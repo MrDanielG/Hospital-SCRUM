@@ -27,10 +27,11 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">border: none;
+background: white;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -86,6 +87,10 @@ color: #3E64FF;
         <height>425</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: none;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -95,116 +100,6 @@ color: #3E64FF;
       <property name="scaledContents">
        <bool>true</bool>
       </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>750</x>
-        <y>30</y>
-        <width>581</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="menu_layout">
-       <item>
-        <widget class="QPushButton" name="btn_servicios">
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
-background: none;
-color: white;
-</string>
-         </property>
-         <property name="text">
-          <string>Servicios del Hospital</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_doctores_info">
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
-background: none;
-color: white;
-</string>
-         </property>
-         <property name="text">
-          <string>Informacion Doctores</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_iniciar_sesion">
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
-background: none;
-color: white;
-</string>
-         </property>
-         <property name="text">
-          <string>Iniciar Sesión</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
@@ -275,24 +170,101 @@ y de prestigio.</string>
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="btn_iniciar_sesion">
+      <property name="geometry">
+       <rect>
+        <x>1210</x>
+        <y>30</y>
+        <width>111</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Iniciar Sesión</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_doctores_info">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>30</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Informacion Doctores</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_servicios">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>30</y>
+        <width>171</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: #3E64FF;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Servicios del Hospital</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>940</x>
-        <y>200</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
     </widget>
    </widget>
   </widget>
