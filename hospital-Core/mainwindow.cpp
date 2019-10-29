@@ -54,6 +54,7 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
 {
     inicar_sesion dialogo_iniciar_sesion;
     dialogo_iniciar_sesion.exec();
+    qDebug()<<"Funciono?" <<this->index;
 }
 
 void MainWindow::on_btn_registrarse_clicked(){

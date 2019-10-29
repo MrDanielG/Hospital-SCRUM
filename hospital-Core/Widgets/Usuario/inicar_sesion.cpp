@@ -68,6 +68,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 this->tipodeusuario = 3;
                                 qDebug()<<"tipo Usuariooooo "<<this->tipodeusuario;
                                 MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
                             }
                         }
                         tipo.finish();
