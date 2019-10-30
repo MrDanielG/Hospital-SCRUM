@@ -17,6 +17,10 @@ public:
     explicit administrador_modificar_usuario(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
     ~administrador_modificar_usuario();
 
+private slots:
+    void on_btn_continuar_clicked();
+    void on_btn_crear_usuario_clicked();
+
 private:
     Ui::administrador_modificar_usuario *ui;
     QSqlDatabase mDatabase;
