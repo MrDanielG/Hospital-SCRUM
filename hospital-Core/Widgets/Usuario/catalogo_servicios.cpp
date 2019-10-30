@@ -36,7 +36,6 @@ Catalogo_servicios::Catalogo_servicios(QWidget *parent) :
 
          i++;
          ui->gridLayoutServicios->addWidget(tarjeta, row, col);
-
     }
 
 

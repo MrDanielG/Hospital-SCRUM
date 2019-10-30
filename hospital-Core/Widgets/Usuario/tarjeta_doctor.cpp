@@ -3,21 +3,31 @@
 #include <QDebug>
 #include "Widgets/Usuario/info_medico.h"
 
-tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialidad, int estrellas, QWidget *parent) : QWidget(parent),
+tarjeta_doctor::tarjeta_doctor(QString idpersona, QString idmedico, QString nombre, QString paterno, QString materno, QString calificacion, QString foto, QString especialidad, QWidget *parent) : QWidget(parent),
     ui(new Ui::tarjeta_doctor){
     ui->setupUi(this);
 
-    this->foto=foto;
+    mDatabase = QSqlDatabase::database("Connection");
+    if (!mDatabase.isOpen()){
+        qDebug() << "ERROR";
+    }else{
+        qDebug() << "base de datos sigue conectada en INICIAR SESION";
+    }
+
+    this->idpersona = idpersona;
+    this->idmedico = idmedico;
     this->nombre = nombre;
+    this->paterno = paterno;
+    this->materno = materno;
+    this->calificacion = calificacion;
+    this->foto = foto;
     this->especialidad = especialidad;
-    this->estrellas = estrellas;
 
     ui->estrella1_5->hide();
     ui->estrella1_4->hide();
     ui->estrella1_3->hide();
     ui->estrella1_2->hide();
     ui->estrella1->hide();
-
 
 }
 
@@ -27,14 +37,12 @@ tarjeta_doctor::~tarjeta_doctor(){
 
 void tarjeta_doctor::insertarDatos(){
 
-    QStringList imagenrecortada = foto.split(" ");
-    QPixmap imag(imagenrecortada[0]);
-
-    ui->tarjetadoctor_doctor->setText(nombre);
+    QPixmap imag(this->foto);
     ui->fotografia->setPixmap(imag.scaled(100,100, Qt::IgnoreAspectRatio));
     ui->especialidad->setText(especialidad);
+    ui->nombre_doctor->setText(nombre);
 
-    int tamanio = estrellas;
+    int tamanio = calificacion.toInt();
 
     if(tamanio == 1){
         ui->estrella1->show();
@@ -66,6 +74,6 @@ void tarjeta_doctor::insertarDatos(){
 
 
 void tarjeta_doctor::on_btn_visualizar_clicked(){
-    info_medico visualizarInfo;
+    info_medico visualizarInfo(this->idpersona);
     visualizarInfo.exec();
 }
