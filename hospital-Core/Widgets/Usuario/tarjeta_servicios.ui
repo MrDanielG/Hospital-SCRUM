@@ -32,10 +32,10 @@ background: white;</string>
   <widget class="QLabel" name="nombre_servicio">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>30</x>
      <y>180</y>
-     <width>81</width>
-     <height>16</height>
+     <width>91</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -47,7 +47,7 @@ background: white;</string>
     <string>Ortopedia</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -78,6 +78,30 @@ border-radius: 10px;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_visualizar_servicio">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>180</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: #3E64FF;
+border-radius: 5px;
+color: white;</string>
+   </property>
+   <property name="text">
+    <string>Visualizar</string>
    </property>
   </widget>
  </widget>

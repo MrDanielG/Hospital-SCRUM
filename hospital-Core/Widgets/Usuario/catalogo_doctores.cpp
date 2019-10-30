@@ -11,13 +11,13 @@ catalogo_doctores::catalogo_doctores(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlQuery query(mDatabase);
-//    query.prepare("select descripcion, fotografia, estado, no_estrellas, "
-//                  "id_casa from casa INNER JOIN direccion ON casa.id_direccion = direccion.id_direccion");
-//    query.exec();
+    query.prepare("select * from info where id_tipo_info = 3");
+    query.exec();
 
-        int i=0;
-        int row = 0;
-        int col = 0;
+    int i=0;
+    int row = 0;
+    int col = 0;
+
 
 
        //aqui se ponen los valores de la query
@@ -34,6 +34,9 @@ catalogo_doctores::catalogo_doctores(QWidget *parent) :
             i++;
             ui->gridLayout->addWidget(tarjeta, row, col);
         }
+
+
+
 
 
 }

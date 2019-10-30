@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include "Clases/doctor.h"
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QDebug>
 
 namespace Ui {
 class tarjeta_doctor;
@@ -15,6 +18,7 @@ class tarjeta_doctor : public QWidget
 public:
     explicit tarjeta_doctor(QString foto, QString nombre, QString especialidad, int estrellas, QWidget *parent = nullptr);
     ~tarjeta_doctor();
+    void insertarDatos();
 
 private slots:
 
@@ -23,7 +27,8 @@ private slots:
 
 private:
     Ui::tarjeta_doctor *ui;
-    QString nombre, especialidad, foto;
+    QSqlDatabase mDatabase;
+    QString nombre, especialidad, foto, id;
     int estrellas;
 };
 

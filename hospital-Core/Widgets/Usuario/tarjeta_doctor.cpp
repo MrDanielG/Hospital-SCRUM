@@ -18,6 +18,15 @@ tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialida
     ui->estrella1_2->hide();
     ui->estrella1->hide();
 
+
+}
+
+tarjeta_doctor::~tarjeta_doctor(){
+    delete ui;
+}
+
+void tarjeta_doctor::insertarDatos(){
+
     QStringList imagenrecortada = foto.split(" ");
     QPixmap imag(imagenrecortada[0]);
 
@@ -53,10 +62,6 @@ tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialida
         ui->estrella1->show();
     }
 
-}
-
-tarjeta_doctor::~tarjeta_doctor(){
-    delete ui;
 }
 
 

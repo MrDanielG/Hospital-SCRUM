@@ -40,6 +40,7 @@ SOURCES += \
         Widgets/Usuario/catalogo_servicios.cpp \
         Widgets/Administrador/administrador_tarjeta_servicios.cpp \
         Widgets/Usuario/info_medico.cpp \
+        Widgets/Usuario/info_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
         Widgets/Usuario/catalogo_servicios.h \
         Widgets/Administrador/administrador_tarjeta_servicios.h \
         Widgets/Usuario/info_medico.h \
+        Widgets/Usuario/info_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
@@ -81,6 +83,7 @@ FORMS += \
         Widgets/Usuario/catalogo_servicios.ui \
         Widgets/Administrador/administrador_tarjeta_servicios.ui \
         Widgets/Usuario/info_medico.ui \
+        Widgets/Usuario/info_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>info_servicios</class>
+ <widget class="QDialog" name="info_servicios">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>267</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>MV Boli</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: white;</string>
+  </property>
+  <widget class="QLabel" name="nombre_servicio">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>201</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Información Servicio</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="img_servicio">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>161</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgServicio1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="text_descripcion_servicio">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>80</y>
+     <width>371</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+color: #818181;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>Brindar atención médico-quirúrgica a pacientes con padecimientos músculo esquelético, proporcionándole la mejor asistencia médica con calidad y calidez, con el respaldo y profesionalismo del personal para satisfacción del usuario.</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
