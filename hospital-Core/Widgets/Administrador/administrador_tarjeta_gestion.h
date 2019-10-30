@@ -2,7 +2,7 @@
 #define ADMINISTRADOR_TARJETA_GESTION_H
 
 #include <QWidget>
-
+#include <QSqlDatabase>
 namespace Ui {
 class administrador_tarjeta_gestion;
 }
@@ -20,6 +20,7 @@ private slots:
 
 private:
     Ui::administrador_tarjeta_gestion *ui;
+    QSqlDatabase mDatabase;
     QString id;
     QString nombre;
     QString img;
