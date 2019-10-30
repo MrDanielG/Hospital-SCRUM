@@ -28,6 +28,7 @@ CONFIG += c++11
 SOURCES += \
         Clases/doctor.cpp \
         Clases/usuario.cpp \
+        Widgets/Administrador/administrador_crear_usuario.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -51,6 +52,7 @@ SOURCES += \
 HEADERS += \
         Clases/doctor.h \
         Clases/usuario.h \
+        Widgets/Administrador/administrador_crear_usuario.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -71,6 +73,7 @@ HEADERS += \
         mainwindow.h
 
 FORMS += \
+        Widgets/Administrador/administrador_crear_usuario.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \
