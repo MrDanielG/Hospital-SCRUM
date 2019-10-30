@@ -1,5 +1,6 @@
 #include "administrador_info_gestion.h"
 #include "ui_administrador_info_gestion.h"
+#include "Widgets/Administrador/administrador_modificar_usuario.h"
 #include "QDebug"
 #include "QMessageBox"
 administrador_info_gestion::administrador_info_gestion(QString nombre, QString tipo_usr, QString info1, QString info2, QString info3, QString img, QString id_usuario, QWidget *parent) :
@@ -53,11 +54,13 @@ void administrador_info_gestion::on_btn_eliminar_clicked()
         QSqlQuery eliminaPersona(mDatabase);
         eliminaPersona.prepare("DELETE FROM persona WHERE persona.id_usuario = '"+idUsuario+"'");
         eliminaPersona.exec();
+        eliminaPersona.finish();
 
         //Elimina Usuario
         QSqlQuery eliminaUsuario(mDatabase);
         eliminaUsuario.prepare("DELETE FROM usuario WHERE usuario.id_usuario = '"+idUsuario+"'");
         eliminaUsuario.exec();
+        eliminaUsuario.finish();
 
         QMessageBox::information(this, tr("Exito"),
                                        tr("El Usuario ha sido Eliminado"),
@@ -66,4 +69,44 @@ void administrador_info_gestion::on_btn_eliminar_clicked()
     }else {
       // No elimina
     }
+}
+
+void administrador_info_gestion::on_btn_gestionar_clicked()
+{
+    QSqlQuery infoUsuario(mDatabase);
+    infoUsuario.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE usuario.id_usuario = '"+this->id_usr+"'");
+    infoUsuario.exec();
+
+    QString nombreUsuario = this->id_usr;
+    QString tipoUsuario = this->tipo_usr;
+    QString contra;
+    QString nombre;
+    QString paterno;
+    QString materno;
+    QString nacimiento;
+    QString correo ;
+    QString sexo;
+    QString edad;
+    QString foto;
+    QString direccion;
+
+    while (infoUsuario.next()) {
+         nombreUsuario = this->id_usr;
+         tipoUsuario = this->tipo_usr;
+         contra = infoUsuario.value(12).toString();
+         nombre = infoUsuario.value(1).toString();
+         paterno = infoUsuario.value(2).toString();
+         materno = infoUsuario.value(3).toString();
+         nacimiento = infoUsuario.value(4).toString();
+         correo = infoUsuario.value(5).toString();
+         sexo = infoUsuario.value(7).toString();
+         edad = infoUsuario.value(8).toString();
+         foto = infoUsuario.value(9).toString();
+         direccion = infoUsuario.value(10).toString();
+    }
+    infoUsuario.finish();
+
+    administrador_modificar_usuario adminUsuario(nombreUsuario, tipoUsuario, contra, nombre, paterno, materno, nacimiento, correo, sexo, edad, foto, direccion, this);
+    adminUsuario.exec();
+    this->close();
 }
