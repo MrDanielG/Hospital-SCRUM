@@ -25,6 +25,8 @@ private slots:
 
     void on_buscar_textChanged(const QString &arg1);
 
+    void on_btn_registra_usuario_clicked();
+
 private:
     Ui::administador_gestionar_usuarios *ui;
     QSqlDatabase mDatabase;
