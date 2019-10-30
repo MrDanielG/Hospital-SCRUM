@@ -14,6 +14,18 @@ class administador_gestionar_usuarios : public QWidget
 public:
     explicit administador_gestionar_usuarios(QWidget *parent = nullptr);
     ~administador_gestionar_usuarios();
+    void limiparCatalogo();
+
+private slots:
+    void on_btn_medicos_clicked();
+
+    void on_btn_pacientes_clicked();
+
+    void on_btn_staff_clicked();
+
+    void on_buscar_textChanged(const QString &arg1);
+
+    void on_btn_registra_usuario_clicked();
 
 private:
     Ui::administador_gestionar_usuarios *ui;

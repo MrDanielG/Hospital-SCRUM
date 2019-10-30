@@ -14,13 +14,12 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: none;
-background: white;</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>630</x>
      <y>60</y>
      <width>111</width>
      <height>16</height>
@@ -38,6 +37,9 @@ background: white;</string>
    <property name="text">
     <string>Doctores</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
@@ -47,6 +49,10 @@ background: white;</string>
      <width>1100</width>
      <height>491</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: white;</string>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
@@ -75,6 +81,9 @@ background: white;</string>
      <width>1366</width>
      <height>751</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: white;</string>
    </property>
    <property name="text">
     <string/>

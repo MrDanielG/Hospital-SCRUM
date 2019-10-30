@@ -28,6 +28,8 @@ CONFIG += c++11
 SOURCES += \
         Clases/doctor.cpp \
         Clases/usuario.cpp \
+        Widgets/Administrador/administrador_crear_usuario.cpp \
+        Widgets/Administrador/administrador_modificar_usuario.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -39,6 +41,8 @@ SOURCES += \
         Widgets/Administrador/administrador_tarjeta_gestion.cpp \
         Widgets/Usuario/catalogo_servicios.cpp \
         Widgets/Administrador/administrador_tarjeta_servicios.cpp \
+        Widgets/Usuario/info_medico.cpp \
+        Widgets/Usuario/info_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
@@ -50,6 +54,8 @@ SOURCES += \
 HEADERS += \
         Clases/doctor.h \
         Clases/usuario.h \
+        Widgets/Administrador/administrador_crear_usuario.h \
+        Widgets/Administrador/administrador_modificar_usuario.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -61,6 +67,8 @@ HEADERS += \
         Widgets/Administrador/administrador_tarjeta_gestion.h \
         Widgets/Usuario/catalogo_servicios.h \
         Widgets/Administrador/administrador_tarjeta_servicios.h \
+        Widgets/Usuario/info_medico.h \
+        Widgets/Usuario/info_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
@@ -69,6 +77,8 @@ HEADERS += \
     Widgets/Medico/medico_landpage.h
 
 FORMS += \
+        Widgets/Administrador/administrador_crear_usuario.ui \
+        Widgets/Administrador/administrador_modificar_usuario.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \
@@ -80,6 +90,8 @@ FORMS += \
         Widgets/Administrador/administrador_tarjeta_gestion.ui \
         Widgets/Usuario/catalogo_servicios.ui \
         Widgets/Administrador/administrador_tarjeta_servicios.ui \
+        Widgets/Usuario/info_medico.ui \
+        Widgets/Usuario/info_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \

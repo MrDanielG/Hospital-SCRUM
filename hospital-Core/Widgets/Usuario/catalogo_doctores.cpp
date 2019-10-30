@@ -9,31 +9,42 @@ catalogo_doctores::catalogo_doctores(QWidget *parent) :
     ui(new Ui::catalogo_doctores)
 {
     ui->setupUi(this);
+    mDatabase = QSqlDatabase::database("Connection");
+    if(!mDatabase.isOpen()){
+        qDebug() << "ERROR";
+    }else{
+        qDebug() << "base de datos sigue conectada en INICIAR SESION";
+    }
 
     QSqlQuery query(mDatabase);
-//    query.prepare("select descripcion, fotografia, estado, no_estrellas, "
-//                  "id_casa from casa INNER JOIN direccion ON casa.id_direccion = direccion.id_direccion");
-//    query.exec();
+    query.prepare("select * from tarjetaMedicos");
+    query.exec();
 
-        int i=0;
-        int row = 0;
-        int col = 0;
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while(query.next()){
+         QString idpersona = query.value(0).toString();
+         QString idmedico = query.value(1).toString();
+         QString nombre = query.value(2).toString();
+         QString paterno = query.value(3).toString();
+         QString materno = query.value(4).toString();
+         QString calificacion = query.value(5).toString();
+         QString foto = query.value(6).toString();
+         QString especialidad = "cirujano";
 
 
-       //aqui se ponen los valores de la query
-        QString foto = "C:/Users/Angel/Documents/Escuela/5toSemestre/SoftwareEngineer2/Hospital-SCRUM/hospital-Core/Imagenes/imgcircular.png";
-        QString nombre = "Angel Genis";
-        QString especialidad = "Cirujano";
-        int estrellas = 5;
+         row = i/4;
+         col= i%4;
 
-        for(int j=0; j<13; j++){
-            row = i/4;
-            col= i%4;
+         tarjeta_doctor *tarjeta = new tarjeta_doctor(idpersona, idmedico, nombre, paterno, materno, calificacion, foto, especialidad);
+         tarjeta->insertarDatos();
+         i++;
+         ui->gridLayout->addWidget(tarjeta, row, col);
 
-            tarjeta_doctor *tarjeta = new tarjeta_doctor(foto, nombre, especialidad, estrellas);
-            i++;
-            ui->gridLayout->addWidget(tarjeta, row, col);
-        }
+    }
+
 
 
 }

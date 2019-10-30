@@ -21,9 +21,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>49</y>
-      <width>1366</width>
-      <height>701</height>
+      <y>39</y>
+      <width>1371</width>
+      <height>721</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -38,8 +38,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1366</width>
-        <height>750</height>
+        <width>1381</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -61,6 +61,7 @@ background: #3E64FF;</string>
       </property>
       <property name="font">
        <font>
+        <family>Montserrat</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -100,71 +101,70 @@ background: none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>130</y>
-        <width>191</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;</string>
-      </property>
-      <property name="text">
-       <string>Hospital Puebla</string>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>631</x>
-        <y>171</y>
-        <width>671</width>
-        <height>192</height>
+        <y>130</y>
+        <width>581</width>
+        <height>234</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Montserrat</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>Hospital Puebla</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="plainTextEdit">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
 background: #3E64FF;
 color: white;</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="plainText">
-       <string>Se apoya en un equipo médico de gran rigor, profesionales
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Se apoya en un equipo médico de gran rigor, profesionales
 pioneros en sus técnicas y exigentes en los resultados,
 seleccionados entre los más prestigiosos médicos 
 nacionales e internacionales para
 formar parte de un equipo multidisciplinar 
 y de prestigio.</string>
-      </property>
-      <property name="overwriteMode">
-       <bool>false</bool>
-      </property>
+         </property>
+         <property name="overwriteMode">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
@@ -176,29 +176,29 @@ y de prestigio.</string>
    <widget class="QStackedWidget" name="stackedWidget_2">
     <property name="geometry">
      <rect>
-      <x>-1</x>
+      <x>0</x>
       <y>0</y>
       <width>1371</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
       <property name="geometry">
        <rect>
-        <x>794</x>
-        <y>21</y>
-        <width>187</width>
+        <x>830</x>
+        <y>10</y>
+        <width>171</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -219,16 +219,16 @@ color: white;
      <widget class="QPushButton" name="btn_doctores_info">
       <property name="geometry">
        <rect>
-        <x>988</x>
-        <y>21</y>
-        <width>189</width>
+        <x>1010</x>
+        <y>10</y>
+        <width>181</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -249,16 +249,16 @@ color: white;
      <widget class="QPushButton" name="btn_iniciar_sesion">
       <property name="geometry">
        <rect>
-        <x>1184</x>
-        <y>21</y>
-        <width>116</width>
+        <x>1200</x>
+        <y>10</y>
+        <width>111</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -279,10 +279,10 @@ color: white;
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>-10</x>
         <y>0</y>
-        <width>1371</width>
-        <height>51</height>
+        <width>1381</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -296,16 +296,16 @@ background: #3E64FF;</string>
      <widget class="QPushButton" name="btn_servicios_2">
       <property name="geometry">
        <rect>
-        <x>691</x>
-        <y>21</y>
-        <width>47</width>
+        <x>760</x>
+        <y>10</y>
+        <width>61</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -336,10 +336,10 @@ color: white;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>2</x>
+        <x>-8</x>
         <y>-1</y>
-        <width>1371</width>
-        <height>71</height>
+        <width>1381</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -353,10 +353,10 @@ background: #3E64FF;</string>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>30</y>
-        <width>831</width>
-        <height>22</height>
+        <x>600</x>
+        <y>10</y>
+        <width>731</width>
+        <height>30</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -365,7 +365,7 @@ background: #3E64FF;</string>
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -375,7 +375,6 @@ background: #3E64FF;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">border: none;
-background: #3E64FF;
 color: white;
 </string>
          </property>
@@ -385,11 +384,24 @@ color: white;
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_remedios_admin">
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -399,7 +411,6 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">border: none;
-background: #3E64FF;
 color: white;
 </string>
          </property>
@@ -409,11 +420,24 @@ color: white;
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_gestionar_servicios_admin">
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -433,11 +457,24 @@ color: white;
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_gestionar_usuarios_admin">
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -457,12 +494,28 @@ color: white;
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_gestionar_tips_admin">
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">border: none;
@@ -476,12 +529,28 @@ color: white;
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_salir_admin">
          <property name="font">
           <font>
            <family>Montserrat</family>
-           <pointsize>10</pointsize>
+           <pointsize>11</pointsize>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">border: none;

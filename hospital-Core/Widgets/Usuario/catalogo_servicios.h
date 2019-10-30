@@ -2,6 +2,8 @@
 #define CATALOGO_SERVICIOS_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 namespace Ui {
 class Catalogo_servicios;
@@ -17,6 +19,7 @@ public:
 
 private:
     Ui::Catalogo_servicios *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // CATALOGO_SERVICIOS_H
