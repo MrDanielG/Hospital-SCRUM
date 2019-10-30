@@ -19,6 +19,9 @@ private slots:
     void registrarUsuario();
     void inicioSesion();
     void recuperarDatos();
+    void editarPerfilProp();
+    void ingresarServicios();
+    void visualizarServicio();
 };
 
 pruebas::pruebas()
@@ -185,7 +188,172 @@ void pruebas::recuperarDatos()
     }
 }
 
+void pruebas::editarPerfilProp()
+{
+    QString usuario = "luisBanderas";
+    QString contrasenia = "luis123";
 
+    QString nCorreo = "luisbanderasbarrera@gmail.com";
+    QString nTelefono = "7351094081";
+    QString nDireccion = "sanmiguel 633 Vugambilias 3ra sección";
+
+
+    QSqlQuery query;
+    QString sql;
+
+    QString nombre, paterno, materno;
+
+    QString contraseniaQuery, usuarioQuery, tipousuarioQuery, nombreTipoQuery, correoInicial, telefonoInicial, direccionInicial;
+
+    QString telefonoCambiado, correoCambiado, direccionCambiada;
+
+    int contador = 0;
+    sql = "select count(*) from usuario where id_usuario = '"+usuario+"';";
+    query.exec(sql);
+    while(query.next()){
+        contador = query.value(0).toInt();
+    }
+
+    if(contador == 1){
+
+        sql = "select * from usuario where id_usuario = '"+usuario+"';";
+        query.exec(sql);
+        while(query.next()){
+            contraseniaQuery = query.value(1).toString();
+            usuarioQuery = query.value(0).toString();
+            tipousuarioQuery = query.value(2).toString();
+        }
+
+        sql = "select nombre_tipo from tipo_usuario where id_tipo_usuario = "+tipousuarioQuery+";";
+        query.exec(sql);
+        while (query.next()) {
+            nombreTipoQuery = query.value(0).toString();
+        }
+
+        if(usuario == usuarioQuery && contrasenia == contraseniaQuery){
+            sql = "select nombre, paterno, materno, correo, telefono, direccion from persona where id_usuario = '"+usuario+"';";
+            query.exec(sql);
+            while(query.next()){
+                nombre = query.value(0).toString();
+                paterno = query.value(1).toString();
+                materno = query.value(2).toString();
+                correoInicial = query.value(3).toString();
+                telefonoInicial = query.value(4).toString();
+                direccionInicial = query.value(5).toString();
+         }
+
+            qDebug()<<"Bienvenido "+nombre+" "+paterno+" "+materno+" usted es un usuario: "+nombreTipoQuery;
+            qDebug()<<"Datos iniciales: Correo = "+correoInicial+", Telefono = "+telefonoInicial+", Direccion = "+direccionInicial;
+
+            sql = "update persona set telefono = '"+nTelefono+"', correo = '"+nCorreo+"', direccion = '"+nDireccion+"' where id_usuario = '"+usuario+"';";
+            query.exec(sql);
+
+            sql = "select telefono, correo, direccion from persona where id_usuario = '"+usuario+"'";
+            query.exec(sql);
+            while(query.next()){
+                telefonoCambiado = query.value(0).toString();
+                correoCambiado = query.value(1).toString();
+                direccionCambiada = query.value(2).toString();
+            }
+
+            qDebug()<<"Tus nuevos datos son: Correo = "+correoCambiado+", Telefono = "+telefonoCambiado+", Direccion = "+direccionCambiada;
+        }
+        else {
+            qDebug()<< "contraseña incorrecta";
+        }
+
+
+
+    }
+    else {
+        qDebug()<<"usuario incorrecto";
+    }
+}
+
+void pruebas::ingresarServicios()
+{
+    QString usuario = "Admin";
+    QString contrasenia = "admin123";
+
+    QString servicio = "Rayos x";
+    QString descripcion = "El Hospital puebla Cuenta con rayos x para poder visualizar los problemas el los huesos";
+
+    QSqlQuery query;
+    QString sql;
+
+    QString contraseniaQuery, usuarioQuery, tipousuarioQuery, nombreTipoQuery;
+
+    QString nombre, paterno, materno;
+
+    int contador = 0;
+
+    sql = "select count(*) from usuario where id_usuario = '"+usuario+"';";
+    query.exec(sql);
+    while(query.next()){
+        contador = query.value(0).toInt();
+    }
+    if(contador == 1){
+        sql = "select * from usuario where id_usuario = '"+usuario+"';";
+        query.exec(sql);
+        while(query.next()){
+            contraseniaQuery = query.value(1).toString();
+            usuarioQuery = query.value(0).toString();
+            tipousuarioQuery = query.value(2).toString();
+        }
+
+        sql = "select nombre_tipo from tipo_usuario where id_tipo_usuario = "+tipousuarioQuery+";";
+        query.exec(sql);
+        while (query.next()) {
+            nombreTipoQuery = query.value(0).toString();
+        }
+
+        if(usuario == usuarioQuery && contrasenia == contraseniaQuery){
+            sql = "select nombre, paterno, materno from persona where id_usuario = '"+usuario+"';";
+            query.exec(sql);
+            while(query.next()){
+                nombre = query.value(0).toString();
+                paterno = query.value(1).toString();
+                materno = query.value(2).toString();
+            }
+            qDebug()<<"Bienvenido "+nombre+" "+paterno+" "+materno+" usted es un usuario: "+nombreTipoQuery;
+
+            sql = "insert into servicios(nombre, descripcion, id_administrador) values('"+servicio+"', '"+descripcion+"', 1);";
+            query.exec(sql);
+
+            sql = "select count(*) from servicios;";
+            query.exec(sql);
+            while (query.next()){
+                if(query.value(0).toInt() == 1){
+                    qDebug()<<"Registro exitoso";
+                }
+                else {
+                    qDebug()<<"Registro fallido";
+                }
+            }
+        }
+        else {
+            qDebug()<< "contrasenia incorrecta";
+        }
+   }
+   else{
+        qDebug()<< "Usuario incorrecto";
+    }
+}
+
+void pruebas::visualizarServicio()
+{
+    QSqlQuery query;
+    QString sql;
+    int contador = 0;
+
+    sql = "select nombre, descripcion from servicios;";
+    query.exec(sql);
+    while(query.next()){
+        contador ++;
+        qDebug()<<QString::number(contador)+" servicio: "+query.value(0).toString()+" descripción: "+query.value(1).toString();
+    }
+
+}
 
 void pruebas::test_case1()
 {
