@@ -53,12 +53,12 @@ administrador_modificar_usuario::~administrador_modificar_usuario()
     delete ui;
 }
 
-//void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
-//    if(ui->lineEdit_nombre->text() != "" &&
-//            ui->lineEdit_paterno->text() != "" &&
-//            ui->lineEdit_materno->text() != "" &&
-//            ui->lineEdit_correo->text() != "" &&
-//            ui->lineEdit_direccion->text() != ""){
+void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
+    if(ui->lineEdit_nombre->text() != "" &&
+            ui->lineEdit_paterno->text() != "" &&
+            ui->lineEdit_materno->text() != "" &&
+            ui->lineEdit_correo->text() != "" &&
+            ui->lineEdit_direccion->text() != ""){
 
 
         QMessageBox msgBox;
