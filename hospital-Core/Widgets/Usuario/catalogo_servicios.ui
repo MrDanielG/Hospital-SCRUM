@@ -29,8 +29,8 @@
     <font>
      <family>Montserrat</family>
      <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -54,7 +54,8 @@ background:none;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border: none;</string>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
@@ -64,8 +65,8 @@ background:none;</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1098</width>
-      <height>489</height>
+      <width>1100</width>
+      <height>491</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">

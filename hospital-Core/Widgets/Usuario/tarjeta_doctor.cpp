@@ -1,5 +1,7 @@
 #include "tarjeta_doctor.h"
 #include "ui_tarjeta_doctor.h"
+#include <QDebug>
+#include "Widgets/Usuario/info_medico.h"
 
 tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialidad, int estrellas, QWidget *parent) : QWidget(parent),
     ui(new Ui::tarjeta_doctor){
@@ -15,6 +17,15 @@ tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialida
     ui->estrella1_3->hide();
     ui->estrella1_2->hide();
     ui->estrella1->hide();
+
+
+}
+
+tarjeta_doctor::~tarjeta_doctor(){
+    delete ui;
+}
+
+void tarjeta_doctor::insertarDatos(){
 
     QStringList imagenrecortada = foto.split(" ");
     QPixmap imag(imagenrecortada[0]);
@@ -53,6 +64,8 @@ tarjeta_doctor::tarjeta_doctor(QString foto, QString nombre, QString especialida
 
 }
 
-tarjeta_doctor::~tarjeta_doctor(){
-    delete ui;
+
+void tarjeta_doctor::on_btn_visualizar_clicked(){
+    info_medico visualizarInfo;
+    visualizarInfo.exec();
 }
