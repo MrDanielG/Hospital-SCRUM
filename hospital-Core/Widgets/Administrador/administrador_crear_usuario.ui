@@ -138,6 +138,9 @@ border-radius: 5px;</string>
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(129, 129, 129);</string>
+        </property>
         <property name="text">
          <string>Tipo Usuario:</string>
         </property>
@@ -309,6 +312,252 @@ border-radius: 5px;</string>
      <property name="text">
       <string/>
      </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Registrar Usuario</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_nombre">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>110</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Nombre</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_paterno">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>160</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Apellido Paterno</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_materno">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>210</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Apellido Materno</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_nacimiento">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>260</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Fecha de Nacimiento</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_correo">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>310</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>E-mail</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_correo_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>350</y>
+       <width>319</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Dirección</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>490</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(129, 129, 129);</string>
+     </property>
+     <property name="text">
+      <string>Agregar Foto:</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>410</y>
+       <width>117</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(129, 129, 129);</string>
+        </property>
+        <property name="text">
+         <string>Sexo:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>460</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(129, 129, 129);</string>
+        </property>
+        <property name="text">
+         <string>Edad:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spinBox"/>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
