@@ -16,6 +16,11 @@ public:
     explicit tarjeta_doctor(QString foto, QString nombre, QString especialidad, int estrellas, QWidget *parent = nullptr);
     ~tarjeta_doctor();
 
+private slots:
+
+
+    void on_btn_visualizar_clicked();
+
 private:
     Ui::tarjeta_doctor *ui;
     QString nombre, especialidad, foto;

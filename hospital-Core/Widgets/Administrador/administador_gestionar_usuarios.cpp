@@ -18,8 +18,8 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
     }
 
     QSqlQuery infoPersona(mDatabase);
-    infoPersona.prepare();
-    infoPersona.exec();
+    //infoPersona.prepare();
+    //infoPersona.exec();
 
     int i=0;
     int row = 0;
