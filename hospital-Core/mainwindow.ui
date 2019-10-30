@@ -189,11 +189,17 @@ y de prestigio.</string>
      <widget class="QPushButton" name="btn_servicios">
       <property name="geometry">
        <rect>
-        <x>710</x>
+        <x>680</x>
         <y>10</y>
-        <width>156</width>
+        <width>211</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>211</width>
+        <height>21</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -221,9 +227,15 @@ color: white;
        <rect>
         <x>930</x>
         <y>10</y>
-        <width>161</width>
+        <width>211</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>211</width>
+        <height>21</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -249,11 +261,17 @@ color: white;
      <widget class="QPushButton" name="btn_iniciar_sesion">
       <property name="geometry">
        <rect>
-        <x>1150</x>
+        <x>1170</x>
         <y>10</y>
-        <width>98</width>
+        <width>141</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>141</width>
+        <height>21</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -296,11 +314,17 @@ background: #3E64FF;</string>
      <widget class="QPushButton" name="btn_servicios_2">
       <property name="geometry">
        <rect>
-        <x>610</x>
+        <x>559</x>
         <y>10</y>
-        <width>40</width>
+        <width>91</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>91</width>
+        <height>21</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -328,10 +352,6 @@ color: white;
      <zorder>btn_doctores_info</zorder>
      <zorder>btn_iniciar_sesion</zorder>
      <zorder>btn_servicios_2</zorder>
-     <zorder>horizontalSpacer_6</zorder>
-     <zorder>horizontalSpacer_7</zorder>
-     <zorder>horizontalSpacer_8</zorder>
-     <zorder>horizontalSpacer_9</zorder>
     </widget>
     <widget class="QWidget" name="menu_admin">
      <property name="styleSheet">
