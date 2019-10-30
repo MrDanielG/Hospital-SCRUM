@@ -14,6 +14,7 @@ class administador_gestionar_usuarios : public QWidget
 public:
     explicit administador_gestionar_usuarios(QWidget *parent = nullptr);
     ~administador_gestionar_usuarios();
+    void limiparCatalogo();
 
 private:
     Ui::administador_gestionar_usuarios *ui;

@@ -18,18 +18,24 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
     }
 
     QSqlQuery infoPersona(mDatabase);
-    infoPersona.prepare();
+    infoPersona.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario");
     infoPersona.exec();
+    limiparCatalogo();
 
     int i=0;
     int row = 0;
     int col = 0;
 
-    for(int j=0; j<4; j++){
+    while(infoPersona.next()){
+        QString id_persona = infoPersona.value(0).toString();
+        QString nombre_persona = infoPersona.value(1).toString() + " " +  infoPersona.value(2).toString() + " " +  infoPersona.value(3).toString();
+        QString img_persona = infoPersona.value(8).toString();
+        QString id_usuario = infoPersona.value(10).toString();
+
         row = i/3;
         col = i%3;
 
-        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion;
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
@@ -38,4 +44,13 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
 administador_gestionar_usuarios::~administador_gestionar_usuarios()
 {
     delete ui;
+}
+
+void administador_gestionar_usuarios::limiparCatalogo()
+{
+    while ( QLayoutItem* item = ui->gridLayout->takeAt( 0 ) ){
+            Q_ASSERT( ! item->layout() ); // otherwise the layout will leak
+            delete item->widget();
+            delete item;
+    }
 }
