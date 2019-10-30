@@ -1,6 +1,7 @@
 #include "administador_gestionar_usuarios.h"
 #include "ui_administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_tarjeta_gestion.h"
+#include "Widgets/Administrador/administrador_crear_usuario.h"
 #include "QMessageBox"
 #include "QDebug"
 #include "QSqlQuery"
@@ -166,4 +167,10 @@ void administador_gestionar_usuarios::on_buscar_textChanged(const QString &arg1)
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
+}
+
+void administador_gestionar_usuarios::on_btn_registra_usuario_clicked()
+{
+    administrador_crear_usuario crearUsuario;
+    crearUsuario.exec();
 }
