@@ -101,7 +101,7 @@ background: none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>631</x>
@@ -183,16 +183,16 @@ y de prestigio.</string>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
       <property name="geometry">
        <rect>
-        <x>830</x>
+        <x>710</x>
         <y>10</y>
-        <width>171</width>
-        <height>20</height>
+        <width>156</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -219,10 +219,10 @@ color: white;
      <widget class="QPushButton" name="btn_doctores_info">
       <property name="geometry">
        <rect>
-        <x>1010</x>
+        <x>930</x>
         <y>10</y>
-        <width>181</width>
-        <height>20</height>
+        <width>161</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -249,10 +249,10 @@ color: white;
      <widget class="QPushButton" name="btn_iniciar_sesion">
       <property name="geometry">
        <rect>
-        <x>1200</x>
+        <x>1150</x>
         <y>10</y>
-        <width>111</width>
-        <height>20</height>
+        <width>98</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -296,10 +296,10 @@ background: #3E64FF;</string>
      <widget class="QPushButton" name="btn_servicios_2">
       <property name="geometry">
        <rect>
-        <x>760</x>
+        <x>610</x>
         <y>10</y>
-        <width>61</width>
-        <height>20</height>
+        <width>40</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -328,6 +328,10 @@ color: white;
      <zorder>btn_doctores_info</zorder>
      <zorder>btn_iniciar_sesion</zorder>
      <zorder>btn_servicios_2</zorder>
+     <zorder>horizontalSpacer_6</zorder>
+     <zorder>horizontalSpacer_7</zorder>
+     <zorder>horizontalSpacer_8</zorder>
+     <zorder>horizontalSpacer_9</zorder>
     </widget>
     <widget class="QWidget" name="menu_admin">
      <property name="styleSheet">
@@ -353,9 +357,9 @@ background: #3E64FF;</string>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>600</x>
+        <x>440</x>
         <y>10</y>
-        <width>731</width>
+        <width>891</width>
         <height>30</height>
        </rect>
       </property>
