@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QDebug>
+#include "Widgets/Usuario/tarjeta_doctor.h"
 
 namespace Ui {
 class info_medico;
@@ -15,8 +16,9 @@ class info_medico : public QDialog
     Q_OBJECT
 
 public:
-    explicit info_medico(QWidget *parent = nullptr);
+    explicit info_medico(QString, QWidget *parent = nullptr);
     ~info_medico();
+    void insertarDatos(QString nombre, QString paterno, QString materno, QString edad, QString correo, QString foto);
 
 
 private:

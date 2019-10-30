@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background: #3E64FF;;</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="foto_medico">
    <property name="geometry">
     <rect>
      <x>480</x>

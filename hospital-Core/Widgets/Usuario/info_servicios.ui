@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>267</height>
+    <width>550</width>
+    <height>225</height>
    </rect>
   </property>
   <property name="font">
@@ -46,8 +46,8 @@
   <widget class="QLabel" name="img_servicio">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>80</y>
+     <x>30</x>
+     <y>50</y>
      <width>161</width>
      <height>131</height>
     </rect>
@@ -62,9 +62,9 @@
   <widget class="QPlainTextEdit" name="text_descripcion_servicio">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>80</y>
-     <width>371</width>
+     <x>220</x>
+     <y>40</y>
+     <width>311</width>
      <height>131</height>
     </rect>
    </property>

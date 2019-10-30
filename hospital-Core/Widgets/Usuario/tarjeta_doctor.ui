@@ -71,7 +71,7 @@ border-radius: 5px;</string>
     <string>Visualizar</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -107,7 +107,7 @@ border-radius: 5px;</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="tarjetadoctor_doctor">
+     <widget class="QLabel" name="nombre_doctor">
       <property name="font">
        <font>
         <family>Montserrat</family>
@@ -133,7 +133,7 @@ border-radius: 5px;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -198,7 +198,7 @@ border-radius: 5px;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
