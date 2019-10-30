@@ -16,6 +16,15 @@ public:
     ~administador_gestionar_usuarios();
     void limiparCatalogo();
 
+private slots:
+    void on_btn_medicos_clicked();
+
+    void on_btn_pacientes_clicked();
+
+    void on_btn_staff_clicked();
+
+    void on_buscar_textChanged(const QString &arg1);
+
 private:
     Ui::administador_gestionar_usuarios *ui;
     QSqlDatabase mDatabase;

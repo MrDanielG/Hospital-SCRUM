@@ -54,3 +54,108 @@ void administador_gestionar_usuarios::limiparCatalogo()
             delete item;
     }
 }
+
+void administador_gestionar_usuarios::on_btn_medicos_clicked()
+{
+    QSqlQuery infoMedico(mDatabase);
+    infoMedico.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE usuario.id_tipo_usuario = 1");
+    infoMedico.exec();
+    limiparCatalogo();
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while(infoMedico.next()){
+        QString id_persona = infoMedico.value(0).toString();
+        QString nombre_persona = infoMedico.value(1).toString() + " " +  infoMedico.value(2).toString() + " " +  infoMedico.value(3).toString();
+        QString img_persona = infoMedico.value(8).toString();
+        QString id_usuario = infoMedico.value(10).toString();
+
+        row = i/3;
+        col = i%3;
+
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
+
+void administador_gestionar_usuarios::on_btn_pacientes_clicked()
+{
+    QSqlQuery infoPaciente(mDatabase);
+    infoPaciente.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE usuario.id_tipo_usuario = 2");
+    infoPaciente.exec();
+    limiparCatalogo();
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while(infoPaciente.next()){
+        QString id_persona = infoPaciente.value(0).toString();
+        QString nombre_persona = infoPaciente.value(1).toString() + " " +  infoPaciente.value(2).toString() + " " +  infoPaciente.value(3).toString();
+        QString img_persona = infoPaciente.value(8).toString();
+        QString id_usuario = infoPaciente.value(10).toString();
+
+        row = i/3;
+        col = i%3;
+
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
+
+void administador_gestionar_usuarios::on_btn_staff_clicked()
+{
+    QSqlQuery infoStaff(mDatabase);
+    infoStaff.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE usuario.id_tipo_usuario = 4");
+    infoStaff.exec();
+    limiparCatalogo();
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while(infoStaff.next()){
+        QString id_persona = infoStaff.value(0).toString();
+        QString nombre_persona = infoStaff.value(1).toString() + " " +  infoStaff.value(2).toString() + " " +  infoStaff.value(3).toString();
+        QString img_persona = infoStaff.value(8).toString();
+        QString id_usuario = infoStaff.value(10).toString();
+
+        row = i/3;
+        col = i%3;
+
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
+
+void administador_gestionar_usuarios::on_buscar_textChanged(const QString &arg1)
+{
+    char caracter = '%';
+    QSqlQuery infoPersona(mDatabase);
+    infoPersona.prepare("SELECT * from persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE persona.nombre like '" + arg1 + caracter +"'");
+    infoPersona.exec();
+    limiparCatalogo();
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while(infoPersona.next()){
+        QString id_persona = infoPersona.value(0).toString();
+        QString nombre_persona = infoPersona.value(1).toString() + " " +  infoPersona.value(2).toString() + " " +  infoPersona.value(3).toString();
+        QString img_persona = infoPersona.value(8).toString();
+        QString id_usuario = infoPersona.value(10).toString();
+
+        row = i/3;
+        col = i%3;
+
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
