@@ -44,7 +44,7 @@ void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
     QString info1 = query.value(5).toString();
     QString info2 = "Edad: " + query.value(7).toString();
     QString info3 = query.value(9).toString();
-
+    QString id_usuario = query.value(10).toString();
     switch (indexUsr) {
     case 1:
         tipo_usr = "Medico";
@@ -63,6 +63,6 @@ void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
         break;
     }
 
-    administrador_info_gestion infoGestion(nombre, tipo_usr, info1, info2, info3, img);
+    administrador_info_gestion infoGestion(nombre, tipo_usr, info1, info2, info3, img, id_usuario);
     infoGestion.exec();
 }
