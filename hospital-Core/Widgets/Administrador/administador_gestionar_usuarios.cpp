@@ -173,4 +173,5 @@ void administador_gestionar_usuarios::on_btn_registra_usuario_clicked()
 {
     administrador_crear_usuario crearUsuario;
     crearUsuario.exec();
+    limiparCatalogo();
 }
