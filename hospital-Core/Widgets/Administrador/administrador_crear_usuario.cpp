@@ -69,7 +69,7 @@ void administrador_crear_usuario::on_btn_crear_usuario_clicked()
         this->nacimiento = ui->dateEdit_fechaNacimiento->text();
         this->sexo = ui->comboBox_sexo->currentText();
         this->edad = QString::number(ui->spinBox_edad->value()); //Se cambia de int a Qstring
-        this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto
+        this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto, esto se cambiara despues
 
         //Se crean las Querys, primero se crea Usuario
         QSqlQuery crearUsuario(mDatabase);
