@@ -107,7 +107,7 @@ background: none;</string>
         <x>631</x>
         <y>130</y>
         <width>581</width>
-        <height>234</height>
+        <height>321</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -172,6 +172,9 @@ y de prestigio.</string>
       <string notr="true"/>
      </property>
     </widget>
+    <widget class="QWidget" name="page_3"/>
+    <widget class="QWidget" name="page_4"/>
+    <widget class="QWidget" name="page_5"/>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget_2">
     <property name="geometry">
