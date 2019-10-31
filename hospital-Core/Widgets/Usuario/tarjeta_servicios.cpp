@@ -28,7 +28,7 @@ Tarjeta_Servicios::~Tarjeta_Servicios()
 
 void Tarjeta_Servicios::insertarDatos(){
     QPixmap imag(this->foto);
-    ui->img_servicios->setPixmap(imag.scaled(141,111, Qt::IgnoreAspectRatio));
+    ui->img_servicios->setPixmap(imag);
     ui->nombre_servicio->setText(this->nombre);
 
 }

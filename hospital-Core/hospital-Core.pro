@@ -28,7 +28,10 @@ CONFIG += c++11
 SOURCES += \
         Clases/doctor.cpp \
         Clases/usuario.cpp \
+        Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
+        Widgets/Administrador/administrador_info_servicios.cpp \
+        Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
@@ -44,6 +47,7 @@ SOURCES += \
         Widgets/Usuario/info_medico.cpp \
         Widgets/Usuario/info_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
+        Widgets/Usuario/recuperar_contra.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
         Widgets/Usuario/tarjeta_servicios.cpp \
@@ -54,7 +58,10 @@ SOURCES += \
 HEADERS += \
         Clases/doctor.h \
         Clases/usuario.h \
+        Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
+        Widgets/Administrador/administrador_info_servicios.h \
+        Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
@@ -70,6 +77,7 @@ HEADERS += \
         Widgets/Usuario/info_medico.h \
         Widgets/Usuario/info_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
+        Widgets/Usuario/recuperar_contra.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
         Widgets/Usuario/tarjeta_servicios.h \
@@ -77,7 +85,10 @@ HEADERS += \
     Widgets/Medico/medico_landpage.h
 
 FORMS += \
+        Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
+        Widgets/Administrador/administrador_info_servicios.ui \
+        Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
@@ -93,6 +104,7 @@ FORMS += \
         Widgets/Usuario/info_medico.ui \
         Widgets/Usuario/info_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
+        Widgets/Usuario/recuperar_contra.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
         Widgets/Usuario/tarjeta_servicios.ui \

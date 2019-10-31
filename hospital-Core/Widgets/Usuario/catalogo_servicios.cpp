@@ -10,9 +10,9 @@ Catalogo_servicios::Catalogo_servicios(QWidget *parent) :
     ui->setupUi(this);
     mDatabase = QSqlDatabase::database("Connection");
     if (!mDatabase.isOpen()){
-        qDebug() << "ERROR";
+        qDebug() << "ERROR conexion a la Base, esto es CATALOGO SERVICIOS";
     }else{
-        qDebug() << "base de datos sigue conectada en INICIAR SESION";
+        qDebug() << "Base de datos sigue conectada en CATALOGO SERVICIOS";
     }
     QSqlQuery query(mDatabase);
 
@@ -37,10 +37,6 @@ Catalogo_servicios::Catalogo_servicios(QWidget *parent) :
          i++;
          ui->gridLayoutServicios->addWidget(tarjeta, row, col);
     }
-
-
-
-
 }
 
 Catalogo_servicios::~Catalogo_servicios()

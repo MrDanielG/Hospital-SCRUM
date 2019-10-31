@@ -37,6 +37,7 @@ private:
     QString curp;
     QString foto;
     QString direccion;
+    QString mascota;
 };
 
 #endif // REGISTRAR_H

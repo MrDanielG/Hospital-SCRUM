@@ -33,7 +33,7 @@ background: white;</string>
     </size>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -276,6 +276,39 @@ border-bottom: 1px solid #C4C4C4;</string>
       </item>
       <item>
        <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="line_edit_mascota">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+        </property>
+        <property name="text">
+         <string>Nombre de tu mascota o palabra clave</string>
+        </property>
+        <property name="placeholderText">
+         <string>Nombre de Usuario</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_11">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
