@@ -5,6 +5,7 @@
 #include "Widgets/Usuario/registrar.h"
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Widgets/Usuario/catalogo_doctores.h"
+#include "Widgets/Paciente/paciente_landpage.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow)
@@ -26,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(4, &gestionServiciosAdmin);
     ui->stackedWidget->insertWidget(5, &gestionUsuariosAdmin);
     ui->stackedWidget->insertWidget(6, &gestionTipsAdmin);
+    ui->stackedWidget->insertWidget(7, &landpagepaciente);
 }
 
 MainWindow::~MainWindow()
@@ -43,16 +45,19 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     dialogo_iniciar_sesion.exec();
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
+    /*Aqui deben poner el index del landpage al que quieran visualizar
+     * 1 = Medico
+     * 2 = Paciente
+     * 3 = Administrador
+     * 4 = Farmaceutico
+     * 5 = Staff
+     *
+     * esto se hace para todos los else if dependiendo el caso
+    */
+
     if(this->index == 1){
-        /*Aqui deben poner el index del landpage al que quieran visualizar
-         * 1 = Medico
-         * 2 = Paciente
-         * 3 = Administrador
-         * 4 = Farmaceutico
-         * 5 = Staff
-         *
-         * esto se hace para todos los else if dependiendo el caso
-        */
+         ui->stackedWidget->setCurrentIndex(7);
+         ui->stackedWidget_2->setCurrentIndex(3);
 
     }
     else if(this->index == 2){
