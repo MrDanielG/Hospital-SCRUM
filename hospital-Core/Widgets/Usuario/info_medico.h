@@ -18,13 +18,15 @@ class info_medico : public QDialog
 public:
     explicit info_medico(QString, QWidget *parent = nullptr);
     ~info_medico();
-    void insertarDatos(QString nombre, QString paterno, QString materno, QString edad, QString correo, QString foto);
+    void insertarDatos(QString, QString, QString, QString, QString, QString);
+     void insertarDatosMedico(QString, QString, QString);
 
 
 private:
     Ui::info_medico *ui;
     QSqlDatabase mDatabase;
     QString idinfo;
+    QString idpersona;
 };
 
 #endif // INFO_MEDICO_H

@@ -19,10 +19,10 @@
   <widget class="QLabel" name="foto_medico">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>40</y>
-     <width>241</width>
-     <height>201</height>
+     <x>500</x>
+     <y>30</y>
+     <width>181</width>
+     <height>181</height>
     </rect>
    </property>
    <property name="text">
@@ -30,6 +30,9 @@
    </property>
    <property name="pixmap">
     <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgPrueba.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -112,12 +115,27 @@ border-radius: 10px;</string>
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background: white;
 border: none;</string>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>dsfsfsdfsdfsdf</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -132,6 +150,7 @@ border: none;</string>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -156,6 +175,7 @@ border: none;</string>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -177,12 +197,27 @@ border: none;</string>
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background: white;
 border: none;</string>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>dsfdsfdgdfgsdf</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
@@ -197,6 +232,7 @@ border: none;</string>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -218,12 +254,28 @@ border: none;</string>
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">background: white;
 border: none;</string>
    </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>adasdasdsadsa
+</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
@@ -238,6 +290,7 @@ border: none;</string>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -253,18 +306,43 @@ border: none;</string>
   <widget class="QPlainTextEdit" name="text_datos_personales">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>450</x>
      <y>440</y>
      <width>411</width>
      <height>71</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background: white;
-border: none;</string>
+border: none;
+</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhMultiLine</set>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
    </property>
    <property name="readOnly">
     <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>sasas
+jgljgl
+
+</string>
    </property>
   </widget>
  </widget>
