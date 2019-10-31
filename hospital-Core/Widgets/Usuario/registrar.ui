@@ -33,7 +33,7 @@ background: white;</string>
     </size>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -599,19 +599,12 @@ border-bottom: 1px solid #C4C4C4;</string>
            <string notr="true">color: rgb(129, 129, 129);</string>
           </property>
           <property name="text">
-           <string>Edad:</string>
+           <string>CURP</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_edad">
-          <property name="font">
-           <font>
-            <family>Montserrat</family>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="CURP"/>
         </item>
        </layout>
       </item>
