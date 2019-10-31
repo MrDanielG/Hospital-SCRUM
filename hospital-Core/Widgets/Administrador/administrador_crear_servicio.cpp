@@ -39,7 +39,7 @@ void administrador_crear_servicio::on_btn_crear_clicked()
         this->foto = "C:/img/imgServicio1.png"; //Momentanea en lo que se agrega funcionalidad a la img
 
         QSqlQuery query(mDatabase);
-        query.prepare("INSERT INTO `info`(`nombre`, `descripcion`, `id_tipo_info`, `imagen`) VALUES ('"+this->nombre+"','"+this->info+"',3,'"+this->foto+"')");
+        query.prepare("INSERT INTO `info`(`nombre`, `descripcion`, `id_tipo_info`, `imagen`, id_administrador) VALUES ('"+this->nombre+"','"+this->info+"',3,'"+this->foto+"',1)");
         query.exec();
 
         QMessageBox::information(this, tr("Crear Servicio"),tr("Servicio Correctamente Creado."),
