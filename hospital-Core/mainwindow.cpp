@@ -18,8 +18,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
         qDebug() << "Base de datos conectada exitosamente";
     }
 
-    ui->stackedWidget->setCurrentIndex(1);
-    ui->stackedWidget_2->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
     ui->stackedWidget->insertWidget(1, &landpageadministrador);
     ui->stackedWidget->insertWidget(2, &catalogo_servicios);
     ui->stackedWidget->insertWidget(3, &catalogodoctores);
@@ -107,6 +107,7 @@ void MainWindow::on_btn_remedios_admin_clicked()
 void MainWindow::on_btn_gestionar_servicios_admin_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+    //QWidget *ptr = ui->stackedWidget->widget(4);
 }
 
 void MainWindow::on_btn_gestionar_usuarios_admin_clicked()
