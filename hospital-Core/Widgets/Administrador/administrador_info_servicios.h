@@ -16,6 +16,9 @@ public:
     explicit administrador_info_servicios(QString, QString, QString, QString, QWidget *parent = nullptr);
     ~administrador_info_servicios();
 
+private slots:
+    void on_btn_modificar_clicked();
+
 private:
     Ui::administrador_info_servicios *ui;
     QSqlDatabase mDatabase;

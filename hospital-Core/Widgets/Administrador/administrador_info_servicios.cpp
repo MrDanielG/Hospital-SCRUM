@@ -25,3 +25,8 @@ administrador_info_servicios::~administrador_info_servicios()
 {
     delete ui;
 }
+
+void administrador_info_servicios::on_btn_modificar_clicked()
+{
+
+}
