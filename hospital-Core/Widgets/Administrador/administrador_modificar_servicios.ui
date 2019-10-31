@@ -187,7 +187,7 @@ border-bottom: 1px solid #C4C4C4;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="info_servicio">
       <property name="font">
        <font>
         <family>Montserrat</family>

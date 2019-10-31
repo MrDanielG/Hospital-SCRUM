@@ -18,6 +18,7 @@ administrador_servicios_hospital::administrador_servicios_hospital(QWidget *pare
 
     query.prepare("select * from info where id_tipo_info = 3");
     query.exec();
+    limiparCatalogo();
 
     int i=0;
     int row = 0;
@@ -41,4 +42,14 @@ administrador_servicios_hospital::administrador_servicios_hospital(QWidget *pare
 administrador_servicios_hospital::~administrador_servicios_hospital()
 {
     delete ui;
+}
+
+void administrador_servicios_hospital::limiparCatalogo()
+{
+    while (QLayoutItem *item = ui->gridLayout->takeAt(0))
+    {
+        Q_ASSERT(!item->layout()); // otherwise the layout will leak
+        delete item->widget();
+        delete item;
+    }
 }

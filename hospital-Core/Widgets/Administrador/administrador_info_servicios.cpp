@@ -36,4 +36,5 @@ void administrador_info_servicios::on_btn_modificar_clicked()
 {
     administrador_modificar_servicios modificarServicios(this->id, this->servicio, this->info, this->foto);
     modificarServicios.exec();
+    this->close();
 }

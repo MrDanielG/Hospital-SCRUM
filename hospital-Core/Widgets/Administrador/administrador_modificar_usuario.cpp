@@ -91,11 +91,11 @@ void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
             updatePersona.prepare("UPDATE `persona` SET `nombre`='"+this->nombre+"',`paterno`='"+this->paterno+"',`materno`='"+this->materno+"',`fNacimiento`='"+this->nacimiento+"',`correo`='"+this->correo+"',`sexo`='"+this->sexo+"',`edad`='"+this->edad+"',`foto`='"+this->foto+"',`direccion`='"+this->direccion+"' WHERE id_usuario = '"+this->nombreUsuario+"'");
             updatePersona.exec();
 
-            QMessageBox::warning(this, tr("Actualizacion"),tr("Usuario Actualizado."),
+            QMessageBox::information(this, tr("Actualizacion"),tr("Usuario Actualizado."),
                                           QMessageBox::Ok);
             this->close();
         } else {
-            QMessageBox::warning(this, tr("Actualizacion"),tr("Usuario NO Actualizado."),
+            QMessageBox::information(this, tr("Actualizacion"),tr("Usuario NO Actualizado."),
                                           QMessageBox::Ok);
             this->close();
         }
