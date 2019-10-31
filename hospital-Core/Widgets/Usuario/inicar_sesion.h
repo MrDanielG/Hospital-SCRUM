@@ -21,6 +21,8 @@ public:
 private slots:
     void on_btn_iniciarsesion_sesion_clicked();
 
+    void on_btn_contrasegnaolvidada_clicked();
+
 private:
     Ui::inicar_sesion *ui;
     QSqlDatabase mDatabase;
