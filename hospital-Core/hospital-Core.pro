@@ -33,6 +33,7 @@ SOURCES += \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+        Widgets/Paciente/paciente_landpage.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -62,6 +63,7 @@ HEADERS += \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+        Widgets/Paciente/paciente_landpage.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -88,6 +90,7 @@ FORMS += \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+        Widgets/Paciente/paciente_landpage.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \
