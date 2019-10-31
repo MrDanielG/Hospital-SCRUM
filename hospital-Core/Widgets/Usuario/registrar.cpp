@@ -32,10 +32,12 @@ void registrar::on_btn_continuar_clicked()
     if(ui->lineEdit_contra->text() == ui->lineEdit_confirma_contra->text() &&
             ui->lineEdit_contra->text() != "" &&
             ui->lineEdit_confirma_contra->text() != "" &&
+             ui->line_edit_mascota->text() != "" &&
             ui->lineEdit_usuario->text() != ""){
 
         this->nombreUsuario = ui->lineEdit_usuario->text();
         this->contra = ui->lineEdit_contra->text();
+        this->mascota = ui->line_edit_mascota->text();
 
         //Asignamos un tipo usuario conforme al combo box
         if(ui->comboBox_tipo_usuario->currentText() == "Medico"){
@@ -75,13 +77,16 @@ void registrar::on_btn_crear_usuario_clicked()
 
         //Se crean las Querys, primero se crea Usuario
         QSqlQuery crearUsuario(mDatabase);
-        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario) VALUES ('"+this->nombreUsuario+"','"+this->contra+"','"+this->tipoUsuario+"')");
+        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario, mascota) VALUES ('"+this->nombreUsuario+"','"+this->contra+"','"+this->tipoUsuario+"','"+this->mascota+"')");
         crearUsuario.exec();
 
         QSqlQuery crearPersona(mDatabase);
         crearPersona.prepare("INSERT INTO `persona`(`nombre`, `paterno`, `materno`, `fNacimiento`, `correo`, `sexo`, `foto`, `direccion`, `id_usuario`, `curp`) "
                              "VALUES ('"+this->nombre+"','"+this->paterno+"','"+this->materno+"','"+this->nacimiento+"','"+this->correo+"','"+this->sexo+"','"+this->foto+"', '"+this->direccion+"' ,'"+this->nombreUsuario+"', '"+this->curp+"')");
         crearPersona.exec();
+        QMessageBox::warning(this, tr("Exito"),tr("Usuario agregado"),
+                                                  QMessageBox::Ok);
+
 
         this->close();
     }
