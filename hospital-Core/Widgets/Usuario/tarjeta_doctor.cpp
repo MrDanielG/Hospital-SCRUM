@@ -38,7 +38,7 @@ tarjeta_doctor::~tarjeta_doctor(){
 void tarjeta_doctor::insertarDatos(){
 
     QPixmap imag(this->foto);
-    ui->fotografia->setPixmap(imag.scaled(100,100, Qt::IgnoreAspectRatio));
+    ui->fotografia->setPixmap(imag);
     ui->especialidad->setText(especialidad);
     ui->nombre_doctor->setText(nombre);
 

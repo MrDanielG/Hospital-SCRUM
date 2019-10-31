@@ -41,6 +41,7 @@ background: white;</string>
    <property name="font">
     <font>
      <family>Montserrat</family>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
@@ -71,13 +72,16 @@ border-radius: 10px;</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>40</y>
-     <width>141</width>
-     <height>111</height>
+     <y>30</y>
+     <width>140</width>
+     <height>140</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_visualizar_servicio">

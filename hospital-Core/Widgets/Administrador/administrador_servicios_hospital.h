@@ -2,7 +2,8 @@
 #define ADMINISTRADOR_SERVICIOS_HOSPITAL_H
 
 #include <QWidget>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
 namespace Ui {
 class administrador_servicios_hospital;
 }
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::administrador_servicios_hospital *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // ADMINISTRADOR_SERVICIOS_HOSPITAL_H
