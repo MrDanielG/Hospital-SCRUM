@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>administrador_modificar_servicios</class>
- <widget class="QDialog" name="administrador_modificar_servicios">
+ <class>administrador_crear_servicio</class>
+ <widget class="QDialog" name="administrador_crear_servicio">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>429</height>
+    <width>305</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-20</y>
-     <width>301</width>
+     <x>-1</x>
+     <y>2</y>
+     <width>311</width>
      <height>461</height>
     </rect>
    </property>
@@ -29,18 +29,18 @@
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>8</y>
+     <x>20</x>
+     <y>30</y>
      <width>261</width>
      <height>401</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="actualiza_Servicio">
+     <widget class="QLabel" name="crearServicio">
       <property name="font">
        <font>
         <family>Montserrat SemiBold</family>
@@ -50,7 +50,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Actualizar Servicio</string>
+       <string>Crear Servicio</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -204,7 +204,7 @@ border: 1px solid #C4C4C4;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="btn_modificar">
+     <widget class="QPushButton" name="btn_crear">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -232,7 +232,7 @@ border: 1px solid #C4C4C4;</string>
 }</string>
       </property>
       <property name="text">
-       <string>Modificar</string>
+       <string>Crear</string>
       </property>
      </widget>
     </item>
