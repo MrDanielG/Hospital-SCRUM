@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>717</width>
-    <height>565</height>
+    <width>299</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>0</x>
+     <y>-20</y>
      <width>301</width>
-     <height>431</height>
+     <height>461</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -32,15 +32,15 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>31</x>
-     <y>28</y>
+     <x>21</x>
+     <y>8</y>
      <width>261</width>
      <height>401</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="nombre_servicio">
+     <widget class="QLabel" name="actualiza_Servicio">
       <property name="font">
        <font>
         <family>Montserrat SemiBold</family>
@@ -170,7 +170,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="nombre_servicio">
       <property name="font">
        <font>
         <family>Montserrat</family>

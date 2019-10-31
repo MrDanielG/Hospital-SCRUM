@@ -1,5 +1,6 @@
 #include "administrador_info_servicios.h"
 #include "ui_administrador_info_servicios.h"
+#include "Widgets/Administrador/administrador_modificar_servicios.h"
 #include "QDebug"
 administrador_info_servicios::administrador_info_servicios(QString id, QString servicio, QString info, QString foto, QWidget *parent) :
     QDialog(parent),
@@ -13,6 +14,11 @@ administrador_info_servicios::administrador_info_servicios(QString id, QString s
     }else{
             qDebug()<<"Base de datos continua abierta, esto es: ADMINISTRADOR INFO SERVICIOS";
     }
+
+    this->id = id;
+    this->servicio = servicio;
+    this->info = info;
+    this->foto = foto;
 
     //Se insertan los valores a la UI
     ui->nombre_servicio->setText(servicio);
@@ -28,5 +34,6 @@ administrador_info_servicios::~administrador_info_servicios()
 
 void administrador_info_servicios::on_btn_modificar_clicked()
 {
-
+    administrador_modificar_servicios modificarServicios(this->id, this->servicio, this->info, this->foto);
+    modificarServicios.exec();
 }

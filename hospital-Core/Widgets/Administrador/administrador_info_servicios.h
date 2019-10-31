@@ -22,6 +22,7 @@ private slots:
 private:
     Ui::administrador_info_servicios *ui;
     QSqlDatabase mDatabase;
+    QString id, servicio, info, foto;
 };
 
 #endif // ADMINISTRADOR_INFO_SERVICIOS_H
