@@ -17,6 +17,9 @@ public:
     ~administrador_servicios_hospital();
     void limiparCatalogo();
 
+private slots:
+    void on_btn_crear_servicio_clicked();
+
 private:
     Ui::administrador_servicios_hospital *ui;
     QSqlDatabase mDatabase;

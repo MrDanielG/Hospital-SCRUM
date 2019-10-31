@@ -1,6 +1,7 @@
 #include "administrador_servicios_hospital.h"
 #include "ui_administrador_servicios_hospital.h"
 #include "Widgets/Administrador/administrador_tarjeta_servicios.h"
+#include "Widgets/Administrador/administrador_crear_servicio.h"
 #include "QDebug"
 administrador_servicios_hospital::administrador_servicios_hospital(QWidget *parent) :
     QWidget(parent),
@@ -52,4 +53,10 @@ void administrador_servicios_hospital::limiparCatalogo()
         delete item->widget();
         delete item;
     }
+}
+
+void administrador_servicios_hospital::on_btn_crear_servicio_clicked()
+{
+    administrador_crear_servicio crearServicio;
+    crearServicio.exec();
 }
