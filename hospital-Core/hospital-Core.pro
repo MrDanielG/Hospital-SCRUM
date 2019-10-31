@@ -29,6 +29,8 @@ SOURCES += \
         Clases/doctor.cpp \
         Clases/usuario.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
+        Widgets/Administrador/administrador_info_servicios.cpp \
+        Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
@@ -55,6 +57,8 @@ HEADERS += \
         Clases/doctor.h \
         Clases/usuario.h \
         Widgets/Administrador/administrador_crear_usuario.h \
+        Widgets/Administrador/administrador_info_servicios.h \
+        Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
@@ -78,6 +82,8 @@ HEADERS += \
 
 FORMS += \
         Widgets/Administrador/administrador_crear_usuario.ui \
+        Widgets/Administrador/administrador_info_servicios.ui \
+        Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
