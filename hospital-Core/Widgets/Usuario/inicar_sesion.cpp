@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "Clases/usuario.h"
 #include "mainwindow.h"
+#include "Widgets/Usuario/recuperar_contra.h"
 
 inicar_sesion::inicar_sesion(QWidget *parent) :
     QDialog(parent),
@@ -126,5 +127,13 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
             ui->line_contrasenia->clear();
         }
     }
+
+}
+
+void inicar_sesion::on_btn_contrasegnaolvidada_clicked()
+{
+    this->close();
+    recuperar_contra datosolvidados;
+    datosolvidados.exec();
 
 }

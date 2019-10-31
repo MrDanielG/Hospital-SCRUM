@@ -186,7 +186,7 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="text">
-    <string>¿Olvidaste tu contraseña?</string>
+    <string>¿Olvidaste tus datos?</string>
    </property>
   </widget>
  </widget>
