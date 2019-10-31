@@ -95,7 +95,7 @@ border-radius: 5px;</string>
    <property name="font">
     <font>
      <family>Montserrat Medium</family>
-     <pointsize>10</pointsize>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">

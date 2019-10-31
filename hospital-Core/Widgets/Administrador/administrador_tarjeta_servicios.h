@@ -16,6 +16,9 @@ public:
     explicit administrador_tarjeta_servicios(QString, QString, QString, QWidget *parent = nullptr);
     ~administrador_tarjeta_servicios();
 
+private slots:
+    void on_btn_gestionar_clicked();
+
 private:
     Ui::administrador_tarjeta_servicios *ui;
     QSqlDatabase mDatabase;
