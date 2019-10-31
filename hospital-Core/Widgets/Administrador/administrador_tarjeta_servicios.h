@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlQuery>
 namespace Ui {
 class administrador_tarjeta_servicios;
 }
@@ -22,6 +23,7 @@ private slots:
 private:
     Ui::administrador_tarjeta_servicios *ui;
     QSqlDatabase mDatabase;
+    QString id, servicio, foto, info;
 };
 
 #endif // ADMINISTRADOR_TARJETA_SERVICIOS_H

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
+    <width>629</width>
     <height>292</height>
    </rect>
   </property>
@@ -118,7 +118,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="nombre_servicio">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -139,27 +139,6 @@
     <string>Nombre Gestion</string>
    </property>
   </widget>
-  <widget class="QLabel" name="texto_tip">
-   <property name="geometry">
-    <rect>
-     <x>202</x>
-     <y>95</y>
-     <width>451</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat Light</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Info Gestion</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -176,12 +155,34 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPlainTextEdit" name="info_servicio">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>401</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Light</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>layoutWidget</zorder>
   <zorder></zorder>
   <zorder>img</zorder>
-  <zorder>label_3</zorder>
-  <zorder>texto_tip</zorder>
+  <zorder>nombre_servicio</zorder>
+  <zorder>info_servicio</zorder>
  </widget>
  <resources>
   <include location="../../resources.qrc"/>
