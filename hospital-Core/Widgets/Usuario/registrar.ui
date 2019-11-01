@@ -300,10 +300,10 @@ border-bottom: 1px solid #C4C4C4;</string>
 border-bottom: 1px solid #C4C4C4;</string>
         </property>
         <property name="text">
-         <string>Nombre de tu mascota o palabra clave</string>
+         <string/>
         </property>
         <property name="placeholderText">
-         <string>Nombre de Usuario</string>
+         <string>Palabra clave(mascota)</string>
         </property>
        </widget>
       </item>

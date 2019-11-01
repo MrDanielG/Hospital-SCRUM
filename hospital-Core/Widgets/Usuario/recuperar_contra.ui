@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -44,6 +44,9 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: #818181;</string>
+     </property>
      <property name="text">
       <string>Ingresa tu curp</string>
      </property>
@@ -56,8 +59,8 @@
       <rect>
        <x>60</x>
        <y>30</y>
-       <width>281</width>
-       <height>16</height>
+       <width>291</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -161,10 +164,10 @@ border-radius: 10px;</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>40</x>
        <y>30</y>
-       <width>281</width>
-       <height>16</height>
+       <width>321</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -178,28 +181,6 @@ border-radius: 10px;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>130</y>
-       <width>321</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Montserrat</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Ingresa la palabra clave que ingresaste al inicio</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="line_palabra">
@@ -248,14 +229,38 @@ border-radius: 10px;</string>
       <string>Enviar</string>
      </property>
     </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>90</y>
+       <width>321</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+color: #818181;</string>
+     </property>
+     <property name="plainText">
+      <string>Ingresa la palabra clave que ingresaste al inicio (mascota)</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_3">
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>40</x>
        <y>30</y>
-       <width>281</width>
+       <width>311</width>
        <height>16</height>
       </rect>
      </property>
@@ -330,6 +335,9 @@ border-radius: 10px;</string>
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: #818181</string>
+     </property>
      <property name="text">
       <string>Su nombre de usuario es</string>
      </property>
@@ -373,6 +381,9 @@ border-bottom: 1px solid #C4C4C4;</string>
        <family>Montserrat</family>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #818181</string>
      </property>
      <property name="text">
       <string>Su cotraseña es</string>

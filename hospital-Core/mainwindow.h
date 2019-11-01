@@ -11,7 +11,7 @@
 #include "Widgets/Administrador/administrador_servicios_hospital.h"
 #include "Widgets/Administrador/administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_gestionar_tips.h"
-#include "Widgets/Medico/medico_landpage.h"
+#include "Widgets/Paciente/paciente_landpage.h"
 namespace Ui
 {
 class MainWindow;
@@ -54,7 +54,7 @@ private:
     administrador_servicios_hospital gestionServiciosAdmin;
     administador_gestionar_usuarios gestionUsuariosAdmin;
     administrador_gestionar_tips gestionTipsAdmin;
-    medico_landPage medicoLandpage;
+    paciente_landpage landpagepaciente;
     int index;
 };
 
