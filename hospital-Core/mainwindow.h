@@ -12,6 +12,7 @@
 #include "Widgets/Administrador/administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_gestionar_tips.h"
 #include "Widgets/Paciente/paciente_landpage.h"
+#include "Widgets/Medico/medico_landpage.h"
 namespace Ui
 {
 class MainWindow;
@@ -45,6 +46,8 @@ private slots:
 
     void on_btn_salir_admin_clicked();
 
+    void on_btn_salir_medico_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -55,6 +58,8 @@ private:
     administador_gestionar_usuarios gestionUsuariosAdmin;
     administrador_gestionar_tips gestionTipsAdmin;
     paciente_landpage landpagepaciente;
+    medico_landPage landpageMedico;
+
     int index;
 };
 

@@ -54,7 +54,8 @@ SOURCES += \
         Widgets/Usuario/tarjeta_servicios.cpp \
         main.cpp \
         mainwindow.cpp \
-    Widgets/Medico/medico_landpage.cpp
+    Widgets/Medico/medico_landpage.cpp \
+    Widgets/Medico/medico_horario.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -84,7 +85,8 @@ HEADERS += \
         Widgets/Usuario/tarjeta_doctor.h \
         Widgets/Usuario/tarjeta_servicios.h \
         mainwindow.h \
-    Widgets/Medico/medico_landpage.h
+    Widgets/Medico/medico_landpage.h \
+    Widgets/Medico/medico_horario.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
@@ -112,7 +114,8 @@ FORMS += \
         Widgets/Usuario/tarjeta_doctor.ui \
         Widgets/Usuario/tarjeta_servicios.ui \
         mainwindow.ui \
-    Widgets/Medico/medico_landpage.ui
+    Widgets/Medico/medico_landpage.ui \
+    Widgets/Medico/medico_horario.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

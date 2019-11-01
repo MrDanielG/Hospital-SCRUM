@@ -33,10 +33,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>130</y>
-     <width>391</width>
-     <height>421</height>
+     <x>150</x>
+     <y>80</y>
+     <width>386</width>
+     <height>425</height>
     </rect>
    </property>
    <property name="text">
@@ -68,60 +68,60 @@
     <string>Medico</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>680</x>
-     <y>140</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>25</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: white;</string>
-   </property>
-   <property name="text">
-    <string>Hospital Puebla</string>
-   </property>
-  </widget>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>220</y>
+     <y>170</y>
      <width>481</width>
-     <height>121</height>
+     <height>233</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: #3E64FF;
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>Hospital Puebla</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #3E64FF;
 color: white;
 border: none;</string>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-   <property name="plainText">
-    <string>Se apoya en un equipo médico de gran rigor, profesionales
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Se apoya en un equipo médico de gran rigor, profesionales
 pioneros en sus técnicas y exigentes en los resultados,
 seleccionados entre los más prestigiosos médicos 
 nacionales e internacionales para formar parte de un equipo 
 multidisciplinario y de prestigio.</string>
-   </property>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources>
