@@ -7,7 +7,15 @@ tarjeta_doctor::tarjeta_doctor(QString idpersona, QString idmedico, QString nomb
     ui(new Ui::tarjeta_doctor){
     ui->setupUi(this);
 
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{

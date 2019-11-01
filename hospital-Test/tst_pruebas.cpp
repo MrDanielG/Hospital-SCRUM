@@ -39,9 +39,11 @@ void pruebas::abrirBase()
     QSqlDatabase mDatabase;
     mDatabase = QSqlDatabase::addDatabase("QMYSQL");
     mDatabase.setHostName("localhost");
+      mDatabase.setDatabaseName("hospital");
     mDatabase.setDatabaseName("hospital");
     mDatabase.setUserName("root");
     mDatabase.setPassword("luisdrew1394");
+      mDatabase.open();
     mDatabase.open();
 
     if (!mDatabase.isOpen()){

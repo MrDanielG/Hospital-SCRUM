@@ -11,7 +11,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 {
     ui->setupUi(this);
 
-    mDatabase = QSqlDatabase::database("Connection");
+
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
 
     ui->stackedWidget->setCurrentIndex(1);
     ui->stackedWidget_2->setCurrentIndex(1);
@@ -21,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(4, &gestionServiciosAdmin);
     ui->stackedWidget->insertWidget(5, &gestionUsuariosAdmin);
     ui->stackedWidget->insertWidget(6, &gestionTipsAdmin);
+    ui->stackedWidget->insertWidget(7, &medicoLandpage);
 }
 
 MainWindow::~MainWindow()
@@ -48,7 +58,7 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
          *
          * esto se hace para todos los else if dependiendo el caso
         */
-
+        ui->stackedWidget->setCurrentIndex(7);
     }
     else if(this->index == 2){
 
