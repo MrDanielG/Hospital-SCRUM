@@ -7,5 +7,8 @@
         <file>Imagenes/imgPrueba.png</file>
         <file>Imagenes/imgTipTest.png</file>
         <file>Imagenes/imgServicio1.png</file>
+        <file>../../../Downloads/Vector.png</file>
+        <file>Imagenes/Ellipse7.png</file>
+        <file>Imagenes/Vector.png</file>
     </qresource>
 </RCC>

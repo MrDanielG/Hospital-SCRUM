@@ -44,5 +44,4 @@ void Tarjeta_Servicios::insertarDatos(){
 void Tarjeta_Servicios::on_btn_visualizar_servicio_clicked(){
     info_servicios visualizarInfo(this->id);
     visualizarInfo.exec();
-
 }

@@ -13,6 +13,8 @@
 #include "Widgets/Administrador/administrador_gestionar_tips.h"
 #include "Widgets/Paciente/paciente_landpage.h"
 #include "Widgets/Medico/medico_landpage.h"
+#include "Widgets/Medico/medico_horario.h"
+
 namespace Ui
 {
 class MainWindow;
@@ -48,6 +50,10 @@ private slots:
 
     void on_btn_salir_medico_clicked();
 
+    void on_btn_horario_medico_clicked();
+
+    void on_btn_inicio_medico_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -59,6 +65,8 @@ private:
     administrador_gestionar_tips gestionTipsAdmin;
     paciente_landpage landpagepaciente;
     medico_landPage landpageMedico;
+    medico_horario horarioMedico;
+
 
     int index;
 };

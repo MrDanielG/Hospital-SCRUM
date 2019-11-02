@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_WIN
   mDatabase = QSqlDatabase::addDatabase("QODBC","Connection");
 #elif defined(Q_OS_MAC)
-    mDatabase = QSqlDatabase::addDatabase("QMYSQL");
+  mDatabase = QSqlDatabase::addDatabase("QMYSQL");
   mDatabase.setHostName("localhost");
   mDatabase.setUserName("root");
   mDatabase.setPassword("luisdrew1394");

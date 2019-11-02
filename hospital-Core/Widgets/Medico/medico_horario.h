@@ -2,6 +2,9 @@
 #define MEDICO_HORARIO_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+
 
 namespace Ui {
 class medico_horario;
@@ -17,6 +20,7 @@ public:
 
 private:
     Ui::medico_horario *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // MEDICO_HORARIO_H

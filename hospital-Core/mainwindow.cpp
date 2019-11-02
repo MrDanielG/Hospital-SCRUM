@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(6, &gestionTipsAdmin);
     ui->stackedWidget->insertWidget(7, &landpagepaciente);
     ui->stackedWidget->insertWidget(8, &landpageMedico);
+    ui->stackedWidget->insertWidget(9, &horarioMedico);
 }
 
 MainWindow::~MainWindow()
@@ -141,4 +142,14 @@ void MainWindow::on_btn_salir_medico_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_btn_horario_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+void MainWindow::on_btn_inicio_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
 }
