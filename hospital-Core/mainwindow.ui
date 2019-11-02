@@ -673,8 +673,19 @@ color: white;
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
-          <string notr="true">border: none;
-color: white;
+          <string notr="true">*{
+	border: none;
+	color: white;
+}
+
+:hover{
+	border-bottom: 1px solid #818181;
+}
+
+
+
+	
+
 </string>
          </property>
          <property name="text">
