@@ -7,7 +7,15 @@ administrador_crear_usuario::administrador_crear_usuario(QWidget *parent) :
     ui(new Ui::administrador_crear_usuario)
 {
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if (!mDatabase.isOpen())
     {
         qDebug() << "ERROR con Base de Datos, esto es: ADMINISTRADOR CREAR USUARIOS";

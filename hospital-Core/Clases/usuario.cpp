@@ -5,7 +5,16 @@
 
 Usuario::Usuario(){
 
-    mDatabase = QSqlDatabase::database("Connection");
+    #ifdef Q_OS_WIN
+      mDatabase = QSqlDatabase::database("Connection");
+    #elif defined(Q_OS_MAC)
+      mDatabase = QSqlDatabase(QSqlDatabase::addDatabase("QMYSQL"));
+      mDatabase.setHostName("localhost");
+      mDatabase.setDatabaseName("hospital");
+      mDatabase.setUserName("root");
+      mDatabase.setPassword("luisdrew1394");
+      mDatabase.open();
+    #endif
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{
@@ -16,7 +25,16 @@ Usuario::Usuario(){
 
 Usuario::Usuario(QString nu, QString pd){
 
-    mDatabase = QSqlDatabase::database("Connection");
+    #ifdef Q_OS_WIN
+      mDatabase = QSqlDatabase::database("Connection");
+    #elif defined(Q_OS_MAC)
+      mDatabase = QSqlDatabase(QSqlDatabase::addDatabase("QMYSQL"));
+      mDatabase.setHostName("localhost");
+      mDatabase.setDatabaseName("hospital");
+      mDatabase.setUserName("root");
+      mDatabase.setPassword("luisdrew1394");
+      mDatabase.open();
+    #endif
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{

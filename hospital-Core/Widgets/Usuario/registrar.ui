@@ -776,6 +776,88 @@ border-radius: 10px;
     </widget>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>90</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Paterno</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="registrarse_aMaterno">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>110</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;
+background: none;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>90</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Materno</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="registrarse_aMaterno_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;
+background: none;</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="../../resources.qrc"/>
