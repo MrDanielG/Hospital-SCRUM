@@ -6,7 +6,15 @@ administrador_tarjeta_gestion::administrador_tarjeta_gestion(QString id, QString
                                                                                                                          ui(new Ui::administrador_tarjeta_gestion)
 {
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if (!mDatabase.isOpen())
     {
         qDebug() << "ERROR con Base de Datos, esto es: TARJETA GESTION";

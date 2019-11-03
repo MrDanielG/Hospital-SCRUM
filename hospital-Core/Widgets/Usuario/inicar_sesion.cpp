@@ -5,13 +5,21 @@
 #include "Clases/usuario.h"
 #include "mainwindow.h"
 #include "Widgets/Usuario/recuperar_contra.h"
-
 inicar_sesion::inicar_sesion(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::inicar_sesion)
 {
+
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR";
     }else{
@@ -72,6 +80,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 this->close();
                             }
                             else if(usuario.tipo_usuario == "Paciente"){
+
                                 ui->line_correo->clear();
                                 ui->line_contrasenia->clear();
 
