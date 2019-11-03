@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(7, &landpagepaciente);
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
+    ui->stackedWidget->insertWidget(10,&solicitudesMedico);
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +48,6 @@ void MainWindow::setindex(int index){
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    inicar_sesion dialogo_iniciar_sesion;
     dialogo_iniciar_sesion.exec();
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -149,4 +149,32 @@ void MainWindow::on_btn_horario_medico_clicked()
 void MainWindow::on_btn_inicio_medico_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
+}
+
+void MainWindow::on_btn_solicitudes_medico_clicked()
+{
+    QString usuario= dialogo_iniciar_sesion.getUsuario(),idPer,idEmp,idMed;
+    QSqlQuery query(mDatabase);
+    qDebug()<<"Usuario: "<<usuario;
+    query.prepare("select id_persona from persona where id_usuario='"+usuario+"'");
+    query.exec();
+    query.next();
+    idPer=query.value(0).toString();
+
+    query.prepare("select id_empleado from empleado where id_persona="+idPer);
+    query.exec();
+    query.next();
+    idEmp=query.value(0).toString();
+
+    query.prepare("");
+    query.exec();
+    query.next();
+    idMed=query.value(0).toString();
+
+    qDebug()<<"idMedico: "<<idMed;
+
+
+    solicitudesMedico.setIdMedico(idMed);
+    solicitudesMedico.inicializar();
+    ui->stackedWidget->setCurrentIndex(10);
 }

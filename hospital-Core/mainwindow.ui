@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -729,13 +729,62 @@ color: white;
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
+          <string notr="true">*{
+border: none;
+background: none;
+color: white;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Recetas</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>50</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_solicitudes_medico">
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>11</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
           <string notr="true">border: none;
 background: none;
 color: white;
 </string>
          </property>
          <property name="text">
-          <string>Recetas</string>
+          <string>Solicitudes</string>
          </property>
         </widget>
        </item>
@@ -795,8 +844,8 @@ color: white;
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>50</width>
-           <height>20</height>
+           <width>47</width>
+           <height>27</height>
           </size>
          </property>
         </spacer>

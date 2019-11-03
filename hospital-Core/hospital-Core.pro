@@ -34,6 +34,7 @@ SOURCES += \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
         Widgets/Medico/medico_solicitudes.cpp \
+    Widgets/Medico/medico_tarjeta_citarechazada.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
         Widgets/Medico/medico_solicitudes.h \
+    Widgets/Medico/medico_tarjeta_citarechazada.h \
         Widgets/Paciente/paciente_landpage.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
@@ -99,6 +101,7 @@ FORMS += \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
         Widgets/Medico/medico_solicitudes.ui \
+    Widgets/Medico/medico_tarjeta_citarechazada.ui \
         Widgets/Paciente/paciente_landpage.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \

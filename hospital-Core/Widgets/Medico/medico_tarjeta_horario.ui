@@ -97,7 +97,7 @@ border-radius: 10px;</string>
   <widget class="QLabel" name="lb_hora_medico_tarjeta_horario">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>160</x>
      <y>80</y>
      <width>121</width>
      <height>20</height>
