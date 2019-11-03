@@ -33,6 +33,7 @@ SOURCES += \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Medico/medico_info_cita_medica.cpp \
         Widgets/Medico/medico_solicitudes.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
@@ -68,6 +69,7 @@ HEADERS += \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Medico/medico_info_cita_medica.h \
         Widgets/Medico/medico_solicitudes.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
         Widgets/Paciente/paciente_landpage.h \
@@ -100,6 +102,7 @@ FORMS += \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Medico/medico_info_cita_medica.ui \
         Widgets/Medico/medico_solicitudes.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
         Widgets/Paciente/paciente_landpage.ui \
