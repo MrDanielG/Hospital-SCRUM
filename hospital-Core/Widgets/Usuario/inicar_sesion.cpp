@@ -5,11 +5,11 @@
 #include "Clases/usuario.h"
 #include "mainwindow.h"
 #include "Widgets/Usuario/recuperar_contra.h"
-
 inicar_sesion::inicar_sesion(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::inicar_sesion)
 {
+
     ui->setupUi(this);
 #ifdef Q_OS_WIN
   mDatabase = QSqlDatabase::database("Connection");
@@ -80,6 +80,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 this->close();
                             }
                             else if(usuario.tipo_usuario == "Paciente"){
+
                                 ui->line_correo->clear();
                                 ui->line_contrasenia->clear();
 

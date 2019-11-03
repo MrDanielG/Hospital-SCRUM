@@ -16,10 +16,10 @@ medico_tarjeta_horario::medico_tarjeta_horario(QString nombre, QString paterno, 
       mDatabase.setPassword("luisdrew1394");
     #endif
     if(!mDatabase.isOpen()){
-          qDebug()<<"Error Base de Datos, esto es: ADMINISTRADOR TARJETA SERVICIOS";
+          qDebug()<<"Error";
            return;
     }else{
-            qDebug()<<"Base de datos continua abierta, esto es: ADMINISTRADOR TARJETA SERVICIOS";
+            qDebug()<<"abierta";
     }
 
     this->nombre = nombre;

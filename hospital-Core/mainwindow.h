@@ -35,23 +35,14 @@ private slots:
     void on_btn_doctores_info_clicked();
     void on_btn_servicios_clicked();
     void on_btn_servicios_2_clicked();
-
     void on_btn_inicio_admin_clicked();
-
     void on_btn_remedios_admin_clicked();
-
     void on_btn_gestionar_servicios_admin_clicked();
-
     void on_btn_gestionar_usuarios_admin_clicked();
-
     void on_btn_gestionar_tips_admin_clicked();
-
     void on_btn_salir_admin_clicked();
-
     void on_btn_salir_medico_clicked();
-
     void on_btn_horario_medico_clicked();
-
     void on_btn_inicio_medico_clicked();
 
 private:

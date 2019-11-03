@@ -4,7 +4,6 @@
 #include <QDebug>
 #include <QSqlError>
 
-
 medico_horario::medico_horario(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::medico_horario)
@@ -26,7 +25,6 @@ medico_horario::medico_horario(QWidget *parent) :
         }
 
     QSqlQuery query(mDatabase);
-
     query.prepare("select * from tarjetaCitaHorario");
     query.exec();
 

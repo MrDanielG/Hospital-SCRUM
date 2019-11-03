@@ -81,9 +81,6 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     else if(this->index == 5){
 
     }
-
-
-
 }
 
 void MainWindow::on_btn_registrarse_clicked(){

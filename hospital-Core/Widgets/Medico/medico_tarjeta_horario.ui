@@ -97,10 +97,10 @@ border-radius: 10px;</string>
   <widget class="QLabel" name="lb_hora_medico_tarjeta_horario">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>140</x>
      <y>80</y>
-     <width>71</width>
-     <height>16</height>
+     <width>121</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -113,7 +113,7 @@ border-radius: 10px;</string>
 </string>
    </property>
    <property name="text">
-    <string>8:30 - 9:40</string>
+    <string>17:30:00 - 18:00:00</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_gestionar_medico_tarjeta_horario">
