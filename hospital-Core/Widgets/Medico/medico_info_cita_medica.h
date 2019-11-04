@@ -20,6 +20,9 @@ public:
     ~medico_info_cita_medica();
     void insertarDatos();
 
+private slots:
+    void on_btn_rechazar_cita_clicked();
+
 private:
     Ui::medico_info_cita_medica *ui;
     QSqlDatabase mDatabase;

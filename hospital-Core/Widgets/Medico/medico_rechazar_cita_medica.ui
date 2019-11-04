@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>341</width>
-    <height>327</height>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>0</x>
      <y>0</y>
      <width>341</width>
-     <height>327</height>
+     <height>301</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -60,7 +60,7 @@
    <property name="font">
     <font>
      <family>Montserrat Medium</family>
-     <pointsize>11</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -70,11 +70,11 @@
     <string>Escribe una justificación para el rechazo de tu cita...</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_cancelar_rechazo_cita">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>210</y>
+     <x>60</x>
+     <y>220</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -101,8 +101,8 @@ border-radius: 5px;</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>210</y>
+     <x>180</x>
+     <y>220</y>
      <width>111</width>
      <height>41</height>
     </rect>

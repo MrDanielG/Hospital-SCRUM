@@ -209,7 +209,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_rechazar_cita">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -237,7 +237,7 @@ border-radius: 5px;</string>
     <string>Rechazar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btn_iniciar_cita">
    <property name="geometry">
     <rect>
      <x>250</x>
