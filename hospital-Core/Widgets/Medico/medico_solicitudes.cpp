@@ -49,7 +49,7 @@ void medico_solicitudes::limpiarCatalogo()
 void medico_solicitudes::on_btn_solicitudesEspera_clicked()
 {
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=1");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=1");
     query.exec();
 
     limpiarCatalogo();
@@ -82,7 +82,7 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 {
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=3");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=3");
     query.exec();
 
     limpiarCatalogo();
@@ -101,8 +101,8 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
         QString hFin = query.value(5).toString();
         QString foto = query.value(7).toString();
 
-        row = i / 4;
-        col = i % 4;
+        row = i / 3;
+        col = i % 3;
         medico_tarjeta_CitaRechazada *tarjeta= new medico_tarjeta_CitaRechazada(nombre, paterno, materno, morivo, hInicio, hFin, foto);
         tarjeta->insertarDatos();
 
@@ -114,7 +114,7 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 void medico_solicitudes::on_btn_solicitudesAprobadas_clicked()
 {
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=2");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=2");
     query.exec();
 
     limpiarCatalogo();

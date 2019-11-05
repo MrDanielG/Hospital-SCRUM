@@ -155,21 +155,25 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
 {
     QString usuario= dialogo_iniciar_sesion.getUsuario(),idPer,idEmp,idMed;
     QSqlQuery query(mDatabase);
+    QSqlQuery query1(mDatabase);
+    QSqlQuery query2(mDatabase);
     qDebug()<<"Usuario: "<<usuario;
     query.prepare("select id_persona from persona where id_usuario='"+usuario+"'");
     query.exec();
     query.next();
     idPer=query.value(0).toString();
+    qDebug()<<"idPer: " <<idPer;
 
-    query.prepare("select id_empleado from empleado where id_persona="+idPer);
-    query.exec();
-    query.next();
-    idEmp=query.value(0).toString();
+    query1.prepare("select id_empleado from empleado where id_persona='"+idPer+"'");
+    query1.exec();
+    query1.next();
+    idEmp=query1.value(0).toString();
+    qDebug()<<"idEmp: " <<idEmp;
 
-    query.prepare("");
-    query.exec();
-    query.next();
-    idMed=query.value(0).toString();
+    query2.prepare("SELECT id_medico FROM medico WHERE id_empleado = '"+idEmp+"'");
+    query2.exec();
+    query2.next();
+    idMed=query2.value(0).toString();
 
     qDebug()<<"idMedico: "<<idMed;
 
