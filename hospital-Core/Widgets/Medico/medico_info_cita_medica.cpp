@@ -64,6 +64,7 @@ void medico_info_cita_medica::insertarDatos()
 
 void medico_info_cita_medica::on_btn_rechazar_cita_clicked()
 {
+    qDebug()<<"idCita" <<this->idCita;
     medico_rechazar_cita_medica rechazarCita(this->idCita);
     rechazarCita.exec();
 

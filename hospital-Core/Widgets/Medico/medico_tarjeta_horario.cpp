@@ -53,6 +53,7 @@ void medico_tarjeta_horario::insertarDatos(){
 // QString nombre, QString paterno, QString materno,QString hInicio, QString hFin, QString foto,QString idCita,
 void medico_tarjeta_horario::on_btn_gestionar_medico_tarjeta_horario_clicked()
 {
-    medico_info_cita_medica *infoCitaMedica= new medico_info_cita_medica(this->nombre,this->paterno,this->materno,this->hInicio,this->hFin,this->foto,this->idCita);
+    qDebug()<<"idCita Medico_tarjeta_horario: " <<this->idCita;
+    medico_info_cita_medica *infoCitaMedica = new medico_info_cita_medica(this->nombre,this->paterno,this->materno,this->hInicio,this->hFin,this->foto,this->idCita);
     infoCitaMedica->show();
 }

@@ -42,12 +42,12 @@ void medico_rechazar_cita_medica::on_btn_cancelar_rechazo_cita_clicked()
 
 bool medico_rechazar_cita_medica::getBandera()
 {
-    return bandera;
+    return this->bandera;
 }
 
 void medico_rechazar_cita_medica::setBandera()
 {
-    bandera=false;
+    this->bandera=false;
 }
 
 void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
@@ -65,11 +65,13 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
     qDebug()<<"Hora "<<horaActual;
 
     QSqlQuery query(mDatabase);
-    query.prepare("select hora_inicio from cita_medica where id_cita_medica="+idCita);
+    query.prepare("select hora_inicio from cita_medica where id_cita_medica='"+this->idCita+"'");
     query.exec();
     query.next();
     hcita=query.value(0).toTime();
     auxh=query.value(0).toString();
+    qDebug()<<"hcita "<<hcita;
+    qDebug()<<"auxh "<<auxh;
 
     query.prepare("select timediff('"+auxh+"','"+horaActual+"')");
     query.exec();
