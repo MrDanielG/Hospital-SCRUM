@@ -12,12 +12,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 {
     ui->setupUi(this);
 
-    mDatabase = QSqlDatabase::database("Connection");
-    if (!mDatabase.isOpen()){
-        qDebug() << "ERROR";
-    }else{
-        qDebug() << "Base de datos conectada exitosamente";
-    }
+
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
 
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
@@ -28,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(5, &gestionUsuariosAdmin);
     ui->stackedWidget->insertWidget(6, &gestionTipsAdmin);
     ui->stackedWidget->insertWidget(7, &landpagepaciente);
+    ui->stackedWidget->insertWidget(8, &landpageMedico);
+    ui->stackedWidget->insertWidget(9, &horarioMedico);
 }
 
 MainWindow::~MainWindow()
@@ -56,12 +62,13 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     */
 
     if(this->index == 1){
-         ui->stackedWidget->setCurrentIndex(7);
-         ui->stackedWidget_2->setCurrentIndex(3);
+        ui->stackedWidget->setCurrentIndex(8);
+        ui->stackedWidget_2->setCurrentIndex(2);
 
     }
     else if(this->index == 2){
-
+        ui->stackedWidget->setCurrentIndex(7);
+        ui->stackedWidget_2->setCurrentIndex(3);
     }
     else if(this->index == 3){
         ui->stackedWidget->setCurrentIndex(1);
@@ -74,9 +81,6 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     else if(this->index == 5){
 
     }
-
-
-
 }
 
 void MainWindow::on_btn_registrarse_clicked(){
@@ -129,4 +133,20 @@ void MainWindow::on_btn_salir_admin_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_btn_salir_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_btn_horario_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+void MainWindow::on_btn_inicio_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
 }

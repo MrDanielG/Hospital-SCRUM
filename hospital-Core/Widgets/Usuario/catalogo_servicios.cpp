@@ -2,13 +2,22 @@
 #include "ui_catalogo_servicios.h"
 #include "Widgets/Usuario/tarjeta_servicios.h"
 #include <QDebug>
+#include <QSqlError>
 
 Catalogo_servicios::Catalogo_servicios(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Catalogo_servicios)
 {
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if (!mDatabase.isOpen()){
         qDebug() << "ERROR conexion a la Base, esto es CATALOGO SERVICIOS";
     }else{

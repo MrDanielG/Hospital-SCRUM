@@ -8,7 +8,15 @@ administrador_info_gestion::administrador_info_gestion(QString nombre, QString t
     ui(new Ui::administrador_info_gestion)
 {
     ui->setupUi(this);
-    mDatabase = QSqlDatabase::database("Connection");
+#ifdef Q_OS_WIN
+  mDatabase = QSqlDatabase::database("Connection");
+#elif defined(Q_OS_MAC)
+  mDatabase = QSqlDatabase::database();
+  mDatabase.setHostName("localhost");
+  mDatabase.setDatabaseName("hospital");
+  mDatabase.setUserName("root");
+  mDatabase.setPassword("luisdrew1394");
+#endif
     if(!mDatabase.isOpen()){
           qDebug()<<"Error Base de Datos, esto es: ADMINISTRADOR INFO GESTION";
            return;

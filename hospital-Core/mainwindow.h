@@ -12,6 +12,9 @@
 #include "Widgets/Administrador/administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_gestionar_tips.h"
 #include "Widgets/Paciente/paciente_landpage.h"
+#include "Widgets/Medico/medico_landpage.h"
+#include "Widgets/Medico/medico_horario.h"
+
 namespace Ui
 {
 class MainWindow;
@@ -32,18 +35,15 @@ private slots:
     void on_btn_doctores_info_clicked();
     void on_btn_servicios_clicked();
     void on_btn_servicios_2_clicked();
-
     void on_btn_inicio_admin_clicked();
-
     void on_btn_remedios_admin_clicked();
-
     void on_btn_gestionar_servicios_admin_clicked();
-
     void on_btn_gestionar_usuarios_admin_clicked();
-
     void on_btn_gestionar_tips_admin_clicked();
-
     void on_btn_salir_admin_clicked();
+    void on_btn_salir_medico_clicked();
+    void on_btn_horario_medico_clicked();
+    void on_btn_inicio_medico_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -55,6 +55,10 @@ private:
     administador_gestionar_usuarios gestionUsuariosAdmin;
     administrador_gestionar_tips gestionTipsAdmin;
     paciente_landpage landpagepaciente;
+    medico_landPage landpageMedico;
+    medico_horario horarioMedico;
+
+
     int index;
 };
 
