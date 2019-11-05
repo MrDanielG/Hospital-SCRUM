@@ -53,6 +53,6 @@ void administrador_tarjeta_cancelacion_cita::insertarDatos()
 
 void administrador_tarjeta_cancelacion_cita::on_btn_admin_visualizar_cancelacion_cita_clicked()
 {
-    administrador_visualizar_cancelacion_cita dialogo_visualizacion;
+    administrador_visualizar_cancelacion_cita dialogo_visualizacion("4");
     dialogo_visualizacion.exec();
 }

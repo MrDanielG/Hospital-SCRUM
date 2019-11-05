@@ -8,7 +8,7 @@ administrador_visualizar_cancelacion_cita::administrador_visualizar_cancelacion_
     ui->setupUi(this);
     ui->setupUi(this);
 
-    this->idinfo = idinfo;
+    this->id = id;
     #ifdef Q_OS_WIN
       mDatabase = QSqlDatabase::database("Connection");
     #elif defined(Q_OS_MAC)
