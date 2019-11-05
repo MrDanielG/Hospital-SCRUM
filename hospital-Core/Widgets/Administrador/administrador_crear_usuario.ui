@@ -29,7 +29,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -582,6 +582,19 @@ border-bottom: 1px solid #C4C4C4;</string>
          <string>CURP</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <widget class="QLabel" name="label_10">

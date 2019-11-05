@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>430</width>
+    <width>418</width>
     <height>558</height>
    </rect>
   </property>
@@ -29,7 +29,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -295,6 +295,55 @@ border-bottom: 1px solid #C4C4C4;</string>
        </spacer>
       </item>
       <item>
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: black;</string>
+        </property>
+        <property name="text">
+         <string>Info para recuperar contraseña:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_mascota">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Mascota</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_14">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QPushButton" name="btn_continuar">
         <property name="minimumSize">
          <size>
@@ -527,6 +576,36 @@ border-bottom: 1px solid #C4C4C4;</string>
        </spacer>
       </item>
       <item>
+       <widget class="QLineEdit" name="lineEdit_curp">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+        </property>
+        <property name="placeholderText">
+         <string>CURP</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_13">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QLabel" name="label_10">
         <property name="font">
          <font>
@@ -593,34 +672,7 @@ border-bottom: 1px solid #C4C4C4;</string>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_8">
-          <property name="font">
-           <font>
-            <family>Montserrat</family>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(129, 129, 129);</string>
-          </property>
-          <property name="text">
-           <string>Edad:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinBox_edad">
-          <property name="font">
-           <font>
-            <family>Montserrat</family>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QHBoxLayout" name="horizontalLayout_3"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
