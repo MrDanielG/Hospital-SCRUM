@@ -48,13 +48,13 @@ void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
 
     query.next();
     QString nombre = query.value(1).toString() + " " + query.value(2).toString() + " " + query.value(3).toString();
-    QString img = query.value(8).toString();
+    QString img = query.value(7).toString();
     int indexUsr = query.value(13).toInt();
     QString tipo_usr = "xd";
-    QString info1 = query.value(5).toString();
-    QString info2 = "Edad: " + query.value(7).toString();
-    QString info3 = query.value(9).toString();
-    QString id_usuario = query.value(10).toString();
+    QString info1 = "CURP: " + query.value(10).toString();
+    QString info2 = query.value(5).toString();
+    QString info3 = query.value(8).toString();
+    QString id_usuario = query.value(9).toString();
     switch (indexUsr)
     {
     case 1:

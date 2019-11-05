@@ -14,7 +14,7 @@ class administrador_modificar_usuario : public QDialog
     Q_OBJECT
 
 public:
-    explicit administrador_modificar_usuario(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
+    explicit administrador_modificar_usuario(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
     ~administrador_modificar_usuario();
 
 private slots:
@@ -33,9 +33,10 @@ private:
     QString nacimiento;
     QString correo;
     QString sexo;
-    QString edad;
     QString foto;
     QString direccion;
+    QString curp;
+    QString mascota;
 };
 
 #endif // ADMINISTRADOR_MODIFICAR_USUARIO_H

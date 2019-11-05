@@ -94,9 +94,10 @@ void administrador_info_gestion::on_btn_gestionar_clicked()
     QString nacimiento;
     QString correo ;
     QString sexo;
-    QString edad;
     QString foto;
     QString direccion;
+    QString curp;
+    QString mascota;
 
     while (infoUsuario.next()) {
          nombreUsuario = this->id_usr;
@@ -107,14 +108,15 @@ void administrador_info_gestion::on_btn_gestionar_clicked()
          materno = infoUsuario.value(3).toString();
          nacimiento = infoUsuario.value(4).toString();
          correo = infoUsuario.value(5).toString();
-         sexo = infoUsuario.value(7).toString();
-         edad = infoUsuario.value(8).toString();
-         foto = infoUsuario.value(9).toString();
-         direccion = infoUsuario.value(10).toString();
+         sexo = infoUsuario.value(6).toString();
+         foto = infoUsuario.value(7).toString();
+         direccion = infoUsuario.value(8).toString();
+         curp = infoUsuario.value(10).toString();
+         mascota = infoUsuario.value(14).toString();
     }
     infoUsuario.finish();
 
-    administrador_modificar_usuario adminUsuario(nombreUsuario, tipoUsuario, contra, nombre, paterno, materno, nacimiento, correo, sexo, edad, foto, direccion, this);
+    administrador_modificar_usuario adminUsuario(nombreUsuario, tipoUsuario, contra, nombre, paterno, materno, nacimiento, correo, sexo, foto, direccion, curp, mascota, this);
     adminUsuario.exec();
     this->close();
 }
