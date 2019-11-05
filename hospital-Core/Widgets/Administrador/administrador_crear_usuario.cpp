@@ -39,11 +39,12 @@ void administrador_crear_usuario::on_btn_continuar_clicked()
     if(ui->lineEdit_contra->text() == ui->lineEdit_confirma_contra->text() &&
             ui->lineEdit_contra->text() != "" &&
             ui->lineEdit_confirma_contra->text() != "" &&
-            ui->lineEdit_usuario->text() != ""){
+            ui->lineEdit_usuario->text() != "" &&
+            ui->lineEdit_mascota->text() != ""){
 
         this->nombreUsuario = ui->lineEdit_usuario->text();
         this->contra = ui->lineEdit_contra->text();
-
+        this->mascota = ui->lineEdit_mascota->text();
         //Asignamos un tipo usuario conforme al combo box
         if(ui->comboBox_tipo_usuario->currentText() == "Medico"){
             this->tipoUsuario = "1";
@@ -67,7 +68,8 @@ void administrador_crear_usuario::on_btn_crear_usuario_clicked()
             ui->lineEdit_paterno->text() != "" &&
             ui->lineEdit_materno->text() != "" &&
             ui->lineEdit_correo->text() != "" &&
-            ui->lineEdit_direccion->text() != ""){
+            ui->lineEdit_direccion->text() != "" &&
+            ui->lineEdit_curp->text() != ""){
 
         this->nombre = ui->lineEdit_nombre->text();
         this->paterno = ui->lineEdit_paterno->text();
@@ -76,19 +78,33 @@ void administrador_crear_usuario::on_btn_crear_usuario_clicked()
         this->direccion = ui->lineEdit_direccion->text();
         this->nacimiento = ui->dateEdit_fechaNacimiento->text();
         this->sexo = ui->comboBox_sexo->currentText();
-        this->edad = QString::number(ui->spinBox_edad->value()); //Se cambia de int a Qstring
-        this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto, esto se cambiara despues
+        this->curp = ui->lineEdit_curp->text();
 
         //Se crean las Querys, primero se crea Usuario
         QSqlQuery crearUsuario(mDatabase);
-        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario) VALUES ('"+this->nombreUsuario+"','"+this->contra+"','"+this->tipoUsuario+"')");
+        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario, mascota) VALUES ('"+this->nombreUsuario+"','"+this->contra+"','"+this->tipoUsuario+"', '"+this->mascota+"')");
         crearUsuario.exec();
 
         QSqlQuery crearPersona(mDatabase);
-        crearPersona.prepare("INSERT INTO `persona`(`nombre`, `paterno`, `materno`, `fNacimiento`, `correo`, `sexo`, `edad`, `foto`, `direccion`, `id_usuario`) "
-                             "VALUES ('"+this->nombre+"','"+this->paterno+"','"+this->materno+"','"+this->nacimiento+"','"+this->correo+"','"+this->sexo+"','"+this->edad+"','"+this->foto+"', '"+this->direccion+"' ,'"+this->nombreUsuario+"')");
+        crearPersona.prepare("INSERT INTO `persona`(`nombre`, `paterno`, `materno`, `fNacimiento`, `correo`, `sexo`, `foto`, `direccion`, `id_usuario`, `curp`) "
+                             "VALUES ('"+this->nombre+"','"+this->paterno+"','"+this->materno+"','"+this->nacimiento+"','"+this->correo+"','"+this->sexo+"', '"+this->foto+"', '"+this->direccion+"' ,'"+this->nombreUsuario+"', '"+this->curp+"')");
         crearPersona.exec();
 
         this->close();
+    }
+}
+
+void administrador_crear_usuario::on_btn_foto_clicked()
+{
+    QString dir = QFileDialog::getOpenFileName(this,tr("Seleccione una imagen"), "/C:/", tr("Archivos de Imagen (* .png,* .jpg)"));
+    qDebug()<<dir << "/directorio";
+    if(!dir.isEmpty()){
+        this->foto = dir;
+        QMessageBox::information(this, tr("Correcto"),
+                     tr("Imagen agregada correctamente"));
+    }else{
+        this->foto = "C:/img/imgServicio1.png"; //Img por Defecto
+        QMessageBox::information(this, tr("Error"),
+                     tr("No se inserto ninguna imagen"));
     }
 }

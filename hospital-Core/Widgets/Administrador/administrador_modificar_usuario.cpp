@@ -2,7 +2,7 @@
 #include "ui_administrador_modificar_usuario.h"
 #include "QDebug"
 #include "QMessageBox"
-administrador_modificar_usuario::administrador_modificar_usuario(QString nombreUsuario, QString tipoUsuario, QString contra, QString nombre, QString paterno, QString materno, QString nacimiento, QString correo, QString sexo, QString edad, QString foto, QString direccion, QWidget *parent) :
+administrador_modificar_usuario::administrador_modificar_usuario(QString nombreUsuario, QString tipoUsuario, QString contra, QString nombre, QString paterno, QString materno, QString nacimiento, QString correo, QString sexo, QString foto, QString direccion, QString curp, QString mascota, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::administrador_modificar_usuario)
 {
@@ -35,9 +35,10 @@ administrador_modificar_usuario::administrador_modificar_usuario(QString nombreU
     this->nacimiento = nacimiento;
     this->correo = correo;
     this->sexo = sexo;
-    this->edad = edad;
     this->foto = foto;
     this->direccion = direccion;
+    this->curp = curp;
+    this->mascota = mascota;
 
     ui->lineEdit_usuario->setText(nombreUsuario);
     ui->label_tipoUsuario->setText(tipoUsuario);
@@ -49,9 +50,10 @@ administrador_modificar_usuario::administrador_modificar_usuario(QString nombreU
     ui->dateEdit_fechaNacimiento->setDate(QDate::fromString(nacimiento,"dd/MM/yyyy"));
     ui->lineEdit_correo->setText(correo);
     this->sexo = sexo;
-    ui->spinBox_edad->setValue(edad.toInt());
     this->foto = foto;
     ui->lineEdit_direccion->setText(direccion);
+    ui->lineEdit_mascota->setText(mascota);
+    ui->lineEdit_curp->setText(curp);
 
     ui->stackedWidget->setCurrentIndex(0);
 }
@@ -66,7 +68,8 @@ void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
             ui->lineEdit_paterno->text() != "" &&
             ui->lineEdit_materno->text() != "" &&
             ui->lineEdit_correo->text() != "" &&
-            ui->lineEdit_direccion->text() != ""){
+            ui->lineEdit_direccion->text() != "" &&
+            ui->lineEdit_curp->text() != ""){
 
 
         QMessageBox msgBox;
@@ -87,16 +90,17 @@ void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
             this->nacimiento = ui->dateEdit_fechaNacimiento->text();
             this->correo = ui->lineEdit_correo->text();
             this->sexo = ui->comboBox_sexo->currentText();
-            this->edad = QString::number(ui->spinBox_edad->value()); //Se cambia de int a Qstring;
-            this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto, esto se cambiara despues;
+            //this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto, esto se cambiara despues;
             this->direccion = ui->lineEdit_direccion->text();
+            this->curp = ui->lineEdit_curp->text();
+            this->mascota = ui->lineEdit_mascota->text();
 
             QSqlQuery updateUsuario(mDatabase);
-            updateUsuario.prepare("UPDATE `usuario` SET `contrasenia`='"+this->contra+"' WHERE id_usuario = '"+this->nombreUsuario+"'");
+            updateUsuario.prepare("UPDATE `usuario` SET `contrasenia`='"+this->contra+"', mascota ='"+this->mascota+"' WHERE id_usuario = '"+this->nombreUsuario+"'");
             updateUsuario.exec();
 
             QSqlQuery updatePersona(mDatabase);
-            updatePersona.prepare("UPDATE `persona` SET `nombre`='"+this->nombre+"',`paterno`='"+this->paterno+"',`materno`='"+this->materno+"',`fNacimiento`='"+this->nacimiento+"',`correo`='"+this->correo+"',`sexo`='"+this->sexo+"',`edad`='"+this->edad+"',`foto`='"+this->foto+"',`direccion`='"+this->direccion+"' WHERE id_usuario = '"+this->nombreUsuario+"'");
+            updatePersona.prepare("UPDATE `persona` SET `nombre`='"+this->nombre+"',`paterno`='"+this->paterno+"',`materno`='"+this->materno+"',`fNacimiento`='"+this->nacimiento+"',`correo`='"+this->correo+"',`sexo`='"+this->sexo+"', `foto`='"+this->foto+"',`direccion`='"+this->direccion+"',`curp`='"+this->curp+"' WHERE id_usuario = '"+this->nombreUsuario+"'");
             updatePersona.exec();
 
             QMessageBox::information(this, tr("Actualizacion"),tr("Usuario Actualizado."),
