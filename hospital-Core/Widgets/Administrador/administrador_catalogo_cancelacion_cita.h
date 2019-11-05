@@ -2,6 +2,8 @@
 #define ADMINISTRADOR_CATALOGO_CANCELACION_CITA_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 namespace Ui {
 class administrador_catalogo_cancelacion_cita;
@@ -17,6 +19,7 @@ public:
 
 private:
     Ui::administrador_catalogo_cancelacion_cita *ui;
+    QSqlDatabase mDatabase;
 };
 
 #endif // ADMINISTRADOR_CATALOGO_CANCELACION_CITA_H

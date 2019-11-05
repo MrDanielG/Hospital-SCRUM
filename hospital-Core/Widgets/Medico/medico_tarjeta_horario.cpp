@@ -1,6 +1,7 @@
 #include "medico_tarjeta_horario.h"
 #include "ui_medico_tarjeta_horario.h"
 
+
 medico_tarjeta_horario::medico_tarjeta_horario(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::medico_tarjeta_horario)
