@@ -25,7 +25,7 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
         }
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaCitaHorario");
+    query.prepare("select * from tarjetaCitaHorario where estado = 1");
     query.exec();
 
     int i=0;
@@ -40,11 +40,12 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
         QString hInicio = query.value(4).toString();
         QString hFin = query.value(5).toString();
         QString foto = query.value(6).toString();
+        QString cita = query.value(8).toString();
 
          row = i/4;
          col= i%4;
 
-         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto);
+         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita);
          tarjeta->insertarDatos();
 
          i++;

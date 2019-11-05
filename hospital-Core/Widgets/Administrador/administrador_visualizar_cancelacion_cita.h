@@ -17,7 +17,7 @@ class administrador_visualizar_cancelacion_cita : public QDialog
 public:
     explicit administrador_visualizar_cancelacion_cita(QString id, QWidget *parent = nullptr);
     ~administrador_visualizar_cancelacion_cita();
-
+    void insertarDatos();
 private:
     Ui::administrador_visualizar_cancelacion_cita *ui;
     QSqlDatabase mDatabase;

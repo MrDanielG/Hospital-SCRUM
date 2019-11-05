@@ -15,7 +15,7 @@ class administrador_tarjeta_cancelacion_cita : public QWidget
     Q_OBJECT
 
 public:
-    explicit administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QWidget *parent = nullptr);
+    explicit administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, QWidget *parent = nullptr);
     ~administrador_tarjeta_cancelacion_cita();
     void insertarDatos();
 
@@ -25,7 +25,7 @@ private slots:
 private:
     Ui::administrador_tarjeta_cancelacion_cita *ui;
     QSqlDatabase mDatabase;
-    QString nombre, paterno, materno, motivo, hInicio, hFin, foto;
+    QString nombre, paterno, materno, motivo, hInicio, hFin, foto, cita;
 };
 
 #endif // ADMINISTRADOR_TARJETA_CANCELACION_CITA_H

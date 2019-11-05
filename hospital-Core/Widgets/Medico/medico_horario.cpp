@@ -25,7 +25,7 @@ medico_horario::medico_horario(QWidget *parent) :
         }
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaCitaHorario");
+    query.prepare("select * from tarjetaCitaHorario where estado = 2");
     query.exec();
 
     int i=0;
