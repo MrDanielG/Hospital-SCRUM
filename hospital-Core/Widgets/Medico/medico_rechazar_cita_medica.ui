@@ -48,7 +48,7 @@
     <string>Rechazo de Consulta</string>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
+  <widget class="QPlainTextEdit" name="justificacion">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -98,7 +98,7 @@ border-radius: 5px;</string>
     <string>Cancelar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btn_Rechazar_cita">
    <property name="geometry">
     <rect>
      <x>180</x>

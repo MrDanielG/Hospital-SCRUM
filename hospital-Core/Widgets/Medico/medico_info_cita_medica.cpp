@@ -66,4 +66,11 @@ void medico_info_cita_medica::on_btn_rechazar_cita_clicked()
 {
     medico_rechazar_cita_medica rechazarCita(this->idCita);
     rechazarCita.exec();
+
+    if(rechazarCita.getBandera())
+    {
+        rechazarCita.setBandera();
+        this->close();
+    }
+
 }

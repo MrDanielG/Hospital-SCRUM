@@ -19,7 +19,7 @@
      <x>28</x>
      <y>80</y>
      <width>1301</width>
-     <height>597</height>
+     <height>541</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -34,7 +34,7 @@
       <x>0</x>
       <y>0</y>
       <width>1299</width>
-      <height>595</height>
+      <height>539</height>
      </rect>
     </property>
     <widget class="QWidget" name="gridLayoutWidget">
@@ -42,8 +42,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>1291</width>
-       <height>571</height>
+       <width>1281</width>
+       <height>521</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout"/>
@@ -168,11 +168,35 @@
     <string>Aprobadas</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>650</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #818181;
+</string>
+   </property>
+   <property name="text">
+    <string>MEDICO</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>scrollArea</zorder>
   <zorder>btn_solicitudesEspera</zorder>
   <zorder>btn_solicitudesRechazadas</zorder>
   <zorder>btn_solicitudesAprobadas</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections/>
