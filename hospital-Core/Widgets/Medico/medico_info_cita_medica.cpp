@@ -33,7 +33,7 @@ medico_info_cita_medica::medico_info_cita_medica(QString nombre, QString paterno
     this->idCita=idCita;
 
     QSqlQuery query(mDatabase);
-    query.prepare("select descripcion from cita_medica where id_cita_medica="+this->idCita);
+    query.prepare("select descripcion from cita_medica where id_cita_medica='"+this->idCita+"'" );
     query.exec();
     query.next();
 

@@ -49,7 +49,7 @@ void medico_solicitudes::limpiarCatalogo()
 void medico_solicitudes::on_btn_solicitudesEspera_clicked()
 {
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico="+idMedico+" && estado=1");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=1");
     query.exec();
 
     limpiarCatalogo();
@@ -82,7 +82,7 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 {
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico="+idMedico+" && estado=3");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=3");
     query.exec();
 
     limpiarCatalogo();
@@ -114,7 +114,7 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 void medico_solicitudes::on_btn_solicitudesAprobadas_clicked()
 {
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico="+idMedico+" && estado=2");
+    query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+idMedico+"' && estado=2");
     query.exec();
 
     limpiarCatalogo();
