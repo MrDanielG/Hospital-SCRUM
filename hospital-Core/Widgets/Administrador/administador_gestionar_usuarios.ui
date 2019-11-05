@@ -256,7 +256,7 @@ border-radius:5px;</string>
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: none;
+       <string notr="true">background-color: white;
 border:none;</string>
       </property>
       <property name="verticalScrollBarPolicy">
@@ -376,6 +376,24 @@ color: #818181;</string>
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1371</width>
+     <height>711</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>
