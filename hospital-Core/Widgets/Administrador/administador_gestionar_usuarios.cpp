@@ -47,7 +47,7 @@ administador_gestionar_usuarios::administador_gestionar_usuarios(QWidget *parent
         row = i / 3;
         col = i % 3;
 
-        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona);
+        administrador_tarjeta_gestion *tarjeta = new administrador_tarjeta_gestion(id_usuario, nombre_persona, img_persona, this);
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }

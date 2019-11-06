@@ -1,5 +1,6 @@
 #include "administrador_tarjeta_gestion.h"
 #include "ui_administrador_tarjeta_gestion.h"
+#include "Widgets/Administrador/administador_gestionar_usuarios.h"
 #include "Widgets/Administrador/administrador_info_gestion.h"
 #include "QDebug"
 administrador_tarjeta_gestion::administrador_tarjeta_gestion(QString id, QString nombre, QString img, QWidget *parent) : QWidget(parent),
@@ -39,9 +40,9 @@ administrador_tarjeta_gestion::~administrador_tarjeta_gestion()
     delete ui;
 }
 
-void administrador_tarjeta_gestion::setPadre(administrador_gestionar_usuarios padre)
+void administrador_tarjeta_gestion::limpiar()
 {
-    this->padre = padre;
+    //this->parentWidget()->limpiarCatalogo();
 }
 
 void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
