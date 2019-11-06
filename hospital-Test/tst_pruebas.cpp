@@ -22,6 +22,9 @@ private slots:
     void editarPerfilProp();
     void ingresarServicios();
     void visualizarServicio();
+
+    //Parte AngelTest
+
 };
 
 pruebas::pruebas()
@@ -41,7 +44,7 @@ void pruebas::abrirBase()
     mDatabase.setHostName("localhost");
     mDatabase.setDatabaseName("hospital");
     mDatabase.setUserName("root");
-    mDatabase.setPassword("luisdrew1394");
+    mDatabase.setPassword("");
       mDatabase.open();
     mDatabase.open();
 
