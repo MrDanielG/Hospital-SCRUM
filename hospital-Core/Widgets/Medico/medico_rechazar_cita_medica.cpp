@@ -65,6 +65,7 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
     qDebug()<<"Hora "<<horaActual;
 
     QSqlQuery query(mDatabase);
+    QSqlQuery query2(mDatabase);
     query.prepare("select hora_inicio from cita_medica where id_cita_medica='"+this->idCita+"'");
     query.exec();
     query.next();
@@ -88,19 +89,22 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
            QMessageBox msgBox(QMessageBox::Question,"Confimacion","¿Estas seguro de rechazar esta consulta?",QMessageBox::Yes|QMessageBox::No);
            msgBox.setButtonText(QMessageBox::Yes,"Sí");
            msgBox.setButtonText(QMessageBox::No,"No");
-            if(msgBox.exec()==QMessageBox::Yes){
-                query.prepare("update cita_medica set estado=0 where id_cita_medica="+idCita);
-                query.exec();
 
-                query.prepare("insert into citasRechazadas (id_cita_medica,justificacion,stado)  values ("+idCita+",'"+justificacion+"',1)");
-                query.exec();
+            if(msgBox.exec()==QMessageBox::Yes){
+                query2.prepare("update cita_medica set estado=2, justificacion_rechazo='"+justificacion+"' where id_cita_medica="+this->idCita);
+                query2.exec();
+                qDebug()<<"dif horas "<<hr2;
+                qDebug()<<"idCita "<<this->idCita;
+
                 bandera=true;
+
                 info.setWindowTitle("Información");
                 info.setText("Tu solicitud de rechazo fue enviada con éxito, espera la autorización del administrador.");
                 info.setStandardButtons(QMessageBox::Ok);
                 info.setDefaultButton(QMessageBox::Ok);
                 info.setButtonText(QMessageBox::Ok,"Aceptar");
                 info.exec();
+
                 this->close();
 
 
