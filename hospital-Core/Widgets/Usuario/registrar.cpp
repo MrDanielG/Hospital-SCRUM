@@ -8,6 +8,7 @@ registrar::registrar(QWidget *parent) :
     ui(new Ui::registrar)
 {
     ui->setupUi(this);
+
 #ifdef Q_OS_WIN
   mDatabase = QSqlDatabase::database("Connection");
 #elif defined(Q_OS_MAC)
@@ -27,6 +28,7 @@ registrar::registrar(QWidget *parent) :
         qDebug() << "Base de datos continua abierta, esto es: ADMINISTRADOR CREAR USUARIOS";
     }
     ui->stackedWidget->setCurrentIndex(0);
+
 }
 
 registrar::~registrar()
@@ -81,7 +83,7 @@ void registrar::on_btn_crear_usuario_clicked()
         this->nacimiento = ui->dateEdit_fechaNacimiento->text();
         this->sexo = ui->comboBox_sexo->currentText();
         this->curp = ui->CURP->text();
-        this->foto = "C:/xampp/htdocs/GitHub/hospital/hospital-Core/Imagenes/imgPrueba.png"; //Por ahora tods la misma foto, esto se cambiara despues
+
 
         //Se crean las Querys, primero se crea Usuario
         QSqlQuery crearUsuario(mDatabase);
@@ -89,8 +91,8 @@ void registrar::on_btn_crear_usuario_clicked()
         crearUsuario.exec();
 
         QSqlQuery crearPersona(mDatabase);
-        crearPersona.prepare("INSERT INTO `persona`(`nombre`, `paterno`, `materno`, `fNacimiento`, `correo`, `sexo`, `foto`, `direccion`, `id_usuario`, `curp`) "
-                             "VALUES ('"+this->nombre+"','"+this->paterno+"','"+this->materno+"','"+this->nacimiento+"','"+this->correo+"','"+this->sexo+"','"+this->foto+"', '"+this->direccion+"' ,'"+this->nombreUsuario+"', '"+this->curp+"')");
+        crearPersona.prepare("INSERT INTO persona(nombre, paterno, materno, fNacimiento, correo, sexo, foto, direccion, id_usuario, curp) "
+                             "VALUES ('"+this->nombre+"','"+this->paterno+"','"+this->materno+"','"+this->nacimiento+"','"+this->correo+"','"+this->sexo+"','"+this->fotoObtenida+"', '"+this->direccion+"' ,'"+this->nombreUsuario+"', '"+this->curp+"')");
         crearPersona.exec();
         QMessageBox::warning(this, tr("Exito"),tr("Usuario agregado"),
                                                   QMessageBox::Ok);
@@ -98,4 +100,18 @@ void registrar::on_btn_crear_usuario_clicked()
 
         this->close();
     }
+}
+
+void registrar::on_btn_foto_clicked(){
+        QString dir = QFileDialog::getOpenFileName(this,tr("Seleccione una imagen"), "/C:/", tr("Archivos de Imagen (* .png,* .jpg)"));
+        qDebug()<<dir;
+        if(!dir.isEmpty()){
+            this->fotoObtenida = dir;
+            QMessageBox::information(this, tr("Correcto"),
+                         tr("Imagen agregada correctamente"));
+
+        }else{
+            QMessageBox::information(this, tr("Error"),
+                         tr("No se inserto ninguna imagen"));
+        }
 }
