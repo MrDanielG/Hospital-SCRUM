@@ -14,6 +14,7 @@
 #include "Widgets/Paciente/paciente_landpage.h"
 #include "Widgets/Medico/medico_landpage.h"
 #include "Widgets/Medico/medico_horario.h"
+#include "Clases/usuario.h"
 
 namespace Ui
 {
@@ -57,7 +58,7 @@ private:
     paciente_landpage landpagepaciente;
     medico_landPage landpageMedico;
     medico_horario horarioMedico;
-
+    Usuario datosLogin;
 
     int index;
 };

@@ -47,8 +47,13 @@ void MainWindow::setindex(int index){
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    inicar_sesion dialogo_iniciar_sesion;
+    inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
+
+    qDebug()<<"DATOS LOGIN";
+    qDebug()<<this->datosLogin.nombre_usuario;
+    qDebug()<<this->datosLogin.passwd;
+
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
     /*Aqui deben poner el index del landpage al que quieran visualizar
