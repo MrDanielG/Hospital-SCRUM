@@ -39,6 +39,11 @@ administrador_tarjeta_gestion::~administrador_tarjeta_gestion()
     delete ui;
 }
 
+void administrador_tarjeta_gestion::setPadre(administrador_gestionar_usuarios padre)
+{
+    this->padre = padre;
+}
+
 void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
 {
     QSqlQuery query(mDatabase);
