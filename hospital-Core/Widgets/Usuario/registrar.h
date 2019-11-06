@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QFileDialog>
+
 
 namespace Ui {
 class registrar;
@@ -22,6 +24,8 @@ private slots:
 
     void on_btn_crear_usuario_clicked();
 
+    void on_btn_foto_clicked();
+
 private:
     Ui::registrar *ui;
     QSqlDatabase mDatabase;
@@ -38,6 +42,7 @@ private:
     QString foto;
     QString direccion;
     QString mascota;
+    QString fotoObtenida;
 };
 
 #endif // REGISTRAR_H
