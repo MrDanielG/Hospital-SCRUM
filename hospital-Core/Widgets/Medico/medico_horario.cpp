@@ -45,11 +45,12 @@ medico_horario::medico_horario(QWidget *parent) :
         QString hInicio = query.value(4).toString();
         QString hFin = query.value(5).toString();
         QString foto = query.value(6).toString();
+        QString idCita = query.value(8).toString();
 
          row = i/4;
          col= i%4;
 
-         medico_tarjeta_horario *tarjeta = new medico_tarjeta_horario(nombre, paterno, materno, morivo, hInicio, hFin, foto);
+         medico_tarjeta_horario *tarjeta = new medico_tarjeta_horario(nombre, paterno, materno, morivo, hInicio, hFin, foto,idCita);
          tarjeta->insertarDatos();
 
          i++;

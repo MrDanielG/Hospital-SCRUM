@@ -39,6 +39,11 @@ int inicar_sesion::getindex()
     return this->tipodeusuario;
 }
 
+QString inicar_sesion::getUsuario()
+{
+    return this->usuario;
+}
+
 void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
     QString nombre_usuario;
     QString contrasenia;
@@ -48,6 +53,8 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
     contrasenia = ui->line_contrasenia->text();
     this->usuarioDatos->nombre_usuario = nombre_usuario;
     this->usuarioDatos->passwd = contrasenia;
+
+    usuario=ui->line_correo->text();
 
     if(nombre_usuario.isEmpty()|| contrasenia.isEmpty()){
         QMessageBox::warning(this,"Datos incompletos", "Ingresa tu usuario y contraseña");

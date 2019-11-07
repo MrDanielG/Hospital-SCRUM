@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>medico_tarjeta_CitaRechazada</class>
+ <widget class="QWidget" name="medico_tarjeta_CitaRechazada">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>151</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>321</width>
+    <height>151</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>321</width>
+    <height>151</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>321</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_foto_solicitudes">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #F4F4F4;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgPrueba.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>192</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lbl_nombre_solicitudes">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #F4F4F4;</string>
+      </property>
+      <property name="text">
+       <string>María Fernanda cruz Zamora</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_sintoma_solicitudes">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #F4F4F4;</string>
+      </property>
+      <property name="text">
+       <string>Dolor de Cabeza</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_horario_solicitudes">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #F4F4F4;
+</string>
+      </property>
+      <property name="text">
+       <string>8:30 - 9:40</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lbl_prioridad_solicitudes">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #F4F4F4;</string>
+        </property>
+        <property name="text">
+         <string>Prioridad:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_pointPrioridad_solicitudes">
+        <property name="minimumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #F4F4F4;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/Ellipse7.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -18,6 +18,8 @@ public:
     explicit inicar_sesion(Usuario *, QWidget *parent = nullptr);
     ~inicar_sesion();
     int getindex();
+    QString getUsuario();
+
     Usuario *returnUsuario();
 private slots:
     void on_btn_iniciarsesion_sesion_clicked();
@@ -27,6 +29,7 @@ private:
     Ui::inicar_sesion *ui;
     QSqlDatabase mDatabase;
     int tipodeusuario;
+    QString usuario;
     Usuario *usuarioDatos;
 };
 

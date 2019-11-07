@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(9, &horarioMedico);
 
     ui->stackedWidget->insertWidget(11, &cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(10,&solicitudesMedico);
 }
 
 MainWindow::~MainWindow()
@@ -88,6 +89,7 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     else if(this->index == 5){
 
     }
+    qDebug()<<"usuario"<<dialogo_iniciar_sesion.getUsuario();
 }
 
 void MainWindow::on_btn_registrarse_clicked(){
@@ -161,4 +163,36 @@ void MainWindow::on_btn_inicio_medico_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
+}
+void MainWindow::on_btn_solicitudes_medico_clicked()
+{
+    QString usuario= dialogo_iniciar_sesion.getUsuario(),idPer,idEmp,idMed;
+
+    QSqlQuery query(mDatabase);
+    QSqlQuery query1(mDatabase);
+    QSqlQuery query2(mDatabase);
+    qDebug()<<"Usuario: "<<usuario;
+    query.prepare("select id_persona from persona where id_usuario='"+usuario+"'");
+    query.exec();
+    query.next();
+    idPer=query.value(0).toString();
+    qDebug()<<"idPer: " <<idPer;
+
+    query1.prepare("select id_empleado from empleado where id_persona='"+idPer+"'");
+    query1.exec();
+    query1.next();
+    idEmp=query1.value(0).toString();
+    qDebug()<<"idEmp: " <<idEmp;
+
+    query2.prepare("SELECT id_medico FROM medico WHERE id_empleado = '"+idEmp+"'");
+    query2.exec();
+    query2.next();
+    idMed=query2.value(0).toString();
+
+    qDebug()<<"idMedico: "<<idMed;
+
+
+    solicitudesMedico.setIdMedico(idMed);
+    solicitudesMedico.inicializar();
+    ui->stackedWidget->setCurrentIndex(10);
 }

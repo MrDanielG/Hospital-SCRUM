@@ -10,6 +10,18 @@
     <height>210</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>370</width>
+    <height>210</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>370</width>
+    <height>210</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -97,9 +109,9 @@ border-radius: 10px;</string>
   <widget class="QLabel" name="lb_hora_medico_tarjeta_horario">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>160</x>
      <y>80</y>
-     <width>121</width>
+     <width>151</width>
      <height>20</height>
     </rect>
    </property>

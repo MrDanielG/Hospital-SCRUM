@@ -1,8 +1,8 @@
 #include "medico_tarjeta_horario.h"
 #include "ui_medico_tarjeta_horario.h"
+#include "Widgets/Medico/medico_info_cita_medica.h"
 
-
-medico_tarjeta_horario::medico_tarjeta_horario(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QWidget *parent) :
+medico_tarjeta_horario::medico_tarjeta_horario(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto,QString idCita, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::medico_tarjeta_horario)
 {
@@ -30,6 +30,7 @@ medico_tarjeta_horario::medico_tarjeta_horario(QString nombre, QString paterno, 
     this->hInicio = hInicio;
     this->hFin = hFin;
     this->foto = foto;
+    this->idCita=idCita;
 }
 
 medico_tarjeta_horario::~medico_tarjeta_horario()
@@ -48,4 +49,11 @@ void medico_tarjeta_horario::insertarDatos(){
     ui->lbl_motivo_medico_tarjeta_horario->setText(motivo);
     ui->lb_hora_medico_tarjeta_horario->setText(horario);
 
+}
+// QString nombre, QString paterno, QString materno,QString hInicio, QString hFin, QString foto,QString idCita,
+void medico_tarjeta_horario::on_btn_gestionar_medico_tarjeta_horario_clicked()
+{
+    qDebug()<<"idCita Medico_tarjeta_horario: " <<this->idCita;
+    medico_info_cita_medica *infoCitaMedica = new medico_info_cita_medica(this->nombre,this->paterno,this->materno,this->hInicio,this->hFin,this->foto,this->idCita);
+    infoCitaMedica->show();
 }
