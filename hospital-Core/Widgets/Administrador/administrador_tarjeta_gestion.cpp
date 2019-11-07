@@ -42,7 +42,8 @@ administrador_tarjeta_gestion::~administrador_tarjeta_gestion()
 
 void administrador_tarjeta_gestion::limpiar()
 {
-    //this->parentWidget()->limpiarCatalogo();
+    administador_gestionar_usuarios* padre = qobject_cast<administador_gestionar_usuarios*>(this->parentWidget());
+    padre->limiparCatalogo();
 }
 
 void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
