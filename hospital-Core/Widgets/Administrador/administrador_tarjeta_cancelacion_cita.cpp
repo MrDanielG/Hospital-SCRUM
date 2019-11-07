@@ -58,18 +58,20 @@ void administrador_tarjeta_cancelacion_cita::insertarDatos()
 
 void administrador_tarjeta_cancelacion_cita::on_btn_admin_visualizar_cancelacion_cita_clicked()
 {
-    QSqlQuery query;
+    QSqlQuery query(mDatabase);
     QString sql;
 
-    QString id, justificacion;
-    sql = "select id_medico, justificacion_rechazo from cita_medica where id_cita_medica = "+this->cita+";";
+    QString id, justificacion, horaI, horaF;
+    sql = "select id_medico, justificacion_rechazo, hora_inicio, hora_fin from cita_medica where id_cita_medica = "+this->cita+";";
     query.exec(sql);
 
     while (query.next()) {
         id = query.value(0).toString();
         justificacion = query.value(1).toString();
+        horaI = query.value(2).toString();
+        horaF = query.value(3).toString();
     }
-    administrador_visualizar_cancelacion_cita dialogo_visualizacion(id, justificacion, this->cita);
+    administrador_visualizar_cancelacion_cita dialogo_visualizacion(id, justificacion, this->cita, horaI, horaF);
     dialogo_visualizacion.exec();
 
 }

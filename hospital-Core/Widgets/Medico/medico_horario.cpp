@@ -76,6 +76,8 @@ void medico_horario::limiparCatalogo()
 
 void medico_horario::setIdUsuario(QString id)
 {
+    limiparCatalogo();
+
     this->idUsuario = id;
     QDate fecha = fecha.currentDate();
     QSqlQuery query(mDatabase);

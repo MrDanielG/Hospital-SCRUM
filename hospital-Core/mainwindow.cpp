@@ -34,9 +34,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(7, &landpagepaciente);
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
-
-    ui->stackedWidget->insertWidget(11, &cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(11,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
+
 }
 
 MainWindow::~MainWindow()
@@ -169,6 +169,7 @@ void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
 }
+
 void MainWindow::on_btn_solicitudes_medico_clicked()
 {
     QString usuario= dialogo_iniciar_sesion.getUsuario(),idPer,idEmp,idMed;

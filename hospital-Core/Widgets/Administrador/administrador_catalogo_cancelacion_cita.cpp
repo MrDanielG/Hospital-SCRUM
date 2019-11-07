@@ -25,7 +25,7 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
         }
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaCitaHorario where estado = 2");
+    query.prepare("select * from tarjetaCitaHorario where estado = 2;");
     query.exec();
 
     int i=0;
