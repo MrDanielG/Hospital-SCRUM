@@ -16,6 +16,7 @@
 #include "Widgets/Medico/medico_horario.h"
 #include "Widgets/Medico/medico_solicitudes.h"
 #include "Widgets/Usuario/inicar_sesion.h"
+#include "Clases/usuario.h"
 
 namespace Ui
 {
@@ -64,6 +65,7 @@ private:
     medico_solicitudes solicitudesMedico;
     inicar_sesion dialogo_iniciar_sesion;
 
+    Usuario datosLogin;
 
     int index;
 };
