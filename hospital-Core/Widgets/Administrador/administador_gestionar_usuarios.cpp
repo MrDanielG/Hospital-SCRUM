@@ -68,6 +68,11 @@ void administador_gestionar_usuarios::limiparCatalogo()
     }
 }
 
+void administador_gestionar_usuarios::hola()
+{
+    qDebug()<<"aPRUEBAAA";
+}
+
 void administador_gestionar_usuarios::on_btn_medicos_clicked()
 {
     QSqlQuery infoMedico(mDatabase);

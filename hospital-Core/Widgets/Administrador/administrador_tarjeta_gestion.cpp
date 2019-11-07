@@ -43,7 +43,7 @@ administrador_tarjeta_gestion::~administrador_tarjeta_gestion()
 void administrador_tarjeta_gestion::limpiar()
 {
     administador_gestionar_usuarios* padre = qobject_cast<administador_gestionar_usuarios*>(this->parentWidget());
-    padre->limiparCatalogo();
+    padre->hola();
 }
 
 void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
@@ -83,4 +83,5 @@ void administrador_tarjeta_gestion::on_btn_gestionar_clicked()
 
     administrador_info_gestion infoGestion(nombre, tipo_usr, info1, info2, info3, img, id_usuario);
     infoGestion.exec();
+    limpiar();
 }
