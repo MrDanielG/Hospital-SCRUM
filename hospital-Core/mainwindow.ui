@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -975,7 +975,7 @@ color: white;
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_Inicio">
       <property name="geometry">
        <rect>
         <x>620</x>
@@ -990,6 +990,9 @@ color: white;
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: none;
 color: white;</string>
@@ -998,7 +1001,7 @@ color: white;</string>
        <string>Inicio</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_calificar_nedico">
       <property name="geometry">
        <rect>
         <x>720</x>
@@ -1013,6 +1016,9 @@ color: white;</string>
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: none;
 color: white;</string>
@@ -1021,7 +1027,7 @@ color: white;</string>
        <string>Calificar Medico</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_remedios_caseros">
       <property name="geometry">
        <rect>
         <x>880</x>
@@ -1036,6 +1042,9 @@ color: white;</string>
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: none;
 color: white;</string>
@@ -1044,7 +1053,7 @@ color: white;</string>
        <string>Remedios Caseros</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn_gestionar_citas">
       <property name="geometry">
        <rect>
         <x>1050</x>
@@ -1059,6 +1068,9 @@ color: white;</string>
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: none;
 color: white;</string>
@@ -1067,7 +1079,7 @@ color: white;</string>
        <string>Gestionar Citas</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="btn_salir">
       <property name="geometry">
        <rect>
         <x>1190</x>
@@ -1081,6 +1093,9 @@ color: white;</string>
         <family>Montserrat</family>
         <pointsize>11</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">border: none;
