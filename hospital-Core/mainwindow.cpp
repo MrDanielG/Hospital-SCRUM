@@ -114,7 +114,6 @@ void MainWindow::on_btn_servicios_clicked()
 void MainWindow::on_btn_servicios_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
-
 }
 
 void MainWindow::on_btn_inicio_admin_clicked()
@@ -200,4 +199,9 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
     solicitudesMedico.setIdMedico(idMed);
     solicitudesMedico.inicializar();
     ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_btn_gestionar_citas_clicked()
+{
+
 }

@@ -53,6 +53,8 @@ private slots:
     void on_pushButton_6_clicked();
     void on_btn_solicitudes_medico_clicked();
 
+    void on_btn_gestionar_citas_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
