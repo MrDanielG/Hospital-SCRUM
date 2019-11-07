@@ -15,6 +15,7 @@ public:
     explicit administador_gestionar_usuarios(QWidget *parent = nullptr);
     ~administador_gestionar_usuarios();
     void limiparCatalogo();
+    void hola();
 
 private slots:
     void on_btn_medicos_clicked();
