@@ -32,6 +32,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void setindex(int index);
+    QString getNombreUsuario();
 
 private slots:
     void on_btn_iniciar_sesion_clicked();
@@ -67,7 +68,6 @@ private:
     administrador_catalogo_cancelacion_cita cancelacionCatalogoAdmin;
     medico_solicitudes solicitudesMedico;
     inicar_sesion dialogo_iniciar_sesion;
-
     Usuario datosLogin;
 
     int index;
