@@ -131,6 +131,9 @@ border-radius:5px;</string>
 background: none;
 border: 1px solid #C4C4C4;</string>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
    <property name="placeholderText">
     <string>Informacion Cita Medica</string>
    </property>

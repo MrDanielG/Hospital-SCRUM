@@ -17,6 +17,9 @@ public:
     void setIdPaciente(QString);
     void inicalizaCatalogo();
     void limpiarCatalogo();
+private slots:
+    void on_btn_agenda_cita_clicked();
+
 private:
     Ui::paciente_gestionar_citas *ui;
     QSqlDatabase mDatabase;

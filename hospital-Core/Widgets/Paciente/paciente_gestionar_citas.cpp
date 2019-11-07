@@ -1,6 +1,7 @@
 #include "paciente_gestionar_citas.h"
 #include "ui_paciente_gestionar_citas.h"
 #include "Widgets/Paciente/paciente_tarjeta_cita.h"
+#include "Widgets/Paciente/paciente_crear_cita.h"
 #include "QMessageBox"
 #include "QDebug"
 #include "QSqlQuery"
@@ -10,6 +11,7 @@ paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     ui(new Ui::paciente_gestionar_citas)
 {
     ui->setupUi(this);
+
 #ifdef Q_OS_WIN
   mDatabase = QSqlDatabase::database("Connection");
 #elif defined(Q_OS_MAC)
@@ -76,4 +78,11 @@ void paciente_gestionar_citas::limpiarCatalogo()
         delete item->widget();
         delete item;
     }
+}
+
+void paciente_gestionar_citas::on_btn_agenda_cita_clicked()
+{
+    paciente_crear_cita crearCita(this->idUsuarioPaciente);
+    crearCita.exec();
+    inicalizaCatalogo();
 }
