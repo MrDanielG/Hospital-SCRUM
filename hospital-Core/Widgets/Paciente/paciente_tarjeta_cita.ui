@@ -115,9 +115,9 @@ border-radius:5px;</string>
    <property name="geometry">
     <rect>
      <x>149</x>
-     <y>80</y>
+     <y>110</y>
      <width>280</width>
-     <height>101</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -133,6 +133,31 @@ border: 1px solid #C4C4C4;</string>
    </property>
    <property name="placeholderText">
     <string>Informacion Cita Medica</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_horario">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>80</y>
+     <width>281</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Medium</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: none;</string>
+   </property>
+   <property name="text">
+    <string>Horario</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_gestionar">
