@@ -17,6 +17,7 @@
 #include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
 #include "Widgets/Medico/medico_solicitudes.h"
 #include "Widgets/Usuario/inicar_sesion.h"
+#include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
 
 namespace Ui
@@ -53,6 +54,8 @@ private slots:
     void on_pushButton_6_clicked();
     void on_btn_solicitudes_medico_clicked();
 
+    void on_btn_gestionar_citas_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -68,6 +71,7 @@ private:
     administrador_catalogo_cancelacion_cita cancelacionCatalogoAdmin;
     medico_solicitudes solicitudesMedico;
     inicar_sesion dialogo_iniciar_sesion;
+    paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
 
     int index;
