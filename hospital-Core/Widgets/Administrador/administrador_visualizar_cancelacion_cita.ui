@@ -34,7 +34,7 @@
     <string>Motivo:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -57,7 +57,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="dialogo_visualizar_cancelacion_idMedico">
+     <widget class="QLabel" name="idMedico">
       <property name="font">
        <font>
         <family>Montserrat</family>
@@ -74,7 +74,7 @@ color: #818181;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -98,7 +98,7 @@ color: #818181;</string>
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pbtn_cancelarRechazo">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -144,7 +144,7 @@ color: #818181;</string>
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pbtn_aprobarRechazo">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -191,7 +191,7 @@ color: #818181;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QPlainTextEdit" name="dialogo_visualizar_cancelacio_motivoPlainTextEdit">
+  <widget class="QPlainTextEdit" name="motivo">
    <property name="geometry">
     <rect>
      <x>110</x>

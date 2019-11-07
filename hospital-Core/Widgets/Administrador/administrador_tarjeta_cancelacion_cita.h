@@ -28,4 +28,5 @@ private:
     QString nombre, paterno, materno, motivo, hInicio, hFin, foto, cita;
 };
 
+
 #endif // ADMINISTRADOR_TARJETA_CANCELACION_CITA_H

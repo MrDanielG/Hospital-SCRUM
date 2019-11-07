@@ -16,6 +16,7 @@ class administrador_catalogo_cancelacion_cita : public QWidget
 public:
     explicit administrador_catalogo_cancelacion_cita(QWidget *parent = nullptr);
     ~administrador_catalogo_cancelacion_cita();
+    void limpiarCatalogo();
 
 private:
     Ui::administrador_catalogo_cancelacion_cita *ui;

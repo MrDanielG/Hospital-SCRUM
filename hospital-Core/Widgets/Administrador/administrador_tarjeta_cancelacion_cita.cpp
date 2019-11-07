@@ -1,6 +1,8 @@
 #include "administrador_tarjeta_cancelacion_cita.h"
 #include "ui_administrador_tarjeta_cancelacion_cita.h"
 #include "Widgets/Administrador/administrador_visualizar_cancelacion_cita.h"
+#include <QLayoutItem>
+#include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
 
 administrador_tarjeta_cancelacion_cita::administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, QWidget *parent) :
     QWidget(parent),
@@ -52,11 +54,22 @@ void administrador_tarjeta_cancelacion_cita::insertarDatos()
 
 }
 
+
+
 void administrador_tarjeta_cancelacion_cita::on_btn_admin_visualizar_cancelacion_cita_clicked()
 {
     QSqlQuery query;
     QString sql;
 
-    administrador_visualizar_cancelacion_cita dialogo_visualizacion("2");
+    QString id, justificacion;
+    sql = "select id_medico, justificacion_rechazo from cita_medica where id_cita_medica = "+this->cita+";";
+    query.exec(sql);
+
+    while (query.next()) {
+        id = query.value(0).toString();
+        justificacion = query.value(1).toString();
+    }
+    administrador_visualizar_cancelacion_cita dialogo_visualizacion(id, justificacion, this->cita);
     dialogo_visualizacion.exec();
+
 }

@@ -25,7 +25,7 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
         }
 
     QSqlQuery query(mDatabase);
-    query.prepare("select * from tarjetaCitaHorario where estado = 1");
+    query.prepare("select * from tarjetaCitaHorario where estado = 2");
     query.exec();
 
     int i=0;
@@ -56,4 +56,15 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
 administrador_catalogo_cancelacion_cita::~administrador_catalogo_cancelacion_cita()
 {
     delete ui;
+}
+
+void administrador_catalogo_cancelacion_cita::limpiarCatalogo()
+{
+    while (QLayoutItem *item = ui->gridLayout_horario->takeAt(0))
+    {
+        Q_ASSERT(!item->layout());
+        delete item->widget();
+        delete item;
+    }
+
 }

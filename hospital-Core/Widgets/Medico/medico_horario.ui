@@ -41,12 +41,12 @@
      <x>120</x>
      <y>120</y>
      <width>1100</width>
-     <height>400</height>
+     <height>471</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border: none;
-background: white;</string>
+    <string notr="true">background-color: none;
+border:none;</string>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
@@ -57,7 +57,7 @@ background: white;</string>
       <x>0</x>
       <y>0</y>
       <width>1100</width>
-      <height>400</height>
+      <height>471</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -89,63 +89,37 @@ background: white;</string>
     <string>Medico</string>
    </property>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>1030</x>
-     <y>55</y>
-     <width>250</width>
-     <height>35</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>250</width>
-     <height>35</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>35</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 1px solid #CBCBCB;
-border-radius: 7px;</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>1040</x>
-     <y>60</y>
-     <width>230</width>
-     <height>22</height>
+     <y>40</y>
+     <width>231</width>
+     <height>30</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="minimumSize">
-       <size>
-        <width>170</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>150</width>
-        <height>16777215</height>
-       </size>
-      </property>
+     <widget class="QDateEdit" name="dateEdit"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
       <property name="styleSheet">
-       <string notr="true">border: none;
-border-bottom: 1px solid #818181;
-background: none;</string>
+       <string notr="true">*{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	color: white;
+	background-color: #3E64FF;
+}</string>
       </property>
-      <property name="placeholderText">
-       <string>Buscar por nombre o folio</string>
+      <property name="text">
+       <string>Buscar</string>
       </property>
      </widget>
     </item>
