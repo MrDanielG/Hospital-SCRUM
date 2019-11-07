@@ -5,6 +5,12 @@
 #include "Clases/usuario.h"
 #include "mainwindow.h"
 #include "Widgets/Usuario/recuperar_contra.h"
+inicar_sesion::inicar_sesion(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::inicar_sesion)
+{
+
+}
 inicar_sesion::inicar_sesion(Usuario *usuarioDatos, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::inicar_sesion)

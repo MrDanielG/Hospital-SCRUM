@@ -15,6 +15,7 @@ class inicar_sesion : public QDialog
     Q_OBJECT
 
 public:
+    explicit inicar_sesion(QWidget *parent = nullptr);
     explicit inicar_sesion(Usuario *, QWidget *parent = nullptr);
     ~inicar_sesion();
     int getindex();
