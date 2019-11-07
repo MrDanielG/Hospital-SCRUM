@@ -8,7 +8,6 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
     ui(new Ui::administrador_catalogo_cancelacion_cita)
 {
     ui->setupUi(this);
-    ui->setupUi(this);
     #ifdef Q_OS_WIN
       mDatabase = QSqlDatabase::database("Connection");
     #elif defined(Q_OS_MAC)
@@ -27,7 +26,7 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaCitaHorario where estado = 2;");
     query.exec();
-
+    limpiarCatalogo();
     int i=0;
     int row = 0;
     int col = 0;
@@ -67,4 +66,35 @@ void administrador_catalogo_cancelacion_cita::limpiarCatalogo()
         delete item;
     }
 
+}
+
+void administrador_catalogo_cancelacion_cita::actualizarCatalogo()
+{
+    QSqlQuery query(mDatabase);
+    query.prepare("select * from tarjetaCitaHorario where estado = 2;");
+    query.exec();
+    limpiarCatalogo();
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while (query.next()) {
+        QString nombre = query.value(0).toString();
+        QString paterno = query.value(1).toString();
+        QString materno = query.value(2).toString();
+        QString morivo = query.value(3).toString();
+        QString hInicio = query.value(4).toString();
+        QString hFin = query.value(5).toString();
+        QString foto = query.value(6).toString();
+        QString cita = query.value(8).toString();
+
+         row = i/4;
+         col= i%4;
+
+         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita);
+         tarjeta->insertarDatos();
+
+         i++;
+         ui->gridLayout_horario->addWidget(tarjeta, row, col);
+    }
 }

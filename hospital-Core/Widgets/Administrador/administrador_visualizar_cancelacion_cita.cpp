@@ -1,6 +1,6 @@
 #include "administrador_visualizar_cancelacion_cita.h"
 #include "ui_administrador_visualizar_cancelacion_cita.h"
-
+#include "QMessageBox"
 administrador_visualizar_cancelacion_cita::administrador_visualizar_cancelacion_cita(QString idMedico, QString motivo, QString cita, QString hInicio, QString hFin, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::administrador_visualizar_cancelacion_cita)
@@ -44,6 +44,8 @@ void administrador_visualizar_cancelacion_cita::on_pbtn_cancelarRechazo_clicked(
     sql = "update cita_medica set estado = 1 where id_cita_medica = "+this->cita+";";
     query.exec(sql);
 
+    QMessageBox::information(this, tr("Actualizacion"),tr("La cita no se Reasignara <br> El doctor seguira teniendo la cita"),
+                                  QMessageBox::Ok);
     this->close();
 }
 
@@ -75,5 +77,9 @@ void administrador_visualizar_cancelacion_cita::on_pbtn_aprobarRechazo_clicked()
 
     sql = "update cita_medica set estado = 1, id_medico = "+idMedico+"where id_cita_medica = "+this->cita+";";
     query.exec(sql);
+
+    QMessageBox::information(this, tr("Actualizacion"),tr("Estado de Cita Acutalizado<br>Se reasigno la cita a un nuevo doctor"),
+                                  QMessageBox::Ok);
+
     this->close();
 }

@@ -169,6 +169,7 @@ void MainWindow::on_btn_inicio_medico_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(15);
+    cancelacionCatalogoAdmin.actualizarCatalogo();
 }
 
 void MainWindow::on_btn_solicitudes_medico_clicked()
