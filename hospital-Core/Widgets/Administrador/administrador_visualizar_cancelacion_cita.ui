@@ -16,64 +16,6 @@
   <property name="styleSheet">
    <string notr="true">background: white;</string>
   </property>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>51</x>
-     <y>91</y>
-     <width>48</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>Motivo:</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>50</y>
-     <width>74</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>Montserrat</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>Medico:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="idMedico">
-      <property name="font">
-       <font>
-        <family>Montserrat</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;
-color: #818181;</string>
-      </property>
-      <property name="text">
-       <string>id</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -110,6 +52,12 @@ color: #818181;</string>
         <width>200</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">*{
@@ -157,6 +105,12 @@ color: #818181;</string>
         <height>16777215</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">*{
 	background-color: white;
@@ -191,25 +145,84 @@ color: #818181;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QPlainTextEdit" name="motivo">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>88</y>
-     <width>300</width>
-     <height>74</height>
+     <x>20</x>
+     <y>20</y>
+     <width>431</width>
+     <height>171</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">border: none;
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Medico:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="idMedico">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
 color: #818181;</string>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-   <property name="plainText">
-    <string>No podré dar ésta cita debido a que el horario en el que está programada no me favorece por el tráfico de la ciudad, ya que es el horario en el que hay mas carros en la CDMX</string>
-   </property>
+        </property>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Motivo:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="motivo">
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+color: #818181;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>No podré dar ésta cita debido a que el horario en el que está programada no me favorece por el tráfico de la ciudad, ya que es el horario en el que hay mas carros en la CDMX</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
