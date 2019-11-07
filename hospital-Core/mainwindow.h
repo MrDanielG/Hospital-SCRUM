@@ -15,6 +15,7 @@
 #include "Widgets/Medico/medico_landpage.h"
 #include "Widgets/Medico/medico_horario.h"
 #include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
+#include "Clases/usuario.h"
 
 namespace Ui
 {
@@ -62,6 +63,7 @@ private:
     medico_horario horarioMedico;
     administrador_catalogo_cancelacion_cita cancelacionCatalogoAdmin;
 
+    Usuario datosLogin;
 
     int index;
 };

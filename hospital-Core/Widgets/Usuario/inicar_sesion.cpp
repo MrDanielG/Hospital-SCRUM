@@ -5,7 +5,7 @@
 #include "Clases/usuario.h"
 #include "mainwindow.h"
 #include "Widgets/Usuario/recuperar_contra.h"
-inicar_sesion::inicar_sesion(QWidget *parent) :
+inicar_sesion::inicar_sesion(Usuario *usuarioDatos, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::inicar_sesion)
 {
@@ -25,6 +25,8 @@ inicar_sesion::inicar_sesion(QWidget *parent) :
     }else{
         qDebug() << "base de datos sigue conectada en INICIAR SESION";
     }
+
+    this->usuarioDatos = usuarioDatos;
 }
 
 inicar_sesion::~inicar_sesion()
@@ -44,6 +46,8 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
 
     nombre_usuario = ui->line_correo->text();
     contrasenia = ui->line_contrasenia->text();
+    this->usuarioDatos->nombre_usuario = nombre_usuario;
+    this->usuarioDatos->passwd = contrasenia;
 
     if(nombre_usuario.isEmpty()|| contrasenia.isEmpty()){
         QMessageBox::warning(this,"Datos incompletos", "Ingresa tu usuario y contraseña");
@@ -75,6 +79,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 3;
+                                this->usuarioDatos->tipo_usuario = 3;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
 
                                 this->close();
@@ -85,6 +90,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 2;
+                                this->usuarioDatos->tipo_usuario = 2;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
@@ -95,6 +101,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 1;
+                                this->usuarioDatos->tipo_usuario = 1;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
@@ -104,6 +111,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 4;
+                                this->usuarioDatos->tipo_usuario = 4;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
@@ -114,6 +122,7 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 5;
+                                this->usuarioDatos->tipo_usuario = 5;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
