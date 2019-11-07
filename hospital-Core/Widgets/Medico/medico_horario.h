@@ -17,6 +17,10 @@ class medico_horario : public QWidget
 public:
     explicit medico_horario(QWidget *parent = nullptr);
     ~medico_horario();
+    void limiparCatalogo();
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::medico_horario *ui;

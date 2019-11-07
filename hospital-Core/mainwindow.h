@@ -14,6 +14,7 @@
 #include "Widgets/Paciente/paciente_landpage.h"
 #include "Widgets/Medico/medico_landpage.h"
 #include "Widgets/Medico/medico_horario.h"
+#include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
 #include "Widgets/Medico/medico_solicitudes.h"
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Clases/usuario.h"
@@ -48,6 +49,7 @@ private slots:
     void on_btn_horario_medico_clicked();
     void on_btn_inicio_medico_clicked();
 
+    void on_pushButton_6_clicked();
     void on_btn_solicitudes_medico_clicked();
 
 private:
@@ -62,6 +64,7 @@ private:
     paciente_landpage landpagepaciente;
     medico_landPage landpageMedico;
     medico_horario horarioMedico;
+    administrador_catalogo_cancelacion_cita cancelacionCatalogoAdmin;
     medico_solicitudes solicitudesMedico;
     inicar_sesion dialogo_iniciar_sesion;
 

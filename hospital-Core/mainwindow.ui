@@ -36,8 +36,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
+        <x>-10</x>
+        <y>-20</y>
         <width>1381</width>
         <height>731</height>
        </rect>
@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -384,10 +384,10 @@ background: #3E64FF;</string>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>10</y>
+        <x>430</x>
+        <y>0</y>
         <width>891</width>
-        <height>32</height>
+        <height>50</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -416,6 +416,39 @@ color: white;
        </item>
        <item>
         <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+color: white;</string>
+         </property>
+         <property name="text">
+          <string>Solicitudes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>

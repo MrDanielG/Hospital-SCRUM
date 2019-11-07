@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>medico_horario</class>
- <widget class="QWidget" name="medico_horario">
+ <class>administrador_catalogo_cancelacion_cita</class>
+ <widget class="QWidget" name="administrador_catalogo_cancelacion_cita">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -22,12 +22,6 @@
      <height>711</height>
     </rect>
    </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>30</height>
-    </size>
-   </property>
    <property name="styleSheet">
     <string notr="true">background: white;</string>
    </property>
@@ -38,10 +32,10 @@
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>120</y>
+     <x>140</x>
+     <y>100</y>
      <width>1100</width>
-     <height>471</height>
+     <height>481</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -57,7 +51,7 @@ border:none;</string>
       <x>0</x>
       <y>0</y>
       <width>1100</width>
-      <height>471</height>
+      <height>481</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -67,63 +61,53 @@ border:none;</string>
     </layout>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>39</x>
-     <y>650</y>
-     <width>81</width>
+     <x>600</x>
+     <y>50</y>
+     <width>181</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Montserrat</family>
-     <pointsize>15</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #818181;</string>
+    <string notr="true">border: none;
+color: #818181;</string>
    </property>
    <property name="text">
-    <string>Medico</string>
+    <string>Citas canceladas</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>1040</x>
-     <y>40</y>
-     <width>231</width>
-     <height>30</height>
+     <x>50</x>
+     <y>660</y>
+     <width>87</width>
+     <height>25</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QDateEdit" name="dateEdit"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="styleSheet">
-       <string notr="true">*{
-	background-color: white;
-	color: #3E64FF;
-	border: 1px solid #3E64FF;
-	border-radius: 5px;
-	padding: 5px;
-}
-
-:hover{
-	color: white;
-	background-color: #3E64FF;
-}</string>
-      </property>
-      <property name="text">
-       <string>Buscar</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+color: #818181;</string>
+   </property>
+   <property name="text">
+    <string>Administrador</string>
+   </property>
   </widget>
  </widget>
  <resources/>

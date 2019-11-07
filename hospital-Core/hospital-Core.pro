@@ -60,7 +60,10 @@ SOURCES += \
         mainwindow.cpp \
     Widgets/Medico/medico_landpage.cpp \
     Widgets/Medico/medico_horario.cpp \
-    Widgets/Medico/medico_tarjeta_horario.cpp
+    Widgets/Medico/medico_tarjeta_horario.cpp \
+    Widgets/Administrador/administrador_catalogo_cancelacion_cita.cpp \
+    Widgets/Administrador/administrador_tarjeta_cancelacion_cita.cpp \
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -96,7 +99,10 @@ HEADERS += \
         mainwindow.h \
     Widgets/Medico/medico_landpage.h \
     Widgets/Medico/medico_horario.h \
-    Widgets/Medico/medico_tarjeta_horario.h
+    Widgets/Medico/medico_tarjeta_horario.h \
+    Widgets/Administrador/administrador_catalogo_cancelacion_cita.h \
+    Widgets/Administrador/administrador_tarjeta_cancelacion_cita.h \
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
@@ -130,7 +136,10 @@ FORMS += \
         mainwindow.ui \
     Widgets/Medico/medico_landpage.ui \
     Widgets/Medico/medico_horario.ui \
-    Widgets/Medico/medico_tarjeta_horario.ui
+    Widgets/Medico/medico_tarjeta_horario.ui \
+    Widgets/Administrador/administrador_catalogo_cancelacion_cita.ui \
+    Widgets/Administrador/administrador_tarjeta_cancelacion_cita.ui \
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
