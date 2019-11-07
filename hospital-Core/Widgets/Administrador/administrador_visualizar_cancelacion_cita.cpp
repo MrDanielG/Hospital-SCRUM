@@ -56,22 +56,24 @@ void administrador_visualizar_cancelacion_cita::on_pbtn_aprobarRechazo_clicked()
 
     QString h_inicio, h_fin;
     QString idMedico;
-    int contador = 0
-            ;
+    int contador = 0;
+
     sql = "select id_medico from medico;";
     query.exec(sql);
     while (query.next()) {
         idMedico = query.value(0).toString();
-
         sql2 = "select count(*) from cita_medica where hora_inicio = '"+this->hInicio+"' and hora_fin = '"+this->hFin+"' and id_medico = "+idMedico+";";
         query2.exec(sql2);
         while (query2.next()) {
-            contador = query.value(0).toInt();
+            contador = query2.value(0).toInt();
+            qDebug()<<contador;
         }
         if(contador == 0){
-            qDebug()<<"Medico: "+idMedico;
             break;
         }
     }
+
+    sql = "update cita_medica set estado = 1, id_medico = "+idMedico+"where id_cita_medica = "+this->cita+";";
+    query.exec(sql);
     this->close();
 }
