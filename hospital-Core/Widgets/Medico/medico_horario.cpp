@@ -74,6 +74,67 @@ void medico_horario::limiparCatalogo()
     }
 }
 
+void medico_horario::setIdUsuario(QString id)
+{
+    this->idUsuario = id;
+    QDate fecha = fecha.currentDate();
+    QSqlQuery query(mDatabase);
+    QString currentFecha = QString::number(fecha.year())+"-"+QString::number(fecha.month())+"-"+QString::number(fecha.day());
+
+    QString prueba = "select id_persona from persona where id_usuario = '"+this->idUsuario+"';";
+    qDebug()<< "Qery1: "+prueba;
+    query.exec(prueba);
+    QString id_persona;
+    while (query.next()) {
+        id_persona = query.value(0).toString();
+    }
+
+    prueba = "select id_empleado from empleado where id_persona = "+id_persona+";";
+    qDebug()<< "Qery2: "+prueba;
+    query.exec(prueba);
+    QString id_empleado;
+    while (query.next()) {
+        id_empleado = query.value(0).toString();
+    }
+
+    prueba = "select id_medico from medico where id_empleado = "+id_empleado+";";
+    qDebug()<< "Qery3: "+prueba;
+    query.exec(prueba);
+    QString id_medico;
+    while (query.next()) {
+        id_medico = query.value(0).toString();
+    }
+    this->medico = id_medico;
+
+    prueba = "select * from tarjetaCitaHorario where estado = 1 and fecha = '"+currentFecha+"' and Medico = "+id_medico+";";
+    qDebug()<< "Qery4: "+prueba;
+    query.exec(prueba);
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while (query.next()) {
+        QString nombre = query.value(0).toString();
+        QString paterno = query.value(1).toString();
+        QString materno = query.value(2).toString();
+        QString morivo = query.value(3).toString();
+        QString hInicio = query.value(4).toString();
+        QString hFin = query.value(5).toString();
+        QString foto = query.value(6).toString();
+        QString idCita = query.value(8).toString();
+
+         row = i/4;
+         col= i%4;
+
+         medico_tarjeta_horario *tarjeta = new medico_tarjeta_horario(nombre, paterno, materno, morivo, hInicio, hFin, foto,idCita);
+         tarjeta->insertarDatos();
+
+         i++;
+         ui->gridLayout_horario->addWidget(tarjeta, row, col);
+    }
+}
+
 void medico_horario::on_pushButton_clicked()
 {
     QSqlQuery query;
@@ -82,7 +143,8 @@ void medico_horario::on_pushButton_clicked()
 
     limiparCatalogo();
 
-    sql = "select * from tarjetaCitaHorario where estado = 1 and fecha = '"+fecha+"';";
+    sql = "select * from tarjetaCitaHorario where estado = 1 and fecha = '"+fecha+"' and Medico = "+medico+";";
+    qDebug()<<"QuerBusqueda: "+sql;
     query.exec(sql);
 
     int i=0;

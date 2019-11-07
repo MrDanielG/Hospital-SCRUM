@@ -48,11 +48,16 @@ void MainWindow::setindex(int index){
     this->index = index;
 }
 
+QString MainWindow::getNombreUsuario()
+{
+    return this->datosLogin.nombre_usuario;
+}
+
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
-
+    horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     qDebug()<<"DATOS LOGIN";
     qDebug()<<this->datosLogin.nombre_usuario;
     qDebug()<<this->datosLogin.passwd;

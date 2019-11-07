@@ -18,6 +18,7 @@ public:
     explicit medico_horario(QWidget *parent = nullptr);
     ~medico_horario();
     void limiparCatalogo();
+    void setIdUsuario(QString);
 
 private slots:
     void on_pushButton_clicked();
@@ -25,6 +26,8 @@ private slots:
 private:
     Ui::medico_horario *ui;
     QSqlDatabase mDatabase;
+    QString idUsuario;
+    QString medico;
 };
 
 #endif // MEDICO_HORARIO_H
