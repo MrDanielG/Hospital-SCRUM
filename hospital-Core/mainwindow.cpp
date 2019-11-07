@@ -35,7 +35,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
-    ui->stackedWidget->insertWidget(11,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
 }
