@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
   mDatabase.setPassword("luisdrew1394");
 #endif
 
-
     mDatabase.setDatabaseName("hospital");
     QApplication a(argc, argv);
     MainWindow w;
