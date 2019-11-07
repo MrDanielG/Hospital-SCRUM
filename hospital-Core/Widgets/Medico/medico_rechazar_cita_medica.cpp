@@ -91,8 +91,15 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
            msgBox.setButtonText(QMessageBox::No,"No");
 
             if(msgBox.exec()==QMessageBox::Yes){
-                query2.prepare("update cita_medica set estado=2, justificacion_rechazo='"+justificacion+"' where id_cita_medica="+this->idCita);
-                query2.exec();
+                query2.prepare("update cita_medica set estado=2, justificacion_rechazo='"+justificacion+"' where id_cita_medica='"+this->idCita+"'");
+                if(query2.exec())
+                {
+                    qDebug()<<"Query ejecutado con exito";
+                }else
+                {
+                    qDebug()<<"Query NO ejecutado";
+                }
+
                 qDebug()<<"dif horas "<<hr2;
                 qDebug()<<"idCita "<<this->idCita;
 
