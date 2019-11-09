@@ -19,6 +19,7 @@
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
+#include "Widgets/Recepcionista/recepcionistalandpage.h"
 
 namespace Ui
 {
@@ -73,6 +74,7 @@ private:
     inicar_sesion dialogo_iniciar_sesion;
     paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
+    recepcionistaLandpage landpageRecepcionista;
 
     int index;
 };

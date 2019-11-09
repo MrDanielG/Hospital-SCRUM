@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
 }
 
 MainWindow::~MainWindow()
@@ -72,7 +73,9 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
      * 2 = Paciente
      * 3 = Administrador
      * 4 = Farmaceutico
-     * 5 = Staff
+     * 5 = Enfermera
+     * 6 = Cajero
+     * 7 = Recepcionista
      *
      * esto se hace para todos los else if dependiendo el caso
     */
@@ -92,10 +95,18 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
         ui->stackedWidget_2->setCurrentIndex(1);
     }
     else if(this->index == 4){
-
+        //Farmaceutico
     }
     else if(this->index == 5){
-
+        // Enfermera
+    }
+    else if (this->index == 6) {
+        //Cajero
+    }
+    else if (this->index == 7) {
+        //Recepcionista
+        ui->stackedWidget->setCurrentIndex(16);
+        ui->stackedWidget_2->setCurrentIndex(4);
     }
     qDebug()<<"usuario"<<dialogo_iniciar_sesion.getUsuario();
 }
