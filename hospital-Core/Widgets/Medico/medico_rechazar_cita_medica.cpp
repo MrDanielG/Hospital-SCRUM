@@ -54,10 +54,13 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
 {
 
     QMessageBox info;
-    QString hr,min,sec,auxh,hr2;
+    QString hr,min,sec,auxh;
+    int hr2;
     QString justificacion= ui->justificacion->toPlainText();
     QTime hora= QTime::currentTime(),hcita,hdif;
-    hr=QString::number( hora.hour()-12);
+    QDate fecha=QDate::currentDate(),fechacita;
+
+    hr=QString::number(hora.hour());
     min=QString::number(hora.minute());
     sec=QString::number(hora.second());
     QString horaActual=hr+":"+min+":"+sec;
@@ -66,7 +69,8 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
 
     QSqlQuery query(mDatabase);
     QSqlQuery query2(mDatabase);
-    query.prepare("select hora_inicio from cita_medica where id_cita_medica='"+this->idCita+"'");
+
+    query.prepare("select hora_inicio,fecha from cita_medica where id_cita_medica='"+this->idCita+"'");
     query.exec();
     query.next();
     hcita=query.value(0).toTime();
@@ -74,17 +78,23 @@ void medico_rechazar_cita_medica::on_btn_Rechazar_cita_clicked()
     qDebug()<<"hcita "<<hcita;
     qDebug()<<"auxh "<<auxh;
 
+    fechacita=query.value(1).toDate();
+
     query.prepare("select timediff('"+auxh+"','"+horaActual+"')");
     query.exec();
     query.next();
     hdif=query.value(0).toTime();
-    hr2=QString::number( hdif.hour());
+     hr2=hdif.hour();
+    if(hr2<0)
+    {
+        hr2= hdif.hour()* -1;
+    }
 
-
+    qDebug()<<"DIFERENCIA EN HORAS "<<hr2;
 
     if(justificacion!="")
     {
-        if(hr2.toInt()>=3)
+        if((hr2>=3 && fecha==fechacita)||(fechacita>fecha))
         {
            QMessageBox msgBox(QMessageBox::Question,"Confimacion","¿Estas seguro de rechazar esta consulta?",QMessageBox::Yes|QMessageBox::No);
            msgBox.setButtonText(QMessageBox::Yes,"Sí");
