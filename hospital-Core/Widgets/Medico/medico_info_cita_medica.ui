@@ -230,7 +230,7 @@
    <property name="styleSheet">
     <string notr="true">color: white;
 border: none;
-background: red;
+background: #EF1F4B;
 border-radius: 5px;</string>
    </property>
    <property name="text">

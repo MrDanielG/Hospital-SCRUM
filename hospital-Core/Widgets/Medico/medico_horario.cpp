@@ -139,7 +139,7 @@ void medico_horario::setIdUsuario(QString id)
 
 void medico_horario::on_pushButton_clicked()
 {
-    QSqlQuery query;
+    QSqlQuery query(mDatabase);
     QString sql;
     QString fecha = QString::number(ui->dateEdit->date().year())+"-"+QString::number(ui->dateEdit->date().month())+"-"+QString::number(ui->dateEdit->date().day());
 

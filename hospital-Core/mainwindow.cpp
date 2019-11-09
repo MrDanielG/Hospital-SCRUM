@@ -35,9 +35,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
+    ui->stackedWidget->insertWidget(12,&gestionCitas);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
-
-
 }
 
 MainWindow::~MainWindow()
@@ -58,10 +57,13 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
 {
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
-    horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
+
     qDebug()<<"DATOS LOGIN";
     qDebug()<<this->datosLogin.nombre_usuario;
     qDebug()<<this->datosLogin.passwd;
+
+    horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
+    gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -115,7 +117,6 @@ void MainWindow::on_btn_servicios_clicked()
 void MainWindow::on_btn_servicios_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
-
 }
 
 void MainWindow::on_btn_inicio_admin_clicked()
@@ -131,7 +132,6 @@ void MainWindow::on_btn_remedios_admin_clicked()
 void MainWindow::on_btn_gestionar_servicios_admin_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    //QWidget *ptr = ui->stackedWidget->widget(4);
 }
 
 void MainWindow::on_btn_gestionar_usuarios_admin_clicked()
@@ -169,6 +169,7 @@ void MainWindow::on_btn_inicio_medico_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(15);
+    cancelacionCatalogoAdmin.actualizarCatalogo();
 }
 
 void MainWindow::on_btn_solicitudes_medico_clicked()
@@ -202,4 +203,9 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
     solicitudesMedico.setIdMedico(idMed);
     solicitudesMedico.inicializar();
     ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_btn_gestionar_citas_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(12);
 }

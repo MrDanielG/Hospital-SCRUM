@@ -17,6 +17,7 @@ public:
     explicit administrador_catalogo_cancelacion_cita(QWidget *parent = nullptr);
     ~administrador_catalogo_cancelacion_cita();
     void limpiarCatalogo();
+    void actualizarCatalogo();
 
 private:
     Ui::administrador_catalogo_cancelacion_cita *ui;
