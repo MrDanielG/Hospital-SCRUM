@@ -86,6 +86,6 @@ void medico_informacion::setID(QString id)
 
 void medico_informacion::on_btn_modificar_medico_clicked()
 {
-    medico_modificar ventanamodificar;
+    medico_modificar ventanamodificar("Carlos");
     ventanamodificar.exec();
 }
