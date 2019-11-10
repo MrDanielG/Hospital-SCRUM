@@ -1,7 +1,7 @@
 #include "recepcionista_tarjeta_internados.h"
 #include "ui_recepcionista_tarjeta_internados.h"
-
-recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString paciente, QString medico, QString habitacion, QString fecha_fin, QString foto, QWidget *parent) :
+#include "Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h"
+recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString id_paciente, QString paciente, QString medico, QString habitacion, QDate fecha_fin, QString foto, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::recepcionista_tarjeta_internados)
 {
@@ -22,6 +22,7 @@ recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString pacie
             qDebug()<<"abierta";
     }
 
+    this->idPaciente = id_paciente;
     this->paciente = paciente;
     this->medico = medico;
     this->habitacion = habitacion ;
@@ -42,5 +43,12 @@ void recepcionista_tarjeta_internados::insertarDatos()
     ui->lbl_nombre_paciente->setText(paciente);
     ui->lbl_medico->setText(medico);
     ui->lbl_habitacion->setText(habitacion);
-    ui->lbl_dias_restantes->setText(fecha_fin);
+    ui->lbl_dias_restantes->setText(fecha_fin.toString());
+}
+
+void recepcionista_tarjeta_internados::on_btn_gestionar_internado_clicked()
+{
+    recepcionista_dialogo_gestionar_internado dialogo(idPaciente, paciente, medico, habitacion, fecha_fin, foto);
+    dialogo.insertarDatos();
+    dialogo.exec();
 }

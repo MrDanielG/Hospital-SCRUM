@@ -4,6 +4,8 @@
 #include "Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h"
 #include "Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h"
 #include <QDebug>
+#include <QDate>
+#include <QMessageBox>
 
 recepcionista_internados::recepcionista_internados(QWidget *parent) :
     QWidget(parent),
@@ -25,7 +27,27 @@ recepcionista_internados::recepcionista_internados(QWidget *parent) :
         }else{
             qDebug() << "base de datos sigue conectada en INICIAR SESION";
         }
+     limiparCatalogo();
+     actualizarCatalogo();
+}
 
+recepcionista_internados::~recepcionista_internados()
+{
+    delete ui;
+}
+
+void recepcionista_internados::limiparCatalogo()
+{
+    while (QLayoutItem *item = ui->gridLayout_internados->takeAt(0))
+    {
+        Q_ASSERT(!item->layout());
+        delete item->widget();
+        delete item;
+    }
+}
+
+void recepcionista_internados::actualizarCatalogo()
+{
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaInternados;");
     query.exec();
@@ -35,12 +57,13 @@ recepcionista_internados::recepcionista_internados(QWidget *parent) :
     int col = 0;
 
     while (query.next()) {
+        QString idPaciente = query.value(0).toString();
         QString nPaciente = query.value(1).toString();
         QString pPaciente = query.value(2).toString();
         QString mPaciente = query.value(3).toString();
         QString medico = query.value(4).toString();
         QString habitacion = query.value(5).toString();
-        QString fin = query.value(6).toString();
+        QDate fin = query.value(6).toDate();
         QString foto = query.value(7).toString();
 
         QString paciente = nPaciente+" "+pPaciente+" "+mPaciente;
@@ -48,18 +71,12 @@ recepcionista_internados::recepcionista_internados(QWidget *parent) :
          row = i/4;
          col= i%4;
 
-         recepcionista_tarjeta_internados *tarjeta = new recepcionista_tarjeta_internados(paciente, medico, habitacion, fin, foto);
+         recepcionista_tarjeta_internados *tarjeta = new recepcionista_tarjeta_internados(idPaciente, paciente, medico, habitacion, fin, foto);
          tarjeta->insertarDatos();
 
          i++;
          ui->gridLayout_internados->addWidget(tarjeta, row, col);
     }
-
-}
-
-recepcionista_internados::~recepcionista_internados()
-{
-    delete ui;
 }
 
 void recepcionista_internados::on_btn_agregar_internado_clicked()
@@ -94,7 +111,8 @@ void recepcionista_internados::on_btn_agregar_internado_clicked()
 
     }
 
-    QSqlQuery query2("select * from tarjetaPacientes;");
+    QSqlQuery query2(mDatabase);
+    query2.prepare("select * from tarjetaPacientes;");
     query2.exec();
 
     while(query2.next()){
@@ -119,5 +137,68 @@ void recepcionista_internados::on_btn_agregar_internado_clicked()
 
 void recepcionista_internados::on_btn_cancelar_internado_clicked()
 {
+    ui->paciente_linEdit->setText("");
+    ui->medico_linEdit->setText("");
+    ui->fin_linEdit->setText("");
+    ui->habitacion_linEdit->setText("");
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void recepcionista_internados::on_btn_agregar_internado_2_clicked()
+{
+    QDate date = date.currentDate();
+    QString fecha_inicio = QString::number(date.year())+"-"+QString::number(date.month())+"-"+QString::number(date.day());
+    QString fecha_fin = ui->fin_linEdit->text();
+    QString id_paciente = ui->paciente_linEdit->text();
+    QString id_medico = ui->medico_linEdit->text();
+    QString habitacion = ui->habitacion_linEdit->text();
+
+    if(id_paciente == "" || id_medico == "" || habitacion == ""){
+        QMessageBox::warning(this,"Datos incompletos", "Por favor llena todos los campos obligatorios marcados con un *");
+    }
+    else if(fecha_fin == ""){
+        QMessageBox messageBox(QMessageBox::Question,tr("Critical Error"), tr("Estás seguro de registrar éste internado"), QMessageBox::Yes | QMessageBox::No);
+
+        messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+        messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+        if (messageBox.exec() == QMessageBox::Yes){
+            QSqlQuery query(mDatabase);
+            QString sql = "insert into internados(fecha_inicio, id_paciente, id_medico, habitacion) values('"+fecha_inicio+"', "+id_paciente+", "+id_medico+", "+habitacion+");";
+            qDebug()<<sql;
+            query.prepare(sql);
+            query.exec();
+            QMessageBox::information(this, "Agregado", "El internado ha sido agregado correctamente");
+            limiparCatalogo();
+            actualizarCatalogo();
+            ui->paciente_linEdit->setText("");
+            ui->medico_linEdit->setText("");
+            ui->fin_linEdit->setText("");
+            ui->habitacion_linEdit->setText("");
+            ui->stackedWidget->setCurrentIndex(0);
+        }
+    }
+    else {
+        QMessageBox messageBox(QMessageBox::Question,tr("Critical Error"), tr("Estás seguro de registrar éste internado"), QMessageBox::Yes | QMessageBox::No);
+
+        messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+        messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+        if (messageBox.exec() == QMessageBox::Yes){
+            QSqlQuery query(mDatabase);
+            QString sql = "insert into internados(fecha_inicio, fecha_fin, id_paciente, id_medico, habitacion) values('"+fecha_inicio+"', '"+fecha_fin+"', "+id_paciente+", "+id_medico+", "+habitacion+");";
+            qDebug()<<sql;
+            query.prepare(sql);
+            query.exec();
+            QMessageBox::information(this, "Agregado", "El internado ha sido agregado correctamente");
+            limiparCatalogo();
+            actualizarCatalogo();
+            ui->paciente_linEdit->setText("");
+            ui->medico_linEdit->setText("");
+            ui->fin_linEdit->setText("");
+            ui->habitacion_linEdit->setText("");
+            ui->stackedWidget->setCurrentIndex(0);
+        }
+    }
+
 }

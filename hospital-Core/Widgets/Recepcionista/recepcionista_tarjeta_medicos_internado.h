@@ -19,6 +19,9 @@ public:
     ~recepcionista_tarjeta_medicos_internado();
     void insertarDatos();
 
+private slots:
+    void on_btn_visualizar_clicked();
+
 private:
     Ui::recepcionista_tarjeta_medicos_internado *ui;
     QSqlDatabase mDatabase;

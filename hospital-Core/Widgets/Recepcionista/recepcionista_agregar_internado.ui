@@ -310,7 +310,7 @@ border-bottom: 1px solid white;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_gestionar_internado">
+  <widget class="QPushButton" name="btn_agregar_internado">
    <property name="geometry">
     <rect>
      <x>1030</x>
@@ -336,7 +336,7 @@ border-bottom: 1px solid white;</string>
 </string>
    </property>
    <property name="text">
-    <string>Gestionar</string>
+    <string>Agregar</string>
    </property>
   </widget>
   <zorder>label</zorder>
@@ -353,7 +353,7 @@ border-bottom: 1px solid white;</string>
   <zorder>medico_linEdit</zorder>
   <zorder>paciente</zorder>
   <zorder>paciente_linEdit</zorder>
-  <zorder>btn_gestionar_internado</zorder>
+  <zorder>btn_agregar_internado</zorder>
  </widget>
  <resources/>
  <connections/>

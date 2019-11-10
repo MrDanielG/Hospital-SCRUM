@@ -1,5 +1,6 @@
 #include "recepcionista_tarjeta_pacientes_internados.h"
 #include "ui_recepcionista_tarjeta_pacientes_internados.h"
+#include <QClipboard>
 
 recepcionista_tarjeta_pacientes_internados::recepcionista_tarjeta_pacientes_internados(QString id, QString nombre, QString paterno, QString materno, QString foto, QString curp, QWidget *parent) :
     QWidget(parent),
@@ -41,11 +42,10 @@ void recepcionista_tarjeta_pacientes_internados::insertarDatos()
     ui->fotografia->setPixmap(imag);
     ui->nombre_paciente->setText(nombre);
     ui->curp_paciente->setText(curp);
-    ui->id_paciente->setText(id);
 }
 
 void recepcionista_tarjeta_pacientes_internados::on_btn_visualizar_clicked()
 {
-    QString nombre = ui->nombre_paciente->text();
-    qDebug()<<nombre;
+    QClipboard *clipboard = QApplication::clipboard( );
+    clipboard->setText(id);
 }

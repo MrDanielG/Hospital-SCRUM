@@ -17,11 +17,14 @@ public:
     explicit recepcionista_internados(QWidget *parent = nullptr);
     ~recepcionista_internados();
     void limiparCatalogo();
+    void actualizarCatalogo();
 
 private slots:
     void on_btn_agregar_internado_clicked();
 
     void on_btn_cancelar_internado_clicked();
+
+    void on_btn_agregar_internado_2_clicked();
 
 private:
     Ui::recepcionista_internados *ui;
