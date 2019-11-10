@@ -358,7 +358,7 @@ border: none;</string>
     <string>dsfdsfdgdfgsdf</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_modificar_medico">
    <property name="geometry">
     <rect>
      <x>590</x>
@@ -398,7 +398,7 @@ border-radius: 10px;</string>
   <zorder>text_logros</zorder>
   <zorder>label_9</zorder>
   <zorder>label_8</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>btn_modificar_medico</zorder>
  </widget>
  <resources>
   <include location="../../resources.qrc"/>
