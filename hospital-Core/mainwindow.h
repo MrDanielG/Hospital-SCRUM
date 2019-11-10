@@ -20,6 +20,8 @@
 #include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
 #include "Widgets/Medico/medico_informacion.h"
+#include "Widgets/Recepcionista/recepcionistalandpage.h"
+#include "Widgets/Recepcionista/recepcionista_internados.h"
 
 namespace Ui
 {
@@ -58,6 +60,7 @@ private slots:
     void on_btn_gestionar_citas_clicked();
 
     void on_btn_informacion_medico_clicked();
+    void on_btn_horario_medico_2_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -77,6 +80,9 @@ private:
     paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
     medico_informacion informacionMedico;
+    recepcionistaLandpage landpageRecepcionista;
+    recepcionista_internados internados;
+
 
     int index;
     QString sesion="";

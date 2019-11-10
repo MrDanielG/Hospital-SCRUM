@@ -68,7 +68,14 @@ SOURCES += \
     Widgets/Medico/medico_tarjeta_horario.cpp \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.cpp \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.cpp \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.cpp
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.cpp \
+    Widgets/Recepcionista/recepcionistalandpage.cpp \
+    Widgets/Recepcionista/recepcionista_internados.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.cpp \
+    Widgets/Recepcionista/recepcionista_agregar_internado.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.cpp \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -112,7 +119,14 @@ HEADERS += \
     Widgets/Medico/medico_tarjeta_horario.h \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.h \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.h \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.h
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.h \
+    Widgets/Recepcionista/recepcionistalandpage.h \
+    Widgets/Recepcionista/recepcionista_internados.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.h \
+    Widgets/Recepcionista/recepcionista_agregar_internado.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
@@ -154,7 +168,14 @@ FORMS += \
     Widgets/Medico/medico_tarjeta_horario.ui \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.ui \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.ui \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.ui
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.ui \
+    Widgets/Recepcionista/recepcionistalandpage.ui \
+    Widgets/Recepcionista/recepcionista_internados.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.ui \
+    Widgets/Recepcionista/recepcionista_agregar_internado.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.ui \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

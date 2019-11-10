@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>recepcionista_agregar_internado</class>
+ <widget class="QWidget" name="recepcionista_agregar_internado">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>750</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>671</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border:none;</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>671</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout_internados"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>390</y>
+     <width>671</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border:none;</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>671</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout_internados_2"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color: #818181;</string>
+   </property>
+   <property name="text">
+    <string>Paciente</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color: #818181;</string>
+   </property>
+   <property name="text">
+    <string>Medico</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="paciente">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>90</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color:  white;</string>
+   </property>
+   <property name="text">
+    <string>Paciente</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="paciente_linEdit">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>110</y>
+     <width>311</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #3E64FF;
+border: none;
+border-bottom: 1px solid white;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Medico">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>160</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color: white;</string>
+   </property>
+   <property name="text">
+    <string>Medico</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="medico_linEdit">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>180</y>
+     <width>311</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#3E64FF;
+border: none;
+border-bottom: 1px solid white;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Fin">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>230</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color: white;</string>
+   </property>
+   <property name="text">
+    <string>Fin</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fin_linEdit">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>250</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#3E64FF;
+border: none;
+border-bottom: 1px solid white;</string>
+   </property>
+   <property name="placeholderText">
+    <string>yyy-mm-dd</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Habitacion">
+   <property name="geometry">
+    <rect>
+     <x>1180</x>
+     <y>230</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+color: white;</string>
+   </property>
+   <property name="text">
+    <string>Habitación</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="habitacion_linEdit">
+   <property name="geometry">
+    <rect>
+     <x>1180</x>
+     <y>250</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#3E64FF;
+border: none;
+border-bottom: 1px solid white;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="color">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>0</y>
+     <width>446</width>
+     <height>750</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#3E64FF;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_agregar_internado">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>570</y>
+     <width>251</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Agregar</string>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>scrollArea</zorder>
+  <zorder>scrollArea_2</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>color</zorder>
+  <zorder>Fin</zorder>
+  <zorder>Habitacion</zorder>
+  <zorder>Medico</zorder>
+  <zorder>fin_linEdit</zorder>
+  <zorder>habitacion_linEdit</zorder>
+  <zorder>medico_linEdit</zorder>
+  <zorder>paciente</zorder>
+  <zorder>paciente_linEdit</zorder>
+  <zorder>btn_agregar_internado</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

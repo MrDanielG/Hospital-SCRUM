@@ -131,12 +131,34 @@ void inicar_sesion::on_btn_iniciarsesion_sesion_clicked(){
                                 this->close();
                             }
 
-                            else if(usuario.tipo_usuario == "Staff"){
+                            else if(usuario.tipo_usuario == "Enfermera"){
                                 ui->line_correo->clear();
                                 ui->line_contrasenia->clear();
 
                                 this->tipodeusuario = 5;
                                 this->usuarioDatos->tipo_usuario = 5;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
+                            }
+
+                            else if(usuario.tipo_usuario == "Cajero"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 6;
+                                this->usuarioDatos->tipo_usuario = 6;
+                                qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
+                                //MainWindow *main = new MainWindow(this, this->tipodeusuario);
+                                this->close();
+                            }
+
+                            else if(usuario.tipo_usuario == "Resepcionista"){
+                                ui->line_correo->clear();
+                                ui->line_contrasenia->clear();
+
+                                this->tipodeusuario = 7;
+                                this->usuarioDatos->tipo_usuario = 7;
                                 qDebug()<<"Tipo Usuariooooo "<<this->tipodeusuario;
                                 //MainWindow *main = new MainWindow(this, this->tipodeusuario);
                                 this->close();
