@@ -20,6 +20,7 @@
 #include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
 #include "Widgets/Recepcionista/recepcionistalandpage.h"
+#include "Widgets/Recepcionista/recepcionista_internados.h"
 
 namespace Ui
 {
@@ -57,6 +58,8 @@ private slots:
 
     void on_btn_gestionar_citas_clicked();
 
+    void on_btn_horario_medico_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -75,6 +78,8 @@ private:
     paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
     recepcionistaLandpage landpageRecepcionista;
+    recepcionista_internados internados;
+
 
     int index;
 };

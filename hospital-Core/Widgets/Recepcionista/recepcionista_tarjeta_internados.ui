@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>recepcionista_tarjeta_internados</class>
+ <widget class="QWidget" name="recepcionista_tarjeta_internados">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>370</width>
+    <height>210</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>359</width>
+     <height>149</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_prioridad_medico_tarjeta_horario">
+   <property name="geometry">
+    <rect>
+     <x>181</x>
+     <y>111</y>
+     <width>75</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>75</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>75</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
+   <property name="text">
+    <string>Habitación:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_dias_restantes">
+   <property name="geometry">
+    <rect>
+     <x>288</x>
+     <y>81</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;
+</string>
+   </property>
+   <property name="text">
+    <string>13</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_gestionar_internado">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>171</y>
+     <width>251</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	color: white;
+	background-color: #3E64FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Gestionar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_nombre_paciente">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>20</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string>Luis Rolando Banderas Barrera</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_foto_paciente">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>25</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgPrueba.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>181</x>
+     <y>81</y>
+     <width>99</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
+   <property name="text">
+    <string>Días Restantes:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_habitacion">
+   <property name="geometry">
+    <rect>
+     <x>264</x>
+     <y>111</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
+   <property name="text">
+    <string>15</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
+   <property name="text">
+    <string>Medico:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_medico">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>50</y>
+     <width>92</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;
+</string>
+   </property>
+   <property name="text">
+    <string>Luis Banderas</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
