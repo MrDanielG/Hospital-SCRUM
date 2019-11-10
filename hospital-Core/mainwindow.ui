@@ -95,7 +95,7 @@ background: none;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>:/imagenes/Imagenes/img_doctores.png</pixmap>
+       <pixmap resource="resources.qrc">:/imagenes/Imagenes/img_doctores.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -1112,6 +1112,8 @@ color: white;</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

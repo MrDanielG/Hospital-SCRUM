@@ -19,6 +19,7 @@
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
+#include "Widgets/Medico/medico_informacion.h"
 
 namespace Ui
 {
@@ -56,6 +57,8 @@ private slots:
 
     void on_btn_gestionar_citas_clicked();
 
+    void on_btn_informacion_medico_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -73,6 +76,7 @@ private:
     inicar_sesion dialogo_iniciar_sesion;
     paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
+    medico_informacion informacionMedico;
 
     int index;
 };

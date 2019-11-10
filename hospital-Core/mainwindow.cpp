@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(16,&informacionMedico);
 }
 
 MainWindow::~MainWindow()
@@ -208,4 +209,9 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
 void MainWindow::on_btn_gestionar_citas_clicked()
 {
     ui->stackedWidget->setCurrentIndex(12);
+}
+
+void MainWindow::on_btn_informacion_medico_clicked(){
+    ui->stackedWidget->setCurrentIndex(16);
+
 }
