@@ -59,12 +59,17 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 
+    this->sesion = dialogo_iniciar_sesion.getUsuario();
+
     qDebug()<<"DATOS LOGIN";
     qDebug()<<this->datosLogin.nombre_usuario;
     qDebug()<<this->datosLogin.passwd;
 
+
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
+    informacionMedico.setID(this->datosLogin.nombre_usuario);
+
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 

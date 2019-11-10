@@ -27,10 +27,14 @@ private slots:
 
     void on_btnModificarDatos_clicked();
 
+    void on_btnFoto_clicked();
+
 private:
     Ui::medico_modificar *ui;
     QSqlDatabase mDatabase;
     QString id;
+    QString Foto;
+
 };
 
 #endif // MEDICO_MODIFICAR_H

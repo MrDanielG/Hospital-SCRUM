@@ -27,11 +27,25 @@ medico_informacion::medico_informacion(QWidget *parent) :
     }else{
         qDebug() << "base de datos sigue conectada en INICIAR SESION";
     }
-    this->idinfo = "1";
 
+
+
+}
+
+medico_informacion::~medico_informacion()
+{
+    delete ui;
+}
+
+void medico_informacion::extraerDatos(){
     QSqlQuery query(mDatabase);
+    qDebug()<<"El id obtenidoooooo "+ this->idinfo;
 
-    query.prepare("select id_persona, nombre, paterno, materno, fNacimiento, correo, foto from persona where id_persona = "+idinfo);
+    query.prepare("SELECT persona.id_persona, persona.nombre, persona.paterno, "
+                  "persona.materno, persona.fNacimiento, persona.correo, persona.foto, usuario.id_usuario "
+                  "FROM persona INNER JOIN usuario "
+                  "ON persona.id_usuario = usuario.id_usuario "
+                  "where usuario.id_usuario= '"+idinfo+"'");
     query.exec();
 
     while(query.next()){
@@ -46,7 +60,15 @@ medico_informacion::medico_informacion(QWidget *parent) :
     }
 
     QSqlQuery medico(mDatabase);
-    medico.prepare("SELECT experiencia, logros, estudios FROM empleado RIGHT JOIN medico ON empleado.id_empleado = medico.id_empleado where id_persona = 1");
+
+    medico.prepare("SELECT medico.experiencia, medico.logros, medico.estudios, usuario.id_usuario "
+                   "FROM usuario INNER JOIN persona "
+                   "ON usuario.id_usuario = persona.id_usuario "
+                   "INNER JOIN empleado "
+                   "ON persona.id_persona = empleado.id_persona "
+                   "INNER JOIN medico "
+                   "ON empleado.id_empleado = medico.id_empleado "
+                   "where usuario.id_usuario = '"+idinfo+"'");
     medico.exec();
 
     while (medico.next()){
@@ -55,14 +77,7 @@ medico_informacion::medico_informacion(QWidget *parent) :
         QString estudios = medico.value(2).toString();
         insertarDatosMedico(exp, log, estudios);
     }
-
 }
-
-medico_informacion::~medico_informacion()
-{
-    delete ui;
-}
-
 void medico_informacion::insertarDatos(QString nombrei, QString paternoi, QString maternoi, QString edadi, QString correoi, QString fotoi){
     //C:/Users/Angel/Documents/Escuela/5toSemestre/SoftwareEngineer2/Hospital-SCRUM/hospital-Core/Imagenes/doctor
     QPixmap img(fotoi);
@@ -81,11 +96,12 @@ void medico_informacion::insertarDatosMedico(QString experiencia, QString logros
 void medico_informacion::setID(QString id)
 {
     this->idinfo = id;
+    extraerDatos();
 }
 
 
 void medico_informacion::on_btn_modificar_medico_clicked()
 {
-    medico_modificar ventanamodificar("Carlos");
+    medico_modificar ventanamodificar(this->idinfo);
     ventanamodificar.exec();
 }

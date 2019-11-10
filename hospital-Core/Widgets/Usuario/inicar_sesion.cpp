@@ -45,6 +45,7 @@ int inicar_sesion::getindex()
     return this->tipodeusuario;
 }
 
+
 QString inicar_sesion::getUsuario()
 {
     return this->usuario;

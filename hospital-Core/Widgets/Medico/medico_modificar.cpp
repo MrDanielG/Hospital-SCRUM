@@ -1,5 +1,6 @@
 #include "medico_modificar.h"
 #include "ui_medico_modificar.h"
+#include <QFileDialog>
 
 medico_modificar::medico_modificar(QString id, QWidget *parent) :
     QDialog(parent),
@@ -7,6 +8,7 @@ medico_modificar::medico_modificar(QString id, QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+
 
     #ifdef Q_OS_WIN
       mDatabase = QSqlDatabase::database("Connection");
@@ -24,6 +26,7 @@ medico_modificar::medico_modificar(QString id, QWidget *parent) :
     }else{
             qDebug()<<"Base de datos continua abierta, esto es:  Medico Modificar";
     }
+    this->id=id;
     //Query para mostrar los datos en los lineedit
     QSqlQuery MostrarDatos(mDatabase);
 
@@ -39,7 +42,7 @@ medico_modificar::medico_modificar(QString id, QWidget *parent) :
                          "ON persona.id_persona = empleado.id_persona "
                          "INNER JOIN medico "
                          "ON empleado.id_empleado = medico.id_empleado "
-                         "where usuario.id_usuario = 'carlos'");
+                         "where usuario.id_usuario = '"+id+"'");
     MostrarDatos.exec();
 
     while (MostrarDatos.next()){
@@ -107,7 +110,7 @@ void medico_modificar::on_btnModificarDatos_clicked()
     QString Direccion = ui->LineDireccion->text();
     QString Contrasenia = ui->LineContrasenia->text();
     QString Experiencia = ui->LineExperiencia->text();
-    QString Foto = ui->LabelFoto->text();
+
 
 
     QMessageBox msgBox;
@@ -133,7 +136,7 @@ void medico_modificar::on_btnModificarDatos_clicked()
                              "persona.materno= '"+Materno+"', persona.correo='"+Correo+"', "
                              "persona.foto='"+Foto+"', persona.direccion='"+Direccion+"', "
                              "usuario.contrasenia='"+Contrasenia+"', usuario.mascota='"+Mascota+"' "
-                             "WHERE usuario.id_usuario='sebastian'");
+                             "WHERE usuario.id_usuario='"+id+"'");
 
         ModificarDatos.exec();
 
@@ -146,8 +149,21 @@ void medico_modificar::on_btnModificarDatos_clicked()
                                       QMessageBox::Ok);
     }
 
+}
 
+void medico_modificar::on_btnFoto_clicked()
+{
+    QString dir = QFileDialog::getOpenFileName(this,tr("Seleccione una imagen"), "/C:/", tr("Archivos de Imagen (* .png,* .jpg)"));
+    if(!dir.isEmpty()){
+        QPixmap img(dir);
+        ui->LabelFoto->setPixmap(img.scaled(120,120, Qt::IgnoreAspectRatio));
+        this->Foto = dir;
 
+        QMessageBox::information(this, tr("Correcto"),
+                     tr("Imagen agregada correctamente"));
 
-
+    }else{
+        QMessageBox::information(this, tr("Error"),
+                     tr("No se inserto ninguna imagen"));
+    }
 }

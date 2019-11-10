@@ -79,6 +79,7 @@ private:
     medico_informacion informacionMedico;
 
     int index;
+    QString sesion="";
 };
 
 #endif // MAINWINDOW_H

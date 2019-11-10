@@ -19,9 +19,11 @@ class medico_informacion : public QWidget
 public:
     explicit medico_informacion(QWidget *parent = nullptr);
     ~medico_informacion();
+    void extraerDatos();
     void insertarDatos(QString, QString, QString, QString, QString, QString);
     void insertarDatosMedico(QString, QString, QString);
     void setID(QString);
+
 
 private slots:
     void on_btn_modificar_medico_clicked();
@@ -31,6 +33,7 @@ private:
     QSqlDatabase mDatabase;
     QString idinfo;
     QString idpersona;
+    QString idModificar;
 
 };
 
