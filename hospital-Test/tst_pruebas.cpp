@@ -11,6 +11,7 @@ class pruebas : public QObject
 public:
     pruebas();
     ~pruebas();
+    void insertarDatos(QString experiencia,QString logros,QString estudios,QString cedula,QString nombre,QString paterno,QString materno,QString correo,QString foto,QString direccion,QString contrasenia,QString mascota);
 private:
     QSqlDatabase mDatabase;
 
@@ -31,6 +32,7 @@ private slots:
     void editarPerfilProp();
     void aprobarCancelacionCita();
     void asignarCitaAMedico();
+    void modificarMedico();
 
 
 };
@@ -41,6 +43,14 @@ pruebas::pruebas()
 }
 
 pruebas::~pruebas(){
+
+
+}
+
+void pruebas::insertarDatos(QString experiencia, QString logros, QString estudios,
+                            QString cedula, QString nombre, QString paterno, QString materno,
+                            QString correo, QString foto, QString direccion, QString contrasenia,
+                            QString mascota){
 
 
 }
@@ -325,6 +335,48 @@ void pruebas::aprobarCancelacionCita()
 
 void pruebas::asignarCitaAMedico()
 {
+
+}
+
+void pruebas::modificarMedico()
+{
+    QSqlQuery ModificarDatos(mDatabase);
+
+    QString Cedula = "54484da";
+    QString Correo = "sebastian@gmail.com;";
+    QString Logros = "Certificados de google";
+    QString Nombre = "Sebastian";
+    QString Mascota = "Galleta";
+    QString Materno = "Rosas";
+    QString Paterno = "Genis";
+    QString Estudios = "Estudio en Harvard";
+    QString Direccion = "Morelos";
+    QString Contrasenia = "123";
+    QString Experiencia = "Trabajo en el FBI";
+    QString Foto = "C:/img/img2.png";
+    QString id = "sebastian";
+     QString aprobada = "false";
+
+    ModificarDatos.prepare("UPDATE usuario INNER JOIN persona "
+                         "ON usuario.id_usuario = persona.id_usuario "
+                         "INNER JOIN empleado "
+                         "ON persona.id_persona = empleado.id_persona "
+                         "INNER JOIN medico "
+                         "ON empleado.id_empleado = medico.id_empleado "
+                         "SET medico.experiencia='"+Experiencia+"', "
+                         "medico.logros='"+Logros+"', medico.estudios = '"+Estudios+"', "
+                         "medico.cedula='"+Cedula+"', "
+                         "persona.nombre='"+Nombre+"', persona.paterno='"+Paterno+"', "
+                         "persona.materno= '"+Materno+"', persona.correo='"+Correo+"', "
+                         "persona.foto='"+Foto+"', persona.direccion='"+Direccion+"', "
+                         "usuario.contrasenia='"+Contrasenia+"', usuario.mascota='"+Mascota+"' "
+                         "WHERE usuario.id_usuario='"+id+"'");
+
+    ModificarDatos.exec();
+    aprobada = "true";
+    QCOMPARE(aprobada, "true");
+
+
 
 }
 
