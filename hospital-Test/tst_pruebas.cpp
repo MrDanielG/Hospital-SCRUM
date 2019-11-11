@@ -573,7 +573,6 @@ void pruebas::buscarporNombre()
     QString arg1 = "Joaquin";
     int seccionactivada = 1;
     QString encontrada = "true";
-
     if(seccionactivada == 1){
         QSqlQuery MostrarDatos(mDatabase);
         MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
