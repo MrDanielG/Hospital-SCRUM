@@ -32,7 +32,13 @@ private slots:
     void editarPerfilProp();
     void aprobarCancelacionCita();
     void asignarCitaAMedico();
+    //Pruebas Angel
     void modificarMedico();
+    void visualizarCitas();
+    void visualizarOperaciones();
+    void agendarCita();
+    void buscarporFecha();
+    void buscarporNombre();
 
 
 };
@@ -376,6 +382,243 @@ void pruebas::modificarMedico()
     aprobada = "true";
     QCOMPARE(aprobada, "true");
 
+
+
+}
+
+void pruebas::visualizarCitas()
+{
+    QSqlQuery MostrarDatos(mDatabase);
+    QString creada = "false";
+
+    MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
+                         "From persona INNER JOIN empleado "
+                         "ON persona.id_persona = empleado.id_persona "
+                         "INNER JOIN medico "
+                         "ON empleado.id_empleado = medico.id_empleado "
+                         "INNER JOIN cita_medica as cita "
+                         "ON medico.id_medico = cita.id_medico ");
+    MostrarDatos.exec();
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while (MostrarDatos.next()){
+        QString fecha = MostrarDatos.value(0).toString();
+        QString hora = MostrarDatos.value(1).toString();
+        QString medico = MostrarDatos.value(2).toString();
+        QString medicopaterno = MostrarDatos.value(3).toString();
+        row = i/2;
+        col= i%2;
+        i++;
+        creada="true";
+    }
+    QCOMPARE(creada, "true");
+
+}
+
+void pruebas::visualizarOperaciones()
+{
+    QSqlQuery MostrarDatos(mDatabase);
+    QString creada = "false";
+
+    MostrarDatos.prepare("select operaciones.fecha, persona.nombre, persona.paterno "
+                         " FROM persona INNER JOIN empleado "
+                         "ON persona.id_persona = empleado.id_persona "
+                         "INNER JOIN medico "
+                         "ON empleado.id_empleado = medico.id_empleado "
+                         "INNER JOIN operaciones_agendadas as operaciones "
+                         "ON medico.id_medico = operaciones.id_medico");
+
+    MostrarDatos.exec();
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while (MostrarDatos.next()){
+        QString fecha = MostrarDatos.value(0).toString();
+        QString hora = "04:14:10";
+        QString medico = MostrarDatos.value(1).toString();
+        QString medicopaterno = MostrarDatos.value(2).toString();
+        row = i/2;
+        col= i%2;
+        i++;
+        creada = "true";
+
+    }
+    QCOMPARE(creada, "true");
+
+}
+
+void pruebas::agendarCita()
+{
+    QString creada = "false";
+    QString lineEdit_descripcion = "Dolor de Cabeza";
+    QString lineEdit_motivo = "Dolor de cabeza muy fuerte";
+
+    if(lineEdit_descripcion.isEmpty() &&
+            lineEdit_motivo.isEmpty()){
+
+    } else {
+        QString folioMedico = "25";
+        QString motivo = lineEdit_motivo;
+        QString descripcion = lineEdit_descripcion;
+        QString fecha = "2019-12-12";
+        QString horaInicio = "10:00:00";
+        QString horaFinal = "12:00:00";
+        QString idPaciente = "5";
+
+        QSqlQuery crearCita(mDatabase);
+        QSqlQuery BuscarCita(mDatabase);
+
+        crearCita.prepare("INSERT INTO cita_medica(motivo, descripcion, fecha, hora_inicio, hora_fin, id_medico, id_paciente, estado) "
+                          "VALUES ('"+motivo+"','"+descripcion+"','"+fecha+"','"+horaInicio+"','"+horaFinal+"','"+folioMedico+"','"+idPaciente+"', '1')");
+        crearCita.exec();
+
+        BuscarCita.prepare("select * from cita_medica where "
+                           "motivo = '"+lineEdit_motivo+"' and descripcion = '"+lineEdit_descripcion+"' and id_paciente = 5 and id_medico = 25 ");
+
+
+        BuscarCita.exec();
+        while(BuscarCita.next()){
+            creada = "true";
+        }
+    }
+
+    QCOMPARE(creada, "true");
+
+}
+
+void pruebas::buscarporFecha()
+{
+    QString nombre = "Joaquin";
+    char caracter = '%';
+    QString arg1 = "201";
+    int seccionactivada = 2;
+    QString encontrada = "false";
+
+    if(seccionactivada==1){
+        QSqlQuery MostrarDatos(mDatabase);
+        MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
+                             "From persona INNER JOIN empleado "
+                             "ON persona.id_persona = empleado.id_persona "
+                             "INNER JOIN medico "
+                             "ON empleado.id_empleado = medico.id_empleado "
+                             "INNER JOIN cita_medica as cita "
+                             "ON medico.id_medico = cita.id_medico "
+                             "where cita.fecha like '"+arg1+""+caracter+"' and persona.nombre like '"+nombre+""+caracter+"'");
+        MostrarDatos.exec();
+
+        int row = 0;
+        int col = 0;
+        int i=0;
+
+        while (MostrarDatos.next()){
+            QString fecha = MostrarDatos.value(0).toString();
+            QString hora = MostrarDatos.value(1).toString();
+            QString medico = MostrarDatos.value(2).toString();
+            QString medicopaterno = MostrarDatos.value(3).toString();
+            row = i/2;
+            col= i%2;
+            i++;
+            encontrada = "true";
+        }
+    }else{
+        QSqlQuery MostrarDatos(mDatabase);
+        MostrarDatos.prepare("select operaciones.fecha, persona.nombre, persona.paterno "
+                             " FROM persona INNER JOIN empleado "
+                             "ON persona.id_persona = empleado.id_persona "
+                             "INNER JOIN medico "
+                             "ON empleado.id_empleado = medico.id_empleado "
+                             "INNER JOIN operaciones_agendadas as operaciones "
+                             "ON medico.id_medico = operaciones.id_medico "
+                             "where operaciones.fecha like '"+arg1+""+caracter+"' and persona.nombre like '"+nombre+""+caracter+"'");
+        MostrarDatos.exec();
+        int row = 0;
+        int col = 0;
+        int i=0;
+
+
+        while (MostrarDatos.next()){
+            QString fecha = MostrarDatos.value(0).toString();
+            QString hora = MostrarDatos.value(1).toString();
+            QString medico = MostrarDatos.value(2).toString();
+            QString medicopaterno = MostrarDatos.value(3).toString();
+            row = i/2;
+            col= i%2;
+            i++;
+            encontrada = "true";
+        }
+    }
+    QCOMPARE(encontrada, "true");
+
+}
+
+void pruebas::buscarporNombre()
+{
+    QString fecha = "2019";
+    char caracter = '%';
+    QString arg1 = "Joaquin";
+    int seccionactivada = 1;
+    QString encontrada = "false";
+
+    if(seccionactivada == 1){
+        QSqlQuery MostrarDatos(mDatabase);
+        MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
+                             "From persona INNER JOIN empleado "
+                             "ON persona.id_persona = empleado.id_persona "
+                             "INNER JOIN medico "
+                             "ON empleado.id_empleado = medico.id_empleado "
+                             "INNER JOIN cita_medica as cita "
+                             "ON medico.id_medico = cita.id_medico "
+                             "where persona.nombre like '"+arg1+""+caracter+"' and persona.nombre like '"+fecha+""+caracter+"'");
+        MostrarDatos.exec();
+
+        int row = 0;
+        int col = 0;
+        int i=0;
+
+
+        while (MostrarDatos.next()){
+            QString fecha = MostrarDatos.value(0).toString();
+            QString hora = MostrarDatos.value(1).toString();
+            QString medico = MostrarDatos.value(2).toString();
+            QString medicopaterno = MostrarDatos.value(3).toString();
+            row = i/2;
+            col= i%2;
+            i++;
+            encontrada = "true";
+        }
+    }else{
+
+        QSqlQuery MostrarDatos(mDatabase);
+        MostrarDatos.prepare("select operaciones.fecha, persona.nombre, persona.paterno "
+                             " FROM persona INNER JOIN empleado "
+                             "ON persona.id_persona = empleado.id_persona "
+                             "INNER JOIN medico "
+                             "ON empleado.id_empleado = medico.id_empleado "
+                             "INNER JOIN operaciones_agendadas as operaciones "
+                             "ON medico.id_medico = operaciones.id_medico "
+                             "where persona.nombre like '"+arg1+""+caracter+"' and operaciones.fecha like '"+fecha+""+caracter+"'");
+        MostrarDatos.exec();
+        int row = 0;
+        int col = 0;
+        int i=0;
+
+
+        while (MostrarDatos.next()){
+            QString fecha = MostrarDatos.value(0).toString();
+            QString hora = MostrarDatos.value(1).toString();
+            QString medico = MostrarDatos.value(2).toString();
+            QString medicopaterno = MostrarDatos.value(3).toString();
+            row = i/2;
+            col= i%2;
+            i++;
+            encontrada = "true";
+
+        }
+    }
+    QCOMPARE(encontrada, "true");
 
 
 }
