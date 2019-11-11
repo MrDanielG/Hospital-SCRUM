@@ -38,12 +38,14 @@ recepcionista_tarjeta_internados::~recepcionista_tarjeta_internados()
 void recepcionista_tarjeta_internados::insertarDatos()
 {
     QPixmap imag(this->foto);
+    QDate fecha;
+    int restantes = fecha.currentDate().daysTo(fecha_fin);
 
     ui->lbl_foto_paciente->setPixmap(imag);
     ui->lbl_nombre_paciente->setText(paciente);
     ui->lbl_medico->setText(medico);
     ui->lbl_habitacion->setText(habitacion);
-    ui->lbl_dias_restantes->setText(fecha_fin.toString());
+    ui->lbl_dias_restantes->setText(QString::number(restantes));
 }
 
 void recepcionista_tarjeta_internados::on_btn_gestionar_internado_clicked()
