@@ -59,7 +59,7 @@ void paciente_gestionar_citas::setIdPaciente(QString _idUsuarioPaciente)
 void paciente_gestionar_citas::inicalizaCatalogo()
 {
     QSqlQuery citas(mDatabase);
-    citas.prepare("SELECT * FROM `gestioncitas` WHERE id_usuario = '"+this->idUsuarioPaciente+"'");
+    citas.prepare("SELECT * FROM cita_medica WHERE id_usuario = '"+this->idUsuarioPaciente+"'");
     citas.exec();
     limpiarCatalogo();
 
@@ -70,17 +70,19 @@ void paciente_gestionar_citas::inicalizaCatalogo()
     while (citas.next())
     {
         QString id_cita = citas.value(0).toString();
-        QString descripcion = citas.value(1).toString();
-        QString fecha = citas.value(2).toString();
-        QString horaInicioFin = citas.value(3).toString() + " " + citas.value(4).toString();
-        QString estadoCita = citas.value(6).toString();
-        QString nombreMedico = citas.value(7).toString() + " " + citas.value(8).toString() + " " + citas.value(9).toString();
-        QString nombreUsuario = citas.value(10).toString();
+        QString motivo = citas.value(1).toString();
+        QString descripcion = citas.value(2).toString();
+        QString fecha = citas.value(3).toString();
+        QString horaInicioFin = citas.value(4).toString() + " " + citas.value(5).toString();
+        QString idMed = citas.value(6).toString();
+        QString idPac = citas.value(7).toString();
+        QString idPago = citas.value(8).toString();
+        QString estadoCita = citas.value(9).toString();
 
         row = i / 3;
         col = i % 3;
 
-        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, descripcion, fecha, horaInicioFin, estadoCita, nombreMedico, nombreUsuario, this);
+        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }

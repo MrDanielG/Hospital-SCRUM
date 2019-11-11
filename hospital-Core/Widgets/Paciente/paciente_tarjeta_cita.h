@@ -12,19 +12,24 @@ class paciente_tarjeta_cita : public QWidget
     Q_OBJECT
 
 public:
-    explicit paciente_tarjeta_cita(QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
+    explicit paciente_tarjeta_cita(QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
     ~paciente_tarjeta_cita();
     void inicializarTarjeta();
+private slots:
+    void on_btn_gestionar_clicked();
+
 private:
     Ui::paciente_tarjeta_cita *ui;
     QSqlDatabase mDatabase;
     QString id_cita;
+    QString motivo;
     QString descripcion;
     QString fecha;
     QString horaInicioFin;
+    QString idMed;
+    QString idPac;
+    QString idPagos;
     QString estadoCita;
-    QString nombreMedico;
-    QString nombreUsuario;
 };
 
 #endif // PACIENTE_TARJETA_CITA_H

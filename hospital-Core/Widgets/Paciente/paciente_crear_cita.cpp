@@ -52,7 +52,7 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
     nombre.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre from persona as p "
                    "inner join empleado as e on p.id_persona=e.id_persona "
                    "inner join medico as m on e.id_empleado=m.id_empleado "
-                   "where id_medico='"+idMedico+"';");
+                   "where m.id_medico='"+idMedico+"';");
     nombre.exec();
     QString nom;
     while(nombre.next())
@@ -103,7 +103,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
 
     if(ui->lineMotivo->text().isEmpty() && ui->lineSintomas->text().isEmpty())
     {
-        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos loc campos"),
+        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos"),
                              QMessageBox::Ok);
     }else
     {
@@ -134,8 +134,8 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         if(Confirmacion == QMessageBox::Yes)
         {
             QSqlQuery InsertaCita(mDatabase);
-            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,h_inicio,id_medico,id_paciente) "
-                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio+"','"+idMedico+"','"+idPaciente+"')");
+            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,h_inicio,id_medico,id_paciente,estado) "
+                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio+"','"+idMedico+"','"+idPaciente+"',1)");
             InsertaCita.exec();
 
             QMessageBox::Information(this, tr("Registrar Cita"),tr("Cita Registrada Correctamente"),

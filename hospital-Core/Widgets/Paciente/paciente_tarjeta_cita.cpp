@@ -1,7 +1,7 @@
 #include "paciente_tarjeta_cita.h"
 #include "ui_paciente_tarjeta_cita.h"
 #include "QDebug"
-paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString descripcion, QString fecha, QString horaInicioFin, QString estadoCita, QString nombreMedico, QString nombreUsuario, QWidget *parent) :
+paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QString descripcion, QString fecha, QString horaInicioFin, QString idMed,QString idPac, QString idPagos,QString estadoCita, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::paciente_tarjeta_cita)
 {
@@ -23,12 +23,14 @@ paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString descripcio
     }
 
     this->id_cita = id_cita;
+    this->motivo = motivo;
     this->descripcion = descripcion;
     this->fecha = fecha;
     this->horaInicioFin = horaInicioFin;
+    this->idMed = idMed;
+    this->idPac = idPac;
+    this->idPagos = idPagos;
     this->estadoCita = estadoCita;
-    this->nombreMedico = nombreMedico;
-    this->nombreUsuario = nombreUsuario;
 
     inicializarTarjeta();
 }
@@ -44,4 +46,9 @@ void paciente_tarjeta_cita::inicializarTarjeta()
     ui->lbl_nombre_medico->setText(this->nombreMedico);
     ui->lbl_horario->setText(this->horaInicioFin);
     ui->info_cita->setPlainText(this->descripcion);
+}
+
+void paciente_tarjeta_cita::on_btn_gestionar_clicked()
+{
+
 }
