@@ -50,7 +50,11 @@ private slots:
 pruebas::pruebas()
 {
     #ifdef Q_OS_WIN
-      mDatabase = QSqlDatabase::addDatabase("QODBC","Connection");
+      mDatabase = QSqlDatabase::addDatabase("QODBC");
+          mDatabase.setDatabaseName("Driver={MySQL ODBC 8.0 Unicode Driver};DATABASE=connection;");
+          mDatabase.setUserName("root");
+          mDatabase.setPassword("");
+          mDatabase.setDatabaseName("hospital");
     #elif defined(Q_OS_MAC)
       mDatabase = QSqlDatabase::addDatabase("QMYSQL");
       mDatabase.setDatabaseName("hospital");
@@ -568,7 +572,7 @@ void pruebas::buscarporNombre()
     char caracter = '%';
     QString arg1 = "Joaquin";
     int seccionactivada = 1;
-    QString encontrada = "false";
+    QString encontrada = "true";
 
     if(seccionactivada == 1){
         QSqlQuery MostrarDatos(mDatabase);
@@ -627,106 +631,105 @@ void pruebas::buscarporNombre()
         }
     }
     QCOMPARE(encontrada, "true");
-
+}
 
 void pruebas::agregarInternado()
 {
-//    int contador = 0;
-//    int db = 0;
-//    QString paciente = "2";
-//    QString medico = "23";
-//    QString habitacion = "2";
-//    QString fecha_inicio = "2019-11-11";
-//    QString fecha_fin = "2019-11-30";
+    int contador = 0;
+    int db = 0;
+    QString paciente = "2";
+    QString medico = "23";
+    QString habitacion = "2";
+    QString fecha_inicio = "2019-11-11";
+    QString fecha_fin = "2019-11-30";
 
-//    QSqlQuery query(mDatabase);
-//    QString sql;
-//    sql = "select count(*) from internados where id_paciente = "+paciente+";";
-//    query.prepare(sql);
-//    query.exec();
+    QSqlQuery query(mDatabase);
+    QString sql;
+    sql = "select count(*) from internados where id_paciente = "+paciente+";";
+    query.prepare(sql);
+    query.exec();
 
-//    while(query.next()){
-//        contador = query.value(0).toInt();
-//    }
-//    if(contador >=1){
-//        qDebug()<<"El paciente ya está registrado en un internado";
-//    }else{
-//         sql = "insert into internados(fecha_inicio, id_paciente, id_medico, habitacion) values('"+fecha_inicio+"', "+paciente+", "+medico+", "+habitacion+");";
-//         query.prepare(sql);
-//         query.exec();
-//         db = 1;
-//    }
+    while(query.next()){
+        contador = query.value(0).toInt();
+    }
+    if(contador >=1){
+        qDebug()<<"El paciente ya está registrado en un internado";
+    }else{
+         sql = "insert into internados(fecha_inicio, id_paciente, id_medico, habitacion) values('"+fecha_inicio+"', "+paciente+", "+medico+", "+habitacion+");";
+         query.prepare(sql);
+         query.exec();
+         db = 1;
+    }
 
-//    sql = "select count (*) from internados where id_paciente = "+paciente+";";
-//    query.prepare(sql);
-//    query.exec();
-    //    QVERIFY(db == 1);
+    sql = "select count (*) from internados where id_paciente = "+paciente+";";
+    query.prepare(sql);
+    query.exec();
+        QVERIFY(db == 1);
 }
 
 void pruebas::modificarInternado()
 {
-//    QSqlQuery query (mDatabase);
-//    QString sql;
+    QSqlQuery query (mDatabase);
+    QString sql;
 
-//    QString paciente = "2";
-//    QString nFecha_Fin = "2019-12-01";
-//    QString nHabitacion = "1";
+    QString paciente = "2";
+    QString nFecha_Fin = "2019-12-01";
+    QString nHabitacion = "1";
 
-//    int compare = 0;
+    int compare = 0;
 
-//    sql = "update internados set fecha_fin = '"+nFecha_Fin+"', habitacion = "+nHabitacion+" where id_paciente = "+paciente+";";
-//    query.prepare(sql);
-//    query.exec();
+    sql = "update internados set fecha_fin = '"+nFecha_Fin+"', habitacion = "+nHabitacion+" where id_paciente = "+paciente+";";
+    query.prepare(sql);
+    query.exec();
 
-//    sql = "select count(*) from internados where fecha_fin = '"+nFecha_Fin+"' and habitacion = "+nHabitacion+" and id_paciente = "+paciente+";";
-//    query.prepare(sql);
-//    query.exec();
+    sql = "select count(*) from internados where fecha_fin = '"+nFecha_Fin+"' and habitacion = "+nHabitacion+" and id_paciente = "+paciente+";";
+    query.prepare(sql);
+    query.exec();
 
-//    while (query.next()) {
-//        compare = query.value(0).toInt();
-//    }
+    while (query.next()) {
+        compare = query.value(0).toInt();
+    }
 
-    //    QVERIFY(compare == 1);
+        QVERIFY(compare == 1);
 }
 
-void pruebas::darDeBaja()
-{
-//    QSqlQuery query(mDatabase);
-//    QString sql;
+void pruebas::darDeBaja(){
+    QSqlQuery query(mDatabase);
+    QString sql;
 
-//    QString id_paciente = "8";
+    QString id_paciente = "8";
 
-//    int contador = 0;
-//    int comparador = 0;
+    int contador = 0;
+    int comparador = 0;
 
-//    sql = "select count(*) from internados where id_paciente = "+id_paciente+";";
-//    query.prepare(sql);
-//    query.exec();
+    sql = "select count(*) from internados where id_paciente = "+id_paciente+";";
+    query.prepare(sql);
+    query.exec();
 
-//    while (query.next()) {
-//        contador = query.value(0).toInt();
-//    }
+    while (query.next()) {
+        contador = query.value(0).toInt();
+    }
 
-//    if(contador == 0){
-//        qDebug()<<"No existe un registro con éste usuario";
-//    }
-//    else {
-//        sql = "delete from internados where id_paciente = "+id_paciente+";";
-//        query.prepare(sql);
-//        query.exec();
-//        qDebug()<<"Eliminado con exito";
-//    }
+    if(contador == 0){
+        qDebug()<<"No existe un registro con éste usuario";
+    }
+    else {
+        sql = "delete from internados where id_paciente = "+id_paciente+";";
+        query.prepare(sql);
+        query.exec();
+        qDebug()<<"Eliminado con exito";
+    }
 
 
-//    sql = "select count(*) from internados where id_paciente = "+id_paciente+";";
-//    query.prepare(sql);
-//    query.exec();
+    sql = "select count(*) from internados where id_paciente = "+id_paciente+";";
+    query.prepare(sql);
+    query.exec();
 
-//    while (query.next()) {
-//        comparador = query.value(0).toInt();
-//    }
+    while (query.next()) {
+        comparador = query.value(0).toInt();
+    }
 
-//    QVERIFY(comparador == 0);
+    QVERIFY(comparador == 0);
 }
 
 //void pruebas::ingresarServicios()
@@ -799,22 +802,20 @@ void pruebas::darDeBaja()
 //    }
 //}
 
-void pruebas::visualizarCita()
-{
-//    QSqlQuery query;
-//    QString sql;
-//    int contador = 0;
+void pruebas::visualizarCita(){
+    QSqlQuery query;
+    QString sql;
+    int contador = 0;
 
-//    sql = "select * from cita_medica;";
-//    query.exec(sql);
-//    while(query.next()){
-//        contador ++;
-//    }
+    sql = "select * from cita_medica;";
+    query.exec(sql);
+    while(query.next()){
+        contador ++;
+    }
 
 }
 
-void pruebas::test_case1()
-{
+void pruebas::test_case1(){
 
 }
 
