@@ -19,6 +19,10 @@
 #include "Widgets/Usuario/inicar_sesion.h"
 #include "Widgets/Paciente/paciente_gestionar_citas.h"
 #include "Clases/usuario.h"
+#include "Widgets/Medico/medico_informacion.h"
+#include "Widgets/Recepcionista/recepcionistalandpage.h"
+#include "Widgets/Recepcionista/recepcionista_internados.h"
+#include "Widgets/Recepcionista/recepcionista_citas.h"
 
 namespace Ui
 {
@@ -56,6 +60,11 @@ private slots:
 
     void on_btn_gestionar_citas_clicked();
 
+    void on_btn_informacion_medico_clicked();
+    void on_btn_horario_medico_2_clicked();
+
+    void on_btn_citas_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -73,8 +82,13 @@ private:
     inicar_sesion dialogo_iniciar_sesion;
     paciente_gestionar_citas gestionCitas;
     Usuario datosLogin;
+    medico_informacion informacionMedico;
+    recepcionistaLandpage landpageRecepcionista;
+    recepcionista_internados internados;
+    recepcionista_citas citas;
 
     int index;
+    QString sesion="";
 };
 
 #endif // MAINWINDOW_H
