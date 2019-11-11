@@ -5,6 +5,7 @@
 #include "QMessageBox"
 #include "QDebug"
 #include "QSqlQuery"
+#include <QPixmap>
 
 paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     QWidget(parent),
@@ -27,6 +28,21 @@ paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     }else{
         qDebug() << "Base de datos continua abierta, esto es: GESTIONAR CITAS";
     }
+
+    //Para el comboBox de os doctores generales
+    QSqlQuery doctores(mDatabase);
+    doctores.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Medico from persona as p "
+                     "inner join empleado as e on p.id_persona=e.id_persona "
+                     "inner join medico as m on e.id_empleado=m.id_empleado "
+                     "inner join medico_has_especialidad as me on m.id_medico=me.id_medico "
+                     "where me.id_especialidad=1;");
+    doctores.exec();
+    while(doctores.next())
+    {
+        ui->comboMedicos->addItem(doctores.value(0).toString());
+    }
+    QString Doc;
+    Doc = ui->comboMedicos->currentText();
 }
 
 paciente_gestionar_citas::~paciente_gestionar_citas()
@@ -82,7 +98,33 @@ void paciente_gestionar_citas::limpiarCatalogo()
 
 void paciente_gestionar_citas::on_btn_agenda_cita_clicked()
 {
-    paciente_crear_cita crearCita(this->idUsuarioPaciente);
+    paciente_crear_cita crearCita(this->idDoc,this->idUsuarioPaciente);
     crearCita.exec();
     inicalizaCatalogo();
+}
+
+void paciente_gestionar_citas::on_comboMedicos_activated(const QString &Doc)
+{
+    QString foto,cedula,nombre,correo,exp,logro;
+    QSqlQuery DetalleDoc(mDatabase);
+    DetalleDoc.prepare("call InfoDoc('"+Doc+"');");
+    DetalleDoc.exec();
+    while(DetalleDoc.next())
+    {
+        foto=DetalleDoc.value(0).toString();
+        cedula=DetalleDoc.value(1).toString();
+        nombre=DetalleDoc.value(2).toString();
+        correo=DetalleDoc.value(3).toString();
+        exp=DetalleDoc.value(4).toString();
+        logro=DetalleDoc.value(5).toString();
+        idDoc=DetalleDoc.value(6).toString();
+    }
+
+    QPixmap pic(foto);
+    ui->label_foto->setPixmap(pic);
+    ui->label_cedula->setText(cedula);
+    ui->label_nombre->setText(nombre);
+    ui->label_correo->setText(correo);
+    ui->label_experiencia->setText(exp);
+    ui->label_logros->setText(logro);
 }
