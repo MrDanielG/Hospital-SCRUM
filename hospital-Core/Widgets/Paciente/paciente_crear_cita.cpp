@@ -59,11 +59,11 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         QString horaFinal = ui->timeEdit_HoraFinal->time().toString();
 
         QSqlQuery queryIdPaciente(mDatabase);
-        queryIdPaciente.prepare("SELECT id_paciente FROM `gestioncitas` WHERE id_usuario = '"+this->idUsuarioPaciente+"'");
+        queryIdPaciente.prepare("SELECT * FROM `paciente` INNER JOIN persona ON paciente.id_persona = persona.id_persona INNER JOIN usuario ON persona.id_usuario = usuario.id_usuario WHERE usuario.id_usuario = '"+this->idUsuarioPaciente+"'");
         queryIdPaciente.exec();
         queryIdPaciente.next();
         QString idPaciente = queryIdPaciente.value(0).toString();
-
+        qDebug()<<"datos xd" <<motivo<<descripcion<<fecha<<horaInicio<<horaFinal<<folioMedico<<idPaciente;
         QSqlQuery crearCita(mDatabase);
         crearCita.prepare("INSERT INTO `cita_medica`(`motivo`, `descripcion`, `fecha`, `hora_inicio`, `hora_fin`, `id_medico`, `id_paciente`, `estado`) "
                           "VALUES ('"+motivo+"','"+descripcion+"','"+fecha+"','"+horaInicio+"','"+horaFinal+"','"+folioMedico+"','"+idPaciente+"',1)");
