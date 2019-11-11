@@ -109,7 +109,7 @@ color: white;</string>
 border-bottom: 1px solid #3E64FF;</string>
    </property>
    <property name="placeholderText">
-    <string>Buscar por fecha</string>
+    <string>Buscar por fecha(2019-11-20)</string>
    </property>
   </widget>
   <widget class="QLabel" name="seccion">
@@ -156,7 +156,7 @@ border-radius: 5px;
 color: white;</string>
    </property>
    <property name="text">
-    <string>Reservar Cita</string>
+    <string>Agendar Cita</string>
    </property>
   </widget>
   <widget class="QLabel" name="seccion_2">
@@ -203,7 +203,7 @@ border-radius: 5px;
 color: white;</string>
    </property>
    <property name="text">
-    <string>Reservar Operacion</string>
+    <string>Agendar Operacion</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -318,6 +318,23 @@ border-bottom: 1px solid #3E64FF;</string>
        </widget>
       </item>
       <item>
+       <widget class="QLineEdit" name="line_id_medico">
+        <property name="font">
+         <font>
+          <family>Montserrat</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+        </property>
+        <property name="placeholderText">
+         <string>id del Medico</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="verticalSpacer_6">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -331,23 +348,7 @@ border-bottom: 1px solid #3E64FF;</string>
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
-        <property name="font">
-         <font>
-          <family>Montserrat</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(129, 129, 129);</string>
-        </property>
-        <property name="text">
-         <string>Seleccione Folio de Medico:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboBox_idMedico">
+       <widget class="QLineEdit" name="line_id_paciente">
         <property name="font">
          <font>
           <family>Montserrat</family>
@@ -356,8 +357,10 @@ border-bottom: 1px solid #3E64FF;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">border: none;
-background: white;
 border-bottom: 1px solid #C4C4C4;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Id del Paciente</string>
         </property>
        </widget>
       </item>
@@ -613,7 +616,7 @@ border-bottom: 1px solid #C4C4C4;</string>
     </widget>
    </widget>
    <widget class="QWidget" name="page_2">
-    <widget class="QLineEdit" name="lineEdit_descripcion_3">
+    <widget class="QLineEdit" name="operacion_lugar">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -661,7 +664,7 @@ border-bottom: 1px solid #C4C4C4;</string>
       <string>Hora Inicio</string>
      </property>
     </widget>
-    <widget class="QTimeEdit" name="timeEdit_HoraInicio_2">
+    <widget class="QTimeEdit" name="operacion_hora_ini">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -699,7 +702,7 @@ border-bottom: 1px solid #C4C4C4;</string>
       <string>Hora Fin</string>
      </property>
     </widget>
-    <widget class="QTimeEdit" name="timeEdit_HoraFinal_2">
+    <widget class="QTimeEdit" name="operacion_hora_fin">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -715,7 +718,59 @@ border-bottom: 1px solid #C4C4C4;</string>
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_agendarCita_2">
+    <widget class="QLineEdit" name="operacion_id_paciente">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>130</y>
+       <width>341</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>id del paciente</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="operacion_id_medico">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>80</y>
+       <width>341</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: none;
+border-bottom: 1px solid #C4C4C4;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>id del medico</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="operacion_btn_agendar">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -785,50 +840,7 @@ border-bottom: 1px solid #C4C4C4;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>101</x>
-       <y>99</y>
-       <width>219</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Montserrat</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(129, 129, 129);</string>
-     </property>
-     <property name="text">
-      <string>Seleccione Folio del Paciente:</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox_idMedico_2">
-     <property name="geometry">
-      <rect>
-       <x>101</x>
-       <y>126</y>
-       <width>341</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Montserrat</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: none;
-background: white;
-border-bottom: 1px solid #C4C4C4;</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_descripcion_2">
+    <widget class="QLineEdit" name="operacion_descripcion">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -876,7 +888,7 @@ border-bottom: 1px solid #C4C4C4;</string>
       <string>Fecha Operacion</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_2">
+    <widget class="QDateEdit" name="operacion_fecha">
      <property name="geometry">
       <rect>
        <x>280</x>
