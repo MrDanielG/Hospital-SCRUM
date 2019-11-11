@@ -1203,6 +1203,35 @@ color: white;
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="btn_citas">
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>11</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Citas</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="btn_urgencias_medico_2">
          <property name="maximumSize">
           <size>

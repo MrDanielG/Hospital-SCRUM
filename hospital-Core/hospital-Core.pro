@@ -43,6 +43,8 @@ SOURCES += \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
+    Widgets/Recepcionista/recepcionista_citas.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -95,6 +97,8 @@ HEADERS += \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.h \
+    Widgets/Recepcionista/recepcionista_citas.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -144,6 +148,8 @@ FORMS += \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
+    Widgets/Recepcionista/recepcionista_citas.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \

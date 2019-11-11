@@ -39,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
     ui->stackedWidget->insertWidget(17, &internados);
+    ui->stackedWidget->insertWidget(18, &informacionMedico);
+    ui->stackedWidget->insertWidget(19, &citas);
 }
 
 MainWindow::~MainWindow()
@@ -228,9 +230,16 @@ void MainWindow::on_btn_gestionar_citas_clicked()
 }
 
 void MainWindow::on_btn_informacion_medico_clicked(){
-    ui->stackedWidget->setCurrentIndex(16);
+    ui->stackedWidget->setCurrentIndex(18);
+}
 
 void MainWindow::on_btn_horario_medico_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(17);
+}
+
+void MainWindow::on_btn_citas_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(19);
+
 }
