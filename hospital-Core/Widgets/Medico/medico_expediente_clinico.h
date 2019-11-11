@@ -55,6 +55,8 @@ private slots:
 
     void on_btn_agregar_operacion_clicked();
 
+    void on_btn_Cancelar_modificar_expediente_clicked();
+
 private:
     Ui::medico_expediente_clinico *ui;
     QString idMedico,idPaciente,nombre,foto,idExpediente,idAlergia,idOperacion,idEnfermedad;

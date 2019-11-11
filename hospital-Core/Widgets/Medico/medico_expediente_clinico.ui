@@ -121,7 +121,7 @@ color: white;</string>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="lbl_imagen">
@@ -314,9 +314,9 @@ color: white;</string>
     <widget class="QPushButton" name="btn_modificarDatos">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>320</x>
        <y>550</y>
-       <width>141</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
@@ -350,9 +350,9 @@ color: white;</string>
     <widget class="QPushButton" name="btn_GenerarExpediente">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>320</x>
        <y>550</y>
-       <width>141</width>
+       <width>151</width>
        <height>31</height>
       </rect>
      </property>
@@ -530,6 +530,9 @@ color: white;</string>
        <pointsize>11</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>ORH +</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="line_estatura">
      <property name="geometry">
@@ -546,6 +549,9 @@ color: white;</string>
        <pointsize>11</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>1.62 </string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="line_peso">
      <property name="geometry">
@@ -561,6 +567,9 @@ color: white;</string>
        <family>Montserrat Medium</family>
        <pointsize>11</pointsize>
       </font>
+     </property>
+     <property name="placeholderText">
+      <string>62 </string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_guardarCambios">
@@ -597,6 +606,42 @@ color: white;</string>
      </property>
      <property name="text">
       <string>Guardar Cambios</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Cancelar_modificar_expediente">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>540</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Montserrat</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">*{
+	background-color: white;
+	color: red;
+	border: 1px solid red;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	color: white;
+	background-color: red;
+}</string>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
      </property>
     </widget>
    </widget>
@@ -638,6 +683,18 @@ background:none;</string>
        <height>371</height>
       </rect>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>291</width>
+       <height>371</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>291</width>
+       <height>371</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <family>Montserrat Medium</family>
@@ -647,6 +704,18 @@ background:none;</string>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
     </widget>
     <widget class="QPushButton" name="btn_agregar_alergia">
      <property name="geometry">
@@ -727,7 +796,7 @@ background:none;</string>
       <rect>
        <x>320</x>
        <y>530</y>
-       <width>151</width>
+       <width>161</width>
        <height>31</height>
       </rect>
      </property>
@@ -761,11 +830,17 @@ background:none;</string>
     <widget class="QTableView" name="table_enfermedades">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>120</x>
        <y>100</y>
        <width>291</width>
        <height>341</height>
       </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>291</width>
+       <height>16777215</height>
+      </size>
      </property>
      <property name="font">
       <font>
@@ -776,6 +851,9 @@ background:none;</string>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
     </widget>
     <widget class="QLabel" name="label_11">
      <property name="geometry">
@@ -808,9 +886,9 @@ background:none;</string>
     <widget class="QPushButton" name="btn_eliminar_enfermedad">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>150</x>
        <y>530</y>
-       <width>151</width>
+       <width>161</width>
        <height>31</height>
       </rect>
      </property>
@@ -882,11 +960,17 @@ background:none;</string>
     <widget class="QTableView" name="table_operaciones">
      <property name="geometry">
       <rect>
-       <x>55</x>
+       <x>110</x>
        <y>90</y>
-       <width>381</width>
-       <height>371</height>
+       <width>291</width>
+       <height>341</height>
       </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>291</width>
+       <height>341</height>
+      </size>
      </property>
      <property name="font">
       <font>
@@ -894,6 +978,18 @@ background:none;</string>
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
     </widget>
     <widget class="QLabel" name="label_12">
      <property name="geometry">

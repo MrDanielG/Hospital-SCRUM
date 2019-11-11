@@ -39,20 +39,33 @@ this->idAlergia="";
 this->idOperacion="";
 this->idEnfermedad="";
 
+qDebug()<<"idCita"<<idCita;
+qDebug()<<"idMedico"<<this->idMedico;
+qDebug()<<"idPaciente"<<this->idPaciente;
+
 QPixmap imag(this->foto);
 ui->lbl_imagen->setPixmap(imag);
 ui->lbl_imagen_2->setPixmap(imag);
 ui->lbl_nombre->setText(this->nombre);
-ui->lbl_nombre_2->setText(nombre);
+ui->lbl_nombre_2->setText(this->nombre);
+ui->lbl_peso->clear();
+ui->lbl_estatura->clear();
+ui->lbl_tipoSangre->clear();
 
+ui->stackedWidget->setCurrentIndex(0);
 
 query.prepare("SELECT id_expediente FROM paciente WHERE id_paciente="+this->idPaciente);
 query.exec();
 query.next();
 
-this->idExpediente=query.value(0).toString();
+if(query.value(0).toString()!='0')
+{
+    this->idExpediente=query.value(0).toString();
+}
 
-if(query.value(0).toString()=="")
+qDebug()<<"idExpediente"<<this->idExpediente;
+
+if(this->idExpediente=="")
 {
     ui->btn_modificarDatos->setVisible(false);
 
@@ -102,7 +115,7 @@ void medico_expediente_clinico::on_btn_enfermedad_clicked()
 
 void medico_expediente_clinico::on_btn_operacion_clicked()
 {
-    cargarTablaEnfermedades();
+    cargarTablaOperaciones();
     ui->stackedWidget->setCurrentIndex(4);
 }
 
@@ -122,7 +135,7 @@ void medico_expediente_clinico::cargarTablaAlergias()
     modeloAlergias= new QSqlTableModel;
     ui->table_alergias->setModel(modeloAlergias);
     QSqlQuery query(mDatabase);
-    query.prepare("SELECT id_alergias, tipo as 'Alergia' FROM alergias WHERE id_expediente="+this->idExpediente);
+    query.prepare("SELECT id_alergias, tipo as '        Alergia         ' FROM alergias WHERE id_expediente="+this->idExpediente);
     query.exec();
     modeloAlergias->setQuery(query);
     ui->table_alergias->hideColumn(0);
@@ -135,7 +148,7 @@ void medico_expediente_clinico::cargarTablaOperaciones()
     modeloOperaciones=new QSqlTableModel;
     ui->table_operaciones->setModel(modeloOperaciones);
     QSqlQuery query(mDatabase);
-    query.prepare("SELECT id_operaciones, descripcion as 'Operación', fecha as 'Fecha' FROM operaciones WHERE id_expediente="+this->idExpediente);
+    query.prepare("SELECT id_operaciones, fecha as 'Fecha', descripcion as 'Operación' FROM operaciones WHERE id_expediente="+this->idExpediente);
     query.exec();
     modeloOperaciones->setQuery(query);
     ui->table_operaciones->hideColumn(0);
@@ -322,7 +335,7 @@ void medico_expediente_clinico::on_btn_eliminar_operacion_clicked()
         query.prepare("SELECT descripcion FROM operaciones WHERE id_operaciones="+this->idOperacion);
         query.exec();
         query.next();
-        QMessageBox msgBox(QMessageBox::Question,"Confimacion","¿Estas seguro de eliminar la enfermedad '"+query.value(0).toString()+"'?",QMessageBox::Yes|QMessageBox::No);
+        QMessageBox msgBox(QMessageBox::Question,"Confimacion","¿Estas seguro de eliminar la operación '"+query.value(0).toString()+"'?",QMessageBox::Yes|QMessageBox::No);
         msgBox.setButtonText(QMessageBox::Yes,"Sí");
         msgBox.setButtonText(QMessageBox::No,"No");
 
@@ -347,24 +360,66 @@ void medico_expediente_clinico::on_btn_eliminar_operacion_clicked()
 
 void medico_expediente_clinico::on_btn_agregar_alergia_clicked()
 {
-    medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"alergia");
-    agregar.exec();
+    QMessageBox info;
+    if(idExpediente!="")
+    {
+        medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"alergia");
+        agregar.exec();
+    }else
+    {
+        info.setWindowTitle("Información");
+        info.setText("Debe generar el expediente primero.");
+        info.setStandardButtons(QMessageBox::Ok);
+        info.setDefaultButton(QMessageBox::Ok);
+        info.setButtonText(QMessageBox::Ok,"Aceptar");
+        info.exec();
+    }
+
 
     cargarTablaAlergias();
 }
 
 void medico_expediente_clinico::on_btn_agregar_enfermedad_clicked()
 {
-    medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"enfermedad");
-    agregar.exec();
+    QMessageBox info;
+    if(idExpediente!="")
+    {
+        medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"enfermedad");
+        agregar.exec();
+    }else
+    {
+        info.setWindowTitle("Información");
+        info.setText("Debe generar el expediente primero.");
+        info.setStandardButtons(QMessageBox::Ok);
+        info.setDefaultButton(QMessageBox::Ok);
+        info.setButtonText(QMessageBox::Ok,"Aceptar");
+        info.exec();
+    }
 
     cargarTablaEnfermedades();
 }
 
 void medico_expediente_clinico::on_btn_agregar_operacion_clicked()
 {
-    medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"operacion");
-    agregar.exec();
+    QMessageBox info;
+    if(idExpediente!="")
+    {
+        medico_agregar_alergia_operacion_enfermedad agregar(this->idExpediente,"operacion");
+        agregar.exec();
+    }else
+    {
+        info.setWindowTitle("Información");
+        info.setText("Debe generar el expediente primero.");
+        info.setStandardButtons(QMessageBox::Ok);
+        info.setDefaultButton(QMessageBox::Ok);
+        info.setButtonText(QMessageBox::Ok,"Aceptar");
+        info.exec();
+    }
 
     cargarTablaOperaciones();
+}
+
+void medico_expediente_clinico::on_btn_Cancelar_modificar_expediente_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
