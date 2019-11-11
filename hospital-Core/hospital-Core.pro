@@ -33,6 +33,8 @@ SOURCES += \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
+    Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_info_cita_medica.cpp \
     Widgets/Medico/medico_informacion.cpp \
     Widgets/Medico/medico_modificar.cpp \
@@ -88,6 +90,8 @@ HEADERS += \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
+    Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_info_cita_medica.h \
     Widgets/Medico/medico_informacion.h \
     Widgets/Medico/medico_modificar.h \
@@ -140,6 +144,8 @@ FORMS += \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
+    Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_info_cita_medica.ui \
     Widgets/Medico/medico_informacion.ui \
     Widgets/Medico/medico_modificar.ui \

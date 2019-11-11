@@ -1,6 +1,7 @@
 #include "medico_info_cita_medica.h"
 #include "ui_medico_info_cita_medica.h"
 #include "Widgets/Medico/medico_rechazar_cita_medica.h"
+#include "medico_expediente_clinico.h"
 
 medico_info_cita_medica::medico_info_cita_medica(QString nombre, QString paterno, QString materno,QString hInicio, QString hFin, QString foto,QString idCita,QWidget *parent) :
     QWidget(parent),
@@ -74,4 +75,10 @@ void medico_info_cita_medica::on_btn_rechazar_cita_clicked()
         this->close();
     }
 
+}
+
+void medico_info_cita_medica::on_btn_iniciar_cita_clicked()
+{
+    medico_expediente_clinico *expediente=new medico_expediente_clinico(this->nombre,this->paterno,this->materno,this->foto,this->idCita);
+    expediente->show();
 }
