@@ -35,12 +35,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
+    ui->stackedWidget->insertWidget(11,&generarReceta);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
     ui->stackedWidget->insertWidget(17, &internados);
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
+
 }
 
 MainWindow::~MainWindow()
@@ -72,7 +74,7 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
     informacionMedico.setID(this->datosLogin.nombre_usuario);
-
+    generarReceta.setUsuario(this->datosLogin.nombre_usuario);
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -241,5 +243,10 @@ void MainWindow::on_btn_horario_medico_2_clicked()
 void MainWindow::on_btn_citas_clicked()
 {
     ui->stackedWidget->setCurrentIndex(19);
+}
 
+void MainWindow::on_btn_recetas_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+    this->generarReceta.inicializarCatalogo();
 }

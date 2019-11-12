@@ -56,8 +56,6 @@ medico_horario::medico_horario(QWidget *parent) :
          i++;
          ui->gridLayout_horario->addWidget(tarjeta, row, col);
     }
-
-
 }
 medico_horario::~medico_horario()
 {

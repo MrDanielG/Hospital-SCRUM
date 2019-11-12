@@ -23,7 +23,7 @@
 #include "Widgets/Recepcionista/recepcionistalandpage.h"
 #include "Widgets/Recepcionista/recepcionista_internados.h"
 #include "Widgets/Recepcionista/recepcionista_citas.h"
-
+#include "Widgets/Medico/medico_generar_receta.h"
 namespace Ui
 {
 class MainWindow;
@@ -65,6 +65,8 @@ private slots:
 
     void on_btn_citas_clicked();
 
+    void on_btn_recetas_medico_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -86,6 +88,7 @@ private:
     recepcionistaLandpage landpageRecepcionista;
     recepcionista_internados internados;
     recepcionista_citas citas;
+    medico_generar_receta generarReceta;
 
     int index;
     QString sesion="";
