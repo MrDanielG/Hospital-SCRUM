@@ -56,11 +56,11 @@ void medico_generar_receta::inicializarCatalogo()
         QString motivo = query.value("motivo").toString();
         QString foto = query.value("foto").toString();
         QString idCita = query.value("id_cita_medica").toString();
-
+        this->idCita = query.value("id_cita_medica").toString();
          row = i/1;
          col= i%1;
 
-         medico_tarjeta_cita *tarjeta = new medico_tarjeta_cita(nombre, motivo, foto, idCita, fecha);
+         medico_tarjeta_cita *tarjeta = new medico_tarjeta_cita(nombre, motivo, foto, idCita, fecha, this);
 
          i++;
          ui->gridLayout_horario->addWidget(tarjeta, row, col);
@@ -76,9 +76,24 @@ void medico_generar_receta::setUsuario(QString _idUsuario)
     this->idMedico = query.value(0).toString();
 }
 
+void medico_generar_receta::setReceta()
+{
+    QSqlQuery query(mDatabase);
+    query.exec("SELECT descripcion FROM cita_medica WHERE id_cita_medica = '"+this->idCita+"'");
+    query.next();
+    QString descripcion = query.value("descripcion").toString();
+    ui->descripcion->setPlainText(descripcion);
+}
+
+
 void medico_generar_receta::on_btn_agregar_clicked()
 {
     ui->lineEdit_modo_2->show();
     ui->lineEdit_tipo_2->show();
     ui->btn_agregar_2->show();
+}
+
+void medico_generar_receta::on_btn_generar_receta_clicked()
+{
+
 }

@@ -144,7 +144,7 @@ border-radius: 5px;
      </widget>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="descripcion">
       <property name="font">
        <font>
         <family>Montserrat Light</family>
