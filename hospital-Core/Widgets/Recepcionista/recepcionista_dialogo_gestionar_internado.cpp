@@ -47,14 +47,13 @@ void recepcionista_dialogo_gestionar_internado::insertarDatos()
     else {
         QDate inicio = inicio.currentDate();
         restantes = inicio.daysTo(fecha_fin);
-        diasRestantes = QString::number(restantes);
     }
 
     ui->lbl_foto_paciente->setPixmap(imag);
     ui->lbl_nombre_paciente->setText(paciente);
     ui->lbl_medico->setText(medico);
-    ui->restantes_lineEdit->setText(diasRestantes);
-    ui->habitacion_lineEdit->setText(habitacion);
+    ui->restantes_lineEdit->setValue(restantes);
+    ui->habitacion_lineEdit->setValue(habitacion.toInt());
 }
 
 void recepcionista_dialogo_gestionar_internado::on_btn_cancelar_internado_clicked()
@@ -70,7 +69,7 @@ void recepcionista_dialogo_gestionar_internado::on_btn_cancelar_internado_clicke
         query.prepare(sql);
         query.exec();
     }
-
+    this->close();
 }
 
 void recepcionista_dialogo_gestionar_internado::on_btn_agregar_internado_2_clicked()
@@ -88,8 +87,11 @@ void recepcionista_dialogo_gestionar_internado::on_btn_agregar_internado_2_click
 
     if (messageBox.exec() == QMessageBox::Yes){
         QSqlQuery query(mDatabase);
-        QString sql = "update internados set fecha_fin = '"+fechafin+"', habitacion = "+habitacion+";";
+        QString sql = "update internados set fecha_fin = '"+fechafin+"', habitacion = "+habitacion+" where id_paciente = "+idPaciente+";";
+        qDebug()<<sql;
         query.prepare(sql);
         query.exec();
     }
+
+    this->close();
 }
