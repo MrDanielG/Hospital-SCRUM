@@ -54,7 +54,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         QString folioMedico = ui->comboBox_idMedico->currentText();
         QString motivo = ui->lineEdit_motivo->text();
         QString descripcion = ui->lineEdit_descripcion->text();
-        QString fecha = ui->dateEdit->date().toString("dd/MM/yyyy");
+        QString fecha = ui->dateEdit->date().toString("yyyy/MM/dd");
         QString horaInicio = ui->timeEdit_HoraInicio->time().toString();
         QString horaFinal = ui->timeEdit_HoraFinal->time().toString();
 
