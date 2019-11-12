@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -384,9 +384,9 @@ background: #3E64FF;</string>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>347</x>
+        <x>220</x>
         <y>0</y>
-        <width>1021</width>
+        <width>1131</width>
         <height>50</height>
        </rect>
       </property>
@@ -589,6 +589,40 @@ color: white;
          </property>
          <property name="text">
           <string>Gestionar Tips</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_horarios_medicos">
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+color: white;
+</string>
+         </property>
+         <property name="text">
+          <string>Horarios Medicos</string>
          </property>
         </widget>
        </item>
