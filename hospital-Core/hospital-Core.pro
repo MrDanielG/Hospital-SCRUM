@@ -3,7 +3,7 @@
 # Project created by QtCreator 2019-10-24T13:39:30
 #
 #-------------------------------------------------
-
+QT       += printsupport
 QT       += core gui
 QT       += core gui sql
 
@@ -27,19 +27,23 @@ CONFIG += c++11
 
 SOURCES += \
         Clases/doctor.cpp \
+    Clases/pdf_receta.cpp \
         Clases/usuario.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
+    Widgets/Administrador/administrador_horarios_medicos.cpp \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
+    Widgets/Medico/medico_generar_receta.cpp \
     Widgets/Medico/medico_info_cita_medica.cpp \
     Widgets/Medico/medico_informacion.cpp \
     Widgets/Medico/medico_modificar.cpp \
     Widgets/Medico/medico_rechazar_cita_medica.cpp \
         Widgets/Medico/medico_solicitudes.cpp \
+    Widgets/Medico/medico_tarjeta_cita.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
     Widgets/Paciente/paciente_crear_cita.cpp \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
@@ -84,19 +88,23 @@ SOURCES += \
 
 HEADERS += \
         Clases/doctor.h \
+    Clases/pdf_receta.h \
         Clases/usuario.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
+    Widgets/Administrador/administrador_horarios_medicos.h \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
+    Widgets/Medico/medico_generar_receta.h \
     Widgets/Medico/medico_info_cita_medica.h \
     Widgets/Medico/medico_informacion.h \
     Widgets/Medico/medico_modificar.h \
     Widgets/Medico/medico_rechazar_cita_medica.h \
         Widgets/Medico/medico_solicitudes.h \
+    Widgets/Medico/medico_tarjeta_cita.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
     Widgets/Paciente/paciente_crear_cita.h \
     Widgets/Paciente/paciente_gestionar_citas.h \
@@ -141,16 +149,19 @@ HEADERS += \
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
+    Widgets/Administrador/administrador_horarios_medicos.ui \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
+    Widgets/Medico/medico_generar_receta.ui \
     Widgets/Medico/medico_info_cita_medica.ui \
     Widgets/Medico/medico_informacion.ui \
     Widgets/Medico/medico_modificar.ui \
     Widgets/Medico/medico_rechazar_cita_medica.ui \
         Widgets/Medico/medico_solicitudes.ui \
+    Widgets/Medico/medico_tarjeta_cita.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
     Widgets/Paciente/paciente_crear_cita.ui \
     Widgets/Paciente/paciente_gestionar_citas.ui \
