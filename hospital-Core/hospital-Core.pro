@@ -31,6 +31,7 @@ SOURCES += \
         Clases/usuario.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
+    Widgets/Administrador/administrador_horarios_medicos.cpp \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
@@ -91,6 +92,7 @@ HEADERS += \
         Clases/usuario.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
+    Widgets/Administrador/administrador_horarios_medicos.h \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
@@ -147,6 +149,7 @@ HEADERS += \
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
+    Widgets/Administrador/administrador_horarios_medicos.ui \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \

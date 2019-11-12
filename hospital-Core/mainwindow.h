@@ -24,6 +24,7 @@
 #include "Widgets/Recepcionista/recepcionista_internados.h"
 #include "Widgets/Recepcionista/recepcionista_citas.h"
 #include "Widgets/Medico/medico_generar_receta.h"
+#include "Widgets/Administrador/administrador_horarios_medicos.h"
 namespace Ui
 {
 class MainWindow;
@@ -67,6 +68,8 @@ private slots:
 
     void on_btn_recetas_medico_clicked();
 
+    void on_btn_horarios_medicos_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -89,6 +92,7 @@ private:
     recepcionista_internados internados;
     recepcionista_citas citas;
     medico_generar_receta generarReceta;
+    administrador_horarios_medicos horariosMedicos;
 
     int index;
     QString sesion="";

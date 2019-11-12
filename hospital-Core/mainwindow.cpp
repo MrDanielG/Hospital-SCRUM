@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
     ui->stackedWidget->insertWidget(11,&generarReceta);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
+    ui->stackedWidget->insertWidget(13,&horariosMedicos);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
     ui->stackedWidget->insertWidget(17, &internados);
@@ -249,4 +250,9 @@ void MainWindow::on_btn_recetas_medico_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
     this->generarReceta.inicializarCatalogo();
+}
+
+void MainWindow::on_btn_horarios_medicos_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
 }
