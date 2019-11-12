@@ -19,8 +19,6 @@ public:
 
 private slots:
     void on_btn_agendarCita_clicked();
-    void llenarLista();
-
     void on_ButtonBuscaHorario_clicked();
 
 private:
@@ -28,7 +26,6 @@ private:
     QSqlDatabase mDatabase;
     QString idUsuarioPaciente;
     QString idMedico;
-    QStringListModel * horas;
 };
 
 #endif // PACIENTE_CREAR_CITA_H

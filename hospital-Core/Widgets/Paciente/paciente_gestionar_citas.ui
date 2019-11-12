@@ -165,7 +165,7 @@ color: #818181;</string>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="btn_cietas_activas">
+       <widget class="QPushButton" name="btn_citas_activas">
         <property name="minimumSize">
          <size>
           <width>120</width>

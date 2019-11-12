@@ -58,7 +58,7 @@ border-radius: 5px;</string>
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>440</y>
+     <y>470</y>
      <width>339</width>
      <height>28</height>
     </rect>
@@ -277,7 +277,7 @@ border-radius: 5px;</string>
        </date>
       </property>
       <property name="displayFormat">
-       <string>yyyy/MM/dd</string>
+       <string>yyyy-MM-dd</string>
       </property>
       <property name="calendarPopup">
        <bool>true</bool>
@@ -325,13 +325,13 @@ border-radius: 5px;</string>
     <string>Horario disponible</string>
    </property>
   </widget>
-  <widget class="QListView" name="listHorasDisponibles">
+  <widget class="QListWidget" name="horasDisponibles">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>230</y>
-     <width>141</width>
-     <height>181</height>
+     <x>400</x>
+     <y>240</y>
+     <width>121</width>
+     <height>192</height>
     </rect>
    </property>
   </widget>

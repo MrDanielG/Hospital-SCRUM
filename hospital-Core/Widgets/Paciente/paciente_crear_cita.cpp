@@ -10,8 +10,8 @@
 
 paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::paciente_crear_cita),
-       horas(new QStringListModel(this))
+    ui(new Ui::paciente_crear_cita)
+
 {
     ui->setupUi(this);
 
@@ -48,7 +48,6 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
     //Para mostrar el nombre del médico que eligió cuando reserva su cita
     QSqlQuery nombre(mDatabase);
     qDebug() << idMedico;
-    qDebug() << idUsuarioPaciente;
     nombre.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre from persona as p "
                    "inner join empleado as e on p.id_persona=e.id_persona "
                    "inner join medico as m on e.id_empleado=m.id_empleado "
@@ -61,8 +60,6 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
     }
 
     ui->label_NomMedico->setText(nom);
-    ui->listHorasDisponibles->setModel(horas);
-    llenarLista();
 }
 
 paciente_crear_cita::~paciente_crear_cita()
@@ -111,10 +108,12 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         motivo = ui->lineMotivo->text();
         sintomas = ui->lineSintomas->text();
         fecha = ui->dateFecha->date().toString("yyyy-MM-dd");
+        h_inicio = ui->horasDisponibles->currentItem()->text();
 
-        QModelIndex index = ui->listHorasDisponibles->currentIndex();
-        h_inicio = index.data(Qt::DisplayRole).toString();
+        //QModelIndex index = ui->listHorasDisponibles->currentIndex();
+        //h_inicio = index.data(Qt::DisplayRole).toString();
 
+        qDebug() << "Hora seleccionada";
         qDebug() << h_inicio;
 
         QSqlQuery buscaIDPaciente(mDatabase);
@@ -138,7 +137,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
                                 "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio+"','"+idMedico+"','"+idPaciente+"',1)");
             InsertaCita.exec();
 
-            QMessageBox::Information(this, tr("Registrar Cita"),tr("Cita Registrada Correctamente"),
+            QMessageBox::information(this, tr("Registrar Cita"),tr("Cita Registrada Correctamente"),
                                           QMessageBox::Ok);
         }
 
@@ -148,45 +147,40 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
 }
 
 
-void paciente_crear_cita::llenarLista()
-{
-    QStringList listaHoras;
-    horas->setStringList(listaHoras);
-    QSet<QTime> setHoras;
-
-    QTime horaInicio(9,0,0), horaFin(17,0,0);
-    for(QTime hora = horaInicio; hora < horaFin; hora  = hora.addSecs(3600))
-    {
-       setHoras.insert(hora);
-    }
-
-    QList<QTime> listTime = setHoras.toList();
-
-    std::sort(listTime.begin(), listTime.end());
-
-    for(auto &f : listTime)
-    {
-        listaHoras << f.toString("hh:mm 'hrs.'");
-    }
-
-    horas->setStringList(listaHoras);
-}
-
 void paciente_crear_cita::on_ButtonBuscaHorario_clicked()
 {
-    QList<QString> horasCitadas;
-    QString dia = ui->dateFecha->date().toString("yyyy-MM-dd");
+    ui->horasDisponibles->clear();
+        QStringList listaHoras;
+        QTime horaInicio(9,0,0), horaFin(17,0,0);
+        for(QTime hora = horaInicio; hora < horaFin; hora  = hora.addSecs(3600))
+        {
+            listaHoras.push_back(hora.toString("hh:mm 'hrs'"));
+        }
 
-    QSqlQuery buscaHora(mDatabase);
-    buscaHora.prepare("select hora_inicio, hora_fin from cita_medica where id_medico="+idMedico+" && fecha='"+dia+"'");
-    buscaHora.exec();
+        QList<QString> horasCitadas;
+        QString dia = ui->dateFecha->date().toString("yyyy-MM-dd");
 
-    QString inicio, final;
-    while(buscaHora.next())
-    {
-       inicio = buscaHora.value(0).toString();
-       horasCitadas.push_back(inicio);
-    }
+        QSqlQuery buscaHora(mDatabase);
+        buscaHora.prepare("select hora_inicio from cita_medica where id_medico="+idMedico+" && fecha='"+dia+"';");
+        buscaHora.exec();
 
-    llenarLista();
+        QString inicio;
+        while(buscaHora.next())
+        {
+            inicio = buscaHora.value(0).toTime().toString("hh:mm 'hrs'");
+            horasCitadas.push_back(inicio);
+            qDebug() << inicio;
+        }
+
+        QString aux1, aux2;
+        foreach (aux1, listaHoras) {
+            foreach(aux2, horasCitadas){
+                if(aux1 == aux2){
+                    qDebug()<<aux1;
+                    listaHoras.removeOne(aux1);
+                }
+            }
+        }
+
+        ui->horasDisponibles->addItems(listaHoras);
 }

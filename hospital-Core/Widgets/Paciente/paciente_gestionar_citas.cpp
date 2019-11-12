@@ -6,6 +6,7 @@
 #include "QDebug"
 #include "QSqlQuery"
 #include <QPixmap>
+#include <QDate>
 
 paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     QWidget(parent),
@@ -28,6 +29,24 @@ paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     }else{
         qDebug() << "Base de datos continua abierta, esto es: GESTIONAR CITAS";
     }
+
+    //ocultar
+    ui->buscar->hide();
+    ui->label_foto->hide();
+    ui->label_5->hide();
+    ui->label_cedula->hide();
+    ui->label_9->hide();
+    ui->label_nombre->hide();
+    ui->label_experiencia->hide();
+    ui->label_correo->hide();
+    ui->label_logros->hide();
+    ui->label_hora->hide();
+    ui->label_6->hide();
+    ui->label_7->hide();
+    ui->label_11->hide();
+    ui->label_13->hide();
+    ui->label_8->hide();
+    ui->btn_agenda_cita->hide();
 
     //Para el comboBox de os doctores generales
     QSqlQuery doctores(mDatabase);
@@ -58,8 +77,18 @@ void paciente_gestionar_citas::setIdPaciente(QString _idUsuarioPaciente)
 
 void paciente_gestionar_citas::inicalizaCatalogo()
 {
+    QSqlQuery BuscaID(mDatabase);
+    BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
+                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+    BuscaID.exec();
+    QString idP;
+    while(BuscaID.next())
+    {
+        idP = BuscaID.value(0).toString();
+    }
+
     QSqlQuery citas(mDatabase);
-    citas.prepare("SELECT * FROM cita_medica WHERE id_usuario = '"+this->idUsuarioPaciente+"'");
+    citas.prepare("SELECT * FROM cita_medica WHERE id_paciente = '"+idP+"'");
     citas.exec();
     limpiarCatalogo();
 
@@ -79,8 +108,8 @@ void paciente_gestionar_citas::inicalizaCatalogo()
         QString idPago = citas.value(8).toString();
         QString estadoCita = citas.value(9).toString();
 
-        row = i / 3;
-        col = i % 3;
+        row = i / 2;
+        col = i % 2;
 
         paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
         i++;
@@ -129,4 +158,124 @@ void paciente_gestionar_citas::on_comboMedicos_activated(const QString &Doc)
     ui->label_correo->setText(correo);
     ui->label_experiencia->setText(exp);
     ui->label_logros->setText(logro);
+
+    ui->label_foto->show();
+    ui->label_5->show();
+    ui->label_cedula->show();
+    ui->label_9->show();
+    ui->label_nombre->show();
+    ui->label_experiencia->show();
+    ui->label_correo->show();
+    ui->label_logros->show();
+    ui->label_hora->show();
+    ui->label_6->show();
+    ui->label_7->show();
+    ui->label_11->show();
+    ui->label_13->show();
+    ui->label_8->show();
+    ui->btn_agenda_cita->show();
+}
+
+void paciente_gestionar_citas::on_btn_citas_activas_clicked()
+{
+    QDate date = QDate::currentDate();
+    QString hoy = date.toString("yyyy-MM-dd");
+    QSqlQuery BuscaActivas(mDatabase);
+    BuscaActivas.prepare("select * from cita_medica where fecha > '"+hoy+"' and estado=1;");
+    BuscaActivas.exec();
+
+    limpiarCatalogo();
+
+    int i = 0;
+    int row = 0;
+    int col = 0;
+
+    while (BuscaActivas.next())
+    {
+        QString id_cita = BuscaActivas.value(0).toString();
+        QString motivo = BuscaActivas.value(1).toString();
+        QString descripcion = BuscaActivas.value(2).toString();
+        QString fecha = BuscaActivas.value(3).toString();
+        QString horaInicioFin = BuscaActivas.value(4).toString() + " " +  BuscaActivas.value(5).toString();
+        QString idMed = BuscaActivas.value(6).toString();
+        QString idPac = BuscaActivas.value(7).toString();
+        QString idPago = BuscaActivas.value(8).toString();
+        QString estadoCita = BuscaActivas.value(9).toString();
+
+        row = i / 2;
+        col = i % 2;
+
+        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
+
+void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
+{
+    QDate date = QDate::currentDate();
+    QString hoy = date.toString("yyyy-MM-dd");
+    QSqlQuery BuscaRealizadas(mDatabase);
+    BuscaRealizadas.prepare("select * from cita_medica where fecha < '"+hoy+"' and estado=1;");
+    BuscaRealizadas.exec();
+
+    limpiarCatalogo();
+
+    int i = 0;
+    int row = 0;
+    int col = 0;
+
+    while (BuscaRealizadas.next())
+    {
+        QString id_cita = BuscaRealizadas.value(0).toString();
+        QString motivo = BuscaRealizadas.value(1).toString();
+        QString descripcion = BuscaRealizadas.value(2).toString();
+        QString fecha = BuscaRealizadas.value(3).toString();
+        QString horaInicioFin = BuscaRealizadas.value(4).toString() + " " +  BuscaRealizadas.value(5).toString();
+        QString idMed = BuscaRealizadas.value(6).toString();
+        QString idPac = BuscaRealizadas.value(7).toString();
+        QString idPago = BuscaRealizadas.value(8).toString();
+        QString estadoCita = BuscaRealizadas.value(9).toString();
+
+        row = i / 2;
+        col = i % 2;
+
+        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
+}
+
+void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
+{
+    /*El estado de la cita es 3 cuando esta cancelada por el paciente*/
+    QSqlQuery BuscaCanceladas(mDatabase);
+    BuscaCanceladas.prepare("select * from cita_medica where estado=3;");
+    BuscaCanceladas.exec();
+
+    limpiarCatalogo();
+
+    int i = 0;
+    int row = 0;
+    int col = 0;
+
+    while (BuscaCanceladas.next())
+    {
+        QString id_cita = BuscaCanceladas.value(0).toString();
+        QString motivo = BuscaCanceladas.value(1).toString();
+        QString descripcion = BuscaCanceladas.value(2).toString();
+        QString fecha = BuscaCanceladas.value(3).toString();
+        QString horaInicioFin = BuscaCanceladas.value(4).toString() + " " +  BuscaCanceladas.value(5).toString();
+        QString idMed = BuscaCanceladas.value(6).toString();
+        QString idPac = BuscaCanceladas.value(7).toString();
+        QString idPago = BuscaCanceladas.value(8).toString();
+        QString estadoCita = BuscaCanceladas.value(9).toString();
+
+        row = i / 2;
+        col = i % 2;
+
+        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+        i++;
+        ui->gridLayout->addWidget(tarjeta, row, col);
+    }
 }
