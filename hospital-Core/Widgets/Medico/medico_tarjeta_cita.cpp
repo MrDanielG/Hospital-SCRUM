@@ -14,6 +14,7 @@ medico_tarjeta_cita::medico_tarjeta_cita(QString _nombre, QString _motivo, QStri
     ui->foto->setPixmap(foto);
     this->padre = parent;
     this->descripcion = _motivo;
+    this->idCita = _idCita;
 }
 
 medico_tarjeta_cita::~medico_tarjeta_cita()
@@ -23,5 +24,5 @@ medico_tarjeta_cita::~medico_tarjeta_cita()
 
 void medico_tarjeta_cita::on_btn_seleccionar_clicked()
 {
-    this->padre->setReceta();
+    this->padre->setReceta(this->idCita);
 }

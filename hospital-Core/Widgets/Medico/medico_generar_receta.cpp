@@ -1,6 +1,7 @@
 #include "medico_generar_receta.h"
 #include "ui_medico_generar_receta.h"
 #include "Widgets/Medico/medico_tarjeta_cita.h"
+#include "Clases/pdf_receta.h"
 #include "QDebug"
 medico_generar_receta::medico_generar_receta(QWidget *parent) :
     QWidget(parent),
@@ -38,7 +39,6 @@ medico_generar_receta::~medico_generar_receta()
 
 void medico_generar_receta::inicializarCatalogo()
 {
-    qDebug()<<"Catalogo Receta, IDMEdico: "<<this->idMedico<<"IDUSUArIO"<<this->idUsuario;
     QSqlQuery query(mDatabase);
     query.prepare("SELECT id_cita_medica, fecha, motivo, nombre, paterno, materno, foto FROM cita_medica "
                   "INNER JOIN paciente ON cita_medica.id_paciente = paciente.id_paciente "
@@ -76,10 +76,10 @@ void medico_generar_receta::setUsuario(QString _idUsuario)
     this->idMedico = query.value(0).toString();
 }
 
-void medico_generar_receta::setReceta()
+void medico_generar_receta::setReceta(QString _idCita)
 {
     QSqlQuery query(mDatabase);
-    query.exec("SELECT descripcion FROM cita_medica WHERE id_cita_medica = '"+this->idCita+"'");
+    query.exec("SELECT descripcion FROM cita_medica WHERE id_cita_medica = '"+_idCita+"'");
     query.next();
     QString descripcion = query.value("descripcion").toString();
     ui->descripcion->setPlainText(descripcion);
@@ -95,5 +95,37 @@ void medico_generar_receta::on_btn_agregar_clicked()
 
 void medico_generar_receta::on_btn_generar_receta_clicked()
 {
+    this->medicamentos =
+            "<b>Nombre Medicamento: </b> "+ui->lineEdit_tipo->text()+"<br>"
+            "<b>Modo de Empleo: </b> "+ui->lineEdit_modo->text()+"<br><br>"
 
+            "<b>Nombre Medicamento: </b> "+ui->lineEdit_tipo_2->text()+"<br>"
+            "<b>Modo de Empleo: </b> "+ui->lineEdit_modo_2->text()+"<br><br>"
+
+            "<b>Nombre Medicamento: </b> "+ui->lineEdit_tipo_3->text()+"<br>"
+            "<b>Modo de Empleo: </b> "+ui->lineEdit_modo_3->text()+"<br><br>";
+
+    QSqlQuery query(mDatabase);
+    query.prepare("SELECT id_cita_medica, fecha, motivo, descripcion, nombre, paterno, materno, foto FROM cita_medica "
+                  "INNER JOIN paciente ON cita_medica.id_paciente = paciente.id_paciente "
+                  "INNER JOIN persona ON paciente.id_persona = persona.id_persona "
+                  "WHERE id_cita_medica = '"+this->idCita+"'");
+    query.exec();
+
+    query.next();
+        QString nombre = query.value("nombre").toString() + " " +query.value("paterno").toString() + " " +query.value("materno").toString();
+        QString fecha = query.value("fecha").toString();
+        QString concepto = query.value("motivo").toString();
+        QString descripcion = query.value("descripcion").toString();
+        QString foto = query.value("foto").toString();
+        QString idCita = query.value("id_cita_medica").toString();
+
+    pdf_receta receta(nombre, fecha, concepto, descripcion, idCita, this->medicamentos);
+}
+
+void medico_generar_receta::on_btn_agregar_2_clicked()
+{
+    ui->lineEdit_modo_3->show();
+    ui->lineEdit_tipo_3->show();
+    ui->btn_agregar_3->show();
 }

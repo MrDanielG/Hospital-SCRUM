@@ -3,7 +3,7 @@
 # Project created by QtCreator 2019-10-24T13:39:30
 #
 #-------------------------------------------------
-
+QT       += printsupport
 QT       += core gui
 QT       += core gui sql
 
@@ -27,6 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
         Clases/doctor.cpp \
+    Clases/pdf_receta.cpp \
         Clases/usuario.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
@@ -86,6 +87,7 @@ SOURCES += \
 
 HEADERS += \
         Clases/doctor.h \
+    Clases/pdf_receta.h \
         Clases/usuario.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \

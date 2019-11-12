@@ -22,6 +22,7 @@ private:
     Ui::medico_tarjeta_cita *ui;
     medico_generar_receta *padre;
     QString descripcion;
+    QString idCita;
 };
 
 #endif // MEDICO_TARJETA_CITA_H

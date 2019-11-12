@@ -17,11 +17,13 @@ public:
     ~medico_generar_receta();
     void inicializarCatalogo();
     void setUsuario(QString);
-    void setReceta();
+    void setReceta(QString);
 private slots:
     void on_btn_agregar_clicked();
 
     void on_btn_generar_receta_clicked();
+
+    void on_btn_agregar_2_clicked();
 
 private:
     Ui::medico_generar_receta *ui;
@@ -29,6 +31,11 @@ private:
     QString idUsuario;
     QString idMedico;
     QString idCita;
+    QString nombre;
+    QString fecha;
+    QString motivo;
+    QString foto;
+    QString medicamentos;
 };
 
 #endif // MEDICO_GENERAR_RECETA_H
