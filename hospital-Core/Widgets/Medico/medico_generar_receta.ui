@@ -82,9 +82,9 @@ border-radius: 10px;</string>
    <property name="geometry">
     <rect>
      <x>1162</x>
-     <y>650</y>
+     <y>647</y>
      <width>171</width>
-     <height>28</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
