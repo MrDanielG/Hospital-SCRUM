@@ -104,18 +104,21 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
                              QMessageBox::Ok);
     }else
     {
-        QString motivo,sintomas,fecha,h_inicio,h_fin,idPaciente;
+        QString motivo,sintomas,fecha,inicio,fin,idPaciente;
+        QTime h_inicio,h_fin;
         motivo = ui->lineMotivo->text();
         sintomas = ui->lineSintomas->text();
         fecha = ui->dateFecha->date().toString("yyyy-MM-dd");
-        h_inicio = ui->horasDisponibles->currentItem()->text();
+        inicio = ui->horasDisponibles->currentIndex().data().toString();
+        h_inicio = QTime::fromString(inicio,"hh:mm 'hrs'");
 
-        //QModelIndex index = ui->listHorasDisponibles->currentIndex();
-        //h_inicio = index.data(Qt::DisplayRole).toString();
-
-        qDebug() << "Hora seleccionada";
-        qDebug() << h_inicio;
-
+        fin = ui->horasDisponibles->currentIndex().data().toString();
+        h_fin = QTime::fromString(inicio,"hh:mm 'hrs'");
+        h_fin = h_fin.addSecs(3600);
+        /*inicio = h_inicio.toString("hh:mm");
+        h_fin = h_inicio.addSecs(3600);
+        fin = h_fin.toString("hh:mm");
+*/
         QSqlQuery buscaIDPaciente(mDatabase);
         buscaIDPaciente.prepare("select id_paciente from paciente as p "
                                 "inner join persona as per on p.id_persona=per.id_persona "
@@ -133,8 +136,8 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         if(Confirmacion == QMessageBox::Yes)
         {
             QSqlQuery InsertaCita(mDatabase);
-            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,h_inicio,id_medico,id_paciente,estado) "
-                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio+"','"+idMedico+"','"+idPaciente+"',1)");
+            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,hora_inicio,hora_fin,id_medico,id_paciente,estado) "
+                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio.toString("HH:mm:ss")+"','"+h_fin.toString("HH:mm:ss")+"','"+idMedico+"','"+idPaciente+"',1)");
             InsertaCita.exec();
 
             QMessageBox::information(this, tr("Registrar Cita"),tr("Cita Registrada Correctamente"),

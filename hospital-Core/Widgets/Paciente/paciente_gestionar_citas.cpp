@@ -102,7 +102,10 @@ void paciente_gestionar_citas::inicalizaCatalogo()
         QString motivo = citas.value(1).toString();
         QString descripcion = citas.value(2).toString();
         QString fecha = citas.value(3).toString();
-        QString horaInicioFin = citas.value(4).toString() + " " + citas.value(5).toString();
+        //QString horaInicioFin = citas.value(4).toString("hh:mm") + " " + citas.value(5).toString();
+        QTime horaInicio = citas.value(4).toTime();
+        QTime horaFin = citas.value(5).toTime();
+        QString horaInicioFin = horaInicio.toString("hh:mm") + " - " + horaFin.toString("hh:mm");
         QString idMed = citas.value(6).toString();
         QString idPac = citas.value(7).toString();
         QString idPago = citas.value(8).toString();
@@ -178,10 +181,20 @@ void paciente_gestionar_citas::on_comboMedicos_activated(const QString &Doc)
 
 void paciente_gestionar_citas::on_btn_citas_activas_clicked()
 {
+    QSqlQuery BuscaID(mDatabase);
+    BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
+                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+    BuscaID.exec();
+    QString idP;
+    while(BuscaID.next())
+    {
+        idP = BuscaID.value(0).toString();
+    }
+
     QDate date = QDate::currentDate();
     QString hoy = date.toString("yyyy-MM-dd");
     QSqlQuery BuscaActivas(mDatabase);
-    BuscaActivas.prepare("select * from cita_medica where fecha > '"+hoy+"' and estado=1;");
+    BuscaActivas.prepare("select * from cita_medica where fecha > '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
     BuscaActivas.exec();
 
     limpiarCatalogo();
@@ -196,7 +209,10 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
         QString motivo = BuscaActivas.value(1).toString();
         QString descripcion = BuscaActivas.value(2).toString();
         QString fecha = BuscaActivas.value(3).toString();
-        QString horaInicioFin = BuscaActivas.value(4).toString() + " " +  BuscaActivas.value(5).toString();
+        //QString horaInicioFin = BuscaActivas.value(4).toString() + " " +  BuscaActivas.value(5).toString();
+        QTime horaInicio = BuscaActivas.value(4).toTime();
+        QTime horaFin = BuscaActivas.value(5).toTime();
+        QString horaInicioFin = horaInicio.toString("hh:mm") + " - " + horaFin.toString("hh:mm");
         QString idMed = BuscaActivas.value(6).toString();
         QString idPac = BuscaActivas.value(7).toString();
         QString idPago = BuscaActivas.value(8).toString();
@@ -213,10 +229,20 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
 
 void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 {
+    QSqlQuery BuscaID(mDatabase);
+    BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
+                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+    BuscaID.exec();
+    QString idP;
+    while(BuscaID.next())
+    {
+        idP = BuscaID.value(0).toString();
+    }
+
     QDate date = QDate::currentDate();
     QString hoy = date.toString("yyyy-MM-dd");
     QSqlQuery BuscaRealizadas(mDatabase);
-    BuscaRealizadas.prepare("select * from cita_medica where fecha < '"+hoy+"' and estado=1;");
+    BuscaRealizadas.prepare("select * from cita_medica where fecha < '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
     BuscaRealizadas.exec();
 
     limpiarCatalogo();
@@ -231,7 +257,10 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
         QString motivo = BuscaRealizadas.value(1).toString();
         QString descripcion = BuscaRealizadas.value(2).toString();
         QString fecha = BuscaRealizadas.value(3).toString();
-        QString horaInicioFin = BuscaRealizadas.value(4).toString() + " " +  BuscaRealizadas.value(5).toString();
+        //QString horaInicioFin = BuscaRealizadas.value(4).toString() + " " +  BuscaRealizadas.value(5).toString();
+        QTime horaInicio = BuscaRealizadas.value(4).toTime();
+        QTime horaFin = BuscaRealizadas.value(5).toTime();
+        QString horaInicioFin = horaInicio.toString("hh:mm") + " - " + horaFin.toString("hh:mm");
         QString idMed = BuscaRealizadas.value(6).toString();
         QString idPac = BuscaRealizadas.value(7).toString();
         QString idPago = BuscaRealizadas.value(8).toString();
@@ -248,9 +277,19 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
 void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
 {
+    QSqlQuery BuscaID(mDatabase);
+    BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
+                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+    BuscaID.exec();
+    QString idP;
+    while(BuscaID.next())
+    {
+        idP = BuscaID.value(0).toString();
+    }
+
     /*El estado de la cita es 3 cuando esta cancelada por el paciente*/
     QSqlQuery BuscaCanceladas(mDatabase);
-    BuscaCanceladas.prepare("select * from cita_medica where estado=3;");
+    BuscaCanceladas.prepare("select * from cita_medica where estado=3 and id_paciente='"+idP+"';");
     BuscaCanceladas.exec();
 
     limpiarCatalogo();
@@ -265,7 +304,10 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
         QString motivo = BuscaCanceladas.value(1).toString();
         QString descripcion = BuscaCanceladas.value(2).toString();
         QString fecha = BuscaCanceladas.value(3).toString();
-        QString horaInicioFin = BuscaCanceladas.value(4).toString() + " " +  BuscaCanceladas.value(5).toString();
+        //QString horaInicioFin = BuscaCanceladas.value(4).toString() + " " +  BuscaCanceladas.value(5).toString();
+        QTime horaInicio = BuscaCanceladas.value(4).toTime();
+        QTime horaFin = BuscaCanceladas.value(5).toTime();
+        QString horaInicioFin = horaInicio.toString("hh:mm") + " - " + horaFin.toString("hh:mm");
         QString idMed = BuscaCanceladas.value(6).toString();
         QString idPac = BuscaCanceladas.value(7).toString();
         QString idPago = BuscaCanceladas.value(8).toString();

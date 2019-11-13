@@ -25,12 +25,16 @@ private slots:
 //    void recuperarDatos();
 
 //    void ingresarServicios();
-    void visualizarCita();
-    void visualizarHorarioCitas();
-    void cancelarCita();
-    void editarPerfilProp();
-    void aprobarCancelacionCita();
-    void asignarCitaAMedico();
+ //   void visualizarCita();
+//    void visualizarHorarioCitas();
+//    void cancelarCita();
+//    void editarPerfilProp();
+//    void aprobarCancelacionCita();
+//    void asignarCitaAMedico();
+    void CancelaCitaPaciente();
+    void VerCitasActivas(); //Por parte del paciente
+    void VerCitasCanceladas(); //Por el paciente
+    void VerCitasRealizadas(); //Por el paciente
 
 
 };
@@ -65,7 +69,7 @@ void pruebas::abrirBase()
 
 }
 
-void pruebas::visualizarHorarioCitas()
+/*void pruebas::visualizarHorarioCitas()
 {
     int band = 0;
     QSqlQuery query(mDatabase);
@@ -84,9 +88,9 @@ void pruebas::visualizarHorarioCitas()
     }
 
     QVERIFY(band == 1);
-}
+}*/
 
-void pruebas::cancelarCita()
+/*void pruebas::cancelarCita()
 {
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaCitaHorario where estado = 1");
@@ -114,7 +118,7 @@ void pruebas::cancelarCita()
         }
     }
     QVERIFY(band == 1);
-}
+}*/
 
 //void pruebas::abrirBase(){
 //    QSqlDatabase mDatabase;
@@ -256,7 +260,7 @@ void pruebas::cancelarCita()
 //    }
 //}
 
-void pruebas::editarPerfilProp()
+/*void pruebas::editarPerfilProp()
 {
     QString usuario = "luisBanderas";
     QString contrasenia = "luis123";
@@ -316,17 +320,17 @@ void pruebas::editarPerfilProp()
             qDebug()<< "contraseña incorrecta";
         }
     }
-}
+}*/
 
-void pruebas::aprobarCancelacionCita()
+/*void pruebas::aprobarCancelacionCita()
 {
 
-}
+}*/
 
-void pruebas::asignarCitaAMedico()
+/*void pruebas::asignarCitaAMedico()
 {
 
-}
+}*/
 
 //void pruebas::ingresarServicios()
 //{
@@ -398,7 +402,7 @@ void pruebas::asignarCitaAMedico()
 //    }
 //}
 
-void pruebas::visualizarCita()
+/*void pruebas::visualizarCita()
 {
     QSqlQuery query;
     QString sql;
@@ -410,6 +414,76 @@ void pruebas::visualizarCita()
         contador ++;
     }
 
+}*/
+
+void pruebas::CancelaCitaPaciente()
+{
+    QString idCita="4";
+    QSqlQuery CancelaCita;
+    CancelaCita.prepare("update cita_medica set estado=3 where id_cita_medica='"+idCita+"';");
+    QVERIFY(CancelaCita.exec());
+
+    if(CancelaCita.exec())
+    {
+        qDebug() << "Cita cancelada";
+    }
+    else
+    {
+        qDebug() << "Error";
+    }
+}
+
+void pruebas::VerCitasActivas()
+{
+    QString idPac = "1";
+    QDate date = QDate::currentDate();
+    QString hoy = date.toString("yyyy-MM-dd");
+    QSqlQuery BuscarActivas;
+    BuscarActivas.prepare("select * from cita_medica where fecha > '"+hoy+"' and estado=1 and id_paciente='"+idPac+"';");
+    QVERIFY(BuscarActivas.exec());
+
+    if(BuscarActivas.next())
+    {
+        qDebug() << "Citas obtenidas del Paciente "+idPac+"";
+    }else
+    {
+        qDebug() << "Error";
+    }
+
+}
+
+void pruebas::VerCitasCanceladas()
+{
+    QString idPac = "1";
+    QSqlQuery BuscarCanceladas;
+    BuscarCanceladas.prepare("select * from cita_medica where estado=3 and id_paciente='"+idPac+"';");
+    QVERIFY(BuscarCanceladas.exec());
+
+    if(BuscarCanceladas.next())
+    {
+        qDebug() << "Citas canceladas por el Paciente "+idPac+"";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+void pruebas::VerCitasRealizadas()
+{
+    QString idPac = "1";
+    QDate date = QDate::currentDate();
+    QString hoy = date.toString("yyyy-MM-dd");
+    QSqlQuery BuscarRealizadas;
+    BuscarRealizadas.prepare("select * from cita_medica where fecha < '"+hoy+"' and estado=1 and id_paciente='"+idPac+"';");
+    QVERIFY(BuscarRealizadas.exec());
+
+    if(BuscarRealizadas.next())
+    {
+        qDebug() << "Citas que tuvo el Paciente "+idPac+"";
+    }else
+    {
+        qDebug() << "Error";
+    }
 }
 
 void pruebas::test_case1()
