@@ -2,6 +2,7 @@
 #include "ui_recepcionista_cobrar_estancia.h"
 #include "Widgets/Recepcionista/recepcionista_tarjeta_cobro.h"
 #include "QDebug"
+#include "QDate"
 recepcionista_cobrar_estancia::recepcionista_cobrar_estancia(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::recepcionista_cobrar_estancia)
@@ -34,7 +35,6 @@ void recepcionista_cobrar_estancia::inicializarCatalogo()
 {
     QSqlQuery query(mDatabase);
     query.prepare("SELECT id_internado, fecha_inicio, habitacion, p2.nombre as nombreInt, p2.paterno as paternoInt, p2.materno as maternoInt, p2.foto as fotoInt, p5.nombre as nombreMed, p5.paterno as paternoMed, p5.materno as maternoMed FROM internados as t1 INNER JOIN paciente as p1 ON t1.id_paciente = p1.id_paciente INNER JOIN persona as p2 ON p2.id_persona = p1.id_persona INNER JOIN medico as p3 ON t1.id_medico = p3.id_medico INNER JOIN empleado as p4 ON p4.id_empleado = p3.id_empleado INNER JOIN persona as p5 ON p5.id_persona = p4.id_persona");
-
     query.exec();
 
     int i=0;
@@ -55,4 +55,36 @@ void recepcionista_cobrar_estancia::inicializarCatalogo()
          i++;
          ui->gridLayout_horario_2->addWidget(tarjeta, row, col);
     }
+}
+
+void recepcionista_cobrar_estancia::inicializarRececta(QString _idInterno)
+{
+    QSqlQuery query(mDatabase);
+    query.prepare("SELECT fecha_inicio, habitacion, p2.nombre as nombreInt, p2.paterno as paternoInt, p2.materno as maternoInt, p2.foto as fotoInt, p5.nombre as nombreMed, p5.paterno as paternoMed, p5.materno as maternoMed FROM internados as t1 INNER JOIN paciente as p1 ON t1.id_paciente = p1.id_paciente INNER JOIN persona as p2 ON p2.id_persona = p1.id_persona INNER JOIN medico as p3 ON t1.id_medico = p3.id_medico INNER JOIN empleado as p4 ON p4.id_empleado = p3.id_empleado INNER JOIN persona as p5 ON p5.id_persona = p4.id_persona WHERE t1.id_internado = '"+_idInterno+"'");
+    query.exec();
+    query.next();
+
+    QString nombre = query.value("nombreInt").toString() + " " +query.value("paternoInt").toString() + " " +query.value("maternoInt").toString();
+    QString fecha = query.value("fecha_inicio").toString();
+    QString habitacion = query.value("habitacion").toString();
+    QString nombreMed = query.value("nombreMed").toString() + " " +query.value("paternoMed").toString() + " " +query.value("maternoMed").toString();
+
+    QDate fechaChida = QDate::fromString(fecha, "yyyy-MM-dd");
+    QDate fechaActual = QDate::currentDate();
+
+    int dt = fechaChida.daysTo(fechaActual);
+    QString diasTotales = QString::number(dt);
+
+    ui->nombreMedico->setText(nombreMed);
+    ui->nombrePaciente->setText(nombre);
+    ui->numHabitacion->setText(habitacion);
+    ui->numDias->setText(diasTotales);
+}
+
+void recepcionista_cobrar_estancia::on_spinBoxCosto_valueChanged(int arg1)
+{
+    int diasTotales = ui->numDias->text().toInt();
+    int total = arg1 * diasTotales;
+    QString totalString = QString::number(total);
+    ui->totalCobro->setText(totalString + " pesos mexicanos");
 }

@@ -16,6 +16,10 @@ public:
     explicit recepcionista_cobrar_estancia(QWidget *parent = nullptr);
     ~recepcionista_cobrar_estancia();
     void inicializarCatalogo();
+    void inicializarRececta(QString);
+private slots:
+    void on_spinBoxCosto_valueChanged(int arg1);
+
 private:
     Ui::recepcionista_cobrar_estancia *ui;
     QSqlDatabase mDatabase;
