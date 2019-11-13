@@ -35,8 +35,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
     ui->stackedWidget->insertWidget(10,&solicitudesMedico);
+    ui->stackedWidget->insertWidget(11,&generarReceta);
     ui->stackedWidget->insertWidget(12,&gestionCitas);
+    ui->stackedWidget->insertWidget(13,&horariosMedicos);
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
+    ui->stackedWidget->insertWidget(17, &internados);
+    ui->stackedWidget->insertWidget(18, &informacionMedico);
+    ui->stackedWidget->insertWidget(19, &citas);
+
 }
 
 MainWindow::~MainWindow()
@@ -58,12 +65,17 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 
+    this->sesion = dialogo_iniciar_sesion.getUsuario();
+
     qDebug()<<"DATOS LOGIN";
     qDebug()<<this->datosLogin.nombre_usuario;
     qDebug()<<this->datosLogin.passwd;
 
+
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
+    informacionMedico.setID(this->datosLogin.nombre_usuario);
+    generarReceta.setUsuario(this->datosLogin.nombre_usuario);
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -72,7 +84,9 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
      * 2 = Paciente
      * 3 = Administrador
      * 4 = Farmaceutico
-     * 5 = Staff
+     * 5 = Enfermera
+     * 6 = Cajero
+     * 7 = Recepcionista
      *
      * esto se hace para todos los else if dependiendo el caso
     */
@@ -92,10 +106,18 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
         ui->stackedWidget_2->setCurrentIndex(1);
     }
     else if(this->index == 4){
-
+        //Farmaceutico
     }
     else if(this->index == 5){
-
+        // Enfermera
+    }
+    else if (this->index == 6) {
+        //Cajero
+    }
+    else if (this->index == 7) {
+        //Recepcionista
+        ui->stackedWidget->setCurrentIndex(16);
+        ui->stackedWidget_2->setCurrentIndex(4);
     }
     qDebug()<<"usuario"<<dialogo_iniciar_sesion.getUsuario();
 }
@@ -208,4 +230,29 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
 void MainWindow::on_btn_gestionar_citas_clicked()
 {
     ui->stackedWidget->setCurrentIndex(12);
+}
+
+void MainWindow::on_btn_informacion_medico_clicked(){
+    ui->stackedWidget->setCurrentIndex(18);
+}
+
+void MainWindow::on_btn_horario_medico_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(17);
+}
+
+void MainWindow::on_btn_citas_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(19);
+}
+
+void MainWindow::on_btn_recetas_medico_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+    this->generarReceta.inicializarCatalogo();
+}
+
+void MainWindow::on_btn_horarios_medicos_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
 }

@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::medico_landPage *ui;
+
 };
 
 #endif // MEDICO_LANDPAGE_H

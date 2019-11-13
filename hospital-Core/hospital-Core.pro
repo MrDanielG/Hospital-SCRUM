@@ -3,7 +3,7 @@
 # Project created by QtCreator 2019-10-24T13:39:30
 #
 #-------------------------------------------------
-
+QT       += printsupport
 QT       += core gui
 QT       += core gui sql
 
@@ -27,20 +27,31 @@ CONFIG += c++11
 
 SOURCES += \
         Clases/doctor.cpp \
+    Clases/pdf_receta.cpp \
         Clases/usuario.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
+    Widgets/Administrador/administrador_horarios_medicos.cpp \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
+    Widgets/Medico/medico_expediente_clinico.cpp \
+    Widgets/Medico/medico_generar_receta.cpp \
     Widgets/Medico/medico_info_cita_medica.cpp \
+    Widgets/Medico/medico_informacion.cpp \
+    Widgets/Medico/medico_modificar.cpp \
     Widgets/Medico/medico_rechazar_cita_medica.cpp \
         Widgets/Medico/medico_solicitudes.cpp \
+    Widgets/Medico/medico_tarjeta_cita.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
     Widgets/Paciente/paciente_crear_cita.cpp \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
+    Widgets/Recepcionista/recepcionista_citas.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -66,24 +77,42 @@ SOURCES += \
     Widgets/Medico/medico_tarjeta_horario.cpp \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.cpp \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.cpp \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.cpp
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.cpp \
+    Widgets/Recepcionista/recepcionistalandpage.cpp \
+    Widgets/Recepcionista/recepcionista_internados.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.cpp \
+    Widgets/Recepcionista/recepcionista_agregar_internado.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.cpp \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp
 
 HEADERS += \
         Clases/doctor.h \
+    Clases/pdf_receta.h \
         Clases/usuario.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
+    Widgets/Administrador/administrador_horarios_medicos.h \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
+    Widgets/Medico/medico_expediente_clinico.h \
+    Widgets/Medico/medico_generar_receta.h \
     Widgets/Medico/medico_info_cita_medica.h \
+    Widgets/Medico/medico_informacion.h \
+    Widgets/Medico/medico_modificar.h \
     Widgets/Medico/medico_rechazar_cita_medica.h \
         Widgets/Medico/medico_solicitudes.h \
+    Widgets/Medico/medico_tarjeta_cita.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
     Widgets/Paciente/paciente_crear_cita.h \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.h \
+    Widgets/Recepcionista/recepcionista_citas.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -108,22 +137,39 @@ HEADERS += \
     Widgets/Medico/medico_tarjeta_horario.h \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.h \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.h \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.h
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.h \
+    Widgets/Recepcionista/recepcionistalandpage.h \
+    Widgets/Recepcionista/recepcionista_internados.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.h \
+    Widgets/Recepcionista/recepcionista_agregar_internado.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
+    Widgets/Administrador/administrador_horarios_medicos.ui \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
+    Widgets/Medico/medico_expediente_clinico.ui \
+    Widgets/Medico/medico_generar_receta.ui \
     Widgets/Medico/medico_info_cita_medica.ui \
+    Widgets/Medico/medico_informacion.ui \
+    Widgets/Medico/medico_modificar.ui \
     Widgets/Medico/medico_rechazar_cita_medica.ui \
         Widgets/Medico/medico_solicitudes.ui \
+    Widgets/Medico/medico_tarjeta_cita.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
     Widgets/Paciente/paciente_crear_cita.ui \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
+    Widgets/Recepcionista/recepcionista_citas.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \
@@ -148,7 +194,14 @@ FORMS += \
     Widgets/Medico/medico_tarjeta_horario.ui \
     Widgets/Administrador/administrador_catalogo_cancelacion_cita.ui \
     Widgets/Administrador/administrador_tarjeta_cancelacion_cita.ui \
-    Widgets/Administrador/administrador_visualizar_cancelacion_cita.ui
+    Widgets/Administrador/administrador_visualizar_cancelacion_cita.ui \
+    Widgets/Recepcionista/recepcionistalandpage.ui \
+    Widgets/Recepcionista/recepcionista_internados.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_internados.ui \
+    Widgets/Recepcionista/recepcionista_agregar_internado.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.ui \
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
