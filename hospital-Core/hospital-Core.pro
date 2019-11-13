@@ -52,6 +52,7 @@ SOURCES += \
     Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
     Widgets/Recepcionista/recepcionista_citas.cpp \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_cobro.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
@@ -114,6 +115,7 @@ HEADERS += \
     Widgets/Recepcionista/recepcion_tarjeta_citas.h \
     Widgets/Recepcionista/recepcionista_citas.h \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_cobro.h \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
@@ -172,6 +174,7 @@ FORMS += \
     Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
     Widgets/Recepcionista/recepcionista_citas.ui \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_cobro.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \

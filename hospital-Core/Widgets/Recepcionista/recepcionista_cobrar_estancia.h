@@ -2,7 +2,8 @@
 #define RECEPCIONISTA_COBRAR_ESTANCIA_H
 
 #include <QWidget>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
 namespace Ui {
 class recepcionista_cobrar_estancia;
 }
@@ -14,9 +15,16 @@ class recepcionista_cobrar_estancia : public QWidget
 public:
     explicit recepcionista_cobrar_estancia(QWidget *parent = nullptr);
     ~recepcionista_cobrar_estancia();
-
+    void inicializarCatalogo();
 private:
     Ui::recepcionista_cobrar_estancia *ui;
+    QSqlDatabase mDatabase;
+    QString idInternado;
+    QString idMedico;
+    QString nombreMedico;
+    QString nombrePaciente;
+    QString fechaInicio;
+    QString habitacion;
 };
 
 #endif // RECEPCIONISTA_COBRAR_ESTANCIA_H
