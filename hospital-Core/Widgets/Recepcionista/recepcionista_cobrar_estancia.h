@@ -20,6 +20,8 @@ public:
 private slots:
     void on_spinBoxCosto_valueChanged(int arg1);
 
+    void on_btnGenerarTicket_clicked();
+
 private:
     Ui::recepcionista_cobrar_estancia *ui;
     QSqlDatabase mDatabase;
@@ -29,6 +31,8 @@ private:
     QString nombrePaciente;
     QString fechaInicio;
     QString habitacion;
+    QString diasTotales;
+    QString precioTotal;
 };
 
 #endif // RECEPCIONISTA_COBRAR_ESTANCIA_H
