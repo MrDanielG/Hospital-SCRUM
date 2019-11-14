@@ -29,7 +29,7 @@ farmaceutico_tarjeta_medicamento_venta::~farmaceutico_tarjeta_medicamento_venta(
     delete ui;
 }
 
-void farmaceutico_tarjeta_medicamento_venta::insertarDatos(QString nombre, QString precio, QString cantidad, QString premedicado)
+void farmaceutico_tarjeta_medicamento_venta::insertarDatos(QString nombre, QString precio, QString cantidad, QString premedicado, QString id)
 {
     QString pre = "";
     if(premedicado == "1"){
@@ -41,5 +41,16 @@ void farmaceutico_tarjeta_medicamento_venta::insertarDatos(QString nombre, QStri
     ui->precio_medicamento->setText(precio);
     ui->cantidad_medicamento->setText(cantidad);
     ui->premedicado_medicamento->setText(pre);
+    this->id=id;
+
+}
+
+QString farmaceutico_tarjeta_medicamento_venta::getID(){
+    return this->id;
+}
+
+void farmaceutico_tarjeta_medicamento_venta::on_btn_agregaracola_clicked()
+{
+    getID();
 
 }

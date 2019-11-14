@@ -18,11 +18,16 @@ class farmaceutico_tarjeta_medicamento_venta : public QWidget
 public:
     explicit farmaceutico_tarjeta_medicamento_venta(QWidget *parent = nullptr);
     ~farmaceutico_tarjeta_medicamento_venta();
-    void insertarDatos(QString nombre, QString precio, QString cantidad, QString premedicado);
+    void insertarDatos(QString nombre, QString precio, QString cantidad, QString premedicado, QString id);
+    QString getID();
+
+private slots:
+    void on_btn_agregaracola_clicked();
 
 private:
     Ui::farmaceutico_tarjeta_medicamento_venta *ui;
     QSqlDatabase mDatabase;
+    QString id;
 };
 
 #endif // FARMACEUTICO_TARJETA_MEDICAMENTO_VENTA_H

@@ -23,7 +23,7 @@ farmaceutico_realizarVentas::farmaceutico_realizarVentas(QWidget *parent) :
         }
 
         QSqlQuery query(mDatabase);
-        query.prepare("select nombre, costo, cantidad, premedicado from medicamentos_farmacia");
+        query.prepare("select nombre, costo, cantidad, premedicado, id_medicamentos_farmacia from medicamentos_farmacia");
         query.exec();
 
         int i=0;
@@ -35,12 +35,13 @@ farmaceutico_realizarVentas::farmaceutico_realizarVentas(QWidget *parent) :
              QString costo = query.value(1).toString();
              QString cantidad = query.value(2).toString();
              QString premedicado = query.value(3).toString();
+             QString id = query.value(4).toString();
 
              row = i/2;
              col= i%2;
 
              farmaceutico_tarjeta_medicamento_venta *tarjeta = new farmaceutico_tarjeta_medicamento_venta();
-             tarjeta->insertarDatos(nombre, costo, cantidad, premedicado);
+             tarjeta->insertarDatos(nombre, costo, cantidad, premedicado, id);
              i++;
              ui->gridLayout->addWidget(tarjeta, row, col);
 
@@ -68,7 +69,7 @@ void farmaceutico_realizarVentas::on_BuscarMedicamento_textChanged(const QString
     char caracter = '%';
 
     QSqlQuery MostrarDatos(mDatabase);
-    MostrarDatos.prepare("select nombre, costo, cantidad, premedicado "
+    MostrarDatos.prepare("select nombre, costo, cantidad, premedicado, id_medicamentos_farmacia "
                          "from medicamentos_farmacia where nombre like '"+arg1+""+caracter+"'");
     MostrarDatos.exec();
 
@@ -82,11 +83,12 @@ void farmaceutico_realizarVentas::on_BuscarMedicamento_textChanged(const QString
         QString costo = MostrarDatos.value(1).toString();
         QString cantidad = MostrarDatos.value(2).toString();
         QString premedicado = MostrarDatos.value(3).toString();
+        QString id = MostrarDatos.value(4).toString();
         row = i/2;
         col= i%2;
 
         farmaceutico_tarjeta_medicamento_venta *tarjeta = new farmaceutico_tarjeta_medicamento_venta();
-       tarjeta->insertarDatos(nombre, costo, cantidad, premedicado);
+       tarjeta->insertarDatos(nombre, costo, cantidad, premedicado, id);
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
