@@ -34,6 +34,7 @@ SOURCES += \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
     Widgets/Farmaceutico/farmaceutico_landpage.cpp \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_info_cita_medica.cpp \
@@ -92,6 +93,7 @@ HEADERS += \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
     Widgets/Farmaceutico/farmaceutico_landpage.h \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_info_cita_medica.h \
@@ -147,6 +149,7 @@ FORMS += \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
     Widgets/Farmaceutico/farmaceutico_landpage.ui \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_info_cita_medica.ui \
