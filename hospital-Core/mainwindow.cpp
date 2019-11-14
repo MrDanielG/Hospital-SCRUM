@@ -41,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(17, &internados);
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
+    ui->stackedWidget->insertWidget(20, &landpageFarmaceutico);
 }
 
 MainWindow::~MainWindow()
@@ -104,6 +105,8 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     }
     else if(this->index == 4){
         //Farmaceutico
+        ui->stackedWidget->setCurrentIndex(20);
+        ui->stackedWidget_2->setCurrentIndex(5);
     }
     else if(this->index == 5){
         // Enfermera

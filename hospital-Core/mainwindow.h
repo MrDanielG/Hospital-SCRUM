@@ -23,6 +23,7 @@
 #include "Widgets/Recepcionista/recepcionistalandpage.h"
 #include "Widgets/Recepcionista/recepcionista_internados.h"
 #include "Widgets/Recepcionista/recepcionista_citas.h"
+#include "Widgets/Farmaceutico/farmaceutico_landpage.h"
 
 namespace Ui
 {
@@ -86,6 +87,7 @@ private:
     recepcionistaLandpage landpageRecepcionista;
     recepcionista_internados internados;
     recepcionista_citas citas;
+    farmaceutico_landpage landpageFarmaceutico;
 
     int index;
     QString sesion="";
