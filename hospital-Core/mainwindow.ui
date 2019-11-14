@@ -1332,7 +1332,7 @@ color: white;
        <string>Salir</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="realizarVenta">
       <property name="geometry">
        <rect>
         <x>1074</x>
@@ -1354,7 +1354,7 @@ color: white;
 </string>
       </property>
       <property name="text">
-       <string>Gestionar Ventas</string>
+       <string>Realizar Venta</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">

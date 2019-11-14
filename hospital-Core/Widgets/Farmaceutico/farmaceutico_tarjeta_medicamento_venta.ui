@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>300</width>
     <height>182</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>182</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>300</width>
+    <height>182</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -18,9 +30,21 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
+     <width>300</width>
      <height>181</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>181</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>300</width>
+     <height>181</height>
+    </size>
    </property>
    <property name="styleSheet">
     <string notr="true">background: #F4F4F4;</string>
@@ -32,9 +56,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>60</x>
      <y>10</y>
-     <width>381</width>
+     <width>181</width>
      <height>20</height>
     </rect>
    </property>
@@ -42,6 +66,9 @@
     <font>
      <family>Montserrat</family>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
    </property>
    <property name="text">
     <string>Datos del Medicamento</string>
@@ -64,6 +91,9 @@
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
     <string> Medicamento:</string>
    </property>
@@ -84,6 +114,9 @@
     <font>
      <family>Montserrat</family>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
    </property>
    <property name="text">
     <string>Precio:</string>
@@ -106,8 +139,11 @@
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
-    <string>Tipo:</string>
+    <string>Cantidad</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -127,6 +163,9 @@
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
     <string>Premedicado:</string>
    </property>
@@ -137,7 +176,7 @@
   <widget class="QPushButton" name="btn_agregaracola">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>180</x>
      <y>150</y>
      <width>111</width>
      <height>23</height>
@@ -166,6 +205,9 @@ background: #3E64FF;</string>
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
     <string>Paracetamol</string>
    </property>
@@ -187,6 +229,9 @@ background: #3E64FF;</string>
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
     <string>16.00</string>
    </property>
@@ -194,7 +239,7 @@ background: #3E64FF;</string>
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="tipo_medicameto">
+  <widget class="QLabel" name="cantidad_medicamento">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -208,8 +253,11 @@ background: #3E64FF;</string>
      <family>Montserrat</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
+   </property>
    <property name="text">
-    <string>Antiflamatorio</string>
+    <string>50</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -228,6 +276,9 @@ background: #3E64FF;</string>
     <font>
      <family>Montserrat</family>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #F4F4F4;</string>
    </property>
    <property name="text">
     <string>Si</string>

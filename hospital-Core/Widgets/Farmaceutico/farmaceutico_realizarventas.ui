@@ -34,7 +34,7 @@
     <string>Realizar Venta</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="BuscarMedicamento">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -78,8 +78,8 @@ padding:5px;</string>
     <rect>
      <x>40</x>
      <y>130</y>
-     <width>631</width>
-     <height>501</height>
+     <width>641</width>
+     <height>521</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -93,10 +93,15 @@ padding:5px;</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>629</width>
-      <height>499</height>
+      <width>639</width>
+      <height>519</height>
      </rect>
     </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -140,7 +145,7 @@ border-radius:5px;</string>
   </widget>
   <zorder>label_2</zorder>
   <zorder>label</zorder>
-  <zorder>lineEdit</zorder>
+  <zorder>BuscarMedicamento</zorder>
   <zorder>scrollArea</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
