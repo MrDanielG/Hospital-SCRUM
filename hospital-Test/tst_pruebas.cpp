@@ -18,7 +18,7 @@ private:
 
 
 private slots:
-    void abrirBase();
+//    void abrirBase();
 //    void abrirBase();
 //    void registrarUsuario();
 //    void inicioSesion();
@@ -33,10 +33,10 @@ private slots:
 //    void editarPerfilProp();
 //    void aprobarCancelacionCita();
 //    void asignarCitaAMedico();
-    void CancelaCitaPaciente();
-    void VerCitasActivas(); //Por parte del paciente
-    void VerCitasCanceladas(); //Por el paciente
-    void VerCitasRealizadas(); //Por el paciente
+ //   void CancelaCitaPaciente();
+   // void VerCitasActivas(); //Por parte del paciente
+   // void VerCitasCanceladas(); //Por el paciente
+    //void VerCitasRealizadas(); //Por el paciente
 
     //Pruebas Angel
 //    void modificarMedico();
@@ -44,15 +44,15 @@ private slots:
 //    void visualizarOperaciones();
 //    void agendarCita();
 //    void buscarporFecha();
-    void buscarporNombre();
+    //void buscarporNombre();
 
 //    void agregarInternado();
 //    void modificarInternado();
 //    void darDeBaja();
 
     //Pruebas Daniel Sprint 3
-    void catalogoCitas();
-    void buscarPorMedico();
+    //void catalogoCitas();
+    //void buscarPorMedico();
 //    void buscarFecha();
 
 
@@ -82,15 +82,15 @@ pruebas::~pruebas(){
 
 }
 
-//void pruebas::insertarDatos(QString experiencia, QString logros, QString estudios,
-//                            QString cedula, QString nombre, QString paterno, QString materno,
-//                            QString correo, QString foto, QString direccion, QString contrasenia,
-//                            QString mascota){
+/*void pruebas::insertarDatos(QString experiencia, QString logros, QString estudios,
+                           QString cedula, QString nombre, QString paterno, QString materno,
+                            QString correo, QString foto, QString direccion, QString contrasenia,
+                            QString mascota){
 
 
-//}
+}*/
 
-void pruebas::abrirBase()
+/*void pruebas::abrirBase()
 {
     int conectada = 0;
     if(!mDatabase.open()){
@@ -104,7 +104,7 @@ void pruebas::abrirBase()
 
     QVERIFY(conectada == 1);
 
-}
+}*/
 
 /*void pruebas::visualizarHorarioCitas()
 {
@@ -827,8 +827,8 @@ void pruebas::buscarPorMedico()
     }
 
 }*/
-    QVERIFY(band == 1);
-}
+ /*   QVERIFY(band == 1);
+}*/
 
 //void pruebas::ingresarServicios()
 //{
@@ -914,7 +914,7 @@ void pruebas::buscarPorMedico()
 
 }*/
 
-void pruebas::CancelaCitaPaciente()
+/*void pruebas::CancelaCitaPaciente()
 {
     QString idCita="4";
     QSqlQuery CancelaCita;
@@ -982,10 +982,10 @@ void pruebas::VerCitasRealizadas()
     {
         qDebug() << "Error";
     }
-}
+}*/
 
-void pruebas::test_case1()
-{
+//void pruebas::test_case1()
+//{
 //void pruebas::visualizarCita(){
 //    QSqlQuery query;
 //    QString sql;
