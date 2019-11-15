@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>401</width>
-    <height>244</height>
+    <height>249</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,14 +24,14 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>401</width>
+     <height>241</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>9999</width>
-     <height>9999</height>
+     <width>401</width>
+     <height>241</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -66,6 +66,8 @@ border-radius:5px;</string>
     <rect>
      <x>200</x>
      <y>190</y>
+     <x>140</x>
+     <y>200</y>
      <width>161</width>
      <height>31</height>
     </rect>
@@ -394,6 +396,17 @@ border: none;</string>
     <string>CALIFICAR</string>
    </property>
   </widget>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>info_cita</zorder>
+  <zorder>lbl_horario</zorder>
+  <zorder>lbl_fecha_cita</zorder>
+  <zorder>label_folio</zorder>
+  <zorder>label_4</zorder>
+  <zorder>lbl_motivo</zorder>
+  <zorder>label_3</zorder>
+  <zorder>lbl_nombre_medico</zorder>
+  <zorder>btn_gestionar</zorder>
  </widget>
  <resources>
   <include location="../../resources.qrc"/>

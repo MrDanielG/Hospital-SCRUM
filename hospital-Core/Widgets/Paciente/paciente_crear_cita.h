@@ -21,11 +21,14 @@ private slots:
     void on_btn_agendarCita_clicked();
     void on_ButtonBuscaHorario_clicked();
 
+    void on_btn_reagendar_cita_clicked();
+
 private:
     Ui::paciente_crear_cita *ui;
     QSqlDatabase mDatabase;
     QString idUsuarioPaciente;
     QString idMedico;
+    QString idCita;
 };
 
 #endif // PACIENTE_CREAR_CITA_H

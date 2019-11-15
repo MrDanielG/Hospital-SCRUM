@@ -5,6 +5,8 @@
 #include <QDate>
 #include <QMessageBox>
 #include "paciente_califica_medico.h"
+#include "Widgets/Paciente/paciente_reagendar_cita.h"
+#include "Widgets/Paciente/paciente_crear_cita.h"
 
 paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QString descripcion, QString fecha, QString horaInicioFin, QString idMed,QString idPac, QString idPagos,QString estadoCita, QWidget *parent) :
     QWidget(parent),
@@ -78,20 +80,38 @@ void paciente_tarjeta_cita::inicializarTarjeta()
 //Para cancelar una cita por el paciente
 void paciente_tarjeta_cita::on_btn_gestionar_clicked()
 {
+    paciente_Reagendar_cita mensajeReagendar(this);
+    mensajeReagendar.exec();
     QMessageBox::StandardButton Confirmacion;
-    Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de cancelar esta cita?",
-                                         QMessageBox::Yes | QMessageBox::No);
 
-    if(Confirmacion == QMessageBox::Yes)
+    if(mensajeReagendar.getBand())
     {
-        QSqlQuery CancelaCita(mDatabase);
-        CancelaCita.prepare("update cita_medica set estado=3 where id_cita_medica='"+id_cita+"';");
-        CancelaCita.exec();
+        paciente_crear_cita crearCita(this->id_cita,"reagendar");
+        crearCita.exec();
 
-        QMessageBox::information(this, tr("Cita"),tr("Cita cancelada"),
-                                      QMessageBox::Ok);
-        ui->btn_gestionar->hide();
+
+
+    }else
+    {
+        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de cancelar esta cita?",
+                                            QMessageBox::Yes | QMessageBox::No);
+        if(Confirmacion == QMessageBox::Yes)
+        {
+            QSqlQuery CancelaCita(mDatabase);
+            CancelaCita.prepare("update cita_medica set estado=3 where id_cita_medica='"+id_cita+"';");
+            CancelaCita.exec();
+
+            QMessageBox::information(this, tr("Cita"),tr("Cita cancelada"),
+                                          QMessageBox::Ok);
+            ui->btn_gestionar->hide();
+        }
     }
+
+}
+
+void paciente_tarjeta_cita::ocultarBoton()
+{
+    ui->btn_gestionar->hide();
 }
 
 void paciente_tarjeta_cita::on_btn_calificar_clicked()

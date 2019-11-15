@@ -48,6 +48,7 @@ SOURCES += \
     Widgets/Paciente/paciente_crear_cita.cpp \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
+    Widgets/Paciente/paciente_reagendar_cita.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
     Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
     Widgets/Recepcionista/recepcionista_citas.cpp \
@@ -110,6 +111,7 @@ HEADERS += \
     Widgets/Paciente/paciente_crear_cita.h \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
+    Widgets/Paciente/paciente_reagendar_cita.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
     Widgets/Recepcionista/recepcion_tarjeta_citas.h \
     Widgets/Recepcionista/recepcionista_citas.h \
@@ -168,6 +170,7 @@ FORMS += \
     Widgets/Paciente/paciente_crear_cita.ui \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \
+    Widgets/Paciente/paciente_reagendar_cita.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
     Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
     Widgets/Recepcionista/recepcionista_citas.ui \

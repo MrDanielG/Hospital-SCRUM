@@ -424,6 +424,46 @@ color: rgb(32, 91, 255);</string>
      </layout>
     </item>
     <item>
+     <widget class="QPushButton" name="btn_reagendar_cita">
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat Medium</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">*{
+	color: white;
+	background-color: #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Reagendar</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="btn_agendarCita">
       <property name="minimumSize">
        <size>

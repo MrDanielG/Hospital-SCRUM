@@ -7,6 +7,7 @@
 #include "QSqlQuery"
 #include <QPixmap>
 #include <QDate>
+#include "QDateTime"
 
 paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     QWidget(parent),
@@ -62,6 +63,7 @@ paciente_gestionar_citas::paciente_gestionar_citas(QWidget *parent) :
     }
     QString Doc;
     Doc = ui->comboMedicos->currentText();
+    inicalizaCatalogo();
 }
 
 paciente_gestionar_citas::~paciente_gestionar_citas()
@@ -77,6 +79,8 @@ void paciente_gestionar_citas::setIdPaciente(QString _idUsuarioPaciente)
 
 void paciente_gestionar_citas::inicalizaCatalogo()
 {
+    on_btn_citas_activas_clicked();
+    /*
     QSqlQuery BuscaID(mDatabase);
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
                     "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
@@ -118,6 +122,7 @@ void paciente_gestionar_citas::inicalizaCatalogo()
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
+    */
 }
 
 void paciente_gestionar_citas::limpiarCatalogo()
@@ -181,7 +186,9 @@ void paciente_gestionar_citas::on_comboMedicos_activated(const QString &Doc)
 
 void paciente_gestionar_citas::on_btn_citas_activas_clicked()
 {
+    bool band=false;
     QSqlQuery BuscaID(mDatabase);
+    QTime horaActual=QTime::currentTime();
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
                     "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
     BuscaID.exec();
@@ -194,7 +201,7 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
     QDate date = QDate::currentDate();
     QString hoy = date.toString("yyyy-MM-dd");
     QSqlQuery BuscaActivas(mDatabase);
-    BuscaActivas.prepare("select * from cita_medica where fecha > '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
+    BuscaActivas.prepare("select * from cita_medica where fecha >= '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
     BuscaActivas.exec();
 
     limpiarCatalogo();
@@ -205,6 +212,18 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
 
     while (BuscaActivas.next())
     {
+
+        if((BuscaActivas.value(4).toTime()>horaActual))
+        {
+            band=true;
+        }else
+        {
+            if(BuscaActivas.value(3).toDate()>date)
+            {
+                band=true;
+            }
+        }
+
         QString id_cita = BuscaActivas.value(0).toString();
         QString motivo = BuscaActivas.value(1).toString();
         QString descripcion = BuscaActivas.value(2).toString();
@@ -221,9 +240,15 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
         row = i / 2;
         col = i % 2;
 
-        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
-        i++;
-        ui->gridLayout->addWidget(tarjeta, row, col);
+        if(band)
+        {
+            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+            i++;
+            ui->gridLayout->addWidget(tarjeta, row, col);
+        }
+
+        band=false;
+
     }
 }
 
@@ -233,7 +258,9 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
                     "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
     BuscaID.exec();
+    QTime horaActual=QTime::currentTime();
     QString idP;
+    bool band=false;
     while(BuscaID.next())
     {
         idP = BuscaID.value(0).toString();
@@ -242,7 +269,7 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
     QDate date = QDate::currentDate();
     QString hoy = date.toString("yyyy-MM-dd");
     QSqlQuery BuscaRealizadas(mDatabase);
-    BuscaRealizadas.prepare("select * from cita_medica where fecha < '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
+    BuscaRealizadas.prepare("select * from cita_medica where fecha <= '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
     BuscaRealizadas.exec();
 
     limpiarCatalogo();
@@ -253,6 +280,13 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
     while (BuscaRealizadas.next())
     {
+        if(BuscaRealizadas.value(4).toTime()<horaActual)
+        {
+            band=true;
+        }
+
+        qDebug()<<"bandera"<<band;
+
         QString id_cita = BuscaRealizadas.value(0).toString();
         QString motivo = BuscaRealizadas.value(1).toString();
         QString descripcion = BuscaRealizadas.value(2).toString();
@@ -268,10 +302,14 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
         row = i / 2;
         col = i % 2;
-
-        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
-        i++;
-        ui->gridLayout->addWidget(tarjeta, row, col);
+        if(band)
+        {
+            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+            tarjeta->ocultarBoton();
+            i++;
+            ui->gridLayout->addWidget(tarjeta, row, col);
+        }
+        band=false;
     }
 }
 
@@ -317,6 +355,7 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
         col = i % 2;
 
         paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+        tarjeta->ocultarBoton();
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
