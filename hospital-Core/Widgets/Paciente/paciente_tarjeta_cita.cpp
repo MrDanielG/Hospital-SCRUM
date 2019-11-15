@@ -107,3 +107,8 @@ void paciente_tarjeta_cita::on_btn_gestionar_clicked()
     }
 
 }
+
+void paciente_tarjeta_cita::ocultarBoton()
+{
+    ui->btn_gestionar->hide();
+}

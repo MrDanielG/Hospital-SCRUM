@@ -15,6 +15,7 @@ public:
     explicit paciente_tarjeta_cita(QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
     ~paciente_tarjeta_cita();
     void inicializarTarjeta();
+    void ocultarBoton();
 private slots:
     void on_btn_gestionar_clicked();
 
