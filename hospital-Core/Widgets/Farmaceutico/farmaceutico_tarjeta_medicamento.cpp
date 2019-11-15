@@ -1,5 +1,6 @@
 #include "farmaceutico_tarjeta_medicamento.h"
 #include "ui_farmaceutico_tarjeta_medicamento.h"
+#include "Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.h"
 
 farmaceutico_tarjeta_medicamento::farmaceutico_tarjeta_medicamento(QString id, QString nombre, QString tipo, QString descripcion, QString costo, QString cantidad, QString premedicado, QWidget *parent) :
     QWidget(parent),
@@ -50,4 +51,11 @@ void farmaceutico_tarjeta_medicamento::insertarDatos()
     ui->precio_medicamento->setText(costo);
     ui->tipo_medicamento->setText(tipo);
     ui->predicado_medicamento->setText(premmedicado);
+}
+
+void farmaceutico_tarjeta_medicamento::on_btn_agregar_medicamento_clicked()
+{
+    farmaceutico_gestionar_medicamento dialogo(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
+    dialogo.insertarDatos();
+    dialogo.exec();
 }

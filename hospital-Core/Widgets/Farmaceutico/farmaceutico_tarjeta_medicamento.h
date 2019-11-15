@@ -19,6 +19,9 @@ public:
     ~farmaceutico_tarjeta_medicamento();
     void insertarDatos();
 
+private slots:
+    void on_btn_agregar_medicamento_clicked();
+
 private:
     Ui::farmaceutico_tarjeta_medicamento *ui;
     QSqlDatabase mDatabase;
