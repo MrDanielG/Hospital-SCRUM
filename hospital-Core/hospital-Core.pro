@@ -33,7 +33,15 @@ SOURCES += \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Farmaceutico/farmaceutico_landpage.cpp \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.cpp \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
+    Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_info_cita_medica.cpp \
+    Widgets/Medico/medico_informacion.cpp \
+    Widgets/Medico/medico_modificar.cpp \
     Widgets/Medico/medico_rechazar_cita_medica.cpp \
         Widgets/Medico/medico_solicitudes.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
@@ -41,6 +49,9 @@ SOURCES += \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
+    Widgets/Recepcionista/recepcionista_citas.cpp \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.cpp \
         Widgets/Usuario/catalogo_doctores.cpp \
         Widgets/Administrador/administador_gestionar_usuarios.cpp \
         Widgets/Administrador/administrador_crear_tips.cpp \
@@ -83,7 +94,15 @@ HEADERS += \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Farmaceutico/farmaceutico_landpage.h \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.h \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.h \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
+    Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_info_cita_medica.h \
+    Widgets/Medico/medico_informacion.h \
+    Widgets/Medico/medico_modificar.h \
     Widgets/Medico/medico_rechazar_cita_medica.h \
         Widgets/Medico/medico_solicitudes.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
@@ -91,6 +110,9 @@ HEADERS += \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.h \
+    Widgets/Recepcionista/recepcionista_citas.h \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.h \
         Widgets/Usuario/catalogo_doctores.h \
         Widgets/Administrador/administador_gestionar_usuarios.h \
         Widgets/Administrador/administrador_crear_tips.h \
@@ -130,7 +152,15 @@ FORMS += \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Farmaceutico/farmaceutico_landpage.ui \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.ui \
+    Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
+    Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_info_cita_medica.ui \
+    Widgets/Medico/medico_informacion.ui \
+    Widgets/Medico/medico_modificar.ui \
     Widgets/Medico/medico_rechazar_cita_medica.ui \
         Widgets/Medico/medico_solicitudes.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
@@ -138,6 +168,9 @@ FORMS += \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
+    Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
+    Widgets/Recepcionista/recepcionista_citas.ui \
+    Widgets/Recepcionista/recepcionista_tarjeta_operaciones.ui \
         Widgets/Usuario/catalogo_doctores.ui \
         Widgets/Administrador/administador_gestionar_usuarios.ui \
         Widgets/Administrador/administrador_crear_tips.ui \

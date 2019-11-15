@@ -39,6 +39,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
     ui->stackedWidget->insertWidget(17, &internados);
+    ui->stackedWidget->insertWidget(18, &informacionMedico);
+    ui->stackedWidget->insertWidget(19, &citas);
+    ui->stackedWidget->insertWidget(20, &landpageFarmaceutico);
+    ui->stackedWidget->insertWidget(21, &ventaMedicamento);
 }
 
 MainWindow::~MainWindow()
@@ -60,12 +64,17 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 
+    this->sesion = dialogo_iniciar_sesion.getUsuario();
+
     qDebug()<<"DATOS LOGIN";
     qDebug()<<this->datosLogin.nombre_usuario;
     qDebug()<<this->datosLogin.passwd;
 
+
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
+    informacionMedico.setID(this->datosLogin.nombre_usuario);
+
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -97,6 +106,8 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     }
     else if(this->index == 4){
         //Farmaceutico
+        ui->stackedWidget->setCurrentIndex(20);
+        ui->stackedWidget_2->setCurrentIndex(5);
     }
     else if(this->index == 5){
         // Enfermera
@@ -222,7 +233,22 @@ void MainWindow::on_btn_gestionar_citas_clicked()
     ui->stackedWidget->setCurrentIndex(12);
 }
 
+void MainWindow::on_btn_informacion_medico_clicked(){
+    ui->stackedWidget->setCurrentIndex(18);
+}
+
 void MainWindow::on_btn_horario_medico_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(17);
+}
+
+void MainWindow::on_btn_citas_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(19);
+
+}
+
+void MainWindow::on_realizarVenta_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(21);
 }

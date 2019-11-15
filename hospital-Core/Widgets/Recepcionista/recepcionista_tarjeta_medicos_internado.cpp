@@ -83,4 +83,5 @@ void recepcionista_tarjeta_medicos_internado::on_btn_visualizar_clicked()
 {
     QClipboard *clipboard = QApplication::clipboard( );
     clipboard->setText(idmedico);
+
 }
