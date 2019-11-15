@@ -15,6 +15,7 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
 {
     ui->setupUi(this);
 
+
 #ifdef Q_OS_WIN
   mDatabase = QSqlDatabase::database("Connection");
 #elif defined(Q_OS_MAC)
@@ -31,35 +32,68 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         qDebug() << "Base de datos continua abierta, esto es: CREAR CITAS";
     }
 
-    this->idUsuarioPaciente = usuario;
-    idMedico = idM;
-
-    /*QSqlQuery query(mDatabase);
-    query.prepare("Select id_medico from medico");
-    query.exec();
-    int i = 0;
-    while (query.next()) {
-        i++;
-        QString idMedico1 = query.value(0).toString();
-        qDebug()<< "ids de Medicos xd" << idMedico1;
-        ui->comboBox_idMedico->insertItem(i,idMedico1);
-    }*/
-
-    //Para mostrar el nombre del médico que eligió cuando reserva su cita
-    QSqlQuery nombre(mDatabase);
-    qDebug() << idMedico;
-    nombre.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre from persona as p "
-                   "inner join empleado as e on p.id_persona=e.id_persona "
-                   "inner join medico as m on e.id_empleado=m.id_empleado "
-                   "where m.id_medico='"+idMedico+"';");
-    nombre.exec();
-    QString nom;
-    while(nombre.next())
+    if(usuario=="reagendar")
     {
-        nom = nombre.value(0).toString();
-    }
+        ui->btn_agendarCita->setVisible(false);
+        this->idCita=idM;
+        QSqlQuery query(mDatabase);
+        query.prepare("SELECT * FROM cita_medica WHERE id_cita_medica="+this->idCita);
+        query.exec();
+        query.next();
 
-    ui->label_NomMedico->setText(nom);
+        this->idMedico=query.value(6).toString();
+        this->idUsuarioPaciente=query.value(7).toString();
+        QSqlQuery nombre(mDatabase);
+        qDebug() << idMedico;
+        nombre.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre from persona as p "
+                       "inner join empleado as e on p.id_persona=e.id_persona "
+                       "inner join medico as m on e.id_empleado=m.id_empleado "
+                       "where m.id_medico='"+idMedico+"';");
+        nombre.exec();
+        nombre.next();
+
+        ui->label_NomMedico->setText(nombre.value(0).toString());
+        ui->lineMotivo->setText(query.value(1).toString());
+        ui->dateFecha->setDate(query.value(3).toDate());
+        ui->lineSintomas->setText(query.value(2).toString());
+
+
+
+    }else
+    {
+        ui->btn_reagendar_cita->setVisible(false);
+
+        this->idUsuarioPaciente = usuario;
+        this->idMedico = idM;
+
+
+        /*QSqlQuery query(mDatabase);
+        query.prepare("Select id_medico from medico");
+        query.exec();
+        int i = 0;
+        while (query.next()) {
+            i++;
+            QString idMedico1 = query.value(0).toString();
+            qDebug()<< "ids de Medicos xd" << idMedico1;
+            ui->comboBox_idMedico->insertItem(i,idMedico1);
+        }*/
+
+        //Para mostrar el nombre del médico que eligió cuando reserva su cita
+        QSqlQuery nombre(mDatabase);
+        qDebug() << idMedico;
+        nombre.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre from persona as p "
+                       "inner join empleado as e on p.id_persona=e.id_persona "
+                       "inner join medico as m on e.id_empleado=m.id_empleado "
+                       "where m.id_medico='"+idMedico+"';");
+        nombre.exec();
+        QString nom;
+        while(nombre.next())
+        {
+            nom = nombre.value(0).toString();
+        }
+
+        ui->label_NomMedico->setText(nom);
+    }
 }
 
 paciente_crear_cita::~paciente_crear_cita()
@@ -130,7 +164,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         }
 
         QMessageBox::StandardButton Confirmacion;
-        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de realizar esta reservación?",
+        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de agendar esta cita?",
                                              QMessageBox::Yes | QMessageBox::No);
 
         if(Confirmacion == QMessageBox::Yes)
@@ -186,4 +220,46 @@ void paciente_crear_cita::on_ButtonBuscaHorario_clicked()
         }
 
         ui->horasDisponibles->addItems(listaHoras);
+}
+
+void paciente_crear_cita::on_btn_reagendar_cita_clicked()
+{
+    if(ui->lineMotivo->text().isEmpty() && ui->lineSintomas->text().isEmpty())
+    {
+        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos"),
+                             QMessageBox::Ok);
+    }else
+    {
+        QString motivo,sintomas,fecha,inicio,fin,idPaciente;
+        QTime h_inicio,h_fin;
+        motivo = ui->lineMotivo->text();
+        sintomas = ui->lineSintomas->text();
+        fecha = ui->dateFecha->date().toString("yyyy-MM-dd");
+        inicio = ui->horasDisponibles->currentIndex().data().toString();
+        h_inicio = QTime::fromString(inicio,"hh:mm 'hrs'");
+
+        fin = ui->horasDisponibles->currentIndex().data().toString();
+        h_fin = QTime::fromString(inicio,"hh:mm 'hrs'");
+        h_fin = h_fin.addSecs(3600);
+        /*inicio = h_inicio.toString("hh:mm");
+        h_fin = h_inicio.addSecs(3600);
+        fin = h_fin.toString("hh:mm");
+*/
+
+        QMessageBox::StandardButton Confirmacion;
+        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de reagendar esta cita?",
+                                             QMessageBox::Yes | QMessageBox::No);
+
+        if(Confirmacion == QMessageBox::Yes)
+        {
+            QSqlQuery InsertaCita(mDatabase);
+            InsertaCita.prepare("UPDATE cita_medica SET motivo='"+motivo+"',descripcion='"+sintomas+"',fecha='"+fecha+"',hora_inicio='"+h_inicio.toString("HH:mm:ss")+"',hora_fin='"+h_fin.toString("HH:mm:ss")+"' WHERE id_cita_medica="+this->idCita);
+            InsertaCita.exec();
+
+            QMessageBox::information(this, tr("Reagendar Cita"),tr("Cita agendada con éxito"),
+                                          QMessageBox::Ok);
+        }
+
+        this->close();
+      }
 }

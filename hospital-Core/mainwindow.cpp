@@ -256,3 +256,9 @@ void MainWindow::on_btn_horarios_medicos_clicked()
 {
     ui->stackedWidget->setCurrentIndex(13);
 }
+
+void MainWindow::on_btn_salir_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
+}
