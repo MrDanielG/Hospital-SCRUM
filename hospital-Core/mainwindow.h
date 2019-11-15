@@ -25,6 +25,7 @@
 #include "Widgets/Recepcionista/recepcionista_citas.h"
 #include "Widgets/Farmaceutico/farmaceutico_landpage.h"
 #include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
+#include "Widgets/Farmaceutico/farmaceutico_medicamentos.h"
 
 namespace Ui
 {
@@ -69,6 +70,8 @@ private slots:
 
     void on_realizarVenta_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -92,6 +95,7 @@ private:
     recepcionista_citas citas;
     farmaceutico_landpage landpageFarmaceutico;
     farmaceutico_realizarVentas ventaMedicamento;
+    farmaceutico_medicamentos catalogoMedicamentos;
 
     int index;
     QString sesion="";

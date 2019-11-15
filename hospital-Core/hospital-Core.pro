@@ -84,7 +84,9 @@ SOURCES += \
     Widgets/Recepcionista/recepcionista_agregar_internado.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.cpp \
-    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -144,7 +146,9 @@ HEADERS += \
     Widgets/Recepcionista/recepcionista_agregar_internado.h \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h \
-    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.h \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
@@ -202,7 +206,9 @@ FORMS += \
     Widgets/Recepcionista/recepcionista_agregar_internado.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.ui \
-    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui
+    Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
