@@ -66,8 +66,6 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         this->idUsuarioPaciente = usuario;
         this->idMedico = idM;
 
-
-    ui->label_NomMedico->setText(nom);
     ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
         /*QSqlQuery query(mDatabase);
         query.prepare("Select id_medico from medico");
