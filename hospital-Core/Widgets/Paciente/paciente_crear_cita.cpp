@@ -60,6 +60,7 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
     }
 
     ui->label_NomMedico->setText(nom);
+    ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
 }
 
 paciente_crear_cita::~paciente_crear_cita()
@@ -179,7 +180,6 @@ void paciente_crear_cita::on_ButtonBuscaHorario_clicked()
         foreach (aux1, listaHoras) {
             foreach(aux2, horasCitadas){
                 if(aux1 == aux2){
-                    qDebug()<<aux1;
                     listaHoras.removeOne(aux1);
                 }
             }

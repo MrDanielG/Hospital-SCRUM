@@ -18,6 +18,8 @@ public:
 private slots:
     void on_btn_gestionar_clicked();
 
+    void on_btn_calificar_clicked();
+
 private:
     Ui::paciente_tarjeta_cita *ui;
     QSqlDatabase mDatabase;

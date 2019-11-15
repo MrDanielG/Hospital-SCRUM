@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QDate>
 #include <QMessageBox>
+#include "paciente_califica_medico.h"
 
 paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QString descripcion, QString fecha, QString horaInicioFin, QString idMed,QString idPac, QString idPagos,QString estadoCita, QWidget *parent) :
     QWidget(parent),
@@ -91,4 +92,10 @@ void paciente_tarjeta_cita::on_btn_gestionar_clicked()
                                       QMessageBox::Ok);
         ui->btn_gestionar->hide();
     }
+}
+
+void paciente_tarjeta_cita::on_btn_calificar_clicked()
+{
+    Paciente_Califica_Medico calificando(idMed,this);
+    calificando.exec();
 }

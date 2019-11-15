@@ -64,8 +64,8 @@ border-radius:5px;</string>
   <widget class="QPushButton" name="btn_gestionar">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>200</y>
+     <x>200</x>
+     <y>190</y>
      <width>161</width>
      <height>31</height>
     </rect>
@@ -346,6 +346,52 @@ border: none;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_calificar">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>190</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>120</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Medium</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+	color: white;
+	background-color: #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+
+}</string>
+   </property>
+   <property name="text">
+    <string>CALIFICAR</string>
    </property>
   </widget>
  </widget>
