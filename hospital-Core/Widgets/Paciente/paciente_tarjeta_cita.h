@@ -16,6 +16,8 @@ public:
     ~paciente_tarjeta_cita();
     void inicializarTarjeta();
     void ocultarBoton();
+    void ocultarAmobosBotones();
+    void ocultarBotonCalificar();
 private slots:
     void on_btn_gestionar_clicked();
 

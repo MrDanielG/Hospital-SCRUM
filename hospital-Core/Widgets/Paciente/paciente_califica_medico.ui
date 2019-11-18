@@ -13,48 +13,191 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="lbl_foto">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>130</y>
+     <width>121</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: #4F64FF;
+border-radius: 60px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>20</y>
+     <y>270</y>
      <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QPushButton" name="btn1Estrella">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/imagenes/Imagenes/star.png</normaloff>:/imagenes/Imagenes/star.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn2Estrellas">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/imagenes/Imagenes/star.png</normaloff>:/imagenes/Imagenes/star.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn3Estrellas">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/imagenes/Imagenes/star.png</normaloff>:/imagenes/Imagenes/star.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn4Estrellas">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/imagenes/Imagenes/star.png</normaloff>:/imagenes/Imagenes/star.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn5Estrellas">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/imagenes/Imagenes/star.png</normaloff>:/imagenes/Imagenes/star.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>20</y>
+     <width>371</width>
      <height>91</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>MS Shell Dlg 2</family>
-        <pointsize>12</pointsize>
-        <weight>9</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(25, 86, 255);
-font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
-      </property>
-      <property name="text">
-       <string>¿Cúal fue tu experiencia?</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>14</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(25, 86, 255);
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="text">
+         <string>¿Cúal fue tu experiencia?</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <spacer name="horizontalSpacer_2">
+       <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -75,18 +218,21 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Doc:</string>
+         <string>Dr.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="lbl_NombreDoctor">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -94,21 +240,21 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Doctor....</string>
+         <string>Sarahi Vazquez Arce</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer">
+       <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -123,12 +269,9 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <spacer name="horizontalSpacer_4">
+       <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -149,11 +292,14 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="text">
          <string>Especialidad:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -168,21 +314,18 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
         <property name="font">
          <font>
           <family>MS Shell Dlg 2</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="text">
-         <string>Especialidad</string>
+         <string>General</string>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_3">
+       <spacer name="horizontalSpacer_4">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -196,25 +339,50 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="lbl_foto">
+  <widget class="QPushButton" name="btn_enviarCalif">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>120</y>
-     <width>101</width>
-     <height>101</height>
+     <x>170</x>
+     <y>340</y>
+     <width>251</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>120</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat Medium</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border: none;
-background: #4F64FF;
-border-radius: 50px;</string>
+    <string notr="true">*{
+	color: white;
+	background-color: #3E64FF;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+:hover{
+	background-color: white;
+	color: #3E64FF;
+	border: 1px solid #3E64FF;
+
+}</string>
    </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+    <string>ENVIAR CALIFICACIÓN</string>
    </property>
   </widget>
  </widget>

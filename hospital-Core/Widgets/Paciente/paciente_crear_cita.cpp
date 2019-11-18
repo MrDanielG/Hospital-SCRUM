@@ -52,12 +52,11 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         nombre.exec();
         nombre.next();
 
+        ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
         ui->label_NomMedico->setText(nombre.value(0).toString());
         ui->lineMotivo->setText(query.value(1).toString());
         ui->dateFecha->setDate(query.value(3).toDate());
         ui->lineSintomas->setText(query.value(2).toString());
-
-
 
     }else
     {
@@ -66,19 +65,7 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         this->idUsuarioPaciente = usuario;
         this->idMedico = idM;
 
-
-    ui->label_NomMedico->setText(nom);
-    ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
-        /*QSqlQuery query(mDatabase);
-        query.prepare("Select id_medico from medico");
-        query.exec();
-        int i = 0;
-        while (query.next()) {
-            i++;
-            QString idMedico1 = query.value(0).toString();
-            qDebug()<< "ids de Medicos xd" << idMedico1;
-            ui->comboBox_idMedico->insertItem(i,idMedico1);
-        }*/
+         ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
 
         //Para mostrar el nombre del médico que eligió cuando reserva su cita
         QSqlQuery nombre(mDatabase);

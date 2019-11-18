@@ -80,49 +80,6 @@ void paciente_gestionar_citas::setIdPaciente(QString _idUsuarioPaciente)
 void paciente_gestionar_citas::inicalizaCatalogo()
 {
     on_btn_citas_activas_clicked();
-    /*
-    QSqlQuery BuscaID(mDatabase);
-    BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
-                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
-    BuscaID.exec();
-    QString idP;
-    while(BuscaID.next())
-    {
-        idP = BuscaID.value(0).toString();
-    }
-
-    QSqlQuery citas(mDatabase);
-    citas.prepare("SELECT * FROM cita_medica WHERE id_paciente = '"+idP+"'");
-    citas.exec();
-    limpiarCatalogo();
-
-    int i = 0;
-    int row = 0;
-    int col = 0;
-
-    while (citas.next())
-    {
-        QString id_cita = citas.value(0).toString();
-        QString motivo = citas.value(1).toString();
-        QString descripcion = citas.value(2).toString();
-        QString fecha = citas.value(3).toString();
-        //QString horaInicioFin = citas.value(4).toString("hh:mm") + " " + citas.value(5).toString();
-        QTime horaInicio = citas.value(4).toTime();
-        QTime horaFin = citas.value(5).toTime();
-        QString horaInicioFin = horaInicio.toString("hh:mm") + " - " + horaFin.toString("hh:mm");
-        QString idMed = citas.value(6).toString();
-        QString idPac = citas.value(7).toString();
-        QString idPago = citas.value(8).toString();
-        QString estadoCita = citas.value(9).toString();
-
-        row = i / 2;
-        col = i % 2;
-
-        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
-        i++;
-        ui->gridLayout->addWidget(tarjeta, row, col);
-    }
-    */
 }
 
 void paciente_gestionar_citas::limpiarCatalogo()
@@ -243,6 +200,7 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
         if(band)
         {
             paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+            tarjeta->ocultarBotonCalificar();
             i++;
             ui->gridLayout->addWidget(tarjeta, row, col);
         }
@@ -355,7 +313,8 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
         col = i % 2;
 
         paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
-        tarjeta->ocultarBoton();
+        tarjeta->ocultarAmobosBotones();
+
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }

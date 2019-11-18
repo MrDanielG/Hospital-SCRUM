@@ -67,14 +67,6 @@ void paciente_tarjeta_cita::inicializarTarjeta()
     ui->lbl_horario->setText(this->horaInicioFin);
     ui->info_cita->setPlainText(this->descripcion);
     ui->lbl_motivo->setText(this->motivo);
-
-    QDate date = QDate::currentDate();
-    QString hoy = date.toString("yyyy-MM-dd");
-
-    if(this->fecha < hoy || this->estadoCita == '3')
-    {
-        ui->btn_gestionar->hide();
-    }
 }
 
 //Para cancelar una cita por el paciente
@@ -88,9 +80,6 @@ void paciente_tarjeta_cita::on_btn_gestionar_clicked()
     {
         paciente_crear_cita crearCita(this->id_cita,"reagendar");
         crearCita.exec();
-
-
-
     }else
     {
         Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de cancelar esta cita?",
@@ -106,16 +95,30 @@ void paciente_tarjeta_cita::on_btn_gestionar_clicked()
             ui->btn_gestionar->hide();
         }
     }
-
 }
 
+//Ocultar el boton de cancelar y mostrar calificar
 void paciente_tarjeta_cita::ocultarBoton()
 {
     ui->btn_gestionar->hide();
+    ui->btn_calificar->show();
 }
 
 void paciente_tarjeta_cita::on_btn_calificar_clicked()
 {
-    Paciente_Califica_Medico calificando(idMed,this);
+    Paciente_Califica_Medico calificando(id_cita,idMed,this);
     calificando.exec();
+}
+
+//Para oculatar ambos botones
+void paciente_tarjeta_cita::ocultarAmobosBotones()
+{
+    ui->btn_gestionar->hide();
+    ui->btn_calificar->hide();
+}
+
+void paciente_tarjeta_cita::ocultarBotonCalificar()
+{
+    ui->btn_gestionar->show();
+    ui->btn_calificar->hide();
 }

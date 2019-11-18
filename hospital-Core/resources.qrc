@@ -11,5 +11,7 @@
         <file>Imagenes/Vector.png</file>
         <file>Imagenes/imgCita.png</file>
         <file>Imagenes/calendario.png</file>
+        <file>Imagenes/star.png</file>
+        <file>Imagenes/starn.png</file>
     </qresource>
 </RCC>

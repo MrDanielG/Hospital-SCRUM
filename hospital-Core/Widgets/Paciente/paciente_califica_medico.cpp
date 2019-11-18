@@ -3,12 +3,14 @@
 #include <QSqlQuery>
 #include <QPixmap>
 #include <QDebug>
+#include <QMessageBox>
 
-Paciente_Califica_Medico::Paciente_Califica_Medico(QString Med,QWidget *parent) :
+Paciente_Califica_Medico::Paciente_Califica_Medico(QString cita,QString Med,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Paciente_Califica_Medico)
 {
     ui->setupUi(this);
+    id_cita = cita;
     idMed = Med;
 
 #ifdef Q_OS_WIN
@@ -50,9 +52,94 @@ Paciente_Califica_Medico::Paciente_Califica_Medico(QString Med,QWidget *parent) 
     ui->lbl_NombreDoctor->setText(nombre);
     ui->lbl_especialidad->setText(especialidad);
     ui->lbl_foto->setPixmap(pic);
+
+    ruta=":/imagenes/Imagenes/starn.png";
+    ruta1=":/imagenes/Imagenes/star.png";
 }
 
 Paciente_Califica_Medico::~Paciente_Califica_Medico()
 {
     delete ui;
+}
+
+void Paciente_Califica_Medico::on_btn1Estrella_clicked()
+{
+    QIcon icon(ruta);
+    QIcon icon1(ruta1);
+    ui->btn1Estrella->setIcon(icon);
+    ui->btn2Estrellas->setIcon(icon1);
+    ui->btn3Estrellas->setIcon(icon1);
+    ui->btn4Estrellas->setIcon(icon1);
+    ui->btn5Estrellas->setIcon(icon1);
+    NumEstrellas = "1";
+}
+
+void Paciente_Califica_Medico::on_btn2Estrellas_clicked()
+{
+    QIcon icon(ruta);
+    QIcon icon1(ruta1);
+    ui->btn1Estrella->setIcon(icon);
+    ui->btn2Estrellas->setIcon(icon);
+    ui->btn3Estrellas->setIcon(icon1);
+    ui->btn4Estrellas->setIcon(icon1);
+    ui->btn5Estrellas->setIcon(icon1);
+    NumEstrellas = "2";
+}
+
+void Paciente_Califica_Medico::on_btn3Estrellas_clicked()
+{
+    QIcon icon(ruta);
+    QIcon icon1(ruta1);
+    ui->btn1Estrella->setIcon(icon);
+    ui->btn2Estrellas->setIcon(icon);
+    ui->btn3Estrellas->setIcon(icon);
+    ui->btn4Estrellas->setIcon(icon1);
+    ui->btn5Estrellas->setIcon(icon1);
+    NumEstrellas = "3";
+}
+
+void Paciente_Califica_Medico::on_btn4Estrellas_clicked()
+{
+    QIcon icon(ruta);
+    QIcon icon1(ruta1);
+    ui->btn1Estrella->setIcon(icon);
+    ui->btn2Estrellas->setIcon(icon);
+    ui->btn3Estrellas->setIcon(icon);
+    ui->btn4Estrellas->setIcon(icon);
+    ui->btn5Estrellas->setIcon(icon1);
+    NumEstrellas = "4";
+}
+
+void Paciente_Califica_Medico::on_btn5Estrellas_clicked()
+{
+    QIcon icon(ruta);
+    ui->btn1Estrella->setIcon(icon);
+    ui->btn2Estrellas->setIcon(icon);
+    ui->btn3Estrellas->setIcon(icon);
+    ui->btn4Estrellas->setIcon(icon);
+    ui->btn5Estrellas->setIcon(icon);
+    NumEstrellas = "5";
+}
+
+void Paciente_Califica_Medico::on_btn_enviarCalif_clicked()
+{
+    if(NumEstrellas == "0")
+    {
+        QMessageBox::warning(this, tr("ERROR"), tr("Por favor, seleccione una calificación"),
+                             QMessageBox::Ok);
+    }else
+    {
+        QSqlQuery insertaCalif(mDatabase);
+        insertaCalif.prepare("insert into cita_medica(calificacion) values('"+NumEstrellas+"') "
+                             " where id_cita_medica='"+id_cita+"';");
+        insertaCalif.exec();
+
+        if(insertaCalif.exec())
+        {
+            QMessageBox::information(this, tr("Calificación enviada"),tr("¡Gracias por su preferencia!"),
+                                      QMessageBox::Ok);
+        }
+
+        this->close();
+    }
 }
