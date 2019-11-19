@@ -11,14 +11,14 @@ class pruebas : public QObject
 public:
     pruebas();
     ~pruebas();
-    void insertarDatos(QString experiencia,QString logros,QString estudios,QString cedula,QString nombre,QString paterno,QString materno,QString correo,QString foto,QString direccion,QString contrasenia,QString mascota);
+    //void insertarDatos(QString experiencia,QString logros,QString estudios,QString cedula,QString nombre,QString paterno,QString materno,QString correo,QString foto,QString direccion,QString contrasenia,QString mascota);
 private:
     QSqlDatabase mDatabase;
 
 
 
 private slots:
-//    void abrirBase();
+    void abrirBase();
 //    void abrirBase();
 //    void registrarUsuario();
 //    void inicioSesion();
@@ -33,6 +33,7 @@ private slots:
 //    void editarPerfilProp();
 //    void aprobarCancelacionCita();
 //    void asignarCitaAMedico();
+    //Pruebas Sara Sprint IV
  //   void CancelaCitaPaciente();
    // void VerCitasActivas(); //Por parte del paciente
    // void VerCitasCanceladas(); //Por el paciente
@@ -55,6 +56,9 @@ private slots:
     //void buscarPorMedico();
 //    void buscarFecha();
 
+    //Prubas Sara Sprint V
+    void ObtenerDatosMedico();
+    void EnviarCalificacion();
 
 };
 
@@ -90,7 +94,7 @@ pruebas::~pruebas(){
 
 }*/
 
-/*void pruebas::abrirBase()
+void pruebas::abrirBase()
 {
     int conectada = 0;
     if(!mDatabase.open()){
@@ -98,13 +102,13 @@ pruebas::~pruebas(){
             conectada = 0;
        }
        else{
-            qDebug()<<"CONECTADAAAAAAA";
+            qDebug()<<"CONECTADA";
             conectada = 1;
        }
 
     QVERIFY(conectada == 1);
 
-}*/
+}
 
 /*void pruebas::visualizarHorarioCitas()
 {
@@ -997,6 +1001,63 @@ void pruebas::VerCitasRealizadas()
 //        contador ++;
 //    }
 //}
+
+void pruebas::ObtenerDatosMedico()
+{
+    QString idMedico="7";
+    QSqlQuery query(mDatabase);
+    query.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre, "
+                  "esp.nombre as Especialidad, p.foto as Foto from persona as p "
+                  "inner join empleado as e on p.id_persona=e.id_persona "
+                  "inner join medico as m on e.id_empleado=m.id_empleado "
+                  "inner join medico_has_especialidad as me on m.id_medico=me.id_medico "
+                  "inner join especialidad as esp on me.id_especialidad=esp.id_especialidad "
+                  "where m.id_medico='"+idMedico+"';");
+    QVERIFY(query.exec());
+
+    if(query.exec())
+    {
+        qDebug() << "Datos obtenidos";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+void pruebas::EnviarCalificacion()
+{
+    QString NumEstrellas="4",id_cita="3",id_Medico="7";
+
+    if(NumEstrellas != "0")
+    {
+        QSqlQuery insert(mDatabase);
+        insert.prepare("update cita_medica set calificacion = '"+NumEstrellas+"'"
+                             " where id_cita_medica='"+id_cita+"';");
+        QVERIFY(insert.exec());
+
+        if(insert.exec())
+        {
+            QSqlQuery CalculaPromedio(mDatabase);
+            CalculaPromedio.prepare("select avg(calificacion) as promedio from "
+                                    "cita_medica where id_medico='"+id_Medico+"' "
+                                    "and calificacion != 0;");
+            QVERIFY(CalculaPromedio.exec());
+
+             QString valor = "4";
+            if(CalculaPromedio.exec())
+            {
+                QSqlQuery update(mDatabase);
+                update.prepare("update medico set calificacion_prom='"+valor+"' "
+                                   "where id_medico='"+id_Medico+"'");
+                QVERIFY(update.exec());
+                update.finish();
+
+                qDebug() << "Calificacion actualizada";
+            }
+        }
+    }else
+        qDebug() << "Ingrese calificacion";
+}
 
 QTEST_APPLESS_MAIN(pruebas)
 

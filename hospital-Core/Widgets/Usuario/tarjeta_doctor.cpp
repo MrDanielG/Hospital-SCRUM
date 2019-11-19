@@ -31,11 +31,11 @@ tarjeta_doctor::tarjeta_doctor(QString idpersona, QString idmedico, QString nomb
     this->foto = foto;
     this->especialidad = especialidad;
 
-    ui->estrella1_5->hide();
+    /*ui->estrella1_5->hide();
     ui->estrella1_4->hide();
     ui->estrella1_3->hide();
     ui->estrella1_2->hide();
-    ui->estrella1->hide();
+    ui->estrella1->hide();*/
 
 }
 
@@ -53,22 +53,32 @@ void tarjeta_doctor::insertarDatos(){
     int tamanio = calificacion.toInt();
 
     if(tamanio == 1){
-        ui->estrella1->show();
+        ui->estrella1->hide();
+        ui->estrella1_2->hide();
+        ui->estrella1_3->show();
+        ui->estrella1_4->hide();
+        ui->estrella1_5->hide();
     }
     if(tamanio == 2){
+        ui->estrella1->hide();
         ui->estrella1_2->show();
         ui->estrella1_3->show();
+        ui->estrella1_4->hide();
+        ui->estrella1_5->hide();
     }
     if(tamanio == 3){
+        ui->estrella1->hide();
         ui->estrella1_2->show();
         ui->estrella1_3->show();
         ui->estrella1_4->show();
+        ui->estrella1_5->hide();
     }
     if(tamanio == 4){
+        ui->estrella1->show();
         ui->estrella1_2->show();
         ui->estrella1_3->show();
         ui->estrella1_4->show();
-        ui->estrella1_5->show();
+        ui->estrella1_5->hide();
     }
     if(tamanio == 5){
         ui->estrella1_2->show();
@@ -76,6 +86,15 @@ void tarjeta_doctor::insertarDatos(){
         ui->estrella1_4->show();
         ui->estrella1_5->show();
         ui->estrella1->show();
+    }
+
+    if(tamanio == 0)
+    {
+        ui->estrella1->hide();
+        ui->estrella1_2->hide();
+        ui->estrella1_3->hide();
+        ui->estrella1_4->hide();
+        ui->estrella1_5->hide();
     }
 
 }

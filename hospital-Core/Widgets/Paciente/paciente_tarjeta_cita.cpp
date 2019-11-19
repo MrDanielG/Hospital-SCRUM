@@ -8,7 +8,7 @@
 #include "Widgets/Paciente/paciente_reagendar_cita.h"
 #include "Widgets/Paciente/paciente_crear_cita.h"
 
-paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QString descripcion, QString fecha, QString horaInicioFin, QString idMed,QString idPac, QString idPagos,QString estadoCita, QWidget *parent) :
+paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QString descripcion, QString fecha, QString horaInicioFin, QString idMed,QString idPac, QString idPagos,QString estadoCita,QString calif, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::paciente_tarjeta_cita)
 {
@@ -38,8 +38,10 @@ paciente_tarjeta_cita::paciente_tarjeta_cita(QString id_cita, QString motivo, QS
     this->idPac = idPac;
     this->idPagos = idPagos;
     this->estadoCita = estadoCita;
+    this->calif = calif;
 
     inicializarTarjeta();
+
 }
 
 paciente_tarjeta_cita::~paciente_tarjeta_cita()

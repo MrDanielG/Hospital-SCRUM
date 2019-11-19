@@ -12,7 +12,7 @@ class paciente_tarjeta_cita : public QWidget
     Q_OBJECT
 
 public:
-    explicit paciente_tarjeta_cita(QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
+    explicit paciente_tarjeta_cita(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QWidget *parent = nullptr);
     ~paciente_tarjeta_cita();
     void inicializarTarjeta();
     void ocultarBoton();
@@ -20,7 +20,6 @@ public:
     void ocultarBotonCalificar();
 private slots:
     void on_btn_gestionar_clicked();
-
     void on_btn_calificar_clicked();
 
 private:
@@ -35,6 +34,7 @@ private:
     QString idPac;
     QString idPagos;
     QString estadoCita;
+    QString calif;
 };
 
 #endif // PACIENTE_TARJETA_CITA_H

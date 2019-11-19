@@ -193,13 +193,14 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
         QString idPac = BuscaActivas.value(7).toString();
         QString idPago = BuscaActivas.value(8).toString();
         QString estadoCita = BuscaActivas.value(9).toString();
+        QString calif = BuscaActivas.value(10).toString();
 
         row = i / 2;
         col = i % 2;
 
         if(band)
         {
-            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita,calif,this);
             tarjeta->ocultarBotonCalificar();
             i++;
             ui->gridLayout->addWidget(tarjeta, row, col);
@@ -216,16 +217,17 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
                     "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
     BuscaID.exec();
-    QTime horaActual=QTime::currentTime();
     QString idP;
-    bool band=false;
+    //bool band=false;
     while(BuscaID.next())
     {
         idP = BuscaID.value(0).toString();
     }
 
     QDate date = QDate::currentDate();
+    QTime horaActual=QTime::currentTime();
     QString hoy = date.toString("yyyy-MM-dd");
+    QString time = horaActual.toString("hh:mm");
     QSqlQuery BuscaRealizadas(mDatabase);
     BuscaRealizadas.prepare("select * from cita_medica where fecha <= '"+hoy+"' and estado=1 and id_paciente='"+idP+"';");
     BuscaRealizadas.exec();
@@ -238,12 +240,12 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
     while (BuscaRealizadas.next())
     {
-        if(BuscaRealizadas.value(4).toTime()<horaActual)
+        /*if(BuscaRealizadas.value(4).toTime()<horaActual)
         {
             band=true;
         }
 
-        qDebug()<<"bandera"<<band;
+        qDebug()<<"bandera"<<band;*/
 
         QString id_cita = BuscaRealizadas.value(0).toString();
         QString motivo = BuscaRealizadas.value(1).toString();
@@ -257,17 +259,25 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
         QString idPac = BuscaRealizadas.value(7).toString();
         QString idPago = BuscaRealizadas.value(8).toString();
         QString estadoCita = BuscaRealizadas.value(9).toString();
+        QString calif = BuscaRealizadas.value(10).toString();
 
         row = i / 2;
         col = i % 2;
-        if(band)
-        {
-            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
-            tarjeta->ocultarBoton();
+        //if(band)
+        //{
+            paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, calif, this);
+            if(calif == "0")
+            {
+                tarjeta->ocultarBoton();
+            }else
+            {
+                tarjeta->ocultarAmobosBotones();
+            }
+
             i++;
             ui->gridLayout->addWidget(tarjeta, row, col);
-        }
-        band=false;
+        //}
+        //band=false;
     }
 }
 
@@ -308,11 +318,12 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
         QString idPac = BuscaCanceladas.value(7).toString();
         QString idPago = BuscaCanceladas.value(8).toString();
         QString estadoCita = BuscaCanceladas.value(9).toString();
+        QString calif = BuscaCanceladas.value(10).toString();
 
         row = i / 2;
         col = i % 2;
 
-        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, this);
+        paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, calif, this);
         tarjeta->ocultarAmobosBotones();
 
         i++;

@@ -159,8 +159,8 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         if(Confirmacion == QMessageBox::Yes)
         {
             QSqlQuery InsertaCita(mDatabase);
-            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,hora_inicio,hora_fin,id_medico,id_paciente,estado) "
-                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio.toString("HH:mm:ss")+"','"+h_fin.toString("HH:mm:ss")+"','"+idMedico+"','"+idPaciente+"',1)");
+            InsertaCita.prepare("insert into cita_medica(motivo,descripcion,fecha,hora_inicio,hora_fin,id_medico,id_paciente,estado,calificacion) "
+                                "values('"+motivo+"','"+sintomas+"','"+fecha+"','"+h_inicio.toString("HH:mm:ss")+"','"+h_fin.toString("HH:mm:ss")+"','"+idMedico+"','"+idPaciente+"',1,0)");
             InsertaCita.exec();
 
             QMessageBox::information(this, tr("Registrar Cita"),tr("Cita Registrada Correctamente"),

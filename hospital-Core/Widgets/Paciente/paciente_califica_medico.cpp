@@ -23,10 +23,10 @@ Paciente_Califica_Medico::Paciente_Califica_Medico(QString cita,QString Med,QWid
   mDatabase.setPassword("luisdrew1394");
 #endif
     if (!mDatabase.isOpen()){
-        qDebug() << "ERROR con Base de Datos, esto es: TARJETA CITAS";
+        qDebug() << "ERROR con Base de Datos, esto es: CALIFICAR MEDICO";
         return;
     }else{
-        qDebug() << "Base de datos continua abierta, esto es: TARJETA CITAS";
+        qDebug() << "Base de datos continua abierta, esto es: CALIFICAR MEDICO";
     }
 
     //Para traer el nombre y especialidad del médico que le atendió en su cita
@@ -130,16 +130,35 @@ void Paciente_Califica_Medico::on_btn_enviarCalif_clicked()
     }else
     {
         QSqlQuery insertaCalif(mDatabase);
-        insertaCalif.prepare("insert into cita_medica(calificacion) values('"+NumEstrellas+"') "
+        insertaCalif.prepare("update cita_medica set calificacion = '"+NumEstrellas+"'"
                              " where id_cita_medica='"+id_cita+"';");
         insertaCalif.exec();
 
         if(insertaCalif.exec())
         {
-            QMessageBox::information(this, tr("Calificación enviada"),tr("¡Gracias por su preferencia!"),
-                                      QMessageBox::Ok);
-        }
+            QSqlQuery CalculaPromedio(mDatabase);
+            CalculaPromedio.prepare("select avg(calificacion) as promedio from "
+                                    "cita_medica where id_medico='"+idMed+"' and calificacion != 0;");
+            CalculaPromedio.exec();
 
+            float prom;
+            while(CalculaPromedio.next())
+            {
+                prom = qRound(CalculaPromedio.value(0).toFloat());
+            }
+
+            qDebug() << "Promedio calculado: "<<prom;
+
+            QString valor = QString::number(prom);
+            QSqlQuery CambiaProm(mDatabase);
+            CambiaProm.prepare("update medico set calificacion_prom='"+valor+"' "
+                               "where id_medico='"+idMed+"'");
+            CambiaProm.exec();
+            CambiaProm.finish();
+
+            QMessageBox::information(this, tr("Calificación enviada"),tr("¡Gracias por su preferencia!"),
+                                     QMessageBox::Ok);
+        }
         this->close();
     }
 }
