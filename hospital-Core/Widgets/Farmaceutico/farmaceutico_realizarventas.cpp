@@ -64,16 +64,30 @@ void farmaceutico_realizarVentas::limpiarCatalogo()
 
 void farmaceutico_realizarVentas::insertarVentas(QString id)
 {
-    int i=2;
+
+    QSqlQuery query(mDatabase);
+    query.prepare("select nombre, costo from medicamentos_farmacia where id_medicamentos_farmacia = 5");
+    query.exec();
+
+    int i=0;
     int row = 0;
     int col = 0;
 
-    row = i/3;
-    col= i%3;
+    while(query.next()){
+         QString nombre = query.value(0).toString();
+         QString costo = query.value(1).toString();
 
-    farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola();
-    tarjeta->insertarDatos("Hola", "58", "Holaaa");
-    ui->gridLayout_3->addWidget(tarjeta, row, col);
+         row = i/2;
+         col= i%2;
+
+         farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola(this);
+         tarjeta->insertarDatos(nombre, "2", costo);
+         ui->gridLayout_3->addWidget(tarjeta, row, col);
+
+    }
+
+
+
 
 
 }
