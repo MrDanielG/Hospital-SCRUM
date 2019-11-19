@@ -62,6 +62,22 @@ void farmaceutico_realizarVentas::limpiarCatalogo()
     }
 }
 
+void farmaceutico_realizarVentas::insertarVentas(QString id)
+{
+    int i=2;
+    int row = 0;
+    int col = 0;
+
+    row = i/3;
+    col= i%3;
+
+    farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola();
+    tarjeta->insertarDatos("Hola", "58", "Holaaa");
+    ui->gridLayout_3->addWidget(tarjeta, row, col);
+
+
+}
+
 
 void farmaceutico_realizarVentas::on_BuscarMedicamento_textChanged(const QString &arg1)
 {

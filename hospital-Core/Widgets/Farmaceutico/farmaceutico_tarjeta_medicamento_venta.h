@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QMessageBox>
 
+class farmaceutico_realizarVentas;
+
 namespace Ui {
 class farmaceutico_tarjeta_medicamento_venta;
 }
@@ -16,7 +18,7 @@ class farmaceutico_tarjeta_medicamento_venta : public QWidget
     Q_OBJECT
 
 public:
-    explicit farmaceutico_tarjeta_medicamento_venta(QWidget *parent = nullptr);
+    explicit farmaceutico_tarjeta_medicamento_venta(farmaceutico_realizarVentas *parent = nullptr);
     ~farmaceutico_tarjeta_medicamento_venta();
     void insertarDatos(QString nombre, QString precio, QString cantidad, QString premedicado, QString id);
     QString getID();
@@ -28,6 +30,7 @@ private:
     Ui::farmaceutico_tarjeta_medicamento_venta *ui;
     QSqlDatabase mDatabase;
     QString id;
+    farmaceutico_realizarVentas *padre;
 };
 
 #endif // FARMACEUTICO_TARJETA_MEDICAMENTO_VENTA_H

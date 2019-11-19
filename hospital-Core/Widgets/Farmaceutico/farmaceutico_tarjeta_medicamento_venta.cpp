@@ -1,7 +1,9 @@
 #include "farmaceutico_tarjeta_medicamento_venta.h"
 #include "ui_farmaceutico_tarjeta_medicamento_venta.h"
+#include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
+#include "Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h"
 
-farmaceutico_tarjeta_medicamento_venta::farmaceutico_tarjeta_medicamento_venta(QWidget *parent) :
+farmaceutico_tarjeta_medicamento_venta::farmaceutico_tarjeta_medicamento_venta(farmaceutico_realizarVentas *parent) :
     QWidget(parent),
     ui(new Ui::farmaceutico_tarjeta_medicamento_venta)
 {
@@ -21,6 +23,7 @@ farmaceutico_tarjeta_medicamento_venta::farmaceutico_tarjeta_medicamento_venta(Q
             qDebug() << "base de datos sigue conectada en INICIAR SESION";
         }
 
+        this->padre = parent;
 
 }
 
@@ -51,6 +54,5 @@ QString farmaceutico_tarjeta_medicamento_venta::getID(){
 
 void farmaceutico_tarjeta_medicamento_venta::on_btn_agregaracola_clicked()
 {
-    getID();
-
+    this->padre->insertarVentas(this->id);
 }

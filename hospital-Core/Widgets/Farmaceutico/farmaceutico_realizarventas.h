@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.h"
+#include "Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h"
 
 namespace Ui {
 class farmaceutico_realizarVentas;
@@ -21,6 +22,7 @@ public:
     explicit farmaceutico_realizarVentas(QWidget *parent = nullptr);
     ~farmaceutico_realizarVentas();
     void limpiarCatalogo();
+    void insertarVentas(QString);
 
 private slots:
     void on_BuscarMedicamento_textChanged(const QString &arg1);
