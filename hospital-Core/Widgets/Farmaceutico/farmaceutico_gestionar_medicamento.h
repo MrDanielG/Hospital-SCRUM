@@ -22,6 +22,8 @@ public:
 private slots:
     void on_btn_modificar_medicamento_clicked();
 
+    void on_btn_eliminar_medicamento_clicked();
+
 private:
     Ui::farmaceutico_gestionar_medicamento *ui;
     QSqlDatabase mDatabase;

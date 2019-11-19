@@ -18,6 +18,11 @@ public:
     ~farmaceutico_medicamentos();
     void limiparCatalogo();
 
+private slots:
+    void on_buscar_medicamento_LE_textChanged(const QString &arg1);
+
+    void on_btn_agregar_medicamento_clicked();
+
 private:
     Ui::farmaceutico_medicamentos *ui;
     QSqlDatabase mDatabase;
