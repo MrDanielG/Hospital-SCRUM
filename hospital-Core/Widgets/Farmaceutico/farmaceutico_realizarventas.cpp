@@ -1,6 +1,7 @@
 #include "farmaceutico_realizarventas.h"
 #include "ui_farmaceutico_realizarventas.h"
 
+
 farmaceutico_realizarVentas::farmaceutico_realizarVentas(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::farmaceutico_realizarVentas)
@@ -62,11 +63,9 @@ void farmaceutico_realizarVentas::limpiarCatalogo()
     }
 }
 
-void farmaceutico_realizarVentas::insertarVentas(QString id)
-{
-
+void farmaceutico_realizarVentas::insertarVentas(QString id){
     QSqlQuery query(mDatabase);
-    query.prepare("select nombre, costo from medicamentos_farmacia where id_medicamentos_farmacia = 5");
+    query.prepare("select nombre, costo from medicamentos_farmacia where id_medicamentos_farmacia = "+id);
     query.exec();
 
     int i=0;
@@ -85,10 +84,6 @@ void farmaceutico_realizarVentas::insertarVentas(QString id)
          ui->gridLayout_3->addWidget(tarjeta, row, col);
 
     }
-
-
-
-
 
 }
 
