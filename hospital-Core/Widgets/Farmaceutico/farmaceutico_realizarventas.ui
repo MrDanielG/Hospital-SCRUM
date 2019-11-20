@@ -201,7 +201,7 @@ border: none;</string>
    <property name="geometry">
     <rect>
      <x>770</x>
-     <y>540</y>
+     <y>570</y>
      <width>61</width>
      <height>21</height>
     </rect>
@@ -213,70 +213,13 @@ border: none;</string>
     </font>
    </property>
    <property name="text">
-    <string>Total:</string>
+    <string>Total $</string>
    </property>
   </widget>
   <widget class="QLabel" name="total">
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>540</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>$200</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>570</y>
-     <width>151</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Cantidad Pagada: </string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>770</x>
-     <y>600</y>
-     <width>171</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Cambio a devolver:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="total_2">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
      <y>570</y>
      <width>61</width>
      <height>21</height>
@@ -289,26 +232,7 @@ border: none;</string>
     </font>
    </property>
    <property name="text">
-    <string>$200</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="total_3">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>600</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>$0</string>
+    <string>200</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -360,10 +284,6 @@ border-radius: 5px;</string>
   <zorder>label_5</zorder>
   <zorder>label_6</zorder>
   <zorder>total</zorder>
-  <zorder>label_7</zorder>
-  <zorder>label_8</zorder>
-  <zorder>total_2</zorder>
-  <zorder>total_3</zorder>
   <zorder>pushButton</zorder>
   <zorder>pushButton_2</zorder>
  </widget>

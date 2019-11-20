@@ -47,6 +47,7 @@ farmaceutico_realizarVentas::farmaceutico_realizarVentas(QWidget *parent) :
              ui->gridLayout->addWidget(tarjeta, row, col);
 
         }
+
 }
 
 farmaceutico_realizarVentas::~farmaceutico_realizarVentas()
@@ -79,12 +80,23 @@ void farmaceutico_realizarVentas::insertarVentas(QString id){
          row = i/2;
          col= i%2;
 
-         farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola();
-         tarjeta->insertarDatos(nombre, "2", costo);
+         farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola(this);
+         tarjeta->insertarDatos(nombre, costo);
+
          i++;
          ui->gridLayout_3->addWidget(tarjeta, row, col);
 
     }
+
+}
+
+void farmaceutico_realizarVentas::insertarTotal(float total){
+
+    this->Total = total;
+    qDebug()<<"Esto se va ainsertar en el total final"<<this->Total;
+    qDebug()<<"Esto se va ainsertar en el total final"<<total;
+
+    ui->total->setText(QString::number(this->Total));
 
 }
 
@@ -113,7 +125,7 @@ void farmaceutico_realizarVentas::on_BuscarMedicamento_textChanged(const QString
         row = i/2;
         col= i%2;
 
-        farmaceutico_tarjeta_medicamento_venta *tarjeta = new farmaceutico_tarjeta_medicamento_venta();
+        farmaceutico_tarjeta_medicamento_venta *tarjeta = new farmaceutico_tarjeta_medicamento_venta(this);
        tarjeta->insertarDatos(nombre, costo, cantidad, premedicado, id);
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);

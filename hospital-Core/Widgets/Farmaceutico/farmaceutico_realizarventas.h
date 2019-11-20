@@ -23,6 +23,7 @@ public:
     ~farmaceutico_realizarVentas();
     void limpiarCatalogo();
     void insertarVentas(QString);
+    void insertarTotal(float);
 
 private slots:
     void on_BuscarMedicamento_textChanged(const QString &arg1);
@@ -31,6 +32,7 @@ private:
     Ui::farmaceutico_realizarVentas *ui;
     QSqlDatabase mDatabase;
     int i = 0;
+    float Total;
 };
 
 #endif // FARMACEUTICO_REALIZARVENTAS_H
