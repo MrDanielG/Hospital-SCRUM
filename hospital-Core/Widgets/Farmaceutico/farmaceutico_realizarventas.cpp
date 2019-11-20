@@ -65,16 +65,10 @@ void farmaceutico_realizarVentas::limpiarCatalogo()
 
 void farmaceutico_realizarVentas::insertarVentas(QString id){
 
-
-    QString ids = "";
-    ids += id + " ";
-
-
     QSqlQuery query(mDatabase);
     query.prepare("select nombre, costo from medicamentos_farmacia where id_medicamentos_farmacia = "+id);
     query.exec();
 
-    int i=0;
     int row = 0;
     int col = 0;
 
@@ -87,6 +81,7 @@ void farmaceutico_realizarVentas::insertarVentas(QString id){
 
          farmaceutico_tarjetasventasencola *tarjeta = new farmaceutico_tarjetasventasencola();
          tarjeta->insertarDatos(nombre, "2", costo);
+         i++;
          ui->gridLayout_3->addWidget(tarjeta, row, col);
 
     }

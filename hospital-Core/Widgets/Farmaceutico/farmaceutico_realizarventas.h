@@ -30,6 +30,7 @@ private slots:
 private:
     Ui::farmaceutico_realizarVentas *ui;
     QSqlDatabase mDatabase;
+    int i = 0;
 };
 
 #endif // FARMACEUTICO_REALIZARVENTAS_H
