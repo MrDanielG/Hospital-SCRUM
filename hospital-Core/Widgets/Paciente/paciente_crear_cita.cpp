@@ -55,6 +55,7 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         ui->label_NomMedico->setText(nombre.value(0).toString());
         ui->lineMotivo->setText(query.value(1).toString());
         ui->dateFecha->setDate(query.value(3).toDate());
+        ui->dateFecha->setMinimumDate(query.value(3).toDate());
         ui->lineSintomas->setText(query.value(2).toString());
 
     }else
@@ -211,10 +212,15 @@ void paciente_crear_cita::on_ButtonBuscaHorario_clicked()
 
 void paciente_crear_cita::on_btn_reagendar_cita_clicked()
 {
+    QMessageBox info;
     if(ui->lineMotivo->text().isEmpty() && ui->lineSintomas->text().isEmpty())
     {
-        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos"),
-                             QMessageBox::Ok);
+        info.setWindowTitle("Información");
+        info.setText("Campos Incompletos\n Por favor llene todos los campos");
+        info.setStandardButtons(QMessageBox::Ok);
+        info.setDefaultButton(QMessageBox::Ok);
+        info.setButtonText(QMessageBox::Ok,"Aceptar");
+        info.exec();
     }else
     {
         QString motivo,sintomas,fecha,inicio,fin,idPaciente;
@@ -232,19 +238,23 @@ void paciente_crear_cita::on_btn_reagendar_cita_clicked()
         h_fin = h_inicio.addSecs(3600);
         fin = h_fin.toString("hh:mm");
 */
+        QMessageBox msgBox(QMessageBox::Question,"ADVERTENCIA","¿Está seguro de reagendar esta cita?",QMessageBox::Yes|QMessageBox::No);
+                   msgBox.setButtonText(QMessageBox::Yes,"Sí");
+                   msgBox.setButtonText(QMessageBox::No,"No");
 
-        QMessageBox::StandardButton Confirmacion;
-        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de reagendar esta cita?",
-                                             QMessageBox::Yes | QMessageBox::No);
 
-        if(Confirmacion == QMessageBox::Yes)
+        if(msgBox.exec()==QMessageBox::Yes)
         {
             QSqlQuery InsertaCita(mDatabase);
             InsertaCita.prepare("UPDATE cita_medica SET motivo='"+motivo+"',descripcion='"+sintomas+"',fecha='"+fecha+"',hora_inicio='"+h_inicio.toString("HH:mm:ss")+"',hora_fin='"+h_fin.toString("HH:mm:ss")+"' WHERE id_cita_medica="+this->idCita);
             InsertaCita.exec();
 
-            QMessageBox::information(this, tr("Reagendar Cita"),tr("Cita agendada con éxito"),
-                                          QMessageBox::Ok);
+            info.setWindowTitle("Información");
+            info.setText("Cita agendada con éxito");
+            info.setStandardButtons(QMessageBox::Ok);
+            info.setDefaultButton(QMessageBox::Ok);
+            info.setButtonText(QMessageBox::Ok,"Aceptar");
+            info.exec();
         }
 
         this->close();
