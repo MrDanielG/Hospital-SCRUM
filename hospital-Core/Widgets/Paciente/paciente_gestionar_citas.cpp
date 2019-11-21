@@ -218,7 +218,7 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
                     "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
     BuscaID.exec();
     QString idP;
-    //bool band=false;
+    bool band=false;
     while(BuscaID.next())
     {
         idP = BuscaID.value(0).toString();
