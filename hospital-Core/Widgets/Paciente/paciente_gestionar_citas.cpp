@@ -193,7 +193,7 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
         QString idPac = BuscaActivas.value(7).toString();
         QString idPago = BuscaActivas.value(8).toString();
         QString estadoCita = BuscaActivas.value(9).toString();
-        QString calif = BuscaActivas.value(10).toString();
+        QString calif = BuscaActivas.value(11).toString();
 
         row = i / 2;
         col = i % 2;
@@ -259,7 +259,7 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
         QString idPac = BuscaRealizadas.value(7).toString();
         QString idPago = BuscaRealizadas.value(8).toString();
         QString estadoCita = BuscaRealizadas.value(9).toString();
-        QString calif = BuscaRealizadas.value(10).toString();
+        QString calif = BuscaRealizadas.value(11).toString();
 
         row = i / 2;
         col = i % 2;
@@ -318,7 +318,7 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
         QString idPac = BuscaCanceladas.value(7).toString();
         QString idPago = BuscaCanceladas.value(8).toString();
         QString estadoCita = BuscaCanceladas.value(9).toString();
-        QString calif = BuscaCanceladas.value(10).toString();
+        QString calif = BuscaCanceladas.value(11).toString();
 
         row = i / 2;
         col = i % 2;
