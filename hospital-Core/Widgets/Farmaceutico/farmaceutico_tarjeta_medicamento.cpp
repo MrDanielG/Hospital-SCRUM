@@ -58,4 +58,19 @@ void farmaceutico_tarjeta_medicamento::on_btn_agregar_medicamento_clicked()
     farmaceutico_gestionar_medicamento dialogo(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
     dialogo.insertarDatos();
     dialogo.exec();
+    QSqlQuery query(mDatabase);
+    QString sql="select * from medicamentos_farmacia where id_medicamentos_farmacia = "+id+";";
+    query.prepare(sql);
+    query.exec();
+
+    while(query.next()){
+        this->nombre = query.value(1).toString();
+        this->tipo = query.value(2).toString();
+        this->descripcion = query.value(3).toString();
+        this->costo = query.value(4).toString();
+        this->cantidad = query.value(5).toString();
+        this->premedicado = query.value(6).toString();
+    }
+
+    insertarDatos();
 }
