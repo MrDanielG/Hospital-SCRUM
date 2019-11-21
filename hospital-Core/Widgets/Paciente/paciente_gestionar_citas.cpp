@@ -280,7 +280,7 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
     while (BuscaRealizadas.next())
     {
-        if(BuscaRealizadas.value(4).toTime()<horaActual)
+        if(BuscaRealizadas.value(4).toTime()<horaActual || BuscaRealizadas.value(3).toDate()<date)
         {
             band=true;
         }
