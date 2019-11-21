@@ -15,10 +15,11 @@ farmaceutico_tarjetasventasencola::~farmaceutico_tarjetasventasencola()
     delete ui;
 }
 
-void farmaceutico_tarjetasventasencola::insertarDatos(QString nombre, QString precio)
+void farmaceutico_tarjetasventasencola::insertarDatos(QString nombre, QString precio, QString id)
 {
     this->nombre = nombre;
     this->precio = precio;
+    this->id = id;
     setDatos();
 }
 
@@ -31,15 +32,14 @@ void farmaceutico_tarjetasventasencola::setDatos()
 
 void farmaceutico_tarjetasventasencola::on_Cantidad_valueChanged(int arg1)
 {
-
     this->can = arg1;
     ui->Cantidad->setValue(can);
     float prec = precio.toFloat();
     float total = can * prec;
-    Total += total;
+    Total = total;
     ui->Total->setText(QString::number(total));
-
-    this->padre->insertarTotal(Total);
+    int c = ui->Cantidad->value();
+    this->padre->insertarTotal(Total, id, c);
 
     qDebug()<<"Estetotal "<<Total;
 

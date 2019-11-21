@@ -19,7 +19,7 @@ class farmaceutico_tarjetasventasencola : public QWidget
 public:
     explicit farmaceutico_tarjetasventasencola(farmaceutico_realizarVentas *parent = nullptr);
     ~farmaceutico_tarjetasventasencola();
-    void insertarDatos(QString, QString);
+    void insertarDatos(QString, QString, QString);
     void setDatos();
 
 private slots:
@@ -34,6 +34,8 @@ private:
     QString nombre;
     QString precio;
     float Total;
+    QString id;
+    QStringList ides;
 };
 
 #endif // FARMACEUTICO_TARJETASVENTASENCOLA_H

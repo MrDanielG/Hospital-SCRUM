@@ -7,6 +7,11 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDate>
+#include <QTextDocument>
+#include <QPrinter>
+#include <QDesktopServices>
+
 #include "Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.h"
 #include "Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h"
 
@@ -22,17 +27,25 @@ public:
     explicit farmaceutico_realizarVentas(QWidget *parent = nullptr);
     ~farmaceutico_realizarVentas();
     void limpiarCatalogo();
+    void limpiarCatalogo2();
     void insertarVentas(QString);
-    void insertarTotal(float);
+    void imprimirTicket(QString total, QString efectivo, QString cambio);
+    void insertarTotal(float, QString, int);
 
 private slots:
     void on_BuscarMedicamento_textChanged(const QString &arg1);
+
+    void on_btnRealizarVentas_clicked();
 
 private:
     Ui::farmaceutico_realizarVentas *ui;
     QSqlDatabase mDatabase;
     int i = 0;
-    float Total;
+    float Total = 0;
+    int cant = 0;
+    QString id = "";
+    QStringList ides;
+    QStringList cants;
 };
 
 #endif // FARMACEUTICO_REALIZARVENTAS_H

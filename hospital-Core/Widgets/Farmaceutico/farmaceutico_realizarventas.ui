@@ -232,7 +232,7 @@ border: none;</string>
     </font>
    </property>
    <property name="text">
-    <string>200</string>
+    <string>0</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -255,7 +255,7 @@ border-radius: 5px;
     <string>Cancelar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="btnRealizarVentas">
    <property name="geometry">
     <rect>
      <x>1070</x>
@@ -285,7 +285,7 @@ border-radius: 5px;</string>
   <zorder>label_6</zorder>
   <zorder>total</zorder>
   <zorder>pushButton</zorder>
-  <zorder>pushButton_2</zorder>
+  <zorder>btnRealizarVentas</zorder>
  </widget>
  <resources/>
  <connections/>
