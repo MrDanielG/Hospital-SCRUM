@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(17, &internados);
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
+    ui->stackedWidget->insertWidget(20, &cobrarEstancia);
 
 }
 
@@ -255,4 +256,9 @@ void MainWindow::on_btn_recetas_medico_clicked()
 void MainWindow::on_btn_horarios_medicos_clicked()
 {
     ui->stackedWidget->setCurrentIndex(13);
+}
+
+void MainWindow::on_btnCobroEstancia_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(20);
 }
