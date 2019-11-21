@@ -240,12 +240,12 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
     while (BuscaRealizadas.next())
     {
-        /*if(BuscaRealizadas.value(4).toTime()<horaActual)
+        if(BuscaRealizadas.value(4).toTime()<horaActual)
         {
             band=true;
         }
 
-        qDebug()<<"bandera"<<band;*/
+        qDebug()<<"bandera"<<band;
 
         QString id_cita = BuscaRealizadas.value(0).toString();
         QString motivo = BuscaRealizadas.value(1).toString();
@@ -263,8 +263,8 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
         row = i / 2;
         col = i % 2;
-        //if(band)
-        //{
+        if(band)
+        {
             paciente_tarjeta_cita *tarjeta = new paciente_tarjeta_cita(id_cita, motivo, descripcion, fecha, horaInicioFin, idMed, idPac, idPago, estadoCita, calif, this);
             if(calif == "0")
             {
@@ -276,8 +276,8 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 
             i++;
             ui->gridLayout->addWidget(tarjeta, row, col);
-        //}
-        //band=false;
+        }
+        band=false;
     }
 }
 

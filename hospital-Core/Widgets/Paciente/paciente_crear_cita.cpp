@@ -52,7 +52,6 @@ paciente_crear_cita::paciente_crear_cita(QString idM,QString usuario, QWidget *p
         nombre.exec();
         nombre.next();
 
-        ui->dateFecha->setMinimumDate(QDate::currentDate().addDays(1));
         ui->label_NomMedico->setText(nombre.value(0).toString());
         ui->lineMotivo->setText(query.value(1).toString());
         ui->dateFecha->setDate(query.value(3).toDate());
