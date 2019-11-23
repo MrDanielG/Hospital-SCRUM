@@ -12,15 +12,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 {
     ui->setupUi(this);
 
-
 #ifdef Q_OS_WIN
-  mDatabase = QSqlDatabase::database("Connection");
+    mDatabase = QSqlDatabase::database("Connection");
 #elif defined(Q_OS_MAC)
-  mDatabase = QSqlDatabase::database();
-  mDatabase.setHostName("localhost");
-  mDatabase.setDatabaseName("hospital");
-  mDatabase.setUserName("root");
-  mDatabase.setPassword("luisdrew1394");
+    mDatabase = QSqlDatabase::database();
+    mDatabase.setHostName("localhost");
+    mDatabase.setDatabaseName("hospital");
+    mDatabase.setUserName("root");
+    mDatabase.setPassword("luisdrew1394");
 #endif
 
     ui->stackedWidget->setCurrentIndex(0);
@@ -34,16 +33,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(7, &landpagepaciente);
     ui->stackedWidget->insertWidget(8, &landpageMedico);
     ui->stackedWidget->insertWidget(9, &horarioMedico);
-    ui->stackedWidget->insertWidget(10,&solicitudesMedico);
-    ui->stackedWidget->insertWidget(11,&generarReceta);
-    ui->stackedWidget->insertWidget(12,&gestionCitas);
-    ui->stackedWidget->insertWidget(13,&horariosMedicos);
-    ui->stackedWidget->insertWidget(15,&cancelacionCatalogoAdmin);
+    ui->stackedWidget->insertWidget(10, &solicitudesMedico);
+    ui->stackedWidget->insertWidget(11, &generarReceta);
+    ui->stackedWidget->insertWidget(12, &gestionCitas);
+    ui->stackedWidget->insertWidget(13, &horariosMedicos);
+    ui->stackedWidget->insertWidget(15, &cancelacionCatalogoAdmin);
     ui->stackedWidget->insertWidget(16, &landpageRecepcionista);
     ui->stackedWidget->insertWidget(17, &internados);
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
-
+    ui->stackedWidget->insertWidget(20, &cobrarEstancia);
 }
 
 MainWindow::~MainWindow()
@@ -51,7 +50,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::setindex(int index){
+void MainWindow::setindex(int index)
+{
     this->index = index;
 }
 
@@ -67,10 +67,9 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
 
     this->sesion = dialogo_iniciar_sesion.getUsuario();
 
-    qDebug()<<"DATOS LOGIN";
-    qDebug()<<this->datosLogin.nombre_usuario;
-    qDebug()<<this->datosLogin.passwd;
-
+    qDebug() << "DATOS LOGIN";
+    qDebug() << this->datosLogin.nombre_usuario;
+    qDebug() << this->datosLogin.passwd;
 
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
@@ -91,43 +90,51 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
      * esto se hace para todos los else if dependiendo el caso
     */
 
-    if(this->index == 1){
+    if (this->index == 1)
+    {
         ui->stackedWidget->setCurrentIndex(8);
         ui->stackedWidget_2->setCurrentIndex(2);
-
     }
-    else if(this->index == 2){
+    else if (this->index == 2)
+    {
         ui->stackedWidget->setCurrentIndex(7);
         ui->stackedWidget_2->setCurrentIndex(3);
     }
-    else if(this->index == 3){
+    else if (this->index == 3)
+    {
         ui->stackedWidget->setCurrentIndex(1);
         //Aqui se cambia el index del navegador, se hace lo mismo para todos
         ui->stackedWidget_2->setCurrentIndex(1);
     }
-    else if(this->index == 4){
+    else if (this->index == 4)
+    {
         //Farmaceutico
     }
-    else if(this->index == 5){
+    else if (this->index == 5)
+    {
         // Enfermera
     }
-    else if (this->index == 6) {
+    else if (this->index == 6)
+    {
         //Cajero
     }
-    else if (this->index == 7) {
+    else if (this->index == 7)
+    {
         //Recepcionista
         ui->stackedWidget->setCurrentIndex(16);
         ui->stackedWidget_2->setCurrentIndex(4);
     }
-    qDebug()<<"usuario"<<dialogo_iniciar_sesion.getUsuario();
+    qDebug() << "usuario" << dialogo_iniciar_sesion.getUsuario();
 }
 
-void MainWindow::on_btn_registrarse_clicked(){
+void MainWindow::on_btn_registrarse_clicked()
+{
     registrar dialogo_registro;
     dialogo_registro.exec();
 }
 
-void MainWindow::on_btn_doctores_info_clicked(){
+void MainWindow::on_btn_doctores_info_clicked()
+{
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -148,7 +155,7 @@ void MainWindow::on_btn_inicio_admin_clicked()
 
 void MainWindow::on_btn_remedios_admin_clicked()
 {
-    qDebug()<<"Aun no la haces prro";
+    qDebug() << "Aun no la haces prro";
 }
 
 void MainWindow::on_btn_gestionar_servicios_admin_clicked()
@@ -196,31 +203,30 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_btn_solicitudes_medico_clicked()
 {
-    QString usuario= dialogo_iniciar_sesion.getUsuario(),idPer,idEmp,idMed;
+    QString usuario = dialogo_iniciar_sesion.getUsuario(), idPer, idEmp, idMed;
 
     QSqlQuery query(mDatabase);
     QSqlQuery query1(mDatabase);
     QSqlQuery query2(mDatabase);
-    qDebug()<<"Usuario: "<<usuario;
-    query.prepare("select id_persona from persona where id_usuario='"+usuario+"'");
+    qDebug() << "Usuario: " << usuario;
+    query.prepare("select id_persona from persona where id_usuario='" + usuario + "'");
     query.exec();
     query.next();
-    idPer=query.value(0).toString();
-    qDebug()<<"idPer: " <<idPer;
+    idPer = query.value(0).toString();
+    qDebug() << "idPer: " << idPer;
 
-    query1.prepare("select id_empleado from empleado where id_persona='"+idPer+"'");
+    query1.prepare("select id_empleado from empleado where id_persona='" + idPer + "'");
     query1.exec();
     query1.next();
-    idEmp=query1.value(0).toString();
-    qDebug()<<"idEmp: " <<idEmp;
+    idEmp = query1.value(0).toString();
+    qDebug() << "idEmp: " << idEmp;
 
-    query2.prepare("SELECT id_medico FROM medico WHERE id_empleado = '"+idEmp+"'");
+    query2.prepare("SELECT id_medico FROM medico WHERE id_empleado = '" + idEmp + "'");
     query2.exec();
     query2.next();
-    idMed=query2.value(0).toString();
+    idMed = query2.value(0).toString();
 
-    qDebug()<<"idMedico: "<<idMed;
-
+    qDebug() << "idMedico: " << idMed;
 
     solicitudesMedico.setIdMedico(idMed);
     solicitudesMedico.inicializar();
@@ -232,7 +238,8 @@ void MainWindow::on_btn_gestionar_citas_clicked()
     ui->stackedWidget->setCurrentIndex(12);
 }
 
-void MainWindow::on_btn_informacion_medico_clicked(){
+void MainWindow::on_btn_informacion_medico_clicked()
+{
     ui->stackedWidget->setCurrentIndex(18);
 }
 
@@ -261,4 +268,8 @@ void MainWindow::on_btn_salir_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
+    void MainWindow::on_btnCobroEstancia_clicked()
+    {
+        ui->stackedWidget->setCurrentIndex(20);
+    }
 }

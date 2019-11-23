@@ -25,6 +25,7 @@
 #include "Widgets/Recepcionista/recepcionista_citas.h"
 #include "Widgets/Medico/medico_generar_receta.h"
 #include "Widgets/Administrador/administrador_horarios_medicos.h"
+#include "Widgets/Recepcionista/recepcionista_cobrar_estancia.h"
 namespace Ui
 {
 class MainWindow;
@@ -71,6 +72,7 @@ private slots:
     void on_btn_horarios_medicos_clicked();
 
     void on_btn_salir_clicked();
+    void on_btnCobroEstancia_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -95,9 +97,10 @@ private:
     recepcionista_citas citas;
     medico_generar_receta generarReceta;
     administrador_horarios_medicos horariosMedicos;
+    recepcionista_cobrar_estancia cobrarEstancia;
 
     int index;
-    QString sesion="";
+    QString sesion = "";
 };
 
 #endif // MAINWINDOW_H
