@@ -268,8 +268,9 @@ void MainWindow::on_btn_salir_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
-    void MainWindow::on_btnCobroEstancia_clicked()
-    {
-        ui->stackedWidget->setCurrentIndex(20);
-    }
+}
+
+void MainWindow::on_btnCobroEstancia_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(20);
 }

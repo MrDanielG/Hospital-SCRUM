@@ -48,6 +48,7 @@ void medico_solicitudes::limpiarCatalogo()
 
 void medico_solicitudes::on_btn_solicitudesEspera_clicked()
 {
+    /*
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=1");
     query.exec();
@@ -76,11 +77,12 @@ void medico_solicitudes::on_btn_solicitudesEspera_clicked()
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
+    */
 }
 
 void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 {
-
+/*
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=3");
     query.exec();
@@ -108,11 +110,12 @@ void medico_solicitudes::on_btn_solicitudesRechazadas_clicked()
 
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
-    }
+    }*/
 }
 
 void medico_solicitudes::on_btn_solicitudesAprobadas_clicked()
 {
+    /*
     QSqlQuery query(mDatabase);
     query.prepare("select * from tarjetaSolicitudesCitaRechazadas where id_medico='"+this->idMedico+"' and estado=2");
     query.exec();
@@ -141,9 +144,10 @@ void medico_solicitudes::on_btn_solicitudesAprobadas_clicked()
         i++;
         ui->gridLayout->addWidget(tarjeta, row, col);
     }
+    */
 }
 
 void medico_solicitudes::inicializar()
 {
-    on_btn_solicitudesEspera_clicked();
+ //   on_btn_solicitudesEspera_clicked();
 }
