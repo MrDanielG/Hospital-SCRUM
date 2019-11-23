@@ -19,11 +19,16 @@ public:
     void limpiarCatalogo();
 private slots:
     void on_btn_agenda_cita_clicked();
+    void on_comboMedicos_activated(const QString &arg1);
+    void on_btn_citas_activas_clicked();
+    void on_btn_citas_realizadas_clicked();
+    void on_btn_citas_canceladas_clicked();
 
 private:
     Ui::paciente_gestionar_citas *ui;
     QSqlDatabase mDatabase;
     QString idUsuarioPaciente;
+    QString idDoc;
 };
 
 #endif // PACIENTE_GESTIONAR_CITAS_H

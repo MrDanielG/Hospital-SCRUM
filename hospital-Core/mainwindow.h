@@ -71,6 +71,7 @@ private slots:
 
     void on_btn_horarios_medicos_clicked();
 
+    void on_btn_salir_clicked();
     void on_btnCobroEstancia_clicked();
 
 private:
@@ -99,7 +100,7 @@ private:
     recepcionista_cobrar_estancia cobrarEstancia;
 
     int index;
-    QString sesion="";
+    QString sesion = "";
 };
 
 #endif // MAINWINDOW_H
