@@ -67,7 +67,6 @@ SOURCES += \
         Widgets/Usuario/info_medico.cpp \
         Widgets/Usuario/info_servicios.cpp \
         Widgets/Usuario/inicar_sesion.cpp \
-    Widgets/Usuario/landpage.cpp \
         Widgets/Usuario/recuperar_contra.cpp \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
@@ -130,7 +129,6 @@ HEADERS += \
         Widgets/Usuario/info_medico.h \
         Widgets/Usuario/info_servicios.h \
         Widgets/Usuario/inicar_sesion.h \
-    Widgets/Usuario/landpage.h \
         Widgets/Usuario/recuperar_contra.h \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
@@ -190,7 +188,6 @@ FORMS += \
         Widgets/Usuario/info_medico.ui \
         Widgets/Usuario/info_servicios.ui \
         Widgets/Usuario/inicar_sesion.ui \
-    Widgets/Usuario/landpage.ui \
         Widgets/Usuario/recuperar_contra.ui \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
