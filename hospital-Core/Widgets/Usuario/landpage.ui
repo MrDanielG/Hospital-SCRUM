@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>landpage</class>
+ <widget class="QWidget" name="landpage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="img_doctores">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>160</y>
+     <width>386</width>
+     <height>425</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/img_doctores.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>150</y>
+     <width>579</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Hospital Puebla</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_registrarse">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>610</y>
+     <width>200</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 5px;
+background: white;
+color: #3E64FF;
+</string>
+   </property>
+   <property name="text">
+    <string>Registrarse</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>750</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: #3E64FF;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>190</y>
+     <width>579</width>
+     <height>276</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: #3E64FF;
+color: white;</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>Se apoya en un equipo médico de gran rigor, profesionales
+pioneros en sus técnicas y exigentes en los resultados,
+seleccionados entre los más prestigiosos médicos 
+nacionales e internacionales para
+formar parte de un equipo multidisciplinar 
+y de prestigio.</string>
+   </property>
+   <property name="overwriteMode">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>img_doctores</zorder>
+  <zorder>label_2</zorder>
+  <zorder>btn_registrarse</zorder>
+  <zorder>plainTextEdit</zorder>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
