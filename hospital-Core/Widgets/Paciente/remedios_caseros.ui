@@ -65,8 +65,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">
-</string>
+    <string notr="true"/>
    </property>
    <property name="placeholderText">
     <string>Buscar por Categoria</string>
@@ -75,11 +74,15 @@
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>180</y>
-     <width>22</width>
-     <height>22</height>
+     <x>70</x>
+     <y>150</y>
+     <width>1231</width>
+     <height>431</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+background: white;</string>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
@@ -89,21 +92,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>20</width>
-      <height>20</height>
+      <width>1231</width>
+      <height>431</height>
      </rect>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>90</y>
-       <width>160</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout"/>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QGridLayout" name="gridLayout"/>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

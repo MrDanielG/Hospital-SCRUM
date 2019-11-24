@@ -51,6 +51,7 @@ SOURCES += \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
     Widgets/Paciente/remedios_caseros.cpp \
+    Widgets/Paciente/tarjeta_remedios.cpp \
     Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
     Widgets/Recepcionista/recepcionista_citas.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.cpp \
@@ -114,6 +115,7 @@ HEADERS += \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
     Widgets/Paciente/remedios_caseros.h \
+    Widgets/Paciente/tarjeta_remedios.h \
     Widgets/Recepcionista/recepcion_tarjeta_citas.h \
     Widgets/Recepcionista/recepcionista_citas.h \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.h \
@@ -174,6 +176,7 @@ FORMS += \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
     Widgets/Paciente/remedios_caseros.ui \
+    Widgets/Paciente/tarjeta_remedios.ui \
     Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
     Widgets/Recepcionista/recepcionista_citas.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_operaciones.ui \
