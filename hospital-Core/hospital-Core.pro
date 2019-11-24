@@ -31,6 +31,7 @@ SOURCES += \
     Clases/pdf_receta.cpp \
         Clases/usuario.cpp \
     Widgets/Administrador/administrador_catalogo_remedios.cpp \
+    Widgets/Administrador/administrador_crear_remedio.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
     Widgets/Administrador/administrador_horarios_medicos.cpp \
@@ -99,6 +100,7 @@ HEADERS += \
     Clases/pdf_receta.h \
         Clases/usuario.h \
     Widgets/Administrador/administrador_catalogo_remedios.h \
+    Widgets/Administrador/administrador_crear_remedio.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
     Widgets/Administrador/administrador_horarios_medicos.h \
@@ -162,6 +164,7 @@ HEADERS += \
 
 FORMS += \
     Widgets/Administrador/administrador_catalogo_remedios.ui \
+    Widgets/Administrador/administrador_crear_remedio.ui \
         Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
     Widgets/Administrador/administrador_horarios_medicos.ui \
