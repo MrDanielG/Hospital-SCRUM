@@ -26,6 +26,7 @@
 #include "Widgets/Medico/medico_generar_receta.h"
 #include "Widgets/Administrador/administrador_horarios_medicos.h"
 #include "Widgets/Recepcionista/recepcionista_cobrar_estancia.h"
+#include "Widgets/Administrador/administrador_catalogo_remedios.h"
 namespace Ui
 {
 class MainWindow;
@@ -98,6 +99,7 @@ private:
     medico_generar_receta generarReceta;
     administrador_horarios_medicos horariosMedicos;
     recepcionista_cobrar_estancia cobrarEstancia;
+    administrador_catalogo_remedios catalogoRemedios;
 
     int index;
     QString sesion = "";

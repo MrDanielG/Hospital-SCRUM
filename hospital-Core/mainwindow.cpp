@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
     ui->stackedWidget->insertWidget(20, &cobrarEstancia);
+    ui->stackedWidget->insertWidget(21, &catalogoRemedios);
 }
 
 MainWindow::~MainWindow()
@@ -155,7 +156,7 @@ void MainWindow::on_btn_inicio_admin_clicked()
 
 void MainWindow::on_btn_remedios_admin_clicked()
 {
-    qDebug() << "Aun no la haces prro";
+    ui->stackedWidget->setCurrentIndex(21);
 }
 
 void MainWindow::on_btn_gestionar_servicios_admin_clicked()
@@ -268,8 +269,8 @@ void MainWindow::on_btn_salir_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
-    void MainWindow::on_btnCobroEstancia_clicked()
-    {
-        ui->stackedWidget->setCurrentIndex(20);
-    }
+//    void MainWindow::on_btnCobroEstancia_clicked() quesesto?
+//    {
+//        ui->stackedWidget->setCurrentIndex(20);
+//    }
 }
