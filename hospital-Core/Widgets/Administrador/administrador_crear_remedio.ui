@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>426</width>
+    <width>420</width>
     <height>473</height>
    </rect>
   </property>
@@ -117,7 +117,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_nombreRemedio">
+      <widget class="QLineEdit" name="nombreRemedio">
        <property name="font">
         <font>
          <family>Montserrat</family>

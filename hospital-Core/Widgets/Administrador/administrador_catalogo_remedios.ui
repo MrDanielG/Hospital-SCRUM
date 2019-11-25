@@ -121,7 +121,7 @@ border:none;</string>
          <x>0</x>
          <y>0</y>
          <width>1309</width>
-         <height>583</height>
+         <height>593</height>
         </rect>
        </property>
        <property name="cursor">
@@ -177,7 +177,7 @@ color: #818181;</string>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_registra_usuario">
+       <widget class="QPushButton" name="btn_crear_remedio">
         <property name="minimumSize">
          <size>
           <width>160</width>

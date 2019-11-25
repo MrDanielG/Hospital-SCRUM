@@ -18,6 +18,9 @@ public:
     void limpiarCatalogo();
     void actualizarCatalogo();
 
+private slots:
+    void on_btn_crear_remedio_clicked();
+
 private:
     Ui::administrador_catalogo_remedios *ui;
     QSqlDatabase mDatabase;

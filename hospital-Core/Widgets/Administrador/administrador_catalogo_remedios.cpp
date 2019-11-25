@@ -1,6 +1,7 @@
 #include "administrador_catalogo_remedios.h"
 #include "ui_administrador_catalogo_remedios.h"
 #include "Widgets/Administrador/administrador_tarjeta_remedio.h"
+#include "Widgets/Administrador/administrador_crear_remedio.h"
 #include "QDebug"
 
 administrador_catalogo_remedios::administrador_catalogo_remedios(QWidget *parent) :
@@ -67,4 +68,11 @@ void administrador_catalogo_remedios::limpiarCatalogo()
         delete item->widget();
         delete item;
     }
+}
+
+void administrador_catalogo_remedios::on_btn_crear_remedio_clicked()
+{
+    administrador_crear_remedio crearRemedio;
+    crearRemedio.exec();
+    actualizarCatalogo();
 }
