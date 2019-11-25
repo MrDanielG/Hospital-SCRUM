@@ -237,6 +237,8 @@ void medico_solicitudes::on_comboPermiso_activated(const QString &arg1)
                 ui->lbl_nombre->show();
                 ui->label_9->show();
                 ui->date_fecha_Inicio->show();
+                ui->label_12->show();
+                ui->date_fecha_Fin->show();
                 ui->date_fecha_Fin->setEnabled(false);
                 ui->label_13->show();
                 ui->btn_solicitar_permiso->show();
@@ -265,13 +267,13 @@ void medico_solicitudes::on_btn_solicitar_permiso_clicked()
         {
             if(ui->comboPermiso->currentText()=="Baja Temporal")
             {
-                query.prepare("");
+                query.prepare("INSERT INTO permiso (descripcion, fecha_inicio,fecha_fin, aprobado, id_empleado) VALUES ('"+descripcion+"', '"+fecha_inicio+"','"+fecha_fin+"', '1', '"+this->idEmpleado+"');");
                 query.exec();
 
             }else{
                 if(ui->comboPermiso->currentText()=="Baja Definitiva")
                 {
-                    query.prepare("");
+                    query.prepare("INSERT INTO permiso (descripcion, fecha_inicio, aprobado, id_empleado) VALUES ('"+descripcion+"', '"+fecha_inicio+"', '1', '"+this->idEmpleado+"');");
                     query.exec();
                 }
             }

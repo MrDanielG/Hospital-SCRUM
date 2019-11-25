@@ -205,27 +205,11 @@ background-color:#435B6C;</string>
     <rect>
      <x>30</x>
      <y>80</y>
-     <width>305</width>
+     <width>301</width>
      <height>41</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
-    <item>
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>22</width>
-        <height>21</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item>
      <widget class="QLabel" name="label_4">
       <property name="sizePolicy">
@@ -244,7 +228,7 @@ background-color:#435B6C;</string>
        <string notr="true">color: rgb(61, 64, 255);</string>
       </property>
       <property name="text">
-       <string>Permiso:</string>
+       <string>Solicitar Permiso:</string>
       </property>
      </widget>
     </item>
@@ -278,22 +262,6 @@ background-color:#435B6C;</string>
        </property>
       </item>
      </widget>
-    </item>
-    <item>
-     <spacer name="horizontalSpacer_19">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
@@ -737,6 +705,8 @@ border-radius: 50px;</string>
   <zorder>layoutWidget_3</zorder>
   <zorder>layoutWidget_4</zorder>
   <zorder>txt_motivo</zorder>
+  <zorder>horizontalSpacer</zorder>
+  <zorder>horizontalSpacer_19</zorder>
  </widget>
  <resources/>
  <connections/>
