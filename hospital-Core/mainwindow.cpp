@@ -53,16 +53,23 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     while (buscarid.next()){
         numeros.append(buscarid.value(0).toString());
     }
-
     int tama = numeros.size();
+    int numerorand =  qrand() % tama;
 
+    QSqlQuery tip(mDatabase);
+    tip.prepare("select * from info where id_tipo_info = 1 and id_info= "+numeros[numerorand]);
+    tip.exec();
+    while(tip.next()){
+        QString id = tip.value(0).toString();
+        QString nombre = tip.value(1).toString();
+        QString descripcion = tip.value(2).toString();
+        QString foto = tip.value(5).toString();
 
-
-    if(ui->stackedWidget->currentIndex() == 0){
-        usuario_tip tip;
-
-        tip.exec();
+        usuario_tip tips;
+        tips.insertarDatos(id, nombre, foto, descripcion);
+        tips.exec();
     }
+
 
 }
 

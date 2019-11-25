@@ -51,7 +51,7 @@
      <x>160</x>
      <y>10</y>
      <width>141</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
@@ -84,6 +84,9 @@
    <property name="styleSheet">
     <string notr="true">border: none;
 background: none;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
    <property name="plainText">
     <string>Las verduras son alimentos saludables que ayudan al desarrollo de los niños, además su contenido calórico es tan bajo, que se convierten, junto a la fruta, en la comida perfecta para los niños que tengan tendencia a la obesidad.</string>
