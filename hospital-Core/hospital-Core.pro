@@ -102,7 +102,7 @@ SOURCES += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.cpp \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp \
-    Widgets/Paciente/paciente_califica_medico.cpp
+    Widgets/Paciente/paciente_califica_medico.cpp \
     Widgets/Farmaceutico/farmaceutico_medicamentos.cpp \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.cpp \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.cpp \
@@ -187,7 +187,7 @@ HEADERS += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h \
-    Widgets/Paciente/paciente_califica_medico.h
+    Widgets/Paciente/paciente_califica_medico.h \
     Widgets/Farmaceutico/farmaceutico_medicamentos.h \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.h \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.h \
@@ -268,7 +268,7 @@ FORMS += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.ui \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui \
-    Widgets/Paciente/paciente_califica_medico.ui
+    Widgets/Paciente/paciente_califica_medico.ui \
     Widgets/Farmaceutico/farmaceutico_medicamentos.ui \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.ui \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.ui \
