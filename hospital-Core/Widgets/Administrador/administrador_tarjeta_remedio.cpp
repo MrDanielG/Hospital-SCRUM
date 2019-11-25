@@ -48,8 +48,22 @@ administrador_tarjeta_remedio::~administrador_tarjeta_remedio()
 
 void administrador_tarjeta_remedio::on_btn_modificar_clicked()
 {
-    QSqlQuery query(mDatabase);
-    query.exec("UPDATE info SET ");
+
+//    QMessageBox msgBox(QMessageBox::Question,"Actualizar","¿Desea Actualizar éste Remedio?",QMessageBox::Yes|QMessageBox::No);
+//    msgBox.setButtonText(QMessageBox::Yes,"Sí");
+//    msgBox.setButtonText(QMessageBox::No,"No");
+
+//    if(msgBox.exec()==QMessageBox::Yes){
+//        QSqlQuery query(mDatabase);
+//        query.exec("UPDATE info SET ");\
+
+//        QMessageBox::information(this, tr("Actualizar"),
+//                     tr("Se actualizo correctamente el remedio"));
+//        this->padre->actualizarCatalogo(); //Se actualiza el catalogo desde la tarjeta
+//    } else {
+//        QMessageBox::information(this, tr("Actualizar"),
+//                     tr("No se Actualizo el remedio"));
+//    }
 }
 
 void administrador_tarjeta_remedio::on_btn_eliminar_clicked()

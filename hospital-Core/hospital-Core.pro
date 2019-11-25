@@ -36,6 +36,7 @@ SOURCES += \
         Widgets/Administrador/administrador_crear_usuario.cpp \
     Widgets/Administrador/administrador_horarios_medicos.cpp \
         Widgets/Administrador/administrador_info_servicios.cpp \
+    Widgets/Administrador/administrador_modificar_remedio.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
     Widgets/Administrador/administrador_tarjeta_remedio.cpp \
@@ -105,6 +106,7 @@ HEADERS += \
         Widgets/Administrador/administrador_crear_usuario.h \
     Widgets/Administrador/administrador_horarios_medicos.h \
         Widgets/Administrador/administrador_info_servicios.h \
+    Widgets/Administrador/administrador_modificar_remedio.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
     Widgets/Administrador/administrador_tarjeta_remedio.h \
@@ -169,6 +171,7 @@ FORMS += \
         Widgets/Administrador/administrador_crear_usuario.ui \
     Widgets/Administrador/administrador_horarios_medicos.ui \
         Widgets/Administrador/administrador_info_servicios.ui \
+    Widgets/Administrador/administrador_modificar_remedio.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
     Widgets/Administrador/administrador_tarjeta_remedio.ui \
