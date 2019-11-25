@@ -65,7 +65,6 @@ void administrador_catalogo_cancelacion_cita::limpiarCatalogo()
         delete item->widget();
         delete item;
     }
-
 }
 
 void administrador_catalogo_cancelacion_cita::actualizarCatalogo()
