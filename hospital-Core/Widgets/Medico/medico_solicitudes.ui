@@ -106,7 +106,7 @@
   <widget class="QPushButton" name="btn_solicitudesRechazadas">
    <property name="geometry">
     <rect>
-     <x>810</x>
+     <x>950</x>
      <y>30</y>
      <width>120</width>
      <height>32</height>
@@ -140,7 +140,7 @@
   <widget class="QPushButton" name="btn_solicitudesAprobadas">
    <property name="geometry">
     <rect>
-     <x>950</x>
+     <x>810</x>
      <y>30</y>
      <width>120</width>
      <height>32</height>
@@ -205,7 +205,7 @@ background-color:#435B6C;</string>
     <rect>
      <x>30</x>
      <y>80</y>
-     <width>291</width>
+     <width>305</width>
      <height>41</height>
     </rect>
    </property>
@@ -725,10 +725,6 @@ border-radius: 50px;</string>
   <zorder>line</zorder>
   <zorder>horizontalLayoutWidget</zorder>
   <zorder>label_foto</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget_2</zorder>
-  <zorder>layoutWidget_3</zorder>
-  <zorder>layoutWidget_4</zorder>
   <zorder>btn_solicitar_permiso</zorder>
   <zorder>layoutWidget_2</zorder>
   <zorder>layoutWidget</zorder>

@@ -36,6 +36,7 @@ SOURCES += \
         Widgets/Administrador/administrador_info_servicios.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Medico/empleado_tarjeta_permiso.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_generar_receta.cpp \
@@ -46,6 +47,7 @@ SOURCES += \
         Widgets/Medico/medico_solicitudes.cpp \
     Widgets/Medico/medico_tarjeta_cita.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
+    Widgets/Medico/tarjeta_permiso.cpp \
     Widgets/Paciente/paciente_crear_cita.cpp \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
@@ -102,6 +104,7 @@ HEADERS += \
         Widgets/Administrador/administrador_info_servicios.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Medico/empleado_tarjeta_permiso.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_generar_receta.h \
@@ -112,6 +115,7 @@ HEADERS += \
         Widgets/Medico/medico_solicitudes.h \
     Widgets/Medico/medico_tarjeta_cita.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
+    Widgets/Medico/tarjeta_permiso.h \
     Widgets/Paciente/paciente_crear_cita.h \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
@@ -163,6 +167,7 @@ FORMS += \
         Widgets/Administrador/administrador_info_servicios.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Medico/empleado_tarjeta_permiso.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_generar_receta.ui \
@@ -173,6 +178,7 @@ FORMS += \
         Widgets/Medico/medico_solicitudes.ui \
     Widgets/Medico/medico_tarjeta_cita.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
+    Widgets/Medico/tarjeta_permiso.ui \
     Widgets/Paciente/paciente_crear_cita.ui \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \
