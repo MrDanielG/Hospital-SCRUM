@@ -70,43 +70,37 @@ background-color:none;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="nombre_remedio">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>13</y>
-      <width>561</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Montserrat</family>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(129, 129, 129);
-background:none;
-background-color:none;</string>
-    </property>
-    <property name="text">
-     <string>Nombre Remedio</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>40</y>
+      <y>10</y>
       <width>401</width>
-      <height>181</height>
+      <height>211</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="nombre_remedio">
+       <property name="font">
+        <font>
+         <family>Montserrat</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(129, 129, 129);
+background:none;
+background-color:none;</string>
+       </property>
+       <property name="text">
+        <string>Nombre Remedio</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPlainTextEdit" name="plainTextEdit">
        <property name="font">
