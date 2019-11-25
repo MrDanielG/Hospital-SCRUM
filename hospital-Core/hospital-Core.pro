@@ -6,6 +6,7 @@
 QT       += printsupport
 QT       += core gui
 QT       += core gui sql
+QT       += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -40,6 +41,10 @@ SOURCES += \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
     Widgets/Administrador/administrador_tarjeta_remedio.cpp \
+    Widgets/Farmaceutico/farmaceutico_landpage.cpp \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_generar_receta.cpp \
@@ -56,6 +61,8 @@ SOURCES += \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_reagendar_cita.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
+    Widgets/Paciente/remedios_caseros.cpp \
+    Widgets/Paciente/tarjeta_remedios.cpp \
     Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
     Widgets/Recepcionista/recepcionista_citas.cpp \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.cpp \
@@ -79,6 +86,7 @@ SOURCES += \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
         Widgets/Usuario/tarjeta_servicios.cpp \
+    Widgets/Usuario/usuario_tip.cpp \
         main.cpp \
         mainwindow.cpp \
     Widgets/Medico/medico_landpage.cpp \
@@ -111,6 +119,10 @@ HEADERS += \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
     Widgets/Administrador/administrador_tarjeta_remedio.h \
+    Widgets/Farmaceutico/farmaceutico_landpage.h \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.h \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.h \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_generar_receta.h \
@@ -127,6 +139,8 @@ HEADERS += \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_reagendar_cita.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
+    Widgets/Paciente/remedios_caseros.h \
+    Widgets/Paciente/tarjeta_remedios.h \
     Widgets/Recepcionista/recepcion_tarjeta_citas.h \
     Widgets/Recepcionista/recepcionista_citas.h \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.h \
@@ -150,6 +164,7 @@ HEADERS += \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
         Widgets/Usuario/tarjeta_servicios.h \
+    Widgets/Usuario/usuario_tip.h \
         mainwindow.h \
     Widgets/Medico/medico_landpage.h \
     Widgets/Medico/medico_horario.h \
@@ -177,6 +192,10 @@ FORMS += \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
     Widgets/Administrador/administrador_tarjeta_remedio.ui \
+    Widgets/Farmaceutico/farmaceutico_landpage.ui \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_generar_receta.ui \
@@ -193,6 +212,8 @@ FORMS += \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_reagendar_cita.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
+    Widgets/Paciente/remedios_caseros.ui \
+    Widgets/Paciente/tarjeta_remedios.ui \
     Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
     Widgets/Recepcionista/recepcionista_citas.ui \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.ui \
@@ -216,6 +237,7 @@ FORMS += \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
         Widgets/Usuario/tarjeta_servicios.ui \
+    Widgets/Usuario/usuario_tip.ui \
         mainwindow.ui \
     Widgets/Medico/medico_landpage.ui \
     Widgets/Medico/medico_horario.ui \

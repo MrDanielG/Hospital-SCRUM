@@ -27,6 +27,11 @@
 #include "Widgets/Administrador/administrador_horarios_medicos.h"
 #include "Widgets/Recepcionista/recepcionista_cobrar_estancia.h"
 #include "Widgets/Administrador/administrador_catalogo_remedios.h"
+#include "Widgets/Farmaceutico/farmaceutico_landpage.h"
+#include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
+#include "Widgets/Paciente/remedios_caseros.h"
+#include "Widgets/Usuario/usuario_tip.h"
+
 namespace Ui
 {
 class MainWindow;
@@ -74,6 +79,9 @@ private slots:
 
     void on_btn_salir_clicked();
     //void on_btnCobroEstancia_clicked();
+    void on_realizarVenta_clicked();
+
+    void on_btn_remedios_caseros_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -100,6 +108,9 @@ private:
     administrador_horarios_medicos horariosMedicos;
     recepcionista_cobrar_estancia cobrarEstancia;
     administrador_catalogo_remedios catalogoRemedios;
+    farmaceutico_landpage landpageFarmaceutico;
+    farmaceutico_realizarVentas ventaMedicamento;
+    remedios_caseros remediosCaseros;
 
     int index;
     QString sesion = "";

@@ -60,6 +60,11 @@ private slots:
     void ObtenerDatosMedico();
     void EnviarCalificacion();
 
+    void crearVenta();
+
+
+
+
 };
 
 pruebas::pruebas()
@@ -833,6 +838,39 @@ void pruebas::buscarPorMedico()
 }*/
  /*   QVERIFY(band == 1);
 }*/
+
+void pruebas::crearVenta()
+{
+    QSqlQuery insertventa(mDatabase);
+    QSqlQuery medicamentosVenta(mDatabase);
+    QSqlQuery buscarVenta(mDatabase);
+    QDateTime fecha=QDateTime::currentDateTime();
+    QString date = fecha.toString();
+    QString secumple="false";
+    QStringList ides;
+    ides.append("1");
+    ides.append("2");
+    ides.append("3");
+    QStringList cants;
+    cants.append("5");
+    cants.append("2");
+    cants.append("1");
+    insertventa.prepare("insert into venta(fecha) values('"+date+"')");
+    insertventa.exec();
+    buscarVenta.prepare("SELECT * FROM venta ORDER by folio desc LIMIT 1");
+    buscarVenta.exec();
+    QString ventaid = "";
+    while (buscarVenta.next()) {
+        ventaid = buscarVenta.value(0).toString();
+    }
+    for(int i=0; i<ides.size(); i++){
+        medicamentosVenta.prepare("insert into medicamentosventa(id_medicamentos_farmacia, venta_folio, cantidad) "
+                                  "values("+ides[i]+", "+ventaid+", "+ cants[i]+" )");
+        medicamentosVenta.exec();
+        secumple="true";
+    }
+    QCOMPARE(secumple, "true");
+}
 
 //void pruebas::ingresarServicios()
 //{
