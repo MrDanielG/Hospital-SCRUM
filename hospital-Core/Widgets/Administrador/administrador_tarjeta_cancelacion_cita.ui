@@ -102,7 +102,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/imagenes/Imagenes/Ellipse7.png</pixmap>
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/Ellipse7.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -124,7 +124,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/imagenes/Imagenes/imgPrueba.png</pixmap>
+    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgPrueba.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -281,6 +281,8 @@ border-radius: 10px;</string>
   <zorder>label_2</zorder>
   <zorder>lbl_idCita_admin_cancelar_cita</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

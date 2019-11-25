@@ -15,46 +15,44 @@ public:
 private:
     QSqlDatabase mDatabase;
 
-
-
 private slots:
     void abrirBase();
-//    void abrirBase();
-//    void registrarUsuario();
-//    void inicioSesion();
-//    void recuperarDatos();
+    //    void abrirBase();
+    //    void registrarUsuario();
+    //    void inicioSesion();
+    //    void recuperarDatos();
 
-//    void ingresarServicios();
- //   void visualizarCita();
+    //    void ingresarServicios();
+    //   void visualizarCita();
 
-//    void visualizarCita();
-//    void visualizarHorarioCitas();
-//    void cancelarCita();
-//    void editarPerfilProp();
-//    void aprobarCancelacionCita();
-//    void asignarCitaAMedico();
+    //    void visualizarCita();
+    //    void visualizarHorarioCitas();
+    //    void cancelarCita();
+    //    void editarPerfilProp();
+    //    void aprobarCancelacionCita();
+    //    void asignarCitaAMedico();
     //Pruebas Sara Sprint IV
- //   void CancelaCitaPaciente();
-   // void VerCitasActivas(); //Por parte del paciente
-   // void VerCitasCanceladas(); //Por el paciente
+    //   void CancelaCitaPaciente();
+    // void VerCitasActivas(); //Por parte del paciente
+    // void VerCitasCanceladas(); //Por el paciente
     //void VerCitasRealizadas(); //Por el paciente
 
     //Pruebas Angel
-//    void modificarMedico();
-//    void visualizarCitas();
-//    void visualizarOperaciones();
-//    void agendarCita();
-//    void buscarporFecha();
+    //    void modificarMedico();
+    //    void visualizarCitas();
+    //    void visualizarOperaciones();
+    //    void agendarCita();
+    //    void buscarporFecha();
     //void buscarporNombre();
 
-//    void agregarInternado();
-//    void modificarInternado();
-//    void darDeBaja();
+    //    void agregarInternado();
+    //    void modificarInternado();
+    //    void darDeBaja();
 
     //Pruebas Daniel Sprint 3
     //void catalogoCitas();
     //void buscarPorMedico();
-//    void buscarFecha();
+    //    void buscarFecha();
 
     //Prubas Sara Sprint V
     void ObtenerDatosMedico();
@@ -62,33 +60,32 @@ private slots:
 
     void crearVenta();
 
-
-
-
+    void agregarMedicamento();
+    void eliminarMedicamento();
+    void modificarMedicamento();
 };
 
 pruebas::pruebas()
 {
-    #ifdef Q_OS_WIN
-//      mDatabase = QSqlDatabase::addDatabase("QODBC");
-//          mDatabase.setDatabaseName("Driver={MySQL ODBC 8.0 Unicode Driver};DATABASE=connection;");
-//          mDatabase.setUserName("root");
-//          mDatabase.setPassword("");
-//          mDatabase.setDatabaseName("hospital");
-    mDatabase = QSqlDatabase::addDatabase("QODBC","Connection");
+#ifdef Q_OS_WIN
+    //      mDatabase = QSqlDatabase::addDatabase("QODBC");
+    //          mDatabase.setDatabaseName("Driver={MySQL ODBC 8.0 Unicode Driver};DATABASE=connection;");
+    //          mDatabase.setUserName("root");
+    //          mDatabase.setPassword("");
+    //          mDatabase.setDatabaseName("hospital");
+    mDatabase = QSqlDatabase::addDatabase("QODBC", "Connection");
     mDatabase.setDatabaseName("hospital");
-    #elif defined(Q_OS_MAC)
-      mDatabase = QSqlDatabase::addDatabase("QMYSQL");
-      mDatabase.setDatabaseName("hospital");
-      mDatabase.setHostName("localhost");
-      mDatabase.setUserName("root");
-      mDatabase.setPassword("luisdrew1394");
-    #endif
+#elif defined(Q_OS_MAC)
+    mDatabase = QSqlDatabase::addDatabase("QMYSQL");
+    mDatabase.setDatabaseName("hospital");
+    mDatabase.setHostName("localhost");
+    mDatabase.setUserName("root");
+    mDatabase.setPassword("luisdrew1394");
+#endif
 }
 
-pruebas::~pruebas(){
-
-
+pruebas::~pruebas()
+{
 }
 
 /*void pruebas::insertarDatos(QString experiencia, QString logros, QString estudios,
@@ -98,21 +95,28 @@ pruebas::~pruebas(){
 
 
 }*/
+//void pruebas::insertarDatos(QString experiencia, QString logros, QString estudios,
+//                            QString cedula, QString nombre, QString paterno, QString materno,
+//                            QString correo, QString foto, QString direccion, QString contrasenia,
+//                            QString mascota){
+
+//}
 
 void pruebas::abrirBase()
 {
     int conectada = 0;
-    if(!mDatabase.open()){
-            qDebug()<<"ERROR :(";
-            conectada = 0;
-       }
-       else{
-            qDebug()<<"CONECTADA";
-            conectada = 1;
-       }
+    if (!mDatabase.open())
+    {
+        qDebug() << "ERROR :(";
+        conectada = 0;
+    }
+    else
+    {
+        qDebug() << "CONECTADA";
+        conectada = 1;
+    }
 
     QVERIFY(conectada == 1);
-
 }
 
 /*void pruebas::visualizarHorarioCitas()
@@ -297,7 +301,6 @@ void pruebas::abrirBase()
 //    sql = "select * from usuario where id_usuario = '"+usuario+"';";
 //    query.exec(sql);
 
-
 //    while(query.next()){
 //        id_usuario = query.value(0).toString();
 //        password = query.value(1).toString();
@@ -333,7 +336,6 @@ void pruebas::abrirBase()
 
 //    //Datos regresados por la query
 //    QString correoQuery, contraseniaQuery, fNacimientoQuery;
-
 
 //    sql = "select correo, fecha_nacimiento from persona where id_usuario = '"+usuario+"';";
 //    query.exec(sql);
@@ -418,6 +420,55 @@ void pruebas::abrirBase()
 //        }
 //    }
 //}
+}
+
+void pruebas::aprobarCancelacionCita()
+{
+
+}
+
+void pruebas::asignarCitaAMedico()
+{
+
+}
+
+void pruebas::modificarMedico()
+{
+//    QSqlQuery ModificarDatos(mDatabase);
+
+//    QString Cedula = "54484da";
+//    QString Correo = "sebastian@gmail.com;";
+//    QString Logros = "Certificados de google";
+//    QString Nombre = "Sebastian";
+//    QString Mascota = "Galleta";
+//    QString Materno = "Rosas";
+//    QString Paterno = "Genis";
+//    QString Estudios = "Estudio en Harvard";
+//    QString Direccion = "Morelos";
+//    QString Contrasenia = "123";
+//    QString Experiencia = "Trabajo en el FBI";
+//    QString Foto = "C:/img/img2.png";
+//    QString id = "sebastian";
+//     QString aprobada = "false";
+
+//    ModificarDatos.prepare("UPDATE usuario INNER JOIN persona "
+//                         "ON usuario.id_usuario = persona.id_usuario "
+//                         "INNER JOIN empleado "
+//                         "ON persona.id_persona = empleado.id_persona "
+//                         "INNER JOIN medico "
+//                         "ON empleado.id_empleado = medico.id_empleado "
+//                         "SET medico.experiencia='"+Experiencia+"', "
+//                         "medico.logros='"+Logros+"', medico.estudios = '"+Estudios+"', "
+//                         "medico.cedula='"+Cedula+"', "
+//                         "persona.nombre='"+Nombre+"', persona.paterno='"+Paterno+"', "
+//                         "persona.materno= '"+Materno+"', persona.correo='"+Correo+"', "
+//                         "persona.foto='"+Foto+"', persona.direccion='"+Direccion+"', "
+//                         "usuario.contrasenia='"+Contrasenia+"', usuario.mascota='"+Mascota+"' "
+//                         "WHERE usuario.id_usuario='"+id+"'");
+
+//    ModificarDatos.exec();
+//    aprobada = "true";
+//    QCOMPARE(aprobada, "true");
 
 //void pruebas::aprobarCancelacionCita()
 //{
@@ -428,6 +479,34 @@ void pruebas::abrirBase()
 //{
 
 //}
+void pruebas::visualizarCitas()
+{
+//    QSqlQuery MostrarDatos(mDatabase);
+//    QString creada = "false";
+
+//    MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
+//                         "From persona INNER JOIN empleado "
+//                         "ON persona.id_persona = empleado.id_persona "
+//                         "INNER JOIN medico "
+//                         "ON empleado.id_empleado = medico.id_empleado "
+//                         "INNER JOIN cita_medica as cita "
+//                         "ON medico.id_medico = cita.id_medico ");
+//    MostrarDatos.exec();
+//    int i=0;
+//    int row = 0;
+//    int col = 0;
+
+//    while (MostrarDatos.next()){
+//        QString fecha = MostrarDatos.value(0).toString();
+//        QString hora = MostrarDatos.value(1).toString();
+//        QString medico = MostrarDatos.value(2).toString();
+//        QString medicopaterno = MostrarDatos.value(3).toString();
+//        row = i/2;
+//        col= i%2;
+//        i++;
+//        creada="true";
+//    }
+//    QCOMPARE(creada, "true");
 
 //void pruebas::modificarMedico()
 //{
@@ -468,8 +547,34 @@ void pruebas::abrirBase()
 //    QCOMPARE(aprobada, "true");
 
 
+{
+//    QString creada = "false";
 
-//}
+//    MostrarDatos.prepare("select operaciones.fecha, persona.nombre, persona.paterno "
+//                         " FROM persona INNER JOIN empleado "
+//                         "ON persona.id_persona = empleado.id_persona "
+//                         "INNER JOIN medico "
+//                         "ON empleado.id_empleado = medico.id_empleado "
+//                         "INNER JOIN operaciones_agendadas as operaciones "
+//                         "ON medico.id_medico = operaciones.id_medico");
+
+//    MostrarDatos.exec();
+//    int i=0;
+//    int row = 0;
+//    int col = 0;
+
+//    while (MostrarDatos.next()){
+//        QString fecha = MostrarDatos.value(0).toString();
+//        QString hora = "04:14:10";
+//        QString medico = MostrarDatos.value(1).toString();
+//        QString medicopaterno = MostrarDatos.value(2).toString();
+//        row = i/2;
+//        col= i%2;
+//        i++;
+//        creada = "true";
+
+//    }
+//    QCOMPARE(creada, "true");
 
 //void pruebas::visualizarCitas()
 //{
@@ -540,6 +645,11 @@ void pruebas::abrirBase()
 //    QString creada = "false";
 //    QString lineEdit_descripcion = "Dolor de Cabeza";
 //    QString lineEdit_motivo = "Dolor de cabeza muy fuerte";
+void pruebas::agendarCita()
+{
+//    QString creada = "false";
+//    QString lineEdit_descripcion = "Dolor de Cabeza";
+//    QString lineEdit_motivo = "Dolor de cabeza muy fuerte";
 
 //    if(lineEdit_descripcion.isEmpty() &&
 //            lineEdit_motivo.isEmpty()){
@@ -563,6 +673,35 @@ void pruebas::abrirBase()
 //        BuscarCita.prepare("select * from cita_medica where "
 //                           "motivo = '"+lineEdit_motivo+"' and descripcion = '"+lineEdit_descripcion+"' and id_paciente = 5 and id_medico = 25 ");
 
+//    if(lineEdit_descripcion.isEmpty() &&
+//            lineEdit_motivo.isEmpty()){
+
+//    } else {
+//        QString folioMedico = "25";
+//        QString motivo = lineEdit_motivo;
+//        QString descripcion = lineEdit_descripcion;
+//        QString fecha = "2019-12-12";
+//        QString horaInicio = "10:00:00";
+//        QString horaFinal = "12:00:00";
+//        QString idPaciente = "5";
+
+//        QSqlQuery crearCita(mDatabase);
+//        QSqlQuery BuscarCita(mDatabase);
+//        BuscarCita.exec();
+//        while(BuscarCita.next()){
+//            creada = "true";
+//        }
+//    }
+
+//    QCOMPARE(creada, "true");
+
+//        crearCita.prepare("INSERT INTO cita_medica(motivo, descripcion, fecha, hora_inicio, hora_fin, id_medico, id_paciente, estado) "
+//                          "VALUES ('"+motivo+"','"+descripcion+"','"+fecha+"','"+horaInicio+"','"+horaFinal+"','"+folioMedico+"','"+idPaciente+"', '1')");
+//        crearCita.exec();
+
+//        BuscarCita.prepare("select * from cita_medica where "
+//                           "motivo = '"+lineEdit_motivo+"' and descripcion = '"+lineEdit_descripcion+"' and id_paciente = 5 and id_medico = 25 ");
+
 
 //        BuscarCita.exec();
 //        while(BuscarCita.next()){
@@ -576,6 +715,8 @@ void pruebas::abrirBase()
 
 //void pruebas::buscarporFecha()
 //{
+void pruebas::buscarporFecha()
+{
 //    QString nombre = "Joaquin";
 //    char caracter = '%';
 //    QString arg1 = "201";
@@ -695,6 +836,72 @@ void pruebas::buscarporNombre()
 
 //void pruebas::agregarInternado()
 //{
+//    QString fecha = "2019";
+//    char caracter = '%';
+//    QString arg1 = "Joaquin";
+//    int seccionactivada = 1;
+//    QString encontrada = "true";
+//    if(seccionactivada == 1){
+//        QSqlQuery MostrarDatos(mDatabase);
+//        MostrarDatos.prepare("select cita.fecha, cita.hora_inicio, persona.nombre, persona.paterno "
+//                             "From persona INNER JOIN empleado "
+//                             "ON persona.id_persona = empleado.id_persona "
+//                             "INNER JOIN medico "
+//                             "ON empleado.id_empleado = medico.id_empleado "
+//                             "INNER JOIN cita_medica as cita "
+//                             "ON medico.id_medico = cita.id_medico "
+//                             "where persona.nombre like '"+arg1+""+caracter+"' and persona.nombre like '"+fecha+""+caracter+"'");
+//        MostrarDatos.exec();
+
+//        int row = 0;
+//        int col = 0;
+//        int i=0;
+
+
+//        while (MostrarDatos.next()){
+//            QString fecha = MostrarDatos.value(0).toString();
+//            QString hora = MostrarDatos.value(1).toString();
+//            QString medico = MostrarDatos.value(2).toString();
+//            QString medicopaterno = MostrarDatos.value(3).toString();
+//            row = i/2;
+//            col= i%2;
+//            i++;
+//            encontrada = "true";
+//        }
+//    }else{
+
+//        QSqlQuery MostrarDatos(mDatabase);
+//        MostrarDatos.prepare("select operaciones.fecha, persona.nombre, persona.paterno "
+//                             " FROM persona INNER JOIN empleado "
+//                             "ON persona.id_persona = empleado.id_persona "
+//                             "INNER JOIN medico "
+//                             "ON empleado.id_empleado = medico.id_empleado "
+//                             "INNER JOIN operaciones_agendadas as operaciones "
+//                             "ON medico.id_medico = operaciones.id_medico "
+//                             "where persona.nombre like '"+arg1+""+caracter+"' and operaciones.fecha like '"+fecha+""+caracter+"'");
+//        MostrarDatos.exec();
+//        int row = 0;
+//        int col = 0;
+//        int i=0;
+
+
+//        while (MostrarDatos.next()){
+//            QString fecha = MostrarDatos.value(0).toString();
+//            QString hora = MostrarDatos.value(1).toString();
+//            QString medico = MostrarDatos.value(2).toString();
+//            QString medicopaterno = MostrarDatos.value(3).toString();
+//            row = i/2;
+//            col= i%2;
+//            i++;
+//            encontrada = "true";
+
+//        }
+//    }
+//    QCOMPARE(encontrada, "true");
+}
+
+void pruebas::agregarInternado()
+{
 //    int contador = 0;
 //    int db = 0;
 //    QString paciente = "2";
@@ -729,6 +936,10 @@ void pruebas::buscarporNombre()
 
 //void pruebas::modificarInternado()
 //{
+}
+
+void pruebas::modificarInternado()
+{
 //    QSqlQuery query (mDatabase);
 //    QString sql;
 
@@ -754,6 +965,9 @@ void pruebas::buscarporNombre()
 //}
 
 //void pruebas::darDeBaja(){
+}
+
+void pruebas::darDeBaja(){
 //    QSqlQuery query(mDatabase);
 //    QString sql;
 
@@ -816,32 +1030,6 @@ void pruebas::catalogoCitas()
 
 /*void pruebas::asignarCitaAMedico()
         QVERIFY(band == 1);
-}
-
-void pruebas::buscarPorMedico()
-{
-    QString idMedico = "20";
-    QString nombreMedico;
-    int band = 0;
-
-    QSqlQuery query(mDatabase);
-    query.prepare("SELECT nombre, paterno, materno FROM medico "
-                  "INNER JOIN empleado ON medico.id_empleado = empleado.id_empleado "
-                  "INNER JOIN persona ON empleado.id_persona = persona.id_persona "
-                  "WHERE id_medico = "+idMedico);
-    query.exec();
-    while (query.next()){
-        nombreMedico = query.value(0).toString();
-        band=1;
-    }
-
-}*/
- /*   QVERIFY(band == 1);
-}*/
-
-void pruebas::crearVenta()
-{
-    QSqlQuery insertventa(mDatabase);
     QSqlQuery medicamentosVenta(mDatabase);
     QSqlQuery buscarVenta(mDatabase);
     QDateTime fecha=QDateTime::currentDateTime();
@@ -872,87 +1060,61 @@ void pruebas::crearVenta()
     QCOMPARE(secumple, "true");
 }
 
-//void pruebas::ingresarServicios()
 //{
 //    QString usuario = "Admin";
-//    QString contrasenia = "admin123";
 
 //    QString servicio = "Rayos x";
-//    QString descripcion = "El Hospital puebla Cuenta con rayos x para poder visualizar los problemas el los huesos";
 
 //    QSqlQuery query;
-//    QString sql;
 
 //    QString contraseniaQuery, usuarioQuery, tipousuarioQuery, nombreTipoQuery;
-
 //    QString nombre, paterno, materno;
 
-//    int contador = 0;
 
 //    sql = "select count(*) from usuario where id_usuario = '"+usuario+"';";
-//    query.exec(sql);
 //    while(query.next()){
 //        contador = query.value(0).toInt();
-//    }
 //    if(contador == 1){
 //        sql = "select * from usuario where id_usuario = '"+usuario+"';";
-//        query.exec(sql);
 //        while(query.next()){
 //            contraseniaQuery = query.value(1).toString();
-//            usuarioQuery = query.value(0).toString();
 //            tipousuarioQuery = query.value(2).toString();
 //        }
-
 //        sql = "select nombre_tipo from tipo_usuario where id_tipo_usuario = "+tipousuarioQuery+";";
 //        query.exec(sql);
-//        while (query.next()) {
 //            nombreTipoQuery = query.value(0).toString();
 //        }
-
 //        if(usuario == usuarioQuery && contrasenia == contraseniaQuery){
 //            sql = "select nombre, paterno, materno from persona where id_usuario = '"+usuario+"';";
-//            query.exec(sql);
 //            while(query.next()){
 //                nombre = query.value(0).toString();
-//                paterno = query.value(1).toString();
 //                materno = query.value(2).toString();
 //            }
-//            qDebug()<<"Bienvenido "+nombre+" "+paterno+" "+materno+" usted es un usuario: "+nombreTipoQuery;
 
 //            sql = "insert into servicios(nombre, descripcion, id_administrador) values('"+servicio+"', '"+descripcion+"', 1);";
-//            query.exec(sql);
 
 //            sql = "select count(*) from servicios;";
-//            query.exec(sql);
 //            while (query.next()){
 //                if(query.value(0).toInt() == 1){
-//                    qDebug()<<"Registro exitoso";
 //                }
 //                else {
-//                    qDebug()<<"Registro fallido";
 //                }
 //            }
-//        }
 //        else {
 //            qDebug()<< "contrasenia incorrecta";
-//        }
 //   }
 //   else{
-//        qDebug()<< "Usuario incorrecto";
 //    }
 //}
-
 /*void pruebas::visualizarCita()
-{
     QSqlQuery query;
     QString sql;
-    int contador = 0;
 
-    sql = "select * from cita_medica;";
-    query.exec(sql);
-    while(query.next()){
-        contador ++;
-    }
+//    sql = "select * from cita_medica;";
+//    query.exec(sql);
+//    while(query.next()){
+//        contador ++;
+//    }
 
 }*/
 
@@ -1042,7 +1204,7 @@ void pruebas::VerCitasRealizadas()
 
 void pruebas::ObtenerDatosMedico()
 {
-    QString idMedico="7";
+    QString idMedico = "7";
     QSqlQuery query(mDatabase);
     query.prepare("select concat(p.nombre,' ',p.paterno,' ',p.materno) as Nombre, "
                   "esp.nombre as Especialidad, p.foto as Foto from persona as p "
@@ -1050,13 +1212,15 @@ void pruebas::ObtenerDatosMedico()
                   "inner join medico as m on e.id_empleado=m.id_empleado "
                   "inner join medico_has_especialidad as me on m.id_medico=me.id_medico "
                   "inner join especialidad as esp on me.id_especialidad=esp.id_especialidad "
-                  "where m.id_medico='"+idMedico+"';");
+                  "where m.id_medico='" +
+                  idMedico + "';");
     QVERIFY(query.exec());
 
-    if(query.exec())
+    if (query.exec())
     {
         qDebug() << "Datos obtenidos";
-    }else
+    }
+    else
     {
         qDebug() << "Error";
     }
@@ -1064,36 +1228,40 @@ void pruebas::ObtenerDatosMedico()
 
 void pruebas::EnviarCalificacion()
 {
-    QString NumEstrellas="4",id_cita="3",id_Medico="7";
+    QString NumEstrellas = "4", id_cita = "3", id_Medico = "7";
 
-    if(NumEstrellas != "0")
+    if (NumEstrellas != "0")
     {
         QSqlQuery insert(mDatabase);
-        insert.prepare("update cita_medica set calificacion = '"+NumEstrellas+"'"
-                             " where id_cita_medica='"+id_cita+"';");
+        insert.prepare("update cita_medica set calificacion = '" + NumEstrellas + "'"
+                                                                                  " where id_cita_medica='" +
+                       id_cita + "';");
         QVERIFY(insert.exec());
 
-        if(insert.exec())
+        if (insert.exec())
         {
             QSqlQuery CalculaPromedio(mDatabase);
             CalculaPromedio.prepare("select avg(calificacion) as promedio from "
-                                    "cita_medica where id_medico='"+id_Medico+"' "
-                                    "and calificacion != 0;");
+                                    "cita_medica where id_medico='" +
+                                    id_Medico + "' "
+                                                "and calificacion != 0;");
             QVERIFY(CalculaPromedio.exec());
 
-             QString valor = "4";
-            if(CalculaPromedio.exec())
+            QString valor = "4";
+            if (CalculaPromedio.exec())
             {
                 QSqlQuery update(mDatabase);
-                update.prepare("update medico set calificacion_prom='"+valor+"' "
-                                   "where id_medico='"+id_Medico+"'");
+                update.prepare("update medico set calificacion_prom='" + valor + "' "
+                                                                                 "where id_medico='" +
+                               id_Medico + "'");
                 QVERIFY(update.exec());
                 update.finish();
 
                 qDebug() << "Calificacion actualizada";
             }
         }
-    }else
+    }
+    else
         qDebug() << "Ingrese calificacion";
 }
 

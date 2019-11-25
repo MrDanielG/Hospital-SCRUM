@@ -77,7 +77,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
         }
     }*/
 
-
+    ui->stackedWidget->insertWidget(25, &catalogoMedicamentos);
+    ui->stackedWidget->insertWidget(26, &catalogoJustificaciones);
 }
 
 MainWindow::~MainWindow()
@@ -313,4 +314,14 @@ void MainWindow::on_btn_remedios_caseros_clicked()
 {
 
     ui->stackedWidget->setCurrentIndex(24);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(25);
+}
+
+void MainWindow::on_justificaciones_pbtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(26);
 }

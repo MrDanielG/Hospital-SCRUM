@@ -155,36 +155,6 @@
     <string>Medico:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="restantes_lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>190</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-border: none;
-border-bottom: 1px solid #818181;</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="habitacion_lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>220</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-border: none;
-border-bottom: 1px solid #818181;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_agregar_internado_2">
    <property name="geometry">
     <rect>
@@ -247,6 +217,26 @@ border-bottom: 1px solid #818181;</string>
    </property>
    <property name="text">
     <string>Dar de baja</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="restantes_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>225</x>
+     <y>195</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="habitacion_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>215</x>
+     <y>225</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
    </property>
   </widget>
  </widget>
