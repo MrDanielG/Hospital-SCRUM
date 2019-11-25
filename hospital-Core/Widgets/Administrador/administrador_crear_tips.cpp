@@ -69,7 +69,7 @@ void administrador_crear_tips::on_btn_crear_clicked()
         {
             QSqlQuery query(mDatabase);
             query.prepare("insert into info(nombre,descripcion,id_tipo_info,id_administrador,imagen) "
-                          "values('"+titulo+"','"+descripcion+"',1,1,'"+imagen+"');");
+                          "values('"+titulo+"','"+descripcion+"',1,2,'"+imagen+"');");
             query.exec();
 
             QMessageBox::information(this, tr("Registrar Tip"),tr("Tip Registrado Correctamente"),
