@@ -44,6 +44,26 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(20, &landpageFarmaceutico);
     ui->stackedWidget->insertWidget(21, &ventaMedicamento);
     ui->stackedWidget->insertWidget(22, &remediosCaseros);
+
+    QSqlQuery buscarid(mDatabase);
+    QStringList numeros;
+    buscarid.prepare("select id_info from info where id_tipo_info = 1");
+    buscarid.exec();
+
+    while (buscarid.next()){
+        numeros.append(buscarid.value(0).toString());
+    }
+
+    int tama = numeros.size();
+
+
+
+    if(ui->stackedWidget->currentIndex() == 0){
+        usuario_tip tip;
+
+        tip.exec();
+    }
+
 }
 
 MainWindow::~MainWindow()

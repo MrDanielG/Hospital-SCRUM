@@ -26,6 +26,7 @@
 #include "Widgets/Farmaceutico/farmaceutico_landpage.h"
 #include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
 #include "Widgets/Paciente/remedios_caseros.h"
+#include "Widgets/Usuario/usuario_tip.h"
 
 namespace Ui
 {
