@@ -57,8 +57,13 @@ private slots:
 //    void buscarFecha();
 
     //Prubas Sara Sprint V
-    void ObtenerDatosMedico();
-    void EnviarCalificacion();
+    //void ObtenerDatosMedico();
+    //void EnviarCalificacion();
+
+    //Pruebas Sara Spintr VI
+    void crearTip();
+    void modificaTip();
+    void eliminaTip();
 
 };
 
@@ -1002,7 +1007,7 @@ void pruebas::VerCitasRealizadas()
 //    }
 //}
 
-void pruebas::ObtenerDatosMedico()
+/*void pruebas::ObtenerDatosMedico()
 {
     QString idMedico="7";
     QSqlQuery query(mDatabase);
@@ -1022,9 +1027,9 @@ void pruebas::ObtenerDatosMedico()
     {
         qDebug() << "Error";
     }
-}
+}*/
 
-void pruebas::EnviarCalificacion()
+/*void pruebas::EnviarCalificacion()
 {
     QString NumEstrellas="4",id_cita="3",id_Medico="7";
 
@@ -1057,6 +1062,64 @@ void pruebas::EnviarCalificacion()
         }
     }else
         qDebug() << "Ingrese calificacion";
+}*/
+
+void pruebas::crearTip()
+{
+    QString titulo = "Toma agua";
+    QString descripcion = "Toma dos litros de agua al día";
+    QString imagen = ":/imagenes/Imagenes/imgTipTest.png";
+    QSqlQuery query(mDatabase);
+    query.prepare("insert into info(nombre,descripcion,id_tipo_info,id_administrador,imagen) "
+                  "values('"+titulo+"','"+descripcion+"',1,1,'"+imagen+"');");
+    QVERIFY(query.exec());
+    if(query.exec())
+    {
+        qDebug() << "Tip registrado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+void pruebas::modificaTip()
+{
+    QString nombre = "Evita el refresco ";
+    QString texto = "El alto consumo de refresco provoca daños a la salud";
+    QString id="4";
+
+    QSqlQuery query1(mDatabase);
+    query1.prepare("UPDATE info SET nombre = '"+nombre+"',descripcion = '"+texto+"' "
+                  " WHERE id_info = '"+id+"';");
+    QVERIFY(query1.exec());
+
+    if(query1.exec())
+    {
+        qDebug() << "Tip modificado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+
+void pruebas::eliminaTip()
+{
+    QString id="2";
+    QSqlQuery query2(mDatabase);
+    query2.prepare("DELETE FROM info WHERE id_info='"+id+"' LIMIT 1;");
+    query2.exec();
+
+    QVERIFY(query2.exec());
+
+    if(query2.exec())
+    {
+        qDebug() << "Tip eiminado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+
 }
 
 QTEST_APPLESS_MAIN(pruebas)

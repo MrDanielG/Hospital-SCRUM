@@ -274,3 +274,8 @@ void MainWindow::on_btnCobroEstancia_clicked()
 {
     ui->stackedWidget->setCurrentIndex(20);
 }
+
+void MainWindow::on_btn_Inicio_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}

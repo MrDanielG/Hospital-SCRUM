@@ -74,6 +74,8 @@ private slots:
     void on_btn_salir_clicked();
     void on_btnCobroEstancia_clicked();
 
+    void on_btn_Inicio_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
