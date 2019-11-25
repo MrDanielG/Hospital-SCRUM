@@ -30,12 +30,16 @@ SOURCES += \
     Clases/pdf_cobro.cpp \
     Clases/pdf_receta.cpp \
         Clases/usuario.cpp \
+    Widgets/Administrador/administrador_catalogo_remedios.cpp \
+    Widgets/Administrador/administrador_crear_remedio.cpp \
         Widgets/Administrador/administrador_crear_servicio.cpp \
         Widgets/Administrador/administrador_crear_usuario.cpp \
     Widgets/Administrador/administrador_horarios_medicos.cpp \
         Widgets/Administrador/administrador_info_servicios.cpp \
+    Widgets/Administrador/administrador_modificar_remedio.cpp \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
+    Widgets/Administrador/administrador_tarjeta_remedio.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_generar_receta.cpp \
@@ -97,12 +101,16 @@ HEADERS += \
     Clases/pdf_cobro.h \
     Clases/pdf_receta.h \
         Clases/usuario.h \
+    Widgets/Administrador/administrador_catalogo_remedios.h \
+    Widgets/Administrador/administrador_crear_remedio.h \
         Widgets/Administrador/administrador_crear_servicio.h \
         Widgets/Administrador/administrador_crear_usuario.h \
     Widgets/Administrador/administrador_horarios_medicos.h \
         Widgets/Administrador/administrador_info_servicios.h \
+    Widgets/Administrador/administrador_modificar_remedio.h \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
+    Widgets/Administrador/administrador_tarjeta_remedio.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_generar_receta.h \
@@ -159,12 +167,16 @@ HEADERS += \
     Widgets/Paciente/paciente_califica_medico.h
 
 FORMS += \
+    Widgets/Administrador/administrador_catalogo_remedios.ui \
+    Widgets/Administrador/administrador_crear_remedio.ui \
         Widgets/Administrador/administrador_crear_servicio.ui \
         Widgets/Administrador/administrador_crear_usuario.ui \
     Widgets/Administrador/administrador_horarios_medicos.ui \
         Widgets/Administrador/administrador_info_servicios.ui \
+    Widgets/Administrador/administrador_modificar_remedio.ui \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
+    Widgets/Administrador/administrador_tarjeta_remedio.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_generar_receta.ui \

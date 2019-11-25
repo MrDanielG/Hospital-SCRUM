@@ -123,8 +123,7 @@ border-radius:5px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: none;
-background: none;
+    <string notr="true">background: #f4f4f4;
 border: none;</string>
    </property>
    <property name="readOnly">
@@ -185,68 +184,6 @@ border: none;</string>
    </property>
    <property name="text">
     <string>Fecha Cita</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_folio">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>110</y>
-     <width>61</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS Shell Dlg 2</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: #f4f4f4;</string>
-   </property>
-   <property name="text">
-    <string>Folio</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>110</y>
-     <width>32</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS Shell Dlg 2</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: #f4f4f4;</string>
-   </property>
-   <property name="text">
-    <string>Folio:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -393,6 +330,68 @@ border: none;</string>
    <property name="text">
     <string>CALIFICAR</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>110</y>
+     <width>98</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #f4f4f4;</string>
+      </property>
+      <property name="text">
+       <string>Folio:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_folio">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #f4f4f4;</string>
+      </property>
+      <property name="text">
+       <string>Folio</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <zorder>label</zorder>
   <zorder>label_2</zorder>
