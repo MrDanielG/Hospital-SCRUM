@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(20, &landpageFarmaceutico);
     ui->stackedWidget->insertWidget(21, &ventaMedicamento);
     ui->stackedWidget->insertWidget(22, &catalogoMedicamentos);
+    ui->stackedWidget->insertWidget(23, &catalogoJustificaciones);
 
 }
 
@@ -258,4 +259,9 @@ void MainWindow::on_realizarVenta_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(22);
+}
+
+void MainWindow::on_justificaciones_pbtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(23);
 }

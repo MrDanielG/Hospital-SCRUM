@@ -26,6 +26,7 @@
 #include "Widgets/Farmaceutico/farmaceutico_landpage.h"
 #include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
 #include "Widgets/Farmaceutico/farmaceutico_medicamentos.h"
+#include "Widgets/Administrador/administrador_justificacion_staff.h"
 
 namespace Ui
 {
@@ -72,6 +73,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_justificaciones_pbtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
@@ -96,6 +99,7 @@ private:
     farmaceutico_landpage landpageFarmaceutico;
     farmaceutico_realizarVentas ventaMedicamento;
     farmaceutico_medicamentos catalogoMedicamentos;
+    administrador_justificacion_staff catalogoJustificaciones;
 
     int index;
     QString sesion="";

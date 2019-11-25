@@ -89,7 +89,10 @@ SOURCES += \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.cpp \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.cpp \
     Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.cpp \
-    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.cpp
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.cpp \
+    Widgets/Administrador/administrador_justificacion_staff.cpp \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.cpp \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -154,7 +157,10 @@ HEADERS += \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.h \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.h \
     Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.h \
-    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.h
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.h \
+    Widgets/Administrador/administrador_justificacion_staff.h \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.h \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.h
 
 FORMS += \
         Widgets/Administrador/administrador_crear_servicio.ui \
@@ -217,7 +223,10 @@ FORMS += \
     Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.ui \
     Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.ui \
     Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.ui \
-    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.ui
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.ui \
+    Widgets/Administrador/administrador_justificacion_staff.ui \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.ui \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
