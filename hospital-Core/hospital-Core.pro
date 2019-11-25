@@ -50,6 +50,7 @@ SOURCES += \
         Widgets/Medico/medico_solicitudes.cpp \
     Widgets/Medico/medico_tarjeta_cita.cpp \
     Widgets/Medico/medico_tarjeta_citarechazada.cpp \
+    Widgets/Medico/tarjeta_permiso.cpp \
     Widgets/Paciente/paciente_crear_cita.cpp \
     Widgets/Paciente/paciente_gestionar_citas.cpp \
         Widgets/Paciente/paciente_landpage.cpp \
@@ -120,6 +121,7 @@ HEADERS += \
         Widgets/Medico/medico_solicitudes.h \
     Widgets/Medico/medico_tarjeta_cita.h \
     Widgets/Medico/medico_tarjeta_citarechazada.h \
+    Widgets/Medico/tarjeta_permiso.h \
     Widgets/Paciente/paciente_crear_cita.h \
     Widgets/Paciente/paciente_gestionar_citas.h \
         Widgets/Paciente/paciente_landpage.h \
@@ -185,6 +187,7 @@ FORMS += \
         Widgets/Medico/medico_solicitudes.ui \
     Widgets/Medico/medico_tarjeta_cita.ui \
     Widgets/Medico/medico_tarjeta_citarechazada.ui \
+    Widgets/Medico/tarjeta_permiso.ui \
     Widgets/Paciente/paciente_crear_cita.ui \
     Widgets/Paciente/paciente_gestionar_citas.ui \
         Widgets/Paciente/paciente_landpage.ui \

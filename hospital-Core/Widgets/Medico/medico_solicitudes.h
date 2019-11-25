@@ -17,7 +17,10 @@ class medico_solicitudes : public QWidget
 public:
     explicit medico_solicitudes(QWidget *parent = nullptr);
     ~medico_solicitudes();
-    void setIdMedico(QString);
+    void setIdEmpleado(QString);
+    void setIdPersona(QString);
+    void setUsuario(QString);
+    QString getUsuario();
     void limpiarCatalogo();
     void inicializar();
 
@@ -28,9 +31,13 @@ private slots:
 
     void on_btn_solicitudesAprobadas_clicked();
 
+    void on_comboPermiso_activated(const QString &arg1);
+
+    void on_btn_solicitar_permiso_clicked();
+
 private:
     Ui::medico_solicitudes *ui;
-    QString idMedico;
+    QString idEmpleado,idPersona,usuario;
     QSqlDatabase mDatabase;
 };
 
