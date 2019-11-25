@@ -18,6 +18,7 @@ public:
     explicit administrador_tarjeta_remedio(QString, QString, QString, QString, administrador_catalogo_remedios *parent = nullptr);
     ~administrador_tarjeta_remedio();
     void llenarTarjeta();
+    void actualizarTarjeta();
 
 private slots:
 

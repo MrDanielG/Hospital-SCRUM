@@ -42,6 +42,16 @@ void administrador_tarjeta_remedio::llenarTarjeta()
     ui->img_remedio->setPixmap(img);
 }
 
+void administrador_tarjeta_remedio::actualizarTarjeta()
+{
+    QSqlQuery query(mDatabase);
+    query.exec("SELECT nombre, descripcion, imagen FROM info WHERE id_info = "+this->id);
+    query.next();
+    this->nombre = query.value("nombre").toString();
+    this->descripcion = query.value("descripcion").toString();
+    this->foto = query.value("imagen").toString();
+}
+
 administrador_tarjeta_remedio::~administrador_tarjeta_remedio()
 {
     delete ui;
@@ -51,7 +61,8 @@ void administrador_tarjeta_remedio::on_btn_modificar_clicked()
 {
     administrador_modificar_remedio modificarRemedio(this->id, this->nombre, this->descripcion, this->foto, this);
     modificarRemedio.exec();
-    //this->padre->actualizarCatalogo();
+    actualizarTarjeta(); //Se actualiza la tarjeta en lugar de todo el catalogo
+    llenarTarjeta();
 }
 
 void administrador_tarjeta_remedio::on_btn_eliminar_clicked()
