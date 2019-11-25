@@ -384,6 +384,9 @@ border-radius: 50px;</string>
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -558,6 +561,9 @@ border-radius: 50px;</string>
         <family>Montserrat</family>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
     </item>

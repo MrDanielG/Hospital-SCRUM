@@ -1,6 +1,8 @@
 #include "medico_solicitudes.h"
 #include "ui_medico_solicitudes.h"
 #include "Widgets/Medico/tarjeta_permiso.h"
+#include <QDate>
+#include "QMessageBox"
 
 medico_solicitudes::medico_solicitudes(QWidget *parent) :
     QWidget(parent),
@@ -29,8 +31,12 @@ medico_solicitudes::medico_solicitudes(QWidget *parent) :
     ui->lbl_nombre->hide();
     ui->label_9->hide();
     ui->date_fecha_Inicio->hide();
+    ui->date_fecha_Inicio->setDate(QDate::currentDate());
+    ui->date_fecha_Inicio->setMinimumDate(QDate::currentDate());
     ui->label_12->hide();
     ui->date_fecha_Fin->hide();
+    ui->date_fecha_Fin->setDate(QDate::currentDate());
+     ui->date_fecha_Fin->setMinimumDate(QDate::currentDate().addDays(1));
     ui->label_13->hide();
     ui->txt_motivo->hide();
     ui->btn_solicitar_permiso->hide();
@@ -186,6 +192,14 @@ void medico_solicitudes::inicializar()
 
 void medico_solicitudes::on_comboPermiso_activated(const QString &arg1)
 {
+    QSqlQuery query(mDatabase);
+    query.prepare("SELECT nombre, paterno, materno,foto FROM persona WHERE id_persona="+this->idPersona);
+    query.exec();
+    query.next();
+    ui->lbl_nombre->setText(query.value(0).toString()+" "+query.value(1).toString()+" "+query.value(2).toString());
+    QPixmap imag(query.value(3).toString());
+    ui->label_foto->setPixmap(imag);
+
     if(arg1=="--Tipo de Permiso--")
     {
         ui->label_foto->hide();
@@ -230,4 +244,57 @@ void medico_solicitudes::on_comboPermiso_activated(const QString &arg1)
             }
         }
     }
+}
+
+void medico_solicitudes::on_btn_solicitar_permiso_clicked()
+{
+    QSqlQuery query(mDatabase);
+    QString descripcion=ui->txt_motivo->toPlainText();
+    QString fecha_inicio=ui->date_fecha_Inicio->date().toString("yyyy-MM-dd");
+    QString fecha_fin=ui->date_fecha_Fin->date().toString("yyyy-MM-dd");
+
+    QMessageBox info;
+
+    if(descripcion!="")
+    {
+        QMessageBox msgBox(QMessageBox::Question,"ADVERTENCIA","¿Estas seguro de solicitar este permiso?",QMessageBox::Yes|QMessageBox::No);
+                           msgBox.setButtonText(QMessageBox::Yes,"Sí");
+                           msgBox.setButtonText(QMessageBox::No,"No");
+
+        if(msgBox.exec()==QMessageBox::Yes)
+        {
+            if(ui->comboPermiso->currentText()=="Baja Temporal")
+            {
+                query.prepare("");
+                query.exec();
+
+            }else{
+                if(ui->comboPermiso->currentText()=="Baja Definitiva")
+                {
+                    query.prepare("");
+                    query.exec();
+                }
+            }
+            info.setWindowTitle("Información");
+            info.setText("Permiso solicitado con éxito, espera la respuesta del administrador.");
+            info.setStandardButtons(QMessageBox::Ok);
+            info.setDefaultButton(QMessageBox::Ok);
+            info.setButtonText(QMessageBox::Ok,"Aceptar");
+            info.exec();
+
+         }
+    }else
+    {
+        info.setWindowTitle("Información");
+        info.setText("Debes escribir el motivo por el cual pediras tu permiso.");
+        info.setStandardButtons(QMessageBox::Ok);
+        info.setDefaultButton(QMessageBox::Ok);
+        info.setButtonText(QMessageBox::Ok,"Aceptar");
+        info.exec();
+    }
+
+
+    ui->txt_motivo->clear();
+    inicializar();
+
 }

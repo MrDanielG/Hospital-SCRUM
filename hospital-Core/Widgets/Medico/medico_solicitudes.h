@@ -33,6 +33,8 @@ private slots:
 
     void on_comboPermiso_activated(const QString &arg1);
 
+    void on_btn_solicitar_permiso_clicked();
+
 private:
     Ui::medico_solicitudes *ui;
     QString idEmpleado,idPersona,usuario;
