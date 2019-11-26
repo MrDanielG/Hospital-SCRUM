@@ -47,8 +47,29 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(22, &landpageFarmaceutico);
     ui->stackedWidget->insertWidget(23, &ventaMedicamento);
     ui->stackedWidget->insertWidget(24, &remediosCaseros);
+    ui->stackedWidget->insertWidget(25, &catalogoMedicamentos);
+    ui->stackedWidget->insertWidget(26, &catalogoJustificaciones);
 
-    /*QSqlQuery buscarid(mDatabase);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::setindex(int index)
+{
+    this->index = index;
+}
+
+QString MainWindow::getNombreUsuario()
+{
+    return this->datosLogin.nombre_usuario;
+}
+
+void MainWindow::CrearTip()
+{
+    QSqlQuery buscarid(mDatabase);
     QStringList numeros;
     buscarid.prepare("select id_info from info where id_tipo_info = 1");
     buscarid.exec();
@@ -75,29 +96,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
             tips.insertarDatos(id, nombre, foto, descripcion);
             tips.exec();
         }
-    }*/
+    }
 
-    ui->stackedWidget->insertWidget(25, &catalogoMedicamentos);
-    ui->stackedWidget->insertWidget(26, &catalogoJustificaciones);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-void MainWindow::setindex(int index)
-{
-    this->index = index;
-}
-
-QString MainWindow::getNombreUsuario()
-{
-    return this->datosLogin.nombre_usuario;
 }
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
+    CrearTip();
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 

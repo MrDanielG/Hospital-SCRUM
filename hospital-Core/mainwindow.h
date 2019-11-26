@@ -48,6 +48,7 @@ public:
     ~MainWindow();
     void setindex(int index);
     QString getNombreUsuario();
+    void CrearTip();
 
 private slots:
     void on_btn_iniciar_sesion_clicked();
