@@ -77,6 +77,18 @@
        </item>
        <item>
         <widget class="QLabel" name="foto">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>125</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>125</width>
+           <height>125</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color:none;</string>
          </property>
@@ -85,6 +97,9 @@
          </property>
          <property name="pixmap">
           <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgTipTest.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
