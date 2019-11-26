@@ -1,5 +1,7 @@
 #include "administrador_visualizar_justificacion_staff.h"
 #include "ui_administrador_visualizar_justificacion_staff.h"
+#include <QMessageBox>
+#include <QDebug>
 
 administrador_visualizar_justificacion_staff::administrador_visualizar_justificacion_staff(QString id, QString nombre, QString motivo, QWidget *parent) :
     QDialog(parent),
@@ -40,4 +42,38 @@ void administrador_visualizar_justificacion_staff::insertarDatos()
 //    ui->nombre->setText(nombre);
 //    ui->motivo->setPlainText(motivo);
 //    ui->id->setText(id);
+}
+
+void administrador_visualizar_justificacion_staff::on_pbtn_cancelar_clicked()
+{
+    QSqlQuery query(mDatabase);
+    QString sql = "update permiso set aprobado = 3 where id_permiso = "+id+";" ;
+    query.prepare(sql);
+    QMessageBox messageBox(QMessageBox::Question,tr("Critical Error"), tr("Estás seguro de rechazar ésta justificacion?"), QMessageBox::Yes | QMessageBox::No);
+
+    messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+    messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+    if (messageBox.exec() == QMessageBox::Yes){
+        query.exec();
+    }
+
+    this->close();
+}
+
+void administrador_visualizar_justificacion_staff::on_pbtn_aprobar_clicked()
+{
+    QSqlQuery query(mDatabase);
+    QString sql = "update permiso set aprobado = 2 where id_permiso = "+id+";" ;
+    query.prepare(sql);
+    QMessageBox messageBox(QMessageBox::Question,tr("Critical Error"), tr("Estás seguro de aceptar ésta justificacion?"), QMessageBox::Yes | QMessageBox::No);
+
+    messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+    messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+    if (messageBox.exec() == QMessageBox::Yes){
+        query.exec();
+    }
+
+    this->close();
 }
