@@ -91,6 +91,10 @@ private slots:
 
     void on_btn_Inicio_clicked();
 
+    void on_btn_Solicitudes_Staff_clicked();
+
+    void on_btn_solicitudes_farmaceutico_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;

@@ -155,10 +155,14 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     }
     else if (this->index == 5)
     {
+        ui->stackedWidget->setCurrentIndex(0);
+        ui->stackedWidget_2->setCurrentIndex(4);
+
         // Enfermera
     }
     else if (this->index == 6)
     {
+
         //Cajero
     }
     else if (this->index == 7)
@@ -335,4 +339,56 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_justificaciones_pbtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(26);
+}
+
+void MainWindow::on_btn_Solicitudes_Staff_clicked()
+{
+    QString usuario = solicitudesMedico.getUsuario(), idPer, idEmp, idMed;
+
+    QSqlQuery query(mDatabase);
+    QSqlQuery query1(mDatabase);
+    qDebug() << "Usuario: " << usuario;
+    query.prepare("select id_persona from persona where id_usuario='" + usuario + "'");
+    query.exec();
+    query.next();
+    idPer = query.value(0).toString();
+    qDebug() << "idPer: " << idPer;
+
+    query1.prepare("select id_empleado from empleado where id_persona='" + idPer + "'");
+    query1.exec();
+    query1.next();
+    idEmp = query1.value(0).toString();
+    qDebug() << "idEmp: " << idEmp;
+
+    solicitudesMedico.setIdEmpleado(idEmp);
+    solicitudesMedico.setIdPersona(idPer);
+    solicitudesMedico.inicializar();
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+
+
+void MainWindow::on_btn_solicitudes_farmaceutico_clicked()
+{
+    QString usuario = solicitudesMedico.getUsuario(), idPer, idEmp, idMed;
+
+    QSqlQuery query(mDatabase);
+    QSqlQuery query1(mDatabase);
+    qDebug() << "Usuario: " << usuario;
+    query.prepare("select id_persona from persona where id_usuario='" + usuario + "'");
+    query.exec();
+    query.next();
+    idPer = query.value(0).toString();
+    qDebug() << "idPer: " << idPer;
+
+    query1.prepare("select id_empleado from empleado where id_persona='" + idPer + "'");
+    query1.exec();
+    query1.next();
+    idEmp = query1.value(0).toString();
+    qDebug() << "idEmp: " << idEmp;
+
+    solicitudesMedico.setIdEmpleado(idEmp);
+    solicitudesMedico.setIdPersona(idPer);
+    solicitudesMedico.inicializar();
+    ui->stackedWidget->setCurrentIndex(10);
 }

@@ -145,7 +145,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
         QSqlQuery buscaIDPaciente(mDatabase);
         buscaIDPaciente.prepare("select id_paciente from paciente as p "
                                 "inner join persona as per on p.id_persona=per.id_persona "
-                                "where per.nombre='"+idUsuarioPaciente+"';");
+                                "where per.id_usuario='"+idUsuarioPaciente+"';");
         buscaIDPaciente.exec();
         while(buscaIDPaciente.next())
         {
