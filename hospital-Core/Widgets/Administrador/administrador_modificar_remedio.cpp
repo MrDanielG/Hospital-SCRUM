@@ -53,12 +53,14 @@ void administrador_modificar_remedio::on_btn_actualizar_clicked()
         QSqlQuery query(mDatabase);
         query.exec("UPDATE `info` SET `nombre`='"+this->nombre+"',`descripcion`='"+this->descripcion+"',`imagen`='"+this->foto+"' WHERE id_info = '"+this->id+"'");
 
-        QMessageBox::information(this, tr("Actualizar"),
-                     tr("Se actualizo correctamente el remedio"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Actualizacion"), tr("Remedio Actualizado"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
         this->close();
     } else {
-        QMessageBox::information(this, tr("Actualizar"),
-                     tr("No se Actualizo el remedio"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Actualizacion"), tr("Remedio NO Actualizado"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
         this->close();
     }
 }
@@ -69,11 +71,13 @@ void administrador_modificar_remedio::on_btn_foto_clicked()
     qDebug()<<dir << "/directorio";
     if(!dir.isEmpty()){
         this->foto = dir;
-        QMessageBox::information(this, tr("Correcto"),
-                     tr("Imagen agregada correctamente"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Imagen"), tr("Imagen Agregada Correctamente"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
         ui->foto->setPixmap(dir);
     }else{
-        QMessageBox::information(this, tr("Error"),
-                     tr("No se actualizo la imagen"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Imagen"), tr("Imagen NO Agregada"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
     }
 }
