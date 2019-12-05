@@ -2,6 +2,7 @@
 #include "ui_administrador_modificar_usuario.h"
 #include "QDebug"
 #include "QMessageBox"
+#include <QFileDialog>
 administrador_modificar_usuario::administrador_modificar_usuario(QString nombreUsuario, QString tipoUsuario, QString contra, QString nombre, QString paterno, QString materno, QString nacimiento, QString correo, QString sexo, QString foto, QString direccion, QString curp, QString mascota, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::administrador_modificar_usuario)
@@ -122,4 +123,18 @@ void administrador_modificar_usuario::on_btn_crear_usuario_clicked(){
 void administrador_modificar_usuario::on_btn_continuar_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void administrador_modificar_usuario::on_btn_foto_clicked()
+{
+    QString dir = QFileDialog::getOpenFileName(this,tr("Seleccione una imagen"), "/C:/", tr("Archivos de Imagen (* .png,* .jpg)"));
+    if(!dir.isEmpty()){
+    this->foto = dir;
+        QMessageBox::information(this, tr("Correcto"),
+                     tr("Imagen agregada correctamente"));
+
+    }else{
+        QMessageBox::information(this, tr("Error"),
+                     tr("No se inserto ninguna imagen"));
+    }
 }
