@@ -98,6 +98,9 @@
          <property name="pixmap">
           <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgTipTest.png</pixmap>
          </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
