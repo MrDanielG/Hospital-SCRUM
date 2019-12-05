@@ -16,6 +16,8 @@ class catalogo_doctores : public QWidget
 public:
     explicit catalogo_doctores(QWidget *parent = nullptr);
     ~catalogo_doctores();
+    void IniciaCatalogo();
+    void LimpiaCatalgo();
 
 private:
     Ui::catalogo_doctores *ui;

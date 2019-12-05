@@ -6,6 +6,7 @@
 QT       += printsupport
 QT       += core gui
 QT       += core gui sql
+QT       += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -40,6 +41,10 @@ SOURCES += \
         Widgets/Administrador/administrador_modificar_servicios.cpp \
         Widgets/Administrador/administrador_modificar_usuario.cpp \
     Widgets/Administrador/administrador_tarjeta_remedio.cpp \
+    Widgets/Farmaceutico/farmaceutico_landpage.cpp \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.cpp \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.cpp \
     Widgets/Medico/medico_expediente_clinico.cpp \
     Widgets/Medico/medico_generar_receta.cpp \
@@ -56,6 +61,8 @@ SOURCES += \
         Widgets/Paciente/paciente_landpage.cpp \
     Widgets/Paciente/paciente_reagendar_cita.cpp \
     Widgets/Paciente/paciente_tarjeta_cita.cpp \
+    Widgets/Paciente/remedios_caseros.cpp \
+    Widgets/Paciente/tarjeta_remedios.cpp \
     Widgets/Recepcionista/recepcion_tarjeta_citas.cpp \
     Widgets/Recepcionista/recepcionista_citas.cpp \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.cpp \
@@ -79,6 +86,7 @@ SOURCES += \
         Widgets/Usuario/registrar.cpp \
         Widgets/Usuario/tarjeta_doctor.cpp \
         Widgets/Usuario/tarjeta_servicios.cpp \
+    Widgets/Usuario/usuario_tip.cpp \
         main.cpp \
         mainwindow.cpp \
     Widgets/Medico/medico_landpage.cpp \
@@ -94,7 +102,16 @@ SOURCES += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.cpp \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.cpp \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.cpp \
-    Widgets/Paciente/paciente_califica_medico.cpp
+    Widgets/Paciente/paciente_califica_medico.cpp \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.cpp \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.cpp \
+    Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.cpp \
+    Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.cpp \
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.cpp \
+    Widgets/Administrador/administrador_justificacion_staff.cpp \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.cpp \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.cpp \
+    Widgets/Administrador/administrador_tarjeta_tip.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -111,6 +128,10 @@ HEADERS += \
         Widgets/Administrador/administrador_modificar_servicios.h \
         Widgets/Administrador/administrador_modificar_usuario.h \
     Widgets/Administrador/administrador_tarjeta_remedio.h \
+    Widgets/Farmaceutico/farmaceutico_landpage.h \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.h \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.h \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.h \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.h \
     Widgets/Medico/medico_expediente_clinico.h \
     Widgets/Medico/medico_generar_receta.h \
@@ -127,6 +148,8 @@ HEADERS += \
         Widgets/Paciente/paciente_landpage.h \
     Widgets/Paciente/paciente_reagendar_cita.h \
     Widgets/Paciente/paciente_tarjeta_cita.h \
+    Widgets/Paciente/remedios_caseros.h \
+    Widgets/Paciente/tarjeta_remedios.h \
     Widgets/Recepcionista/recepcion_tarjeta_citas.h \
     Widgets/Recepcionista/recepcionista_citas.h \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.h \
@@ -150,6 +173,7 @@ HEADERS += \
         Widgets/Usuario/registrar.h \
         Widgets/Usuario/tarjeta_doctor.h \
         Widgets/Usuario/tarjeta_servicios.h \
+    Widgets/Usuario/usuario_tip.h \
         mainwindow.h \
     Widgets/Medico/medico_landpage.h \
     Widgets/Medico/medico_horario.h \
@@ -164,7 +188,16 @@ HEADERS += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.h \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.h \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h \
-    Widgets/Paciente/paciente_califica_medico.h
+    Widgets/Paciente/paciente_califica_medico.h \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.h \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.h \
+    Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.h \
+    Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.h \
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.h \
+    Widgets/Administrador/administrador_justificacion_staff.h \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.h \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.h \
+    Widgets/Administrador/administrador_tarjeta_tip.h
 
 FORMS += \
     Widgets/Administrador/administrador_catalogo_remedios.ui \
@@ -177,6 +210,10 @@ FORMS += \
         Widgets/Administrador/administrador_modificar_servicios.ui \
         Widgets/Administrador/administrador_modificar_usuario.ui \
     Widgets/Administrador/administrador_tarjeta_remedio.ui \
+    Widgets/Farmaceutico/farmaceutico_landpage.ui \
+    Widgets/Farmaceutico/farmaceutico_realizarventas.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento_venta.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjetasventasencola.ui \
     Widgets/Medico/medico_agregar_alergia_operacion_enfermedad.ui \
     Widgets/Medico/medico_expediente_clinico.ui \
     Widgets/Medico/medico_generar_receta.ui \
@@ -193,6 +230,8 @@ FORMS += \
         Widgets/Paciente/paciente_landpage.ui \
     Widgets/Paciente/paciente_reagendar_cita.ui \
     Widgets/Paciente/paciente_tarjeta_cita.ui \
+    Widgets/Paciente/remedios_caseros.ui \
+    Widgets/Paciente/tarjeta_remedios.ui \
     Widgets/Recepcionista/recepcion_tarjeta_citas.ui \
     Widgets/Recepcionista/recepcionista_citas.ui \
     Widgets/Recepcionista/recepcionista_cobrar_estancia.ui \
@@ -216,6 +255,7 @@ FORMS += \
         Widgets/Usuario/registrar.ui \
         Widgets/Usuario/tarjeta_doctor.ui \
         Widgets/Usuario/tarjeta_servicios.ui \
+    Widgets/Usuario/usuario_tip.ui \
         mainwindow.ui \
     Widgets/Medico/medico_landpage.ui \
     Widgets/Medico/medico_horario.ui \
@@ -230,7 +270,16 @@ FORMS += \
     Widgets/Recepcionista/recepcionista_tarjeta_medicos_internado.ui \
     Widgets/Recepcionista/recepcionista_tarjeta_pacientes_internados.ui \
     Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.ui \
-    Widgets/Paciente/paciente_califica_medico.ui
+    Widgets/Paciente/paciente_califica_medico.ui \
+    Widgets/Farmaceutico/farmaceutico_medicamentos.ui \
+    Widgets/Farmaceutico/farmaceutico_tarjeta_medicamento.ui \
+    Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.ui \
+    Widgets/Farmaceutico/farmaceutico_modificar_medicamentos.ui \
+    Widgets/Farmaceutico/farmaceutico_agregar_medicamento.ui \
+    Widgets/Administrador/administrador_justificacion_staff.ui \
+    Widgets/Administrador/administrador_tarjeta_justificacion_staf.ui \
+    Widgets/Administrador/administrador_visualizar_justificacion_staff.ui \
+    Widgets/Administrador/administrador_tarjeta_tip.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

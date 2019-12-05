@@ -71,12 +71,23 @@ void recepcionista_internados::actualizarCatalogo()
          row = i/4;
          col= i%4;
 
-         recepcionista_tarjeta_internados *tarjeta = new recepcionista_tarjeta_internados(idPaciente, paciente, medico, habitacion, fin, foto);
+         recepcionista_tarjeta_internados *tarjeta = new recepcionista_tarjeta_internados(idPaciente, paciente, medico, habitacion, fin, foto, this);
          tarjeta->insertarDatos();
 
          i++;
          ui->gridLayout_internados->addWidget(tarjeta, row, col);
     }
+}
+
+void recepcionista_internados::insertaPaciente(QString idPaciente)
+{
+    //-----------___-----------------------------------------------------------
+    ui->paciente_linEdit->setText(idPaciente);
+}
+
+void recepcionista_internados::insertaMedico(QString( idMedico))
+{
+    ui->medico_linEdit->setText(idMedico);
 }
 
 void recepcionista_internados::on_btn_agregar_internado_clicked()
@@ -104,7 +115,7 @@ void recepcionista_internados::on_btn_agregar_internado_clicked()
          row = i/3;
          col= i%3;
 
-         recepcionista_tarjeta_medicos_internado *tarjeta = new recepcionista_tarjeta_medicos_internado (idpersona, idmedico, nombre, paterno, materno, calificacion, foto, especialidad);
+         recepcionista_tarjeta_medicos_internado *tarjeta = new recepcionista_tarjeta_medicos_internado (idpersona, idmedico, nombre, paterno, materno, calificacion, foto, especialidad, this);
          tarjeta->insertarDatos();
          i++;
          ui->gridLayout_medicos->addWidget(tarjeta, row, col);
@@ -126,7 +137,7 @@ void recepcionista_internados::on_btn_agregar_internado_clicked()
          row = i/3;
          col= i%3;
 
-         recepcionista_tarjeta_pacientes_internados *tarjeta = new recepcionista_tarjeta_pacientes_internados(id, nombre, paterno, materno, foto, curp);
+         recepcionista_tarjeta_pacientes_internados *tarjeta = new recepcionista_tarjeta_pacientes_internados(id, nombre, paterno, materno, foto, curp, this);
          tarjeta->insertarDatos();
          i++;
          ui->gridLayout_pacientes->addWidget(tarjeta, row, col);

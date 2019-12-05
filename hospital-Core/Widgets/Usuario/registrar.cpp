@@ -87,7 +87,7 @@ void registrar::on_btn_crear_usuario_clicked()
 
         //Se crean las Querys, primero se crea Usuario
         QSqlQuery crearUsuario(mDatabase);
-        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario, mascota) VALUES ('"+this->nombreUsuario+"','"+this->contra+"','"+this->tipoUsuario+"','"+this->mascota+"')");
+        crearUsuario.prepare("INSERT INTO usuario(id_usuario, contrasenia, id_tipo_usuario, mascota) VALUES ('"+this->nombreUsuario+"','"+this->contra+"',"+this->tipoUsuario+",'"+this->mascota+"')");
         crearUsuario.exec();
 
         QSqlQuery crearPersona(mDatabase);

@@ -27,6 +27,13 @@
 #include "Widgets/Administrador/administrador_horarios_medicos.h"
 #include "Widgets/Recepcionista/recepcionista_cobrar_estancia.h"
 #include "Widgets/Administrador/administrador_catalogo_remedios.h"
+#include "Widgets/Farmaceutico/farmaceutico_landpage.h"
+#include "Widgets/Farmaceutico/farmaceutico_realizarventas.h"
+#include "Widgets/Paciente/remedios_caseros.h"
+#include "Widgets/Usuario/usuario_tip.h"
+#include "Widgets/Farmaceutico/farmaceutico_medicamentos.h"
+#include "Widgets/Administrador/administrador_justificacion_staff.h"
+
 namespace Ui
 {
 class MainWindow;
@@ -41,6 +48,7 @@ public:
     ~MainWindow();
     void setindex(int index);
     QString getNombreUsuario();
+    void CrearTip();
 
 private slots:
     void on_btn_iniciar_sesion_clicked();
@@ -73,7 +81,19 @@ private slots:
     void on_btn_horarios_medicos_clicked();
 
     void on_btn_salir_clicked();
-    //void on_btnCobroEstancia_clicked();
+    void on_btnCobroEstancia_clicked();
+    void on_realizarVenta_clicked();
+
+    void on_btn_remedios_caseros_clicked();
+    void on_pushButton_3_clicked();
+
+    void on_justificaciones_pbtn_clicked();
+
+    void on_btn_Inicio_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -100,6 +120,11 @@ private:
     administrador_horarios_medicos horariosMedicos;
     recepcionista_cobrar_estancia cobrarEstancia;
     administrador_catalogo_remedios catalogoRemedios;
+    farmaceutico_landpage landpageFarmaceutico;
+    farmaceutico_realizarVentas ventaMedicamento;
+    remedios_caseros remediosCaseros;
+    farmaceutico_medicamentos catalogoMedicamentos;
+    administrador_justificacion_staff catalogoJustificaciones;
 
     int index;
     QString sesion = "";

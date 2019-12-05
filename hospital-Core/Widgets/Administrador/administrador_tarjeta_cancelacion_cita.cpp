@@ -3,8 +3,9 @@
 #include "Widgets/Administrador/administrador_visualizar_cancelacion_cita.h"
 #include <QLayoutItem>
 #include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
+#include "Widgets/Administrador/administrador_catalogo_cancelacion_cita.h"
 
-administrador_tarjeta_cancelacion_cita::administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, QWidget *parent) :
+administrador_tarjeta_cancelacion_cita::administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, administrador_catalogo_cancelacion_cita *parent) :
     QWidget(parent),
     ui(new Ui::administrador_tarjeta_cancelacion_cita)
 {
@@ -33,6 +34,7 @@ administrador_tarjeta_cancelacion_cita::administrador_tarjeta_cancelacion_cita(Q
     this->hFin = hFin;
     this->foto = foto;
     this->cita = cita;
+    this->padre = parent;
 }
 
 administrador_tarjeta_cancelacion_cita::~administrador_tarjeta_cancelacion_cita()
@@ -73,5 +75,8 @@ void administrador_tarjeta_cancelacion_cita::on_btn_admin_visualizar_cancelacion
     }
     administrador_visualizar_cancelacion_cita dialogo_visualizacion(id, justificacion, this->cita, horaI, horaF);
     dialogo_visualizacion.exec();
+
+    this->padre->limpiarCatalogo();
+    this->padre->actualizarCatalogo();
 
 }

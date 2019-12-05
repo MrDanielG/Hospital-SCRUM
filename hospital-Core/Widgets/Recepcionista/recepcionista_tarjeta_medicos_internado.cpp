@@ -1,8 +1,9 @@
 #include "recepcionista_tarjeta_medicos_internado.h"
 #include "ui_recepcionista_tarjeta_medicos_internado.h"
 #include <QClipboard>
+#include "Widgets/Recepcionista/recepcionista_internados.h"
 
-recepcionista_tarjeta_medicos_internado::recepcionista_tarjeta_medicos_internado(QString idpersona, QString idmedico, QString nombre, QString paterno, QString materno, QString calificacion, QString foto, QString especialidad, QWidget *parent) :
+recepcionista_tarjeta_medicos_internado::recepcionista_tarjeta_medicos_internado(QString idpersona, QString idmedico, QString nombre, QString paterno, QString materno, QString calificacion, QString foto, QString especialidad, recepcionista_internados *parent) :
     QWidget(parent),
     ui(new Ui::recepcionista_tarjeta_medicos_internado)
 {
@@ -30,6 +31,7 @@ recepcionista_tarjeta_medicos_internado::recepcionista_tarjeta_medicos_internado
     this->calificacion = calificacion;
     this->foto = foto;
     this->especialidad = especialidad;
+    this->padre = parent;
 
     ui->estrella1_5->hide();
     ui->estrella1_4->hide();
@@ -83,5 +85,5 @@ void recepcionista_tarjeta_medicos_internado::on_btn_visualizar_clicked()
 {
     QClipboard *clipboard = QApplication::clipboard( );
     clipboard->setText(idmedico);
-
+    this->padre->insertaMedico(idmedico);
 }

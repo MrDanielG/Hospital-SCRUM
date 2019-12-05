@@ -46,3 +46,4 @@ void administrador_info_servicios::on_btn_modificar_clicked()
     modificarServicios.exec();
     this->close();
 }
+

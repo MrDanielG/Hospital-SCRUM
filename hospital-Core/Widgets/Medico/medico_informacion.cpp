@@ -39,7 +39,6 @@ medico_informacion::~medico_informacion()
 
 void medico_informacion::extraerDatos(){
     QSqlQuery query(mDatabase);
-    qDebug()<<"El id obtenidoooooo "+ this->idinfo;
 
     query.prepare("SELECT persona.id_persona, persona.nombre, persona.paterno, "
                   "persona.materno, persona.fNacimiento, persona.correo, persona.foto, usuario.id_usuario "
@@ -104,4 +103,9 @@ void medico_informacion::on_btn_modificar_medico_clicked()
 {
     medico_modificar ventanamodificar(this->idinfo);
     ventanamodificar.exec();
+}
+
+void medico_informacion::on_pushButton_clicked()
+{
+    extraerDatos();
 }

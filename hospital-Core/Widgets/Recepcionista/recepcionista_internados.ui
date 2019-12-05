@@ -220,7 +220,7 @@ color: white;</string>
 color:  white;</string>
      </property>
      <property name="text">
-      <string>Paciente</string>
+      <string>Paciente*</string>
      </property>
     </widget>
     <widget class="QScrollArea" name="scrollArea_3">
@@ -275,7 +275,7 @@ color:  white;</string>
 color: white;</string>
      </property>
      <property name="text">
-      <string>Medico</string>
+      <string>Medico*</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="medico_linEdit">
@@ -290,7 +290,11 @@ color: white;</string>
      <property name="styleSheet">
       <string notr="true">background:#3E64FF;
 border: none;
-border-bottom: 1px solid white;</string>
+border-bottom: 1px solid white;
+color: #ffffff;</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
     <widget class="QScrollArea" name="scrollArea_2">
@@ -369,7 +373,8 @@ border-bottom: 1px solid white;</string>
      <property name="styleSheet">
       <string notr="true">background:#3E64FF;
 border: none;
-border-bottom: 1px solid white;</string>
+border-bottom: 1px solid white;
+color: #ffffff;</string>
      </property>
      <property name="placeholderText">
       <string>yyy-mm-dd</string>
@@ -395,7 +400,7 @@ border-bottom: 1px solid white;</string>
 color: white;</string>
      </property>
      <property name="text">
-      <string>Habitación</string>
+      <string>Habitación*</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="paciente_linEdit">
@@ -410,7 +415,11 @@ color: white;</string>
      <property name="styleSheet">
       <string notr="true">background: #3E64FF;
 border: none;
-border-bottom: 1px solid white;</string>
+border-bottom: 1px solid white;
+color: #ffffff;</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -448,7 +457,8 @@ color: #818181;</string>
      <property name="styleSheet">
       <string notr="true">background:#3E64FF;
 border: none;
-border-bottom: 1px solid white;</string>
+border-bottom: 1px solid white;
+color: #ffffff;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_cancelar_internado">

@@ -44,6 +44,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(19, &citas);
     ui->stackedWidget->insertWidget(20, &cobrarEstancia);
     ui->stackedWidget->insertWidget(21, &catalogoRemedios);
+    ui->stackedWidget->insertWidget(22, &landpageFarmaceutico);
+    ui->stackedWidget->insertWidget(23, &ventaMedicamento);
+    ui->stackedWidget->insertWidget(24, &remediosCaseros);
+    ui->stackedWidget->insertWidget(25, &catalogoMedicamentos);
+    ui->stackedWidget->insertWidget(26, &catalogoJustificaciones);
+
 }
 
 MainWindow::~MainWindow()
@@ -61,8 +67,42 @@ QString MainWindow::getNombreUsuario()
     return this->datosLogin.nombre_usuario;
 }
 
+void MainWindow::CrearTip()
+{
+    QSqlQuery buscarid(mDatabase);
+    QStringList numeros;
+    buscarid.prepare("select id_info from info where id_tipo_info = 1");
+    buscarid.exec();
+
+    while (buscarid.next())
+    {
+        numeros.append(buscarid.value(0).toString());
+    }
+    int tama = numeros.size();
+    int numerorand = qrand() % tama;
+
+    if(tama > 0){
+        QSqlQuery tip(mDatabase);
+        tip.prepare("select * from info where id_tipo_info = 1 and id_info= " + numeros[numerorand]);
+        tip.exec();
+        while (tip.next())
+        {
+            QString id = tip.value(0).toString();
+            QString nombre = tip.value(1).toString();
+            QString descripcion = tip.value(2).toString();
+            QString foto = tip.value(5).toString();
+
+            usuario_tip tips;
+            tips.insertarDatos(id, nombre, foto, descripcion);
+            tips.exec();
+        }
+    }
+
+}
+
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
+
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 
@@ -110,6 +150,8 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     else if (this->index == 4)
     {
         //Farmaceutico
+        ui->stackedWidget->setCurrentIndex(22);
+        ui->stackedWidget_2->setCurrentIndex(5);
     }
     else if (this->index == 5)
     {
@@ -262,8 +304,46 @@ void MainWindow::on_btn_salir_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
-    //    void MainWindow::on_btnCobroEstancia_clicked() quesesto?
-    //    {
-    //        ui->stackedWidget->setCurrentIndex(20);
-    //    }
+}
+
+void MainWindow::on_btnCobroEstancia_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(20);
+}
+
+void MainWindow::on_btn_Inicio_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
+void MainWindow::on_realizarVenta_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(23);
+}
+
+void MainWindow::on_btn_remedios_caseros_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(24);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(25);
+}
+
+void MainWindow::on_justificaciones_pbtn_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(26);
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(22);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }

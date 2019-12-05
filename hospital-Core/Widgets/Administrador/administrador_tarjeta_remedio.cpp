@@ -82,4 +82,5 @@ void administrador_tarjeta_remedio::on_btn_eliminar_clicked()
         QMessageBox::information(this, tr("Eliminar"),
                      tr("No eliminó el remedio"));
     }
+
 }

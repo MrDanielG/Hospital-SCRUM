@@ -28,6 +28,8 @@ public:
 private slots:
     void on_btn_modificar_medico_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::medico_informacion *ui;
     QSqlDatabase mDatabase;
