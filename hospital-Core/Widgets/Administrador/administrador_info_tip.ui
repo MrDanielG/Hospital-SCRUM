@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
-    <height>605</height>
+    <width>715</width>
+    <height>343</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>120</y>
-     <width>681</width>
+     <x>20</x>
+     <y>20</y>
+     <width>661</width>
      <height>291</height>
     </rect>
    </property>
@@ -34,8 +34,8 @@ border-radius: 5px;
   <widget class="QLabel" name="img">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>190</y>
+     <x>40</x>
+     <y>60</y>
      <width>150</width>
      <height>150</height>
     </rect>
@@ -50,60 +50,18 @@ border-radius: 5px;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>185</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat SemiBold</family>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Tip del Dia</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="texto_tip">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>220</y>
-     <width>391</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat Light</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>lorem impsum</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>483</x>
-     <y>350</y>
+     <x>350</x>
+     <y>230</y>
      <width>261</width>
      <height>39</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPushButton" name="btn_eliminar">
+     <widget class="QPushButton" name="btn_cancelar">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -131,12 +89,12 @@ border-radius: 5px;
 }</string>
       </property>
       <property name="text">
-       <string>Eliminar</string>
+       <string>Cacelar</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="btn_modificar">
+     <widget class="QPushButton" name="btn_guardar">
       <property name="minimumSize">
        <size>
         <width>120</width>
@@ -164,11 +122,64 @@ border-radius: 5px;
 }</string>
       </property>
       <property name="text">
-       <string>Modificar</string>
+       <string>Guardar</string>
       </property>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QTextEdit" name="textEditDes">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>100</y>
+     <width>391</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;
+border: none;
+color: black;
+border-bottom: 1px solid #3E64FF;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditNom">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>50</y>
+     <width>301</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;
+border: none;
+color: black;
+border-bottom: 1px solid #3E64FF;</string>
+   </property>
+   <property name="text">
+    <string>Titulo</string>
+   </property>
   </widget>
  </widget>
  <resources>

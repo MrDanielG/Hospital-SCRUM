@@ -1,8 +1,9 @@
 #include "administrador_tarjeta_justificacion_staf.h"
 #include "ui_administrador_tarjeta_justificacion_staf.h"
 #include "Widgets/Administrador/administrador_visualizar_justificacion_staff.h"
+#include "Widgets/Administrador/administrador_justificacion_staff.h"
 
-administrador_tarjeta_justificacion_staf::administrador_tarjeta_justificacion_staf(QString id, QString descripcion, QString fecha_inicio, QString fecha_fin, QString nombre, QString foto, QString tipo, QWidget *parent) :
+administrador_tarjeta_justificacion_staf::administrador_tarjeta_justificacion_staf(QString id, QString descripcion, QString fecha_inicio, QString fecha_fin, QString nombre, QString foto, QString tipo, administrador_justificacion_staff *parent) :
     QWidget(parent),
     ui(new Ui::administrador_tarjeta_justificacion_staf)
 {
@@ -30,6 +31,7 @@ administrador_tarjeta_justificacion_staf::administrador_tarjeta_justificacion_st
     this->nombre = nombre;
     this->foto = foto;
     this->tipo = tipo;
+    this->padre = parent;
 }
 
 administrador_tarjeta_justificacion_staf::~administrador_tarjeta_justificacion_staf()
@@ -51,7 +53,8 @@ void administrador_tarjeta_justificacion_staf::insertarDatos()
 
 void administrador_tarjeta_justificacion_staf::on_visualizar_justificacion_pbtn_clicked()
 {
-    qDebug()<<this->id;
     administrador_visualizar_justificacion_staff dialogo_visualizacion(id, nombre, descripcion);
     dialogo_visualizacion.exec();
+
+    this->padre->actualizarCatalogo();
 }

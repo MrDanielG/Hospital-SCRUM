@@ -121,7 +121,7 @@ void paciente_crear_cita::on_btn_agendarCita_clicked()
 
     }*/
 
-    if(ui->lineMotivo->text().isEmpty() && ui->lineSintomas->text().isEmpty())
+    if(ui->lineMotivo->text().isEmpty() || ui->lineSintomas->text().isEmpty())
     {
         QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos"),
                              QMessageBox::Ok);

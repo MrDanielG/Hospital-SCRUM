@@ -81,13 +81,15 @@ private slots:
     void on_btn_horarios_medicos_clicked();
 
     void on_btn_salir_clicked();
-    //void on_btnCobroEstancia_clicked();
+    void on_btnCobroEstancia_clicked();
     void on_realizarVenta_clicked();
 
     void on_btn_remedios_caseros_clicked();
     void on_pushButton_3_clicked();
 
     void on_justificaciones_pbtn_clicked();
+
+    void on_btn_Inicio_clicked();
 
 private:
     Ui::MainWindow *ui;

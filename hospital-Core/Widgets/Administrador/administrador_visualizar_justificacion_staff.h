@@ -19,6 +19,11 @@ public:
     ~administrador_visualizar_justificacion_staff();
     void insertarDatos();
 
+private slots:
+    void on_pbtn_cancelar_clicked();
+
+    void on_pbtn_aprobar_clicked();
+
 private:
     Ui::administrador_visualizar_justificacion_staff *ui;
     QSqlDatabase mDatabase;

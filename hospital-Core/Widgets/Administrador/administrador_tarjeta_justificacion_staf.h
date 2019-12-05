@@ -6,7 +6,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 
-
+class administrador_justificacion_staff;
 namespace Ui {
 class administrador_tarjeta_justificacion_staf;
 }
@@ -16,7 +16,7 @@ class administrador_tarjeta_justificacion_staf : public QWidget
     Q_OBJECT
 
 public:
-    explicit administrador_tarjeta_justificacion_staf(QString id, QString descripcion, QString fecha_inicio, QString fecha_fin, QString nombre, QString foto, QString tipo, QWidget *parent = nullptr);
+    explicit administrador_tarjeta_justificacion_staf(QString, QString, QString, QString, QString, QString, QString, administrador_justificacion_staff *parent = nullptr);
     ~administrador_tarjeta_justificacion_staf();
     void insertarDatos();
 
@@ -26,6 +26,7 @@ private slots:
 private:
     Ui::administrador_tarjeta_justificacion_staf *ui;
     QSqlDatabase mDatabase;
+    administrador_justificacion_staff *padre;
     QString id, descripcion, fecha_inicio, fecha_fin, nombre, foto, tipo;
 };
 
