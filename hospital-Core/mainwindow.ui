@@ -1387,7 +1387,7 @@ color: white;
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btn_salir_medico_2">
+        <widget class="QPushButton" name="btn_salir_Staff">
          <property name="maximumSize">
           <size>
            <width>100</width>

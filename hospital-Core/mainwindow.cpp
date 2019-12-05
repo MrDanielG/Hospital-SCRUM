@@ -391,12 +391,20 @@ void MainWindow::on_btn_solicitudes_farmaceutico_clicked()
     solicitudesMedico.setIdPersona(idPer);
     solicitudesMedico.inicializar();
     ui->stackedWidget->setCurrentIndex(10);
+}
+
 void MainWindow::on_pushButton_4_clicked()
 {
     ui->stackedWidget->setCurrentIndex(22);
 }
 
 void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_btn_salir_Staff_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
