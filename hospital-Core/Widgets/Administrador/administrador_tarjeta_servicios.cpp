@@ -1,8 +1,9 @@
 #include "administrador_tarjeta_servicios.h"
 #include "ui_administrador_tarjeta_servicios.h"
 #include "Widgets/Administrador/administrador_info_servicios.h"
+#include "Widgets/Administrador/administrador_servicios_hospital.h"
 #include "QDebug"
-administrador_tarjeta_servicios::administrador_tarjeta_servicios(QString id, QString servicio, QString foto, QWidget *parent) :
+administrador_tarjeta_servicios::administrador_tarjeta_servicios(QString id, QString servicio, QString foto, administrador_servicios_hospital *parent) :
     QWidget(parent),
     ui(new Ui::administrador_tarjeta_servicios)
 {
@@ -26,6 +27,7 @@ administrador_tarjeta_servicios::administrador_tarjeta_servicios(QString id, QSt
     this->id = id;
     this->servicio = servicio;
     this->foto = foto;
+    this->padre = parent;
 
     //Se agregan a la UI
     ui->lbl_servicio->setText(servicio);
@@ -54,4 +56,5 @@ void administrador_tarjeta_servicios::on_btn_gestionar_clicked()
     }
     administrador_info_servicios infoServicio(this->id, this->servicio, this->info, this->foto);
     infoServicio.exec();
+    this->padre->regargaCatalogo();
 }
