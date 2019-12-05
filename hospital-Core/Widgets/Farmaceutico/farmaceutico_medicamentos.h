@@ -17,6 +17,7 @@ public:
     explicit farmaceutico_medicamentos(QWidget *parent = nullptr);
     ~farmaceutico_medicamentos();
     void limiparCatalogo();
+    void insertarDatos();
 
 private slots:
     void on_buscar_medicamento_LE_textChanged(const QString &arg1);

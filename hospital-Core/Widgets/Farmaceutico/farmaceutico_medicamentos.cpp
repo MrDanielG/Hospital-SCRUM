@@ -46,7 +46,7 @@ farmaceutico_medicamentos::farmaceutico_medicamentos(QWidget *parent) :
          row = i/4;
          col= i%4;
 
-         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
+         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado, this);
          tarjeta->insertarDatos();
 
          i++;
@@ -66,6 +66,37 @@ void farmaceutico_medicamentos::limiparCatalogo()
         Q_ASSERT(!item->layout());
         delete item->widget();
         delete item;
+    }
+}
+
+void farmaceutico_medicamentos::insertarDatos()
+{
+    QSqlQuery query(mDatabase);
+
+    query.prepare("select * from medicamentos_farmacia;");
+    query.exec();
+
+    int i=0;
+    int row = 0;
+    int col = 0;
+
+    while (query.next()) {
+        QString id = query.value(0).toString();
+        QString nombre = query.value(1).toString();
+        QString tipo = query.value(2).toString();
+        QString descripcion = query.value(3).toString();
+        QString costo = query.value(4).toString();
+        QString cantidad = query.value(5).toString();
+        QString premedicado = query.value(6).toString();
+
+         row = i/4;
+         col= i%4;
+
+         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado, this);
+         tarjeta->insertarDatos();
+
+         i++;
+         ui->gridLayout_medicamentos->addWidget(tarjeta, row, col);
     }
 }
 
@@ -93,7 +124,7 @@ void farmaceutico_medicamentos::on_buscar_medicamento_LE_textChanged(const QStri
          row = i/4;
          col= i%4;
 
-         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
+         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado, this);
          tarjeta->insertarDatos();
 
          i++;
@@ -127,7 +158,7 @@ void farmaceutico_medicamentos::on_btn_agregar_medicamento_clicked()
          row = i/4;
          col= i%4;
 
-         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
+         farmaceutico_tarjeta_medicamento *tarjeta = new farmaceutico_tarjeta_medicamento(id, nombre, tipo, descripcion, costo, cantidad, premedicado, this);
          tarjeta->insertarDatos();
 
          i++;

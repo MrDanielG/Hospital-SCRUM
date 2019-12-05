@@ -336,3 +336,14 @@ void MainWindow::on_justificaciones_pbtn_clicked()
 {
     ui->stackedWidget->setCurrentIndex(26);
 }
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(22);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
+}

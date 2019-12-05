@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">

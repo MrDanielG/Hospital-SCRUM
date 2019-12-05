@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 
+class administrador_catalogo_cancelacion_cita;
 namespace Ui {
 class administrador_tarjeta_cancelacion_cita;
 }
@@ -15,7 +16,7 @@ class administrador_tarjeta_cancelacion_cita : public QWidget
     Q_OBJECT
 
 public:
-    explicit administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, QWidget *parent = nullptr);
+    explicit administrador_tarjeta_cancelacion_cita(QString nombre, QString paterno, QString materno, QString motivo, QString hInicio, QString hFin, QString foto, QString cita, administrador_catalogo_cancelacion_cita *parent = nullptr);
     ~administrador_tarjeta_cancelacion_cita();
     void insertarDatos();
 
@@ -25,6 +26,7 @@ private slots:
 private:
     Ui::administrador_tarjeta_cancelacion_cita *ui;
     QSqlDatabase mDatabase;
+    administrador_catalogo_cancelacion_cita *padre;
     QString nombre, paterno, materno, motivo, hInicio, hFin, foto, cita;
 };
 

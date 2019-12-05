@@ -18,6 +18,8 @@ public:
     ~recepcionista_internados();
     void limiparCatalogo();
     void actualizarCatalogo();
+    void insertaPaciente(QString idPaciente);
+    void insertaMedico(QString idPaciente);
 
 private slots:
     void on_btn_agregar_internado_clicked();

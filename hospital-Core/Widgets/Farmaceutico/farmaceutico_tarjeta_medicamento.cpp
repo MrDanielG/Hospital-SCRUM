@@ -1,8 +1,9 @@
 #include "farmaceutico_tarjeta_medicamento.h"
 #include "ui_farmaceutico_tarjeta_medicamento.h"
 #include "Widgets/Farmaceutico/farmaceutico_gestionar_medicamento.h"
+#include "Widgets/Farmaceutico/farmaceutico_medicamentos.h"
 
-farmaceutico_tarjeta_medicamento::farmaceutico_tarjeta_medicamento(QString id, QString nombre, QString tipo, QString descripcion, QString costo, QString cantidad, QString premedicado, QWidget *parent) :
+farmaceutico_tarjeta_medicamento::farmaceutico_tarjeta_medicamento(QString id, QString nombre, QString tipo, QString descripcion, QString costo, QString cantidad, QString premedicado, farmaceutico_medicamentos *parent) :
     QWidget(parent),
     ui(new Ui::farmaceutico_tarjeta_medicamento)
 {
@@ -30,6 +31,7 @@ farmaceutico_tarjeta_medicamento::farmaceutico_tarjeta_medicamento(QString id, Q
     this->costo = costo;
     this->cantidad = cantidad;
     this->premedicado = premedicado;
+    this->padre = parent;
 }
 
 farmaceutico_tarjeta_medicamento::~farmaceutico_tarjeta_medicamento()
@@ -58,19 +60,22 @@ void farmaceutico_tarjeta_medicamento::on_btn_agregar_medicamento_clicked()
     farmaceutico_gestionar_medicamento dialogo(id, nombre, tipo, descripcion, costo, cantidad, premedicado);
     dialogo.insertarDatos();
     dialogo.exec();
-    QSqlQuery query(mDatabase);
-    QString sql="select * from medicamentos_farmacia where id_medicamentos_farmacia = "+id+";";
-    query.prepare(sql);
-    query.exec();
+//    QSqlQuery query(mDatabase);
+//    QString sql="select * from medicamentos_farmacia where id_medicamentos_farmacia = "+id+";";
+//    query.prepare(sql);
+//    query.exec();
 
-    while(query.next()){
-        this->nombre = query.value(1).toString();
-        this->tipo = query.value(2).toString();
-        this->descripcion = query.value(3).toString();
-        this->costo = query.value(4).toString();
-        this->cantidad = query.value(5).toString();
-        this->premedicado = query.value(6).toString();
-    }
+//    while(query.next()){
+//        this->nombre = query.value(1).toString();
+//        this->tipo = query.value(2).toString();
+//        this->descripcion = query.value(3).toString();
+//        this->costo = query.value(4).toString();
+//        this->cantidad = query.value(5).toString();
+//        this->premedicado = query.value(6).toString();
+//    }
 
-    insertarDatos();
+    this->padre->limiparCatalogo();
+    this->padre->insertarDatos();
+
+//    insertarDatos();
 }
