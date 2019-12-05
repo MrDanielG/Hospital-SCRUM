@@ -13,5 +13,6 @@
         <file>Imagenes/calendario.png</file>
         <file>Imagenes/star.png</file>
         <file>Imagenes/starn.png</file>
+        <file>Imagenes/refresh.png</file>
     </qresource>
 </RCC>

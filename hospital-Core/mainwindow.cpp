@@ -102,7 +102,7 @@ void MainWindow::CrearTip()
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    CrearTip();
+
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 

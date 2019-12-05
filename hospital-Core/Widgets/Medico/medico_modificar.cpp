@@ -1,6 +1,7 @@
 #include "medico_modificar.h"
 #include "ui_medico_modificar.h"
 #include <QFileDialog>
+#include "Widgets/Medico/medico_informacion.h"
 
 medico_modificar::medico_modificar(QString id, QWidget *parent) :
     QDialog(parent),
@@ -61,8 +62,6 @@ medico_modificar::medico_modificar(QString id, QWidget *parent) :
         insertarDatos(experiencia,logros,estudios,cedula,nombre,paterno,materno,correo,foto,direccion,contrasenia,mascota);
     }
 
-
-
 }
 
 medico_modificar::~medico_modificar()
@@ -86,8 +85,6 @@ void medico_modificar::insertarDatos(QString experiencia, QString logros, QStrin
     ui->LineExperiencia->setText(experiencia);
     QPixmap img(foto);
     ui->LabelFoto->setPixmap(img.scaled(120,120, Qt::IgnoreAspectRatio));
-
-
 }
 
 void medico_modificar::on_pushButton_2_clicked()
@@ -110,7 +107,6 @@ void medico_modificar::on_btnModificarDatos_clicked()
     QString Direccion = ui->LineDireccion->text();
     QString Contrasenia = ui->LineContrasenia->text();
     QString Experiencia = ui->LineExperiencia->text();
-
 
 
     QMessageBox msgBox;
@@ -157,6 +153,8 @@ void medico_modificar::on_btnFoto_clicked()
     if(!dir.isEmpty()){
         QPixmap img(dir);
         ui->LabelFoto->setPixmap(img.scaled(120,120, Qt::IgnoreAspectRatio));
+
+        qDebug()<<"Fotto "<<ui->LabelFoto->pixmap();
         this->Foto = dir;
 
         QMessageBox::information(this, tr("Correcto"),
