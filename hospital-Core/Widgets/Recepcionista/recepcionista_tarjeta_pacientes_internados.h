@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 
+class recepcionista_internados;
 namespace Ui {
 class recepcionista_tarjeta_pacientes_internados;
 }
@@ -15,7 +16,7 @@ class recepcionista_tarjeta_pacientes_internados : public QWidget
     Q_OBJECT
 
 public:
-    explicit recepcionista_tarjeta_pacientes_internados(QString id, QString nombre, QString paterno, QString materno, QString foto, QString curp, QWidget *parent = nullptr);
+    explicit recepcionista_tarjeta_pacientes_internados(QString id, QString nombre, QString paterno, QString materno, QString foto, QString curp, recepcionista_internados *parent = nullptr);
     ~recepcionista_tarjeta_pacientes_internados();
     void insertarDatos();
 
@@ -25,6 +26,7 @@ private slots:
 private:
     Ui::recepcionista_tarjeta_pacientes_internados *ui;
     QSqlDatabase mDatabase;
+    recepcionista_internados *padre;
     QString id, nombre, paterno, materno, foto, curp;
 };
 

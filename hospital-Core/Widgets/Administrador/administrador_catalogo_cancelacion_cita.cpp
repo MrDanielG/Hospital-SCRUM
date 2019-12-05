@@ -44,7 +44,7 @@ administrador_catalogo_cancelacion_cita::administrador_catalogo_cancelacion_cita
          row = i/4;
          col= i%4;
 
-         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita);
+         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita, this);
          tarjeta->insertarDatos();
 
          i++;
@@ -90,7 +90,7 @@ void administrador_catalogo_cancelacion_cita::actualizarCatalogo()
          row = i/4;
          col= i%4;
 
-         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita);
+         administrador_tarjeta_cancelacion_cita *tarjeta = new administrador_tarjeta_cancelacion_cita(nombre, paterno, materno, morivo, hInicio, hFin, foto, cita, this);
          tarjeta->insertarDatos();
 
          i++;

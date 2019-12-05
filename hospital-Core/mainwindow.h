@@ -94,6 +94,9 @@ private slots:
     void on_btn_Solicitudes_Staff_clicked();
 
     void on_btn_solicitudes_farmaceutico_clicked();
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -102,7 +102,7 @@ void MainWindow::CrearTip()
 
 void MainWindow::on_btn_iniciar_sesion_clicked()
 {
-    CrearTip();
+
     inicar_sesion dialogo_iniciar_sesion(&(this->datosLogin));
     dialogo_iniciar_sesion.exec();
 
@@ -391,4 +391,13 @@ void MainWindow::on_btn_solicitudes_farmaceutico_clicked()
     solicitudesMedico.setIdPersona(idPer);
     solicitudesMedico.inicializar();
     ui->stackedWidget->setCurrentIndex(10);
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(22);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget_2->setCurrentIndex(0);
 }

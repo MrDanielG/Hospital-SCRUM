@@ -291,7 +291,7 @@ color: white;</string>
       <string notr="true">background:#3E64FF;
 border: none;
 border-bottom: 1px solid white;
-color: #818181;</string>
+color: #ffffff;</string>
      </property>
      <property name="text">
       <string/>
@@ -374,7 +374,7 @@ color: #818181;</string>
       <string notr="true">background:#3E64FF;
 border: none;
 border-bottom: 1px solid white;
-color: #818181;</string>
+color: #ffffff;</string>
      </property>
      <property name="placeholderText">
       <string>yyy-mm-dd</string>
@@ -416,7 +416,7 @@ color: white;</string>
       <string notr="true">background: #3E64FF;
 border: none;
 border-bottom: 1px solid white;
-color: #818181;</string>
+color: #ffffff;</string>
      </property>
      <property name="text">
       <string/>
@@ -458,7 +458,7 @@ color: #818181;</string>
       <string notr="true">background:#3E64FF;
 border: none;
 border-bottom: 1px solid white;
-color: #818181;</string>
+color: #ffffff;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_cancelar_internado">

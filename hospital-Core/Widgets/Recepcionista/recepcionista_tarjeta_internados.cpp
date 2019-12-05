@@ -1,7 +1,8 @@
 #include "recepcionista_tarjeta_internados.h"
 #include "ui_recepcionista_tarjeta_internados.h"
 #include "Widgets/Recepcionista/recepcionista_dialogo_gestionar_internado.h"
-recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString id_paciente, QString paciente, QString medico, QString habitacion, QDate fecha_fin, QString foto, QWidget *parent) :
+#include "Widgets/Recepcionista/recepcionista_internados.h"
+recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString id_paciente, QString paciente, QString medico, QString habitacion, QDate fecha_fin, QString foto, recepcionista_internados *parent) :
     QWidget(parent),
     ui(new Ui::recepcionista_tarjeta_internados)
 {
@@ -28,6 +29,7 @@ recepcionista_tarjeta_internados::recepcionista_tarjeta_internados(QString id_pa
     this->habitacion = habitacion ;
     this->fecha_fin = fecha_fin;
     this->foto = foto;
+    this->padre = parent;
 }
 
 recepcionista_tarjeta_internados::~recepcionista_tarjeta_internados()
@@ -53,4 +55,6 @@ void recepcionista_tarjeta_internados::on_btn_gestionar_internado_clicked()
     recepcionista_dialogo_gestionar_internado dialogo(idPaciente, paciente, medico, habitacion, fecha_fin, foto);
     dialogo.insertarDatos();
     dialogo.exec();
+    this->padre->limiparCatalogo();
+    this->padre->actualizarCatalogo();
 }
