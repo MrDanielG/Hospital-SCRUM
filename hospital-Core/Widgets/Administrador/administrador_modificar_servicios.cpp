@@ -2,6 +2,7 @@
 #include "ui_administrador_modificar_servicios.h"
 #include "QDebug"
 #include "QMessageBox"
+#include <QFileDialog>
 administrador_modificar_servicios::administrador_modificar_servicios(QString id_servicio, QString nombre, QString info, QString foto, QWidget *parent) :
     QDialog(parent),
      ui(new Ui::administrador_modificar_servicios)
@@ -47,7 +48,6 @@ void administrador_modificar_servicios::on_btn_modificar_clicked()
     if(msgBox.exec() == QMessageBox::Yes){
         this->nombre = ui->nombre_servicio->text();
         this->info = ui->info_servicio->toPlainText();
-        this->foto = "C:/img/imgServicio1.png"; //Momentanea en lo que se agrega funcionalidad a la img
         QSqlQuery query(mDatabase);
         query.prepare("UPDATE `info` SET `nombre`='"+this->nombre+"',`descripcion`='"+this->info+"',`imagen`='"+this->foto+"' WHERE id_info = '"+this->id_servicio+"'");
         query.exec();
@@ -61,5 +61,22 @@ void administrador_modificar_servicios::on_btn_modificar_clicked()
         messageBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
         messageBox2.exec();
         this->close();
+    }
+}
+
+void administrador_modificar_servicios::on_btn_foto_clicked()
+{
+    QString dir = QFileDialog::getOpenFileName(this,tr("Seleccione una imagen"), "/C:/", tr("Archivos de Imagen (* .png,* .jpg)"));
+    qDebug()<<dir << "/directorio";
+    if(!dir.isEmpty()){
+        this->foto = dir;
+        QMessageBox msgBox(QMessageBox::Warning,tr("Imagen"), tr("Imagen Agregada Correctamente"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
+        ui->img->setPixmap(dir);
+    }else{
+        QMessageBox msgBox(QMessageBox::Warning,tr("Imagen"), tr("Imagen NO Agregada"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
     }
 }

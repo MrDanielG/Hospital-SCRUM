@@ -19,6 +19,8 @@ public:
 private slots:
     void on_btn_modificar_clicked();
 
+    void on_btn_foto_clicked();
+
 private:
     Ui::administrador_modificar_servicios *ui;
     QSqlDatabase mDatabase;
