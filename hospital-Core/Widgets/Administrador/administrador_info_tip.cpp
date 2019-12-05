@@ -59,27 +59,28 @@ void administrador_info_tip::on_btn_guardar_clicked()
 {
     if(ui->lineEditNom->text().isEmpty() || ui->textEditDes->toPlainText().isEmpty())
     {
-        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos."),
-                             QMessageBox::Ok);
+        QMessageBox msgBox(QMessageBox::Warning,tr("Campos"), tr("Ingrese todos los Campos"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
     }else
     {
         QString nuevoNombre,nuevoTexto;
         nuevoNombre = ui->lineEditNom->text();
         nuevoTexto = ui->textEditDes->toPlainText();
 
-        QMessageBox::StandardButton Confirmacion;
-        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de guardar esta información?",
-                                             QMessageBox::Yes | QMessageBox::No);
+        QMessageBox msgBox(QMessageBox::Warning,tr("Confirmar"), tr("Desea guardar esta información"), QMessageBox::Yes | QMessageBox::No);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Si"));
 
-        if(Confirmacion == QMessageBox::Yes)
+        if(msgBox.exec() == QMessageBox::Yes)
         {
             QSqlQuery query1(mDatabase);
             query1.prepare("UPDATE info SET nombre = '"+nuevoNombre+"',descripcion = '"+nuevoTexto+"' "
                           " WHERE id_info = '"+idTip+"';");
             query1.exec();
 
-            QMessageBox::information(this, tr("Modificar Tip"),tr("Tip Actualizado Correctamente"),
-                                          QMessageBox::Ok);
+            QMessageBox msgBox(QMessageBox::Warning,tr("Éxito"), tr("Tip Actualizado Correctamente"), QMessageBox::Yes);
+            msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+            msgBox.exec();
 
             this->close();
         }

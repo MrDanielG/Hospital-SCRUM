@@ -47,8 +47,9 @@ void administrador_crear_servicio::on_btn_crear_clicked()
         query.prepare("INSERT INTO `info`(`nombre`, `descripcion`, `id_tipo_info`, `imagen`, id_administrador) VALUES ('"+this->nombre+"','"+this->info+"',3,'"+this->foto+"',2)");
         query.exec();
 
-        QMessageBox::information(this, tr("Crear Servicio"),tr("Servicio Correctamente Creado."),
-                                      QMessageBox::Ok);
+        QMessageBox msgBox(QMessageBox::Warning,tr("Crear Servicio"), tr("Servicios Creado Correctamente"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
         this->close();
     }
 }

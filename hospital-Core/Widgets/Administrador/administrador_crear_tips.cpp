@@ -49,8 +49,9 @@ void administrador_crear_tips::on_btn_crear_clicked()
 {
     if(ui->lineNombreTip->text().isEmpty() || ui->textTip->toPlainText().isEmpty())
     {
-        QMessageBox::warning(this, tr("ERROR INFO"), tr("Campos Incompletos\n Por favor llene todos los campos."),
-                             QMessageBox::Ok);
+        QMessageBox msgBox3(QMessageBox::Warning,tr("Campos"), tr("Ingresa todos los campos"), QMessageBox::Yes);
+        msgBox3.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox3.exec();
     }else
     {
         if(imagen.isEmpty())
@@ -61,19 +62,20 @@ void administrador_crear_tips::on_btn_crear_clicked()
         titulo = ui->lineNombreTip->text();
         descripcion = ui->textTip->toPlainText();
 
-        QMessageBox::StandardButton Confirmacion;
-        Confirmacion = QMessageBox::question(this, "ADVERTENCIA", "¿Está seguro de guardar esta información?",
-                                             QMessageBox::Yes | QMessageBox::No);
+        QMessageBox messageBox(QMessageBox::Question,tr("Confirmacion"), tr("Deseas guardar esta informacion?"), QMessageBox::Yes | QMessageBox::No);
+        messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+        messageBox.setButtonText(QMessageBox::No, tr("No"));
 
-        if(Confirmacion == QMessageBox::Yes)
+        if(messageBox.exec() == QMessageBox::Yes)
         {
             QSqlQuery query(mDatabase);
             query.prepare("insert into info(nombre,descripcion,id_tipo_info,id_administrador,imagen) "
                           "values('"+titulo+"','"+descripcion+"',1,2,'"+imagen+"');");
             query.exec();
 
-            QMessageBox::information(this, tr("Registrar Tip"),tr("Tip Registrado Correctamente"),
-                                          QMessageBox::Ok);
+            QMessageBox msgBox(QMessageBox::Warning,tr("Exito"), tr("Tip registrado Correctamente"), QMessageBox::Yes);
+            msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+            msgBox.exec();
         }
 
         this->close();
