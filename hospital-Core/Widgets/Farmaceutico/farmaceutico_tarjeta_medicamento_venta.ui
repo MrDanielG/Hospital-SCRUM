@@ -56,9 +56,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>30</x>
      <y>10</y>
-     <width>181</width>
+     <width>241</width>
      <height>20</height>
     </rect>
    </property>
@@ -82,7 +82,7 @@
     <rect>
      <x>10</x>
      <y>40</y>
-     <width>91</width>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
@@ -154,7 +154,7 @@
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>81</width>
+     <width>121</width>
      <height>20</height>
     </rect>
    </property>
@@ -176,11 +176,16 @@
   <widget class="QPushButton" name="btn_agregaracola">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>160</x>
      <y>150</y>
-     <width>111</width>
+     <width>131</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Montserrat</family>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
@@ -194,9 +199,9 @@ background: #3E64FF;</string>
   <widget class="QLabel" name="nombre_medicamento">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>140</x>
      <y>40</y>
-     <width>91</width>
+     <width>151</width>
      <height>20</height>
     </rect>
    </property>
@@ -218,7 +223,7 @@ background: #3E64FF;</string>
   <widget class="QLabel" name="precio_medicamento">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>130</x>
      <y>70</y>
      <width>91</width>
      <height>20</height>
@@ -242,7 +247,7 @@ background: #3E64FF;</string>
   <widget class="QLabel" name="cantidad_medicamento">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>130</x>
      <y>100</y>
      <width>91</width>
      <height>20</height>
@@ -266,7 +271,7 @@ background: #3E64FF;</string>
   <widget class="QLabel" name="premedicado_medicamento">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>130</x>
      <y>130</y>
      <width>91</width>
      <height>20</height>
