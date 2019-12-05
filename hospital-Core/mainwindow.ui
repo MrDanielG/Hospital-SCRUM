@@ -36,7 +36,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>0</x>
         <y>-20</y>
         <width>1381</width>
         <height>731</height>
@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -386,7 +386,7 @@ background: #3E64FF;</string>
        <rect>
         <x>320</x>
         <y>0</y>
-        <width>1021</width>
+        <width>1049</width>
         <height>41</height>
        </rect>
       </property>
@@ -1001,7 +1001,7 @@ color: white;
      <widget class="QPushButton" name="btn_Inicio">
       <property name="geometry">
        <rect>
-        <x>620</x>
+        <x>770</x>
         <y>10</y>
         <width>75</width>
         <height>23</height>
@@ -1022,32 +1022,6 @@ color: white;</string>
       </property>
       <property name="text">
        <string>Inicio</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_calificar_nedico">
-      <property name="geometry">
-       <rect>
-        <x>720</x>
-        <y>10</y>
-        <width>141</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Montserrat</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;
-color: white;</string>
-      </property>
-      <property name="text">
-       <string>Calificar Medico</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_remedios_caseros">
@@ -1133,9 +1107,9 @@ color: white;</string>
      <widget class="QWidget" name="layoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>690</x>
+        <x>670</x>
         <y>0</y>
-        <width>661</width>
+        <width>681</width>
         <height>41</height>
        </rect>
       </property>
@@ -1180,6 +1154,59 @@ color: white;
          <property name="sizeHint" stdset="0">
           <size>
            <width>50</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_Solicitudes_Staff">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Montserrat</family>
+           <pointsize>11</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">*{
+	border: none;
+	color: white;
+}
+
+:hover{
+	border-bottom: 1px solid #818181;
+}
+
+
+
+	
+
+</string>
+         </property>
+         <property name="text">
+          <string>Solicitudes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_18">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
            <height>20</height>
           </size>
          </property>
@@ -1360,7 +1387,7 @@ color: white;
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="btn_salir_medico_2">
+        <widget class="QPushButton" name="btn_salir_Staff">
          <property name="maximumSize">
           <size>
            <width>100</width>
@@ -1396,7 +1423,7 @@ color: white;
        <rect>
         <x>1250</x>
         <y>10</y>
-        <width>75</width>
+        <width>61</width>
         <height>23</height>
        </rect>
       </property>
@@ -1419,9 +1446,9 @@ color: white;
      <widget class="QPushButton" name="realizarVenta">
       <property name="geometry">
        <rect>
-        <x>1074</x>
+        <x>1100</x>
         <y>10</y>
-        <width>161</width>
+        <width>141</width>
         <height>23</height>
        </rect>
       </property>
@@ -1444,9 +1471,9 @@ color: white;
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>820</x>
+        <x>880</x>
         <y>10</y>
-        <width>221</width>
+        <width>211</width>
         <height>23</height>
        </rect>
       </property>
@@ -1471,7 +1498,7 @@ color: white;
        <rect>
         <x>650</x>
         <y>10</y>
-        <width>171</width>
+        <width>101</width>
         <height>23</height>
        </rect>
       </property>
@@ -1489,6 +1516,31 @@ color: white;
       </property>
       <property name="text">
        <string>Inicio</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_solicitudes_farmaceutico">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>10</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: none;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Solicitudes</string>
       </property>
      </widget>
     </widget>

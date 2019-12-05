@@ -147,7 +147,7 @@ void paciente_gestionar_citas::on_btn_citas_activas_clicked()
     QSqlQuery BuscaID(mDatabase);
     QTime horaActual=QTime::currentTime();
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
-                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+                    "on p.id_persona=per.id_persona where per.id_usuario='"+idUsuarioPaciente+"';");
     BuscaID.exec();
     QString idP;
     while(BuscaID.next())
@@ -215,7 +215,7 @@ void paciente_gestionar_citas::on_btn_citas_realizadas_clicked()
 {
     QSqlQuery BuscaID(mDatabase);
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
-                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+                    "on p.id_persona=per.id_persona where per.id_usuario='"+idUsuarioPaciente+"';");
     BuscaID.exec();
     QString idP;
     bool band=false;
@@ -285,7 +285,7 @@ void paciente_gestionar_citas::on_btn_citas_canceladas_clicked()
 {
     QSqlQuery BuscaID(mDatabase);
     BuscaID.prepare("select id_paciente from paciente as p inner join persona as per "
-                    "on p.id_persona=per.id_persona where per.nombre='"+idUsuarioPaciente+"';");
+                    "on p.id_persona=per.id_persona where per.id_usuario='"+idUsuarioPaciente+"';");
     BuscaID.exec();
     QString idP;
     while(BuscaID.next())
