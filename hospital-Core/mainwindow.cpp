@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui->stackedWidget->insertWidget(18, &informacionMedico);
     ui->stackedWidget->insertWidget(19, &citas);
     ui->stackedWidget->insertWidget(20, &cobrarEstancia);
+    ui->stackedWidget->insertWidget(21, &catalogoRemedios);
 }
 
 MainWindow::~MainWindow()
@@ -70,11 +71,11 @@ void MainWindow::on_btn_iniciar_sesion_clicked()
     qDebug() << "DATOS LOGIN";
     qDebug() << this->datosLogin.nombre_usuario;
     qDebug() << this->datosLogin.passwd;
-
     horarioMedico.setIdUsuario(this->datosLogin.nombre_usuario);
     gestionCitas.setIdPaciente(this->datosLogin.nombre_usuario);
     informacionMedico.setID(this->datosLogin.nombre_usuario);
     generarReceta.setUsuario(this->datosLogin.nombre_usuario);
+    solicitudesMedico.setUsuario(this->datosLogin.nombre_usuario);
 
     this->index = dialogo_iniciar_sesion.getindex(); //Retorno tipo de usuario a MainWindow para abrir interfaz correcta
 
@@ -155,7 +156,7 @@ void MainWindow::on_btn_inicio_admin_clicked()
 
 void MainWindow::on_btn_remedios_admin_clicked()
 {
-    qDebug() << "Aun no la haces prro";
+    ui->stackedWidget->setCurrentIndex(21);
 }
 
 void MainWindow::on_btn_gestionar_servicios_admin_clicked()
@@ -203,11 +204,10 @@ void MainWindow::on_pushButton_6_clicked()
 
 void MainWindow::on_btn_solicitudes_medico_clicked()
 {
-    QString usuario = dialogo_iniciar_sesion.getUsuario(), idPer, idEmp, idMed;
+    QString usuario = solicitudesMedico.getUsuario(), idPer, idEmp, idMed;
 
     QSqlQuery query(mDatabase);
     QSqlQuery query1(mDatabase);
-    QSqlQuery query2(mDatabase);
     qDebug() << "Usuario: " << usuario;
     query.prepare("select id_persona from persona where id_usuario='" + usuario + "'");
     query.exec();
@@ -221,14 +221,8 @@ void MainWindow::on_btn_solicitudes_medico_clicked()
     idEmp = query1.value(0).toString();
     qDebug() << "idEmp: " << idEmp;
 
-    query2.prepare("SELECT id_medico FROM medico WHERE id_empleado = '" + idEmp + "'");
-    query2.exec();
-    query2.next();
-    idMed = query2.value(0).toString();
-
-    qDebug() << "idMedico: " << idMed;
-
-    solicitudesMedico.setIdMedico(idMed);
+    solicitudesMedico.setIdEmpleado(idEmp);
+    solicitudesMedico.setIdPersona(idPer);
     solicitudesMedico.inicializar();
     ui->stackedWidget->setCurrentIndex(10);
 }
