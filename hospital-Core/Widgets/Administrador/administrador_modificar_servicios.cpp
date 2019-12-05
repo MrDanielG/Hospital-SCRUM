@@ -40,13 +40,9 @@ administrador_modificar_servicios::~administrador_modificar_servicios()
 
 void administrador_modificar_servicios::on_btn_modificar_clicked()
 {
-    QMessageBox msgBox;
-    msgBox.setWindowTitle("Actualizar Servicio");
-    msgBox.setText("¿Desea Actualizar este Servicio?");
-    msgBox.setInformativeText("Esta accion no podra ser revertida");
-    msgBox.setStandardButtons(QMessageBox::Yes);
-    msgBox.addButton(QMessageBox::No);
-    msgBox.setDefaultButton(QMessageBox::Yes);
+    QMessageBox msgBox(QMessageBox::Warning,tr("Actualizacion"), tr("Desea Actualizar el Servicio"), QMessageBox::Yes | QMessageBox::No);
+    msgBox.setButtonText(QMessageBox::Yes, tr("Si"));
+    msgBox.exec();
 
     if(msgBox.exec() == QMessageBox::Yes){
         this->nombre = ui->nombre_servicio->text();
@@ -56,11 +52,14 @@ void administrador_modificar_servicios::on_btn_modificar_clicked()
         query.prepare("UPDATE `info` SET `nombre`='"+this->nombre+"',`descripcion`='"+this->info+"',`imagen`='"+this->foto+"' WHERE id_info = '"+this->id_servicio+"'");
         query.exec();
 
-        QMessageBox::information(this, tr("Actualizacion"),tr("Usuario Actualizado."),
-                                      QMessageBox::Ok);
+        QMessageBox messageBox2(QMessageBox::Warning,tr("Actualizacion"), tr("Servicio Actualizado"), QMessageBox::Yes);
+        messageBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        messageBox2.exec();
         this->close();
     } else {
-        QMessageBox::information(this, tr("Actualizacion"),tr("Usuario NO Actualizado."),
-                                      QMessageBox::Ok);
+        QMessageBox messageBox2(QMessageBox::Warning,tr("Actualizacion"), tr("El servicio NO ha sido actualizado"), QMessageBox::Yes);
+        messageBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        messageBox2.exec();
+        this->close();
     }
 }
