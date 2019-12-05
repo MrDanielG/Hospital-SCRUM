@@ -34,8 +34,9 @@ void administrador_crear_remedio::on_btn_crear_clicked()
     if( ui->nombreRemedio->text().isEmpty() ||
             ui->descripcion->toPlainText().isEmpty()){
 
-        QMessageBox::information(this, tr("Error"),
-                     tr("Completa todos los campos"));
+        QMessageBox msgBox3(QMessageBox::Warning,tr("Campos"), tr("Ingresa todos los campos"), QMessageBox::Yes);
+        msgBox3.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox3.exec();
 
     } else {
         QMessageBox msgBox(QMessageBox::Question,"Confimacion","¿Desea crear un nuevo Remedio?",QMessageBox::Yes|QMessageBox::No);
@@ -50,12 +51,14 @@ void administrador_crear_remedio::on_btn_crear_clicked()
             QSqlQuery query(mDatabase);
             query.exec("INSERT INTO `info`(`nombre`, `descripcion`, `id_tipo_info`, `id_administrador`, `imagen`) VALUES ('"+this->nombre+"','"+this->descripcion+"',2,2,'"+this->foto+"')");
 
-            QMessageBox::information(this, tr("Error"),
-                         tr("Se agrego creo un Nuevo Remedio"));
+            QMessageBox msgBox2(QMessageBox::Warning,tr("Éxito"), tr("Se Agrego un nuevo Remedio"), QMessageBox::Yes);
+            msgBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+            msgBox2.exec();
             this->close();
         } else {
-            QMessageBox::information(this, tr("Error"),
-                         tr("No se creo un nuevo remedio"));
+            QMessageBox msgBox2(QMessageBox::Warning,tr("Éxito"), tr("Se Agrego un nuevo Remedio"), QMessageBox::Yes);
+            msgBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+            msgBox2.exec();
             this->close();
         }
     }
@@ -67,12 +70,14 @@ void administrador_crear_remedio::on_btn_foto_clicked()
     qDebug()<<dir << "/directorio";
     if(!dir.isEmpty()){
         this->foto = dir;
-        QMessageBox::information(this, tr("Correcto"),
-                     tr("Imagen agregada correctamente"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Éxito"), tr("Se Agrego una nueva imágen"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
         ui->foto->setPixmap(dir);
     }else{
         this->foto = "C:/img/imgTipTest.png"; //Img por Defecto
-        QMessageBox::information(this, tr("Error"),
-                     tr("No se inserto ninguna imagen"));
+        QMessageBox msgBox(QMessageBox::Warning,tr("Éxito"), tr("NO se Agrego una nueva Imágen"), QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        msgBox.exec();
     }
 }

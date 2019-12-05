@@ -2,6 +2,7 @@
 #include "ui_administrador_info_servicios.h"
 #include "Widgets/Administrador/administrador_modificar_servicios.h"
 #include "QDebug"
+#include "QMessageBox"
 administrador_info_servicios::administrador_info_servicios(QString id, QString servicio, QString info, QString foto, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::administrador_info_servicios)
@@ -47,3 +48,28 @@ void administrador_info_servicios::on_btn_modificar_clicked()
     this->close();
 }
 
+
+void administrador_info_servicios::on_btn_eliminar_clicked()
+{
+    QMessageBox messageBox(QMessageBox::Warning,tr("Eliminar Servicio"), tr("Estás seguro de dar de baja éste servico?"), QMessageBox::Yes | QMessageBox::No);
+    messageBox.setButtonText(QMessageBox::Yes, tr("Sí"));
+    messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+    if (messageBox.exec() == QMessageBox::Yes){
+        QSqlQuery query(mDatabase);
+        query.prepare("delete from info where id_info = "+this->id);
+        query.exec();
+
+        QMessageBox messageBox2(QMessageBox::Warning,tr("Eliminacion"), tr("El servicio ha sido eliminado"), QMessageBox::Yes);
+        messageBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        messageBox2.exec();
+
+
+        this->close();
+    } else {
+        QMessageBox messageBox2(QMessageBox::Warning,tr("No se elimino"), tr("El servicio NO ha sido eliminado"), QMessageBox::Yes);
+        messageBox2.setButtonText(QMessageBox::Yes, tr("Entendido"));
+        messageBox2.exec();
+        this->close();
+    }
+}

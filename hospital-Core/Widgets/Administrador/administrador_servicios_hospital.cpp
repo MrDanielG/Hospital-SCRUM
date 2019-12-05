@@ -88,7 +88,7 @@ void administrador_servicios_hospital::regargaCatalogo()
          row = i/4;
          col= i%4;
 
-         administrador_tarjeta_servicios *tarjeta = new administrador_tarjeta_servicios(id, nombre, foto);
+         administrador_tarjeta_servicios *tarjeta = new administrador_tarjeta_servicios(id, nombre, foto, this);
 
          i++;
          ui->gridLayout->addWidget(tarjeta, row, col);
