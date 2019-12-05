@@ -48,7 +48,7 @@ border-radius: 5px;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../resources.qrc">:/imagenes/Imagenes/imgTipTest.png</pixmap>
+    <pixmap>:/imagenes/Imagenes/imgTipTest.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -211,7 +211,7 @@ border-radius: 5px;
     </item>
    </layout>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineNombreTip">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -236,7 +236,7 @@ border-bottom: 1px solid #3E64FF;</string>
     <string>Nombre Tip</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="textTip">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -261,8 +261,6 @@ border-bottom: 1px solid #3E64FF;</string>
    </property>
   </widget>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

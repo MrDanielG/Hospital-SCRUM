@@ -111,6 +111,7 @@ SOURCES += \
     Widgets/Administrador/administrador_justificacion_staff.cpp \
     Widgets/Administrador/administrador_tarjeta_justificacion_staf.cpp \
     Widgets/Administrador/administrador_visualizar_justificacion_staff.cpp
+    Widgets/Administrador/administrador_tarjeta_tip.cpp
 
 HEADERS += \
         Clases/doctor.h \
@@ -196,6 +197,7 @@ HEADERS += \
     Widgets/Administrador/administrador_justificacion_staff.h \
     Widgets/Administrador/administrador_tarjeta_justificacion_staf.h \
     Widgets/Administrador/administrador_visualizar_justificacion_staff.h
+    Widgets/Administrador/administrador_tarjeta_tip.h
 
 FORMS += \
     Widgets/Administrador/administrador_catalogo_remedios.ui \
@@ -277,6 +279,7 @@ FORMS += \
     Widgets/Administrador/administrador_justificacion_staff.ui \
     Widgets/Administrador/administrador_tarjeta_justificacion_staf.ui \
     Widgets/Administrador/administrador_visualizar_justificacion_staff.ui
+    Widgets/Administrador/administrador_tarjeta_tip.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

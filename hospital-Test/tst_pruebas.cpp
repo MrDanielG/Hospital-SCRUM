@@ -19,6 +19,52 @@ private slots:
     void abrirBase();
     void mostrarTip();
     void mostrarRemedios();
+//    void abrirBase();
+//    void registrarUsuario();
+//    void inicioSesion();
+//    void recuperarDatos();
+
+//    void ingresarServicios();
+ //   void visualizarCita();
+
+//    void visualizarCita();
+//    void visualizarHorarioCitas();
+//    void cancelarCita();
+//    void editarPerfilProp();
+//    void aprobarCancelacionCita();
+//    void asignarCitaAMedico();
+    //Pruebas Sara Sprint IV
+ //   void CancelaCitaPaciente();
+   // void VerCitasActivas(); //Por parte del paciente
+   // void VerCitasCanceladas(); //Por el paciente
+    //void VerCitasRealizadas(); //Por el paciente
+
+    //Pruebas Angel
+//    void modificarMedico();
+//    void visualizarCitas();
+//    void visualizarOperaciones();
+//    void agendarCita();
+//    void buscarporFecha();
+    //void buscarporNombre();
+
+//    void agregarInternado();
+//    void modificarInternado();
+//    void darDeBaja();
+
+    //Pruebas Daniel Sprint 3
+    //void catalogoCitas();
+    //void buscarPorMedico();
+//    void buscarFecha();
+
+    //Prubas Sara Sprint V
+    //void ObtenerDatosMedico();
+    //void EnviarCalificacion();
+
+    //Pruebas Sara Spintr VI
+    void crearTip();
+    void modificaTip();
+    void eliminaTip();
+
 };
 
 pruebas::pruebas()
@@ -92,6 +138,7 @@ void pruebas::mostrarTip()
 }
 
 void pruebas::mostrarRemedios()
+/*void pruebas::ObtenerDatosMedico()
 {
     QSqlQuery crear(mDatabase);
     crear.prepare("select * from info where id_tipo_info = 2");
@@ -107,6 +154,18 @@ void pruebas::mostrarRemedios()
         QString nombre = crear.value(1).toString();
         QString descripcion = crear.value(2).toString();
         QString imagen = crear.value(5).toString();
+    if(query.exec())
+    {
+        qDebug() << "Datos obtenidos";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}*/
+
+/*void pruebas::EnviarCalificacion()
+{
+    QString NumEstrellas="4",id_cita="3",id_Medico="7";
 
         row = i/3;
         col= i%3;
@@ -120,6 +179,69 @@ void pruebas::mostrarRemedios()
 
     }
     QVERIFY(band == "true");
+                qDebug() << "Calificacion actualizada";
+            }
+        }
+    }else
+        qDebug() << "Ingrese calificacion";
+}*/
+
+void pruebas::crearTip()
+{
+    QString titulo = "Toma agua";
+    QString descripcion = "Toma dos litros de agua al día";
+    QString imagen = ":/imagenes/Imagenes/imgTipTest.png";
+    QSqlQuery query(mDatabase);
+    query.prepare("insert into info(nombre,descripcion,id_tipo_info,id_administrador,imagen) "
+                  "values('"+titulo+"','"+descripcion+"',1,1,'"+imagen+"');");
+    QVERIFY(query.exec());
+    if(query.exec())
+    {
+        qDebug() << "Tip registrado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+void pruebas::modificaTip()
+{
+    QString nombre = "Evita el refresco ";
+    QString texto = "El alto consumo de refresco provoca daños a la salud";
+    QString id="4";
+
+    QSqlQuery query1(mDatabase);
+    query1.prepare("UPDATE info SET nombre = '"+nombre+"',descripcion = '"+texto+"' "
+                  " WHERE id_info = '"+id+"';");
+    QVERIFY(query1.exec());
+
+    if(query1.exec())
+    {
+        qDebug() << "Tip modificado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+}
+
+
+void pruebas::eliminaTip()
+{
+    QString id="2";
+    QSqlQuery query2(mDatabase);
+    query2.prepare("DELETE FROM info WHERE id_info='"+id+"' LIMIT 1;");
+    query2.exec();
+
+    QVERIFY(query2.exec());
+
+    if(query2.exec())
+    {
+        qDebug() << "Tip eiminado";
+    }else
+    {
+        qDebug() << "Error";
+    }
+
 }
 
 QTEST_APPLESS_MAIN(pruebas)

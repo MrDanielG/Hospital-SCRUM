@@ -89,6 +89,8 @@ private slots:
 
     void on_justificaciones_pbtn_clicked();
 
+    void on_btn_Inicio_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;

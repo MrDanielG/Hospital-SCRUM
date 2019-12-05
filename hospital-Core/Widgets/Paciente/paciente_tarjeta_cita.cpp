@@ -110,6 +110,7 @@ void paciente_tarjeta_cita::on_btn_calificar_clicked()
 {
     Paciente_Califica_Medico calificando(id_cita,idMed,this);
     calificando.exec();
+    ui->btn_calificar->hide();
 }
 
 //Para oculatar ambos botones
