@@ -190,7 +190,7 @@ y de prestigio.</string>
 background: #3E64FF;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="menu_usuario">
      <widget class="QPushButton" name="btn_servicios">
@@ -321,7 +321,7 @@ background: #3E64FF;</string>
      <widget class="QPushButton" name="btn_servicios_2">
       <property name="geometry">
        <rect>
-        <x>559</x>
+        <x>480</x>
         <y>10</y>
         <width>91</width>
         <height>21</height>
@@ -354,11 +354,36 @@ color: white;
        <string>Inicio</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background: #3E64FF;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Tip del Dia</string>
+      </property>
+     </widget>
      <zorder>label_3</zorder>
      <zorder>btn_servicios</zorder>
      <zorder>btn_doctores_info</zorder>
      <zorder>btn_iniciar_sesion</zorder>
      <zorder>btn_servicios_2</zorder>
+     <zorder>pushButton_2</zorder>
     </widget>
     <widget class="QWidget" name="menu_admin">
      <property name="styleSheet">
@@ -1326,47 +1351,6 @@ color: white;
          </property>
          <property name="text">
           <string>Citas</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_16">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_urgencias_medico_2">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Montserrat</family>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: none;
-background: none;
-color: white;
-</string>
-         </property>
-         <property name="text">
-          <string>Urgencias</string>
          </property>
         </widget>
        </item>

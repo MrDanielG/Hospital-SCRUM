@@ -409,3 +409,8 @@ void MainWindow::on_btn_salir_Staff_clicked()
     ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget_2->setCurrentIndex(0);
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    CrearTip();
+}

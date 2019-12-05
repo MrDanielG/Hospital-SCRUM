@@ -21,6 +21,8 @@ private slots:
     void on_btn_continuar_clicked();
     void on_btn_crear_usuario_clicked();
 
+    void on_btn_foto_clicked();
+
 private:
     Ui::administrador_modificar_usuario *ui;
     QSqlDatabase mDatabase;

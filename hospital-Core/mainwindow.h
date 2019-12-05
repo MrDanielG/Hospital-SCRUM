@@ -100,6 +100,8 @@ private slots:
 
     void on_btn_salir_Staff_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase mDatabase;
